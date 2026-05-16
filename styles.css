@@ -470,7 +470,6 @@ a.card:hover {
 .price-card {
   padding: clamp(24px, 4vw, 40px);
   text-align: center;
-  box-shadow: var(--shadow);
 }
 
 .price-card strong {
@@ -711,7 +710,7 @@ textarea {
     text-align: left;
   }
 
-  .hero > .container > .eyebrow {
+  .hero>.container>.eyebrow {
     display: none;
   }
 
