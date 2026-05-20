@@ -122,6 +122,31 @@ p {
   margin-bottom: 28px;
 }
 
+.intro-media {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 1fr);
+  gap: clamp(24px, 4vw, 20px);
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.intro-media__copy p {
+  margin-top: 22px;
+}
+
+.intro-media__image {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.intro-media__image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  display: block;
+}
+
 .soft-band {
   background: var(--surface-soft);
   border-block: 1px solid var(--line);
@@ -616,7 +641,7 @@ textarea {
   max-width: none;
   margin: 0 auto 36px;
   text-align: center;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .temario-tema {
@@ -685,9 +710,11 @@ textarea {
   }
 
   .grid.three,
-  .section-head {
+  .section-head,
+  .intro-media {
     grid-template-columns: 1fr;
   }
+
 }
 
 @media (max-width: 1080px) {
