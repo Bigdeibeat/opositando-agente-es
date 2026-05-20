@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://academia.ucademy.com/oposicion-agente-de-hacienda/</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Requisitos</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Convocatorias</span></div>
+<div class="line level-3" style="padding-left:108px"><span class="tag-label">h4 -&gt; </span><span class="content-header">Profesores</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Tu academia online para las</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Oposición Agente de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Prepara tus oposiciones Agente Hacienda 2025 con la única academia con garantía de aprobado. Aprende de nuestros profesores funcionarios reales.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">⭐ ⭐ ⭐ ⭐ ⭐ 4.4/5 (1.201 reseñas)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Clases grabadas</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Ahorro en tiempo</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Profesores asignados</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Acceso a simulacros</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Nos adaptamos a ti</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Y en directo para verlas donde y cuando quieras</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Lo hacemos por ti: apuntes, resúmenes, esquemas...</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Profesores funcionarios</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Que te guiarán en tu preparación.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Practica con los exámenes de convocatorias anteriores</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Vamos a tu ritmo y tenemos en cuenta tus necesidades</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Contenido actualizado</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Material descargable</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tests</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Opositar a Agente de Hacienda en 2025 con Ucademy</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Prepara tu oposición para Agente de Hacienda 2025 con la mejor metodología y el apoyo que necesitas. Sabemos que opositar es un reto, pero no estás solo. Te acompañamos en cada paso con recursos de calidad, orientación personalizada y la motivación necesaria para que alcances tu plaza. ¡Tu esfuerzo tiene recompensa!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Estás listo para el desafío? Convierte tu pasión en tu profesión y únete a quienes marcan la diferencia.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Oposiciones Agente de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Tenemos siempre actualizadas todas las convocatorias para que puedas apuntarte y mantenerte informado de la tuya.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Número de Temas: 34</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Dificultad preparación: Fácil - Medio</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Nº de Bloques de Estudio: 3</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Materias Organización del Estado y funcionamiento de la Administración General del Estado, Derecho Administrativo General y Organización de la Hacienda Pública y Derecho Tributario</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">¿Qué necesito para poder presentarme?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Requisitos para aprobar</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Sin conocimientos previos de derecho y sin méritos</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">No importa si no tienes conocimientos previos en derecho. Nuestro método está diseñado para llevarte desde cero hasta conseguir tu plaza.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">No has sido separado del ejercicio de funciones públicas.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">A partir de 16 años</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Ser español/a</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Bachillerato o Técnico (o equivalente).</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Contar con la capacidad funcional necesaria</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="tag-label">h5 -&gt; </span><span class="content-header">Funciones públicas</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="context-label">texto bajo h5 -&gt; </span><span class="content-text">No has sido separado del ejercicio de funciones públicas.</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="tag-label">h5 -&gt; </span><span class="content-header">A partir de 16 años</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="context-label">texto bajo h5 -&gt; </span><span class="content-text">y no superar la edad de jubilación forzosa.</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="tag-label">h5 -&gt; </span><span class="content-header">Nacionalidad</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="context-label">texto bajo h5 -&gt; </span><span class="content-text">Ser español/a</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="tag-label">h5 -&gt; </span><span class="content-header">Requisitos de formación</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="context-label">texto bajo h5 -&gt; </span><span class="content-text">Bachillerato o Técnico (o equivalente)</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="tag-label">h5 -&gt; </span><span class="content-header">Ser capaz</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="context-label">texto bajo h5 -&gt; </span><span class="content-text">Debes contar con la capacidad funcional necesaria para desempeñar las tareas del puesto.</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="context-label">texto bajo h5 -&gt; </span><span class="content-text">Llamada informativa gratis. Empieza ahora y gana ventaja.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Ahora te toca a ti, hoy empieza el camino hacia tu plaza</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Temario corto, requisitos asequibles y un trabajo de por vida con los múltiples beneficios que has visto. ¿Qué más quieres?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Modalidad online</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Flexibilidad</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Acceso: ESO o similar</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Con Garantía de Aprobado</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Por qué estudiar Agente de Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Disfruta de todas las ventajas de opositar para Agente de Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Estabilidad laboral: Consigue un trabajo para toda la vida.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Estabilidad laboral: Empleo fijo en la Administración Pública con las ventajas del sector público.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Localización: La movilidad no será un problema.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Sueldo: inicial aproximado de 28.000€ brutos anuales.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Conciliación familiar: Jornada laboral de 8 a 15 horas con opciones de teletrabajo parcial.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Cómo te ayudamos a aprobar?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Te informamos de las convocatorias AL MOMENTO</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tenemos siempre actualizadas todas las convocatorias para que puedas apuntarte y mantenerte informado de la tuya.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">2022: 775</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">2023: 780</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">2024: 800</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">2025: 736</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Todo lo que necesitas para arrasar en tu estudio</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Prepárate para tenerlo todo a tu alcance. En Ucademy, el contenido es mucho más que solo un puñado de clases: es una biblioteca completa de recursos audiovisuales, resúmenes clarísimos y PDFs descargables listos para ayudarte a estudiar sin distracciones.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Bloque I: Organización del Estado y funcionamiento de la Administración General del Estado</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Bloque II: Derecho Administrativo General</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Bloque III:Organización de la Hacienda Pública y Derecho Tributario</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Recibe orientación personalizada para resolver tus dudas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Nuestros orientadores están disponibles para darte el apoyo que necesitas y resolver juntos cualquier duda que tengas.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Aprenderás de la mano de profesionales del sector</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Conoce a tus futuros profesores</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Funcionario de carrera y experto en oposiciones judiciales, ha pasado por el mismo camino que tú, aprobando todas las pruebas de Gestión Procesal, Tramitación y Auxilio Judicial.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Formación top : Graduado en Derecho y Máster en Derecho Penal y Procesal Penal.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Experiencia real : Funcionario en activo del Ministerio de Justicia.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Método eficaz : Explica el temario de forma clara, práctica y enfocada en lo que realmente importa.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Los alumnos opinan: ★★★★★ - Súper cercano y claro</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Experta en Justicia, Criminología y Formación en Oposiciones , Evelin Robles combina su experiencia como preparadora de oposiciones con una trayectoria académica e investigadora de alto nivel.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Formación y experiencia : Graduada en Criminología. Experiencia en investigación jurídica y peritaje criminológico .</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Enfoque estratégico : Explicaciones claras, técnicas de estudio y conocimiento profundo del proceso selectivo .</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Los alumnos opinan: ★★★★★ - En foque práctico y conciso</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Consigue financiación para tu formación</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Nuestra opción de financiación esta pensada para que NO tengas que preocuparte del pago de tu oposición y puedas dedicarte 100% a tu formación. Encuentra la opción ideal para ti y empieza ya a prepararte con nosotros.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Por qué los opositores preparan las Oposiciones de Agente de Hacienda con Ucademy?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Llamada informativa gratis. Empieza ahora y gana ventaja.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Tienes dudas?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">faq -&gt; </span><span class="content-header">1. ¿Cuál es la diferencia entre una oposición y un concurso-oposición en Agente de Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo faq -&gt; </span><span class="content-text">La diferencia entre una oposición y un concurso-oposición radica en que, en una oposición, solo es necesario aprobar exámenes, y quienes obtienen las calificaciones más altas tienen prioridad en la elección de plazas. En cambio, en un concurso-oposición, además de los exámenes, se evalúan méritos, como la experiencia laboral en la Administración y la formación, según lo establecido por la entidad convocante.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">faq -&gt; </span><span class="content-header">2. ¿Las oposiciones de Agente de Hacienda son fáciles?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo faq -&gt; </span><span class="content-text">La facilidad de una oposición depende de la capacidad de estudio y organización del individuo. Algunas oposiciones pueden considerarse más difíciles, especialmente aquellas con extensos temarios. En lugar de buscar oposiciones más fáciles, se aconseja elegir una cuyo contenido te interese y te motive.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">faq -&gt; </span><span class="content-header">3. ¿Cómo se presentan los méritos en las oposiciones de Agente de Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo faq -&gt; </span><span class="content-text">Al final de las convocatorias de los concursos-oposiciones, se detallan los procedimientos y plazos para la presentación de méritos, así como los criterios de valoración. Por lo general, este proceso se realiza de forma telemática y después de la publicación de los resultados de los exámenes.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">faq -&gt; </span><span class="content-header">4. ¿Existe una edad máxima para participar en las Oposiciones de Agente de Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo faq -&gt; </span><span class="content-text">Sí, se establecen edades máximas y mínimas para participar en las oposiciones. La edad máxima generalmente corresponde al límite de jubilación, mientras que la mínima es típicamente de 16 años.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">faq -&gt; </span><span class="content-header">5. ¿Cuándo debo presentar mi instancia para la Convocatoria de Agente de Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo faq -&gt; </span><span class="content-text">Una vez se publique la nueva convocatoria de Auxiliar del Estado, se abrirá el plazo de 20 días hábiles para que puedes presentar tu solicitud al examen.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Apúntate y logra tus objetivos</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Aprueba dedicando el menor tiempo posible a través de una metodología validada y seguimiento personalizado a través de nuestra plataforma</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">© 2025 Ucademy. Todos los derechos reservados.</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "\th2 -> Requisitos\n\th2 -> Convocatorias\n\t\t\th4 -> Profesores\n\t\th3 -> Tu academia online para las\nh1 -> Oposición Agente de Hacienda\n\th2 -> Prepara tus oposiciones Agente Hacienda 2025 con la única academia con garantía de aprobado. Aprende de nuestros profesores funcionarios reales.\n\ttexto bajo h2 -> ⭐ ⭐ ⭐ ⭐ ⭐ 4.4/5 (1.201 reseñas)\n\t\th3 -> Clases grabadas\n\t\th3 -> Ahorro en tiempo\n\t\th3 -> Profesores asignados\n\t\th3 -> Acceso a simulacros\n\t\th3 -> Nos adaptamos a ti\n\t\ttexto bajo h3 -> Y en directo para verlas donde y cuando quieras\n\t\ttexto bajo h3 -> Lo hacemos por ti: apuntes, resúmenes, esquemas...\n\t\th3 -> Profesores funcionarios\n\t\ttexto bajo h3 -> Que te guiarán en tu preparación.\n\t\ttexto bajo h3 -> Practica con los exámenes de convocatorias anteriores\n\t\ttexto bajo h3 -> Vamos a tu ritmo y tenemos en cuenta tus necesidades\n\t\ttexto bajo h3 -> Contenido actualizado\n\t\ttexto bajo h3 -> Material descargable\n\t\ttexto bajo h3 -> Tests\n\th2 -> Opositar a Agente de Hacienda en 2025 con Ucademy\n\ttexto bajo h2 -> Prepara tu oposición para Agente de Hacienda 2025 con la mejor metodología y el apoyo que necesitas. Sabemos que opositar es un reto, pero no estás solo. Te acompañamos en cada paso con recursos de calidad, orientación personalizada y la motivación necesaria para que alcances tu plaza. ¡Tu esfuerzo tiene recompensa!\n\ttexto bajo h2 -> ¿Estás listo para el desafío? Convierte tu pasión en tu profesión y únete a quienes marcan la diferencia.\n\th2 -> Oposiciones Agente de Hacienda\n\ttexto bajo h2 -> Tenemos siempre actualizadas todas las convocatorias para que puedas apuntarte y mantenerte informado de la tuya.\n\t\th3 -> Número de Temas: 34\n\t\th3 -> Dificultad preparación: Fácil - Medio\n\t\th3 -> Nº de Bloques de Estudio: 3\n\t\th3 -> Materias Organización del Estado y funcionamiento de la Administración General del Estado, Derecho Administrativo General y Organización de la Hacienda Pública y Derecho Tributario\n\t\th3 -> ¿Qué necesito para poder presentarme?\n\th2 -> Requisitos para aprobar\n\t\th3 -> Sin conocimientos previos de derecho y sin méritos\n\t\ttexto bajo h3 -> No importa si no tienes conocimientos previos en derecho. Nuestro método está diseñado para llevarte desde cero hasta conseguir tu plaza.\n\t\ttexto bajo h3 -> No has sido separado del ejercicio de funciones públicas.\n\t\ttexto bajo h3 -> A partir de 16 años\n\t\ttexto bajo h3 -> Ser español/a\n\t\ttexto bajo h3 -> Bachillerato o Técnico (o equivalente).\n\t\ttexto bajo h3 -> Contar con la capacidad funcional necesaria\n\t\t\t\th5 -> Funciones públicas\n\t\t\t\ttexto bajo h5 -> No has sido separado del ejercicio de funciones públicas.\n\t\t\t\th5 -> A partir de 16 años\n\t\t\t\ttexto bajo h5 -> y no superar la edad de jubilación forzosa.\n\t\t\t\th5 -> Nacionalidad\n\t\t\t\ttexto bajo h5 -> Ser español/a\n\t\t\t\th5 -> Requisitos de formación\n\t\t\t\ttexto bajo h5 -> Bachillerato o Técnico (o equivalente)\n\t\t\t\th5 -> Ser capaz\n\t\t\t\ttexto bajo h5 -> Debes contar con la capacidad funcional necesaria para desempeñar las tareas del puesto.\n\t\t\t\ttexto bajo h5 -> Llamada informativa gratis. Empieza ahora y gana ventaja.\n\th2 -> Ahora te toca a ti, hoy empieza el camino hacia tu plaza\n\t\th3 -> Temario corto, requisitos asequibles y un trabajo de por vida con los múltiples beneficios que has visto. ¿Qué más quieres?\n\t\ttexto bajo h3 -> Modalidad online\n\t\ttexto bajo h3 -> Flexibilidad\n\t\ttexto bajo h3 -> Acceso: ESO o similar\n\t\ttexto bajo h3 -> Con Garantía de Aprobado\n\th2 -> ¿Por qué estudiar Agente de Hacienda?\n\t\th3 -> Disfruta de todas las ventajas de opositar para Agente de Hacienda\n\t\th3 -> Estabilidad laboral: Consigue un trabajo para toda la vida.\n\t\th3 -> Estabilidad laboral: Empleo fijo en la Administración Pública con las ventajas del sector público.\n\t\th3 -> Localización: La movilidad no será un problema.\n\t\th3 -> Sueldo: inicial aproximado de 28.000€ brutos anuales.\n\t\th3 -> Conciliación familiar: Jornada laboral de 8 a 15 horas con opciones de teletrabajo parcial.\n\th2 -> ¿Cómo te ayudamos a aprobar?\n\t\th3 -> Te informamos de las convocatorias AL MOMENTO\n\t\ttexto bajo h3 -> Tenemos siempre actualizadas todas las convocatorias para que puedas apuntarte y mantenerte informado de la tuya.\n\t\ttexto bajo h3 -> 2022: 775\n\t\ttexto bajo h3 -> 2023: 780\n\t\ttexto bajo h3 -> 2024: 800\n\t\ttexto bajo h3 -> 2025: 736\n\t\th3 -> Todo lo que necesitas para arrasar en tu estudio\n\t\ttexto bajo h3 -> Prepárate para tenerlo todo a tu alcance. En Ucademy, el contenido es mucho más que solo un puñado de clases: es una biblioteca completa de recursos audiovisuales, resúmenes clarísimos y PDFs descargables listos para ayudarte a estudiar sin distracciones.\n\t\ttexto bajo h3 -> Bloque I: Organización del Estado y funcionamiento de la Administración General del Estado\n\t\ttexto bajo h3 -> Bloque II: Derecho Administrativo General\n\t\ttexto bajo h3 -> Bloque III:Organización de la Hacienda Pública y Derecho Tributario\n\th2 -> Recibe orientación personalizada para resolver tus dudas\n\ttexto bajo h2 -> Nuestros orientadores están disponibles para darte el apoyo que necesitas y resolver juntos cualquier duda que tengas.\n\t\th3 -> Aprenderás de la mano de profesionales del sector\n\th2 -> Conoce a tus futuros profesores\n\ttexto bajo h2 -> Funcionario de carrera y experto en oposiciones judiciales, ha pasado por el mismo camino que tú, aprobando todas las pruebas de Gestión Procesal, Tramitación y Auxilio Judicial.\n\ttexto bajo h2 -> Formación top : Graduado en Derecho y Máster en Derecho Penal y Procesal Penal.\n\ttexto bajo h2 -> Experiencia real : Funcionario en activo del Ministerio de Justicia.\n\ttexto bajo h2 -> Método eficaz : Explica el temario de forma clara, práctica y enfocada en lo que realmente importa.\n\ttexto bajo h2 -> Los alumnos opinan: ★★★★★ - Súper cercano y claro\n\ttexto bajo h2 -> Experta en Justicia, Criminología y Formación en Oposiciones , Evelin Robles combina su experiencia como preparadora de oposiciones con una trayectoria académica e investigadora de alto nivel.\n\ttexto bajo h2 -> Formación y experiencia : Graduada en Criminología. Experiencia en investigación jurídica y peritaje criminológico .\n\ttexto bajo h2 -> Enfoque estratégico : Explicaciones claras, técnicas de estudio y conocimiento profundo del proceso selectivo .\n\ttexto bajo h2 -> Los alumnos opinan: ★★★★★ - En foque práctico y conciso\n\t\th3 -> Consigue financiación para tu formación\n\t\ttexto bajo h3 -> Nuestra opción de financiación esta pensada para que NO tengas que preocuparte del pago de tu oposición y puedas dedicarte 100% a tu formación. Encuentra la opción ideal para ti y empieza ya a prepararte con nosotros.\n\th2 -> ¿Por qué los opositores preparan las Oposiciones de Agente de Hacienda con Ucademy?\n\ttexto bajo h2 -> Llamada informativa gratis. Empieza ahora y gana ventaja.\n\th2 -> ¿Tienes dudas?\n\t\tfaq -> 1. ¿Cuál es la diferencia entre una oposición y un concurso-oposición en Agente de Hacienda?\n\t\ttexto bajo faq -> La diferencia entre una oposición y un concurso-oposición radica en que, en una oposición, solo es necesario aprobar exámenes, y quienes obtienen las calificaciones más altas tienen prioridad en la elección de plazas. En cambio, en un concurso-oposición, además de los exámenes, se evalúan méritos, como la experiencia laboral en la Administración y la formación, según lo establecido por la entidad convocante.\n\t\tfaq -> 2. ¿Las oposiciones de Agente de Hacienda son fáciles?\n\t\ttexto bajo faq -> La facilidad de una oposición depende de la capacidad de estudio y organización del individuo. Algunas oposiciones pueden considerarse más difíciles, especialmente aquellas con extensos temarios. En lugar de buscar oposiciones más fáciles, se aconseja elegir una cuyo contenido te interese y te motive.\n\t\tfaq -> 3. ¿Cómo se presentan los méritos en las oposiciones de Agente de Hacienda?\n\t\ttexto bajo faq -> Al final de las convocatorias de los concursos-oposiciones, se detallan los procedimientos y plazos para la presentación de méritos, así como los criterios de valoración. Por lo general, este proceso se realiza de forma telemática y después de la publicación de los resultados de los exámenes.\n\t\tfaq -> 4. ¿Existe una edad máxima para participar en las Oposiciones de Agente de Hacienda?\n\t\ttexto bajo faq -> Sí, se establecen edades máximas y mínimas para participar en las oposiciones. La edad máxima generalmente corresponde al límite de jubilación, mientras que la mínima es típicamente de 16 años.\n\t\tfaq -> 5. ¿Cuándo debo presentar mi instancia para la Convocatoria de Agente de Hacienda?\n\t\ttexto bajo faq -> Una vez se publique la nueva convocatoria de Auxiliar del Estado, se abrirá el plazo de 20 días hábiles para que puedes presentar tu solicitud al examen.\n\th2 -> Apúntate y logra tus objetivos\n\ttexto bajo h2 -> Aprueba dedicando el menor tiempo posible a través de una metodología validada y seguimiento personalizado a través de nuestra plataforma\n\ttexto bajo h2 -> © 2025 Ucademy. Todos los derechos reservados.";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

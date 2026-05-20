@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://www.campustraining.es/oposiciones/hacienda/agente-de-hacienda/temario/</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Temario para Agente de Hacienda en 2025: descubre los 34 temas</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Escrito por</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Juan Luis Gómez Frieiro</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Realizador de audiovisuales y guionista de formación, es especialista en la red...</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">9 minutos</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">¿Quieres conocer el actual temario Agente de Hacienda? ¿Deseas conseguir una plaza como funcionario? Si es así, estás en el lugar adecuado. En este artículo te citamos todos los temas que entran en la vigente convocatoria de las oposiciones Agente de Hacienda por turno libre.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Si estás pensando en preparar estas oposiciones no dudes en ponerte en contacto con nosotros. Desde Campus Training te ayudamos a alcanzar tu puesto fijo de por vida. ¡Consúltanos!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Cómo es el temario de Agente de Hacienda 2026?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¡Este año se ha publicado una nueva convocatoria de agentes de Hacienda con 823 plazas! Y las bases, publicadas en el BOE, núm. 7, de 8 de enero de 2024, estructuran el temario de 34 temas en tres bloques:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Organización del Estado y funcionamiento de la Administración General del Estado: formado por siete temas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Derecho Administrativo General: cinco temas conforman este bloque.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Organización de la Hacienda Pública y Derecho Tributario: esta parte está formada por 22 temas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¡Fórmate en Temario para Agente de Hacienda en 2025: descubre los 34 temas!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Es difícil el temario de Agente de Hacienda Pública?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Para ser Agente de Hacienda Pública tienes que preparar 34 temas que, comparado con otros procesos de oposiciones, no es extenso. Pero donde entra el desafío es en el contenido, especialmente en materia tributaria, que abarca muchas casuísticas, normativa y matices que resultan complejos de asimilar (especialmente si partes de 0 en conocimientos sobre economía, fiscos o derecho).</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El temario de Agente de Hacienda es de una dificultad media por el contenido a preparar.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Por todo ello, afirmamos que es de una dificultad media. Así que, lo más habitual es que los aspirantes a una plaza como Agentes de Hacienda se apoyen en una preparación profesional para agilizar el estudio, consolidar sus avances y tener un apoyo experto para resolver sus dudas y enseñarles la materia.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Qué temas se estudian para las oposiciones de Agente de Hacienda en 2026?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Conoce los epígrafes que estudiarás en las oposiciones de Agente de Hacienda Pública, recogidos en cada uno de los bloques de la convocatoria.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">1. Organización del Estado y funcionamiento de la Administración General del Estado</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Los temas correspondientes a los bloques de Organización del Estado y funcionamiento de la Administración General del Estado, que entran dentro del Temario Agente de Hacienda:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 1. La Constitución Española de 1978: Estructura y contenido.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 2. Las Cortes Generales: Composición, atribuciones y funcionamiento.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 3. El Gobierno: Nombramiento y cese.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 4. La organización territorial del Estado.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 5. El funcionamiento electrónico del sector público.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 6. Políticas de igualdad y contra la violencia de género.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 7. Régimen jurídico del personal al servicio de las Administraciones Públicas.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">2. Derecho Administrativo General</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Estos son los temas de Derecho Administrativo General para la preparación de las pruebas selectivas de ingreso en el Cuerpo General Administrativo de la Administración General, especialidad Agentes de Hacienda Pública:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 1. Las fuentes del Derecho Administrativo.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 2. Los actos administrativos. Concepto y clases.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 3. El procedimiento administrativo común.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 4. Las fases del procedimiento administrativo: Iniciación, ordenación, instrucción y finalización.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 5. Los recursos administrativos: concepto y clases.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">3. Organización de la Hacienda Pública y Derecho Tributario</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Este bloque es el más extenso y con el contenido específico del temario de Agente de Hacienda, donde abarcarás el sistema fiscal, derecho tributario, recaudación y el IRPF o el IVA. ¡Descúbrelos!</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 1. El sistema fiscal español.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 2. La Agencia Estatal de Administración Tributaria.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 3. Derecho Tributario: Concepto y contenido.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 4. Derechos y garantías de los obligados tributarios.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 5. La aplicación de los tributos: Información y asistencia.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 6. Las obligaciones formales de los contribuyentes: Libros registros y facturas.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 7. Normas comunes sobre actuaciones y procedimientos tributarios: Fases.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 8. Las declaraciones tributarias: Concepto y clases.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 9. Actuaciones y procedimiento de gestión tributaria.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 10. Actuaciones y procedimiento de inspección: Funciones y facultades.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 11. La extinción de la deuda tributaria (I). Medios de extinción de la deuda.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 12. La extinción de la deuda tributaria (II). La prescripción del derecho a exigir el pago.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 13. El procedimiento de recaudación en período voluntario.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 14. El embargo.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 15. Infracciones y sanciones en materia tributaria.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 16. La revisión de los actos de carácter tributario en vía administrativa.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 17. El impuesto sobre la Renta de las Personas Físicas (I). Naturaleza, objeto y ámbito de aplicación. Sujeción al impuesto. Métodos de determinación de la base imponible.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 18. El impuesto sobre la Renta de las Personas Físicas (II). Rendimientos del trabajo, del capital mobiliario e inmobiliario y de actividades económicas.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 19. El impuesto sobre la Renta de las Personas Físicas (III). Tributación familiar. Gestión del impuesto.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 20. El Impuesto sobre el Valor Añadido (I). Concepto y naturaleza.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 21. El Impuesto sobre el Valor Añadido (II). Sujeto pasivo, repercusión, devengo y base imponible.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema 22. La Aduana. Elementos personales, la representación.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Cómo mantenerse actualizado con los cambios en el temario de estas oposiciones</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Quieres enterarte de las modificaciones en el temario de las oposiciones de Agente de Hacienda? Te recomendamos estos recursos para que no se te escapen las actualizaciones:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Seguir las noticias en materia fiscal y tributaria, especialmente en las propuestas y aprobación de leyes que puedan alterar el contenido del temario.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Comprar el índice del temario de la convocatoria actual con procesos pasados, para comprobar si cambian la expresión en los epígrafes o si varía el número de temas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Consultar las novedades en la página de la Agencia Tributaria sobre tu OEP para enterarte de cambios en los contenidos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Contar con el apoyo de una preparación profesional con expertos en el proceso que te manden alertas y, además, modifiquen el contenido de tu preparación.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Uniéndote a foros de oposiciones sobre Agente de Hacienda donde se discutan estas novedades y otros avisos como apertura de convocatorias y más información relevante.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Qué debe tener el mejor temario para preparar las oposiciones de Agente de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Para asegurarte de que estás preparándote por el mejor temario de oposiciones de Agente de Hacienda, asegúrate de:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Cuentas con un contenido editado por expertos en estas oposiciones y en materia tributaria para estudiar con un enfoque riguroso.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Que está actualizado, basándose en la convocatoria actual, y también que cuentas con expertos que estarán atentos a modificaciones en caso de aprobarse legislación y normativa que afecte a las oposiciones para reeditarlo.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Que sea completo, abarque toda la materia e incluya material complementario (como bibliografía extra) para que puedas extender tu preparación todo lo que puedas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Que incluya test y recursos con los que puedas repasar el temario con preguntas reales de convocatorias pasadas, pero asegurándote de que también tiene las respuestas actualizadas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Consejos para estudiar el temario de Agente de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Sigue estas indicaciones para preparar el temario de Agente de Hacienda con eficiencia:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Sigue una planificación personalizada</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Sigue un itinerario en tu preparación coherente con las exigencias del proceso, que respete el calendario con las fechas de los exámenes, pero también calibrando todo lo que puedas exigirte para no quemarte en el proceso y lograr objetivos realistas.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Readapta tu preparación</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Monitoriza tu rendimiento preparando las oposiciones, cómo son tus avances semanales y los objetivos que alcanzas. Siempre hay margen para que te prepares con más eficiencia y es importante que te plantees modificaciones en el método para desbloquear esas mejoras.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Prueba a estudiar enseñando</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Las oposiciones de Agente de Hacienda tienen un contenido denso y difícil de aprender. Te recomendamos probar la técnica de estudio Feynman, que se basa en el principio de que la forma más rápida de aprender es enseñando la materia. Así es como debes desplegarla:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Coge una hoja de papel.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Escribe el título del tema que vas a preparar.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Realiza una primera lectura del tema y escribe en la hoja una explicación informal de todo lo que has entendido.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Cuando lo tengas anotado en la hoja, conviértete en profesor e intenta explicarle a otra persona el contenido.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Acto seguido, vuelve a leer el tema para entender mejor el contenido.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Reescribe todo el temario con todos los conceptos claros y prueba a dar otra clase en voz alta.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Sigue unos hábitos de vida saludables</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">No subestimes el poder de un ritmo de vida sano para tu estudio. Comer bien y equilibrado, ayudará a que tu actividad cognitiva rinda al máximo y hacer deporte te ayudará a descargar el estrés del estudio y a aumentar tus niveles de motivación. Así que invierte esfuerzo en cuidarte para notar una mejoría en tu preparación y, además, en tu vida personal.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¡Prepara las oposiciones!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En total son 34 temas los que conforman el temario Agente de Hacienda. ¿Quieres conseguir toda la información sobre lo que debes preparar para superar estas oposiciones? Si es así, rellena este formulario y te la enviaremos en unos pocos segundos a tu cuenta de correo.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La formación y el estudio son las partes fundamentales a la hora de aprobar las oposiciones de Agente de Hacienda. Contar con materiales que estén actualizados y con apoyo de expertos en la materia de la convocatoria es la sólida base sobre la que empezar a preparar las pruebas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En Campus Training colaboramos con Flou para ofrecerte un método formativo específicamente diseñado para la preparación de oposiciones y contamos con profesionales docentes especializados en cada categoría.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¡Apúntate a la formación y consigue tu plaza de Agente de Hacienda!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Fuentes y recursos de información</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Comprobamos el contenido y la veracidad del conocimiento presentado en este artículo a través de nuestro proceso editoria y de verificación de la información, para asegurarnos de que sea preciso y confiable</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Bibliografía</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Resolución de 29 de diciembre de 2023, de la Presidencia de la Agencia Estatal de Administración Tributaria, por la que se convocan procesos selectivos para ingreso, por el sistema general de acceso libre y promoción interna, en el Cuerpo General Administrativo de la Administración del Estado, especialidad de Agentes de la Hacienda Pública. Boletín Oficial del Estado, 7, de 8 de enero de 2024. https://www.boe.es/diario_boe/txt.php?id=BOE-A-2024-402</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Selecciona el tipo de estudios Cursos Oposiciones FP Tipo de estudios*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Selecciona la categoría Familia de estudios*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Qué te interesa? Preparar una oposición y conseguir un empleo fijo Formarme en una profesión con futuro Obtener un título FP con alta empleabilidad Titulación*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Selecciona tu centro* Madrid Barcelona Centro*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Nombre y apellidos*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">+34 +54 +52 +57 +51 +593 +56 +1 +44 +58 +502 +33 +351 País*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Teléfono*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Email*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Código postal*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">España Afganistán Albania Alemania Andorra Angola Anguila Antigua y Barbuda Antillas Neerlandesas Arabia Saudita Argelia Argentina Armenia Aruba Australia Austria Azerbaiyán Bahamas Bahrein Bangladesh Barbados Bélgica Belice Benín Bermudas Bielorrusia Bolivia Bosnia y Herzegovina Botswana Brasil Brunei Bulgaria Burkina Faso Burundi Bután Camboya Camerún Canadá Chad Chile China Chipre Colombia Comores Congo Corea Del Norte Corea Del Sur Costa De Marfil Costa Rica Croacia Cuba Curaçao Dinamarca Djibouti Dominica Ecuador Egipto El Salvador Emiratos Árabes Unidos Eritrea Eslovaquia Eslovenia Estados Unidos De América Estonia Etiopía Federación de Estados de Micronesia Fiyi Filipinas Finlandia Francia Gabón Gambia Gaza y Jericó Georgia Ghana Gibraltar Granada Grecia Groenlandia Guadalupe Guam Guatemala Guernesey Guinea Guinea Ecuatorial Guinea-Bissau Guyana Guyana Francesa Haití Honduras Hong Kong Hungría India Indonesia Irán Iraq Irlanda Isla De Man Islandia Islas Caimán Islas Cook Islas Feroe Islas Malvinas (Falklands) Islas Marianas Del Norte Islas Marshall Islas Salomón Islas Turks y Caicos Islas Vírgenes Británicas Islas Vírgenes, Estados Unidos Islas Wallis y Futuna Israel Italia Jamaica Japón Jersey Jordania Kazajistán Kenia Kirguistán Kiribati Kuwait Laos Lesotho Letonia Líbano Liberia Libia Liechtenstein Lituania Luxemburgo Macao Macedonia Madagascar Malasia Malawi Maldivas Malí Malta Marruecos Martinica Mauricio Mauritania México Moldavia Mónaco Mongolia Montenegro Montserrat Mozambique Myanmar (Birmania) Namibia Nauru Nepal Nicaragua Níger Nigeria Niue Noruega Nueva Caledonia y Dependencias Nueva Zelanda Omán Organismos Internacionales Otros Países Países Bajos Pakistán Palau Panamá Papua-Nueva Guinea Paraguay Perú Pitcairn Polinesia Francesa Polonia Portugal Puerto Rico Qatar Reino Unido República Dominicana República Centroafricana República Checa República de Cabo Verde Reunión Ruanda Rumanía Rusia Samoa Americana Samoa Occidental San Cristóbal y Nieves San Marino San Pedro y Miquelón San Vicente Santa Helena y Dependencias Santa Lucía Santo Tomé y Príncipe Senegal Serbia Seychelles y Dependencias Sierra Leona Singapur Siria Somalia Sri Lanka Sudáfrica Sudán Suecia Suiza Surinam Swazilandia Tailandia Taiwán Tajikistán Tanzania Timor Leste Togo Tonga Trinidad y Tobago Túnez Turkmenistán Turquía Tuvalu Ucrania Uganda Uruguay Uzbekistán Vanuatu Vaticano Venezuela Vietnam Yemen Zaire Zambia Zimbabue Nacionalidad*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ed. Secundaria/EGB/ESO Bachillerato FP medio FP superior Estudios universitarios Sin estudios Nivel de estudios*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Edad Por favor, escribe un número entre 0 y 90.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Grupo Northius tratará sus datos personales para contactarle por medios tecnológicos, incluso aplicaciones de mensajería instantánea, con el fin de ofrecerle información del programa formativo seleccionado o de otros directamente relacionados con el interés manifestado y, en su caso, para tramitar la contratación correspondiente. Compartiremos su solicitud con las empresas que conforman el Grupo Northius, con el objeto de que estas puedan hacerle llegar la mejor oferta de productos y servicios de acuerdo a su petición. Quedan reconocidos los derechos de acceso, rectificación, supresión, oposición, limitación, tal y como se explica en la Política de Privacidad.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">producto_name*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">producto_id*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">producto_tipo*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">producto_categoria*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">producto_catalogo*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">prelead_name*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">prelead_tipo*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">prelead_seccion*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">prelead_form*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">prelead_author*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">prelead_blogcat*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">prelead_content*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">user_id*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">lead_id*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">transaction_id*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">modo_llegada*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">gclid*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Fecha de entrada*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">user_ip*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">pais_id*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">wp_id*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">utm_campaign*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">utm_content*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">utm_medium*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">utm_source*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">utm_term*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">orig_utm_campaign*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">orig_utm_content*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">orig_utm_medium*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">orig_utm_source*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">orig_utm_term*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">optHitId*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">urlOrig*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">social_request_id*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">social_request_type*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">user_id_triki*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">session_id_triki*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">nav_id_triki*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Motivaciones para elegir Oposiciones Agente de Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Oposiciones menos demandadas: ¿cuáles son?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Foro oposiciones Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">¿Dónde trabaja un Agente de Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Oposiciones Agente de Hacienda 2024: ¿Qué novedades y expectativas hay?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Otras profesiones que pueden interesarte</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Agente del Servicio de Vigilancia Aduanera</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Técnico de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Agente de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Recibe gratis la guía formativa</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Con esta guía te moverás por el papeleo como pez en el agua</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">url_catalogo*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Infórmate gratis</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Vigila las tributaciones con vista de águila</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">tipo_formacion*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Deseo recibir información de interés</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Fuente*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">orig_author*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">orig_tipo*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">producto_temario*</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "h1 -> Temario para Agente de Hacienda en 2025: descubre los 34 temas\ntexto bajo h1 -> Escrito por\ntexto bajo h1 -> Juan Luis Gómez Frieiro\ntexto bajo h1 -> Realizador de audiovisuales y guionista de formación, es especialista en la red...\ntexto bajo h1 -> 9 minutos\ntexto bajo h1 -> ¿Quieres conocer el actual temario Agente de Hacienda? ¿Deseas conseguir una plaza como funcionario? Si es así, estás en el lugar adecuado. En este artículo te citamos todos los temas que entran en la vigente convocatoria de las oposiciones Agente de Hacienda por turno libre.\ntexto bajo h1 -> Si estás pensando en preparar estas oposiciones no dudes en ponerte en contacto con nosotros. Desde Campus Training te ayudamos a alcanzar tu puesto fijo de por vida. ¡Consúltanos!\n\th2 -> ¿Cómo es el temario de Agente de Hacienda 2026?\n\ttexto bajo h2 -> ¡Este año se ha publicado una nueva convocatoria de agentes de Hacienda con 823 plazas! Y las bases, publicadas en el BOE, núm. 7, de 8 de enero de 2024, estructuran el temario de 34 temas en tres bloques:\n\ttexto bajo h2 -> Organización del Estado y funcionamiento de la Administración General del Estado: formado por siete temas.\n\ttexto bajo h2 -> Derecho Administrativo General: cinco temas conforman este bloque.\n\ttexto bajo h2 -> Organización de la Hacienda Pública y Derecho Tributario: esta parte está formada por 22 temas.\n\ttexto bajo h2 -> ¡Fórmate en Temario para Agente de Hacienda en 2025: descubre los 34 temas!\n\th2 -> ¿Es difícil el temario de Agente de Hacienda Pública?\n\ttexto bajo h2 -> Para ser Agente de Hacienda Pública tienes que preparar 34 temas que, comparado con otros procesos de oposiciones, no es extenso. Pero donde entra el desafío es en el contenido, especialmente en materia tributaria, que abarca muchas casuísticas, normativa y matices que resultan complejos de asimilar (especialmente si partes de 0 en conocimientos sobre economía, fiscos o derecho).\n\ttexto bajo h2 -> El temario de Agente de Hacienda es de una dificultad media por el contenido a preparar.\n\ttexto bajo h2 -> Por todo ello, afirmamos que es de una dificultad media. Así que, lo más habitual es que los aspirantes a una plaza como Agentes de Hacienda se apoyen en una preparación profesional para agilizar el estudio, consolidar sus avances y tener un apoyo experto para resolver sus dudas y enseñarles la materia.\n\th2 -> ¿Qué temas se estudian para las oposiciones de Agente de Hacienda en 2026?\n\ttexto bajo h2 -> Conoce los epígrafes que estudiarás en las oposiciones de Agente de Hacienda Pública, recogidos en cada uno de los bloques de la convocatoria.\n\t\th3 -> 1. Organización del Estado y funcionamiento de la Administración General del Estado\n\t\ttexto bajo h3 -> Los temas correspondientes a los bloques de Organización del Estado y funcionamiento de la Administración General del Estado, que entran dentro del Temario Agente de Hacienda:\n\t\ttexto bajo h3 -> Tema 1. La Constitución Española de 1978: Estructura y contenido.\n\t\ttexto bajo h3 -> Tema 2. Las Cortes Generales: Composición, atribuciones y funcionamiento.\n\t\ttexto bajo h3 -> Tema 3. El Gobierno: Nombramiento y cese.\n\t\ttexto bajo h3 -> Tema 4. La organización territorial del Estado.\n\t\ttexto bajo h3 -> Tema 5. El funcionamiento electrónico del sector público.\n\t\ttexto bajo h3 -> Tema 6. Políticas de igualdad y contra la violencia de género.\n\t\ttexto bajo h3 -> Tema 7. Régimen jurídico del personal al servicio de las Administraciones Públicas.\n\t\th3 -> 2. Derecho Administrativo General\n\t\ttexto bajo h3 -> Estos son los temas de Derecho Administrativo General para la preparación de las pruebas selectivas de ingreso en el Cuerpo General Administrativo de la Administración General, especialidad Agentes de Hacienda Pública:\n\t\ttexto bajo h3 -> Tema 1. Las fuentes del Derecho Administrativo.\n\t\ttexto bajo h3 -> Tema 2. Los actos administrativos. Concepto y clases.\n\t\ttexto bajo h3 -> Tema 3. El procedimiento administrativo común.\n\t\ttexto bajo h3 -> Tema 4. Las fases del procedimiento administrativo: Iniciación, ordenación, instrucción y finalización.\n\t\ttexto bajo h3 -> Tema 5. Los recursos administrativos: concepto y clases.\n\t\th3 -> 3. Organización de la Hacienda Pública y Derecho Tributario\n\t\ttexto bajo h3 -> Este bloque es el más extenso y con el contenido específico del temario de Agente de Hacienda, donde abarcarás el sistema fiscal, derecho tributario, recaudación y el IRPF o el IVA. ¡Descúbrelos!\n\t\ttexto bajo h3 -> Tema 1. El sistema fiscal español.\n\t\ttexto bajo h3 -> Tema 2. La Agencia Estatal de Administración Tributaria.\n\t\ttexto bajo h3 -> Tema 3. Derecho Tributario: Concepto y contenido.\n\t\ttexto bajo h3 -> Tema 4. Derechos y garantías de los obligados tributarios.\n\t\ttexto bajo h3 -> Tema 5. La aplicación de los tributos: Información y asistencia.\n\t\ttexto bajo h3 -> Tema 6. Las obligaciones formales de los contribuyentes: Libros registros y facturas.\n\t\ttexto bajo h3 -> Tema 7. Normas comunes sobre actuaciones y procedimientos tributarios: Fases.\n\t\ttexto bajo h3 -> Tema 8. Las declaraciones tributarias: Concepto y clases.\n\t\ttexto bajo h3 -> Tema 9. Actuaciones y procedimiento de gestión tributaria.\n\t\ttexto bajo h3 -> Tema 10. Actuaciones y procedimiento de inspección: Funciones y facultades.\n\t\ttexto bajo h3 -> Tema 11. La extinción de la deuda tributaria (I). Medios de extinción de la deuda.\n\t\ttexto bajo h3 -> Tema 12. La extinción de la deuda tributaria (II). La prescripción del derecho a exigir el pago.\n\t\ttexto bajo h3 -> Tema 13. El procedimiento de recaudación en período voluntario.\n\t\ttexto bajo h3 -> Tema 14. El embargo.\n\t\ttexto bajo h3 -> Tema 15. Infracciones y sanciones en materia tributaria.\n\t\ttexto bajo h3 -> Tema 16. La revisión de los actos de carácter tributario en vía administrativa.\n\t\ttexto bajo h3 -> Tema 17. El impuesto sobre la Renta de las Personas Físicas (I). Naturaleza, objeto y ámbito de aplicación. Sujeción al impuesto. Métodos de determinación de la base imponible.\n\t\ttexto bajo h3 -> Tema 18. El impuesto sobre la Renta de las Personas Físicas (II). Rendimientos del trabajo, del capital mobiliario e inmobiliario y de actividades económicas.\n\t\ttexto bajo h3 -> Tema 19. El impuesto sobre la Renta de las Personas Físicas (III). Tributación familiar. Gestión del impuesto.\n\t\ttexto bajo h3 -> Tema 20. El Impuesto sobre el Valor Añadido (I). Concepto y naturaleza.\n\t\ttexto bajo h3 -> Tema 21. El Impuesto sobre el Valor Añadido (II). Sujeto pasivo, repercusión, devengo y base imponible.\n\t\ttexto bajo h3 -> Tema 22. La Aduana. Elementos personales, la representación.\n\th2 -> Cómo mantenerse actualizado con los cambios en el temario de estas oposiciones\n\ttexto bajo h2 -> ¿Quieres enterarte de las modificaciones en el temario de las oposiciones de Agente de Hacienda? Te recomendamos estos recursos para que no se te escapen las actualizaciones:\n\ttexto bajo h2 -> Seguir las noticias en materia fiscal y tributaria, especialmente en las propuestas y aprobación de leyes que puedan alterar el contenido del temario.\n\ttexto bajo h2 -> Comprar el índice del temario de la convocatoria actual con procesos pasados, para comprobar si cambian la expresión en los epígrafes o si varía el número de temas.\n\ttexto bajo h2 -> Consultar las novedades en la página de la Agencia Tributaria sobre tu OEP para enterarte de cambios en los contenidos.\n\ttexto bajo h2 -> Contar con el apoyo de una preparación profesional con expertos en el proceso que te manden alertas y, además, modifiquen el contenido de tu preparación.\n\ttexto bajo h2 -> Uniéndote a foros de oposiciones sobre Agente de Hacienda donde se discutan estas novedades y otros avisos como apertura de convocatorias y más información relevante.\n\th2 -> ¿Qué debe tener el mejor temario para preparar las oposiciones de Agente de Hacienda?\n\ttexto bajo h2 -> Para asegurarte de que estás preparándote por el mejor temario de oposiciones de Agente de Hacienda, asegúrate de:\n\ttexto bajo h2 -> Cuentas con un contenido editado por expertos en estas oposiciones y en materia tributaria para estudiar con un enfoque riguroso.\n\ttexto bajo h2 -> Que está actualizado, basándose en la convocatoria actual, y también que cuentas con expertos que estarán atentos a modificaciones en caso de aprobarse legislación y normativa que afecte a las oposiciones para reeditarlo.\n\ttexto bajo h2 -> Que sea completo, abarque toda la materia e incluya material complementario (como bibliografía extra) para que puedas extender tu preparación todo lo que puedas.\n\ttexto bajo h2 -> Que incluya test y recursos con los que puedas repasar el temario con preguntas reales de convocatorias pasadas, pero asegurándote de que también tiene las respuestas actualizadas.\n\th2 -> Consejos para estudiar el temario de Agente de Hacienda\n\ttexto bajo h2 -> Sigue estas indicaciones para preparar el temario de Agente de Hacienda con eficiencia:\n\t\th3 -> Sigue una planificación personalizada\n\t\ttexto bajo h3 -> Sigue un itinerario en tu preparación coherente con las exigencias del proceso, que respete el calendario con las fechas de los exámenes, pero también calibrando todo lo que puedas exigirte para no quemarte en el proceso y lograr objetivos realistas.\n\t\th3 -> Readapta tu preparación\n\t\ttexto bajo h3 -> Monitoriza tu rendimiento preparando las oposiciones, cómo son tus avances semanales y los objetivos que alcanzas. Siempre hay margen para que te prepares con más eficiencia y es importante que te plantees modificaciones en el método para desbloquear esas mejoras.\n\t\th3 -> Prueba a estudiar enseñando\n\t\ttexto bajo h3 -> Las oposiciones de Agente de Hacienda tienen un contenido denso y difícil de aprender. Te recomendamos probar la técnica de estudio Feynman, que se basa en el principio de que la forma más rápida de aprender es enseñando la materia. Así es como debes desplegarla:\n\t\ttexto bajo h3 -> Coge una hoja de papel.\n\t\ttexto bajo h3 -> Escribe el título del tema que vas a preparar.\n\t\ttexto bajo h3 -> Realiza una primera lectura del tema y escribe en la hoja una explicación informal de todo lo que has entendido.\n\t\ttexto bajo h3 -> Cuando lo tengas anotado en la hoja, conviértete en profesor e intenta explicarle a otra persona el contenido.\n\t\ttexto bajo h3 -> Acto seguido, vuelve a leer el tema para entender mejor el contenido.\n\t\ttexto bajo h3 -> Reescribe todo el temario con todos los conceptos claros y prueba a dar otra clase en voz alta.\n\t\th3 -> Sigue unos hábitos de vida saludables\n\t\ttexto bajo h3 -> No subestimes el poder de un ritmo de vida sano para tu estudio. Comer bien y equilibrado, ayudará a que tu actividad cognitiva rinda al máximo y hacer deporte te ayudará a descargar el estrés del estudio y a aumentar tus niveles de motivación. Así que invierte esfuerzo en cuidarte para notar una mejoría en tu preparación y, además, en tu vida personal.\n\th2 -> ¡Prepara las oposiciones!\n\ttexto bajo h2 -> En total son 34 temas los que conforman el temario Agente de Hacienda. ¿Quieres conseguir toda la información sobre lo que debes preparar para superar estas oposiciones? Si es así, rellena este formulario y te la enviaremos en unos pocos segundos a tu cuenta de correo.\n\ttexto bajo h2 -> La formación y el estudio son las partes fundamentales a la hora de aprobar las oposiciones de Agente de Hacienda. Contar con materiales que estén actualizados y con apoyo de expertos en la materia de la convocatoria es la sólida base sobre la que empezar a preparar las pruebas.\n\ttexto bajo h2 -> En Campus Training colaboramos con Flou para ofrecerte un método formativo específicamente diseñado para la preparación de oposiciones y contamos con profesionales docentes especializados en cada categoría.\n\ttexto bajo h2 -> ¡Apúntate a la formación y consigue tu plaza de Agente de Hacienda!\n\th2 -> Fuentes y recursos de información\n\ttexto bajo h2 -> Comprobamos el contenido y la veracidad del conocimiento presentado en este artículo a través de nuestro proceso editoria y de verificación de la información, para asegurarnos de que sea preciso y confiable\n\ttexto bajo h2 -> Bibliografía\n\ttexto bajo h2 -> Resolución de 29 de diciembre de 2023, de la Presidencia de la Agencia Estatal de Administración Tributaria, por la que se convocan procesos selectivos para ingreso, por el sistema general de acceso libre y promoción interna, en el Cuerpo General Administrativo de la Administración del Estado, especialidad de Agentes de la Hacienda Pública. Boletín Oficial del Estado, 7, de 8 de enero de 2024. https://www.boe.es/diario_boe/txt.php?id=BOE-A-2024-402\n\ttexto bajo h2 -> Selecciona el tipo de estudios Cursos Oposiciones FP Tipo de estudios*\n\ttexto bajo h2 -> Selecciona la categoría Familia de estudios*\n\ttexto bajo h2 -> ¿Qué te interesa? Preparar una oposición y conseguir un empleo fijo Formarme en una profesión con futuro Obtener un título FP con alta empleabilidad Titulación*\n\ttexto bajo h2 -> Selecciona tu centro* Madrid Barcelona Centro*\n\ttexto bajo h2 -> Nombre y apellidos*\n\ttexto bajo h2 -> +34 +54 +52 +57 +51 +593 +56 +1 +44 +58 +502 +33 +351 País*\n\ttexto bajo h2 -> Teléfono*\n\ttexto bajo h2 -> Email*\n\ttexto bajo h2 -> Código postal*\n\ttexto bajo h2 -> España Afganistán Albania Alemania Andorra Angola Anguila Antigua y Barbuda Antillas Neerlandesas Arabia Saudita Argelia Argentina Armenia Aruba Australia Austria Azerbaiyán Bahamas Bahrein Bangladesh Barbados Bélgica Belice Benín Bermudas Bielorrusia Bolivia Bosnia y Herzegovina Botswana Brasil Brunei Bulgaria Burkina Faso Burundi Bután Camboya Camerún Canadá Chad Chile China Chipre Colombia Comores Congo Corea Del Norte Corea Del Sur Costa De Marfil Costa Rica Croacia Cuba Curaçao Dinamarca Djibouti Dominica Ecuador Egipto El Salvador Emiratos Árabes Unidos Eritrea Eslovaquia Eslovenia Estados Unidos De América Estonia Etiopía Federación de Estados de Micronesia Fiyi Filipinas Finlandia Francia Gabón Gambia Gaza y Jericó Georgia Ghana Gibraltar Granada Grecia Groenlandia Guadalupe Guam Guatemala Guernesey Guinea Guinea Ecuatorial Guinea-Bissau Guyana Guyana Francesa Haití Honduras Hong Kong Hungría India Indonesia Irán Iraq Irlanda Isla De Man Islandia Islas Caimán Islas Cook Islas Feroe Islas Malvinas (Falklands) Islas Marianas Del Norte Islas Marshall Islas Salomón Islas Turks y Caicos Islas Vírgenes Británicas Islas Vírgenes, Estados Unidos Islas Wallis y Futuna Israel Italia Jamaica Japón Jersey Jordania Kazajistán Kenia Kirguistán Kiribati Kuwait Laos Lesotho Letonia Líbano Liberia Libia Liechtenstein Lituania Luxemburgo Macao Macedonia Madagascar Malasia Malawi Maldivas Malí Malta Marruecos Martinica Mauricio Mauritania México Moldavia Mónaco Mongolia Montenegro Montserrat Mozambique Myanmar (Birmania) Namibia Nauru Nepal Nicaragua Níger Nigeria Niue Noruega Nueva Caledonia y Dependencias Nueva Zelanda Omán Organismos Internacionales Otros Países Países Bajos Pakistán Palau Panamá Papua-Nueva Guinea Paraguay Perú Pitcairn Polinesia Francesa Polonia Portugal Puerto Rico Qatar Reino Unido República Dominicana República Centroafricana República Checa República de Cabo Verde Reunión Ruanda Rumanía Rusia Samoa Americana Samoa Occidental San Cristóbal y Nieves San Marino San Pedro y Miquelón San Vicente Santa Helena y Dependencias Santa Lucía Santo Tomé y Príncipe Senegal Serbia Seychelles y Dependencias Sierra Leona Singapur Siria Somalia Sri Lanka Sudáfrica Sudán Suecia Suiza Surinam Swazilandia Tailandia Taiwán Tajikistán Tanzania Timor Leste Togo Tonga Trinidad y Tobago Túnez Turkmenistán Turquía Tuvalu Ucrania Uganda Uruguay Uzbekistán Vanuatu Vaticano Venezuela Vietnam Yemen Zaire Zambia Zimbabue Nacionalidad*\n\ttexto bajo h2 -> Ed. Secundaria/EGB/ESO Bachillerato FP medio FP superior Estudios universitarios Sin estudios Nivel de estudios*\n\ttexto bajo h2 -> Edad Por favor, escribe un número entre 0 y 90.\n\ttexto bajo h2 -> Grupo Northius tratará sus datos personales para contactarle por medios tecnológicos, incluso aplicaciones de mensajería instantánea, con el fin de ofrecerle información del programa formativo seleccionado o de otros directamente relacionados con el interés manifestado y, en su caso, para tramitar la contratación correspondiente. Compartiremos su solicitud con las empresas que conforman el Grupo Northius, con el objeto de que estas puedan hacerle llegar la mejor oferta de productos y servicios de acuerdo a su petición. Quedan reconocidos los derechos de acceso, rectificación, supresión, oposición, limitación, tal y como se explica en la Política de Privacidad.\n\ttexto bajo h2 -> producto_name*\n\ttexto bajo h2 -> producto_id*\n\ttexto bajo h2 -> producto_tipo*\n\ttexto bajo h2 -> producto_categoria*\n\ttexto bajo h2 -> producto_catalogo*\n\ttexto bajo h2 -> prelead_name*\n\ttexto bajo h2 -> prelead_tipo*\n\ttexto bajo h2 -> prelead_seccion*\n\ttexto bajo h2 -> prelead_form*\n\ttexto bajo h2 -> prelead_author*\n\ttexto bajo h2 -> prelead_blogcat*\n\ttexto bajo h2 -> prelead_content*\n\ttexto bajo h2 -> user_id*\n\ttexto bajo h2 -> lead_id*\n\ttexto bajo h2 -> transaction_id*\n\ttexto bajo h2 -> modo_llegada*\n\ttexto bajo h2 -> gclid*\n\ttexto bajo h2 -> Fecha de entrada*\n\ttexto bajo h2 -> user_ip*\n\ttexto bajo h2 -> pais_id*\n\ttexto bajo h2 -> wp_id*\n\ttexto bajo h2 -> utm_campaign*\n\ttexto bajo h2 -> utm_content*\n\ttexto bajo h2 -> utm_medium*\n\ttexto bajo h2 -> utm_source*\n\ttexto bajo h2 -> utm_term*\n\ttexto bajo h2 -> orig_utm_campaign*\n\ttexto bajo h2 -> orig_utm_content*\n\ttexto bajo h2 -> orig_utm_medium*\n\ttexto bajo h2 -> orig_utm_source*\n\ttexto bajo h2 -> orig_utm_term*\n\ttexto bajo h2 -> optHitId*\n\ttexto bajo h2 -> urlOrig*\n\ttexto bajo h2 -> social_request_id*\n\ttexto bajo h2 -> social_request_type*\n\ttexto bajo h2 -> user_id_triki*\n\ttexto bajo h2 -> session_id_triki*\n\ttexto bajo h2 -> nav_id_triki*\n\th2 -> Motivaciones para elegir Oposiciones Agente de Hacienda\n\t\th3 -> Oposiciones menos demandadas: ¿cuáles son?\n\t\th3 -> Foro oposiciones Hacienda\n\t\th3 -> ¿Dónde trabaja un Agente de Hacienda?\n\t\th3 -> Oposiciones Agente de Hacienda 2024: ¿Qué novedades y expectativas hay?\n\th2 -> Otras profesiones que pueden interesarte\n\ttexto bajo h2 -> Agente del Servicio de Vigilancia Aduanera\n\ttexto bajo h2 -> Técnico de Hacienda\n\ttexto bajo h2 -> Agente de Hacienda\n\ttexto bajo h2 -> Recibe gratis la guía formativa\n\ttexto bajo h2 -> Con esta guía te moverás por el papeleo como pez en el agua\n\ttexto bajo h2 -> url_catalogo*\n\ttexto bajo h2 -> Infórmate gratis\n\ttexto bajo h2 -> Vigila las tributaciones con vista de águila\n\ttexto bajo h2 -> tipo_formacion*\n\ttexto bajo h2 -> Deseo recibir información de interés\n\ttexto bajo h2 -> Fuente*\n\ttexto bajo h2 -> orig_author*\n\ttexto bajo h2 -> orig_tipo*\n\ttexto bajo h2 -> producto_temario*";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://www.reddit.com/r/FormacionNinja/comments/1pzbzil/1000_plazas_oposiciones_agentes_de_hacienda/</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://preparatuexamen.com/oposiciones/hacienda</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Oposiciones Hacienda 2026</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Guía completa oposiciones Hacienda 2026: Agentes (1.400 plazas) y Técnicos, temario, fechas de examen marzo-abril 2026, sueldo 20-32K€.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">La Agencia Tributaria (AEAT) convoca oposiciones para Agentes y Técnicos de Hacienda. Buen sueldo, horario de oficina y una de las oposiciones con mejor relación esfuerzo-recompensa del grupo C1.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Convocatoria Agentes 2025-2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Los dos cuerpos de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Los Agentes realizan funciones de gestión tributaria: atención al contribuyente, tramitación de declaraciones, comprobación de datos. Los Técnicos tienen funciones de inspección y gestión avanzada.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Formato del examen (Agentes)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Primer ejercicio: Test (21 marzo 2026)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Segundo ejercicio: Supuesto práctico (abril 2026)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Temario Agentes de Hacienda 2026</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque I: Organización del Estado (7 temas)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Constitución Española</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Gobierno y Administración General del Estado</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Comunidades Autónomas</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La Unión Europea</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque II: Derecho Administrativo (5 temas)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Ley 39/2015 Procedimiento Administrativo</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Ley 40/2015 Régimen Jurídico</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Protección de datos</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque III: Derecho Tributario (20 temas)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Ley General Tributaria (LGT)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Procedimientos tributarios</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Impuesto sobre Sociedades</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Impuestos Especiales y Aduanas (reducido)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Gestión catastral</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Recaudación</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Cambios temario 2026:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Desaparece tema IRNR (Impuesto Renta No Residentes)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tema Aduanas reducido (sin Impuestos Especiales detallados)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Temas 4 y 5 unificados</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Sueldo de Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Agentes de la Hacienda Pública (C1)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Técnicos de Hacienda (A2)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La AEAT tiene complementos específicos superiores a otros cuerpos de la AGE.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Penalización: 1/4 (no 1/3)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">A diferencia de otras oposiciones (Auxiliar, Policía, Justicia) que penalizan 1/3, Hacienda penaliza 1/4:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Estrategia: Con 4 opciones y penalización 1/4, si puedes descartar 1 opción, estadísticamente conviene arriesgar. Calcula tu nota exacta con la calculadora de nota de oposiciones.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Ventajas de opositar a Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Horario de oficina — Sin turnos ni nocturnidad</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Buen sueldo — Complementos AEAT superiores a la media</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Temario acotado — 32 temas (menos que otras C1)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Dos convocatorias — Agentes y Técnicos por separado</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Promoción interna — De Agente a Técnico sin salir de la AEAT</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Estrategia de preparación</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Para el test:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Domina la LGT — Es el núcleo del temario</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">IRPF e IVA son los impuestos más preguntados</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Usa repetición espaciada para los procedimientos</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Aplica la práctica de recuperación con tests de cada bloque</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Para el supuesto práctico:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Practica casos reales de liquidación</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Conoce los plazos y tipos impositivos de memoria</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Trabaja con los modelos oficiales de la AEAT</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Empieza con nuestro test gratuito de Agentes de Hacienda con 30 preguntas ya preparadas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Recursos adicionales</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Consulta nuestra guía de recursos oficiales para oposiciones con enlaces al BOE, legislación tributaria gratuita y calendario de convocatorias.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Prueba sin riesgo</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">1 examen gratis, sin tarjeta. Luego decides si quieres seguir con packs de exámenes, sin suscripción.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Ver planes y precios</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Relacionado</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Tu plaza está más cerca</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Genera tests nuevos de tu propio temario y practica hasta aprobar</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">1 examen gratis • Sin suscripción • Pago único por exámenes</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Preguntas frecuentes</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Todo lo que necesitas saber para empezar a practicar</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "h1 -> Oposiciones Hacienda 2026\ntexto bajo h1 -> Guía completa oposiciones Hacienda 2026: Agentes (1.400 plazas) y Técnicos, temario, fechas de examen marzo-abril 2026, sueldo 20-32K€.\ntexto bajo h1 -> La Agencia Tributaria (AEAT) convoca oposiciones para Agentes y Técnicos de Hacienda. Buen sueldo, horario de oficina y una de las oposiciones con mejor relación esfuerzo-recompensa del grupo C1.\n\th2 -> Convocatoria Agentes 2025-2026\n\th2 -> Los dos cuerpos de Hacienda\n\ttexto bajo h2 -> Los Agentes realizan funciones de gestión tributaria: atención al contribuyente, tramitación de declaraciones, comprobación de datos. Los Técnicos tienen funciones de inspección y gestión avanzada.\n\th2 -> Formato del examen (Agentes)\n\t\th3 -> Primer ejercicio: Test (21 marzo 2026)\n\t\th3 -> Segundo ejercicio: Supuesto práctico (abril 2026)\n\th2 -> Temario Agentes de Hacienda 2026\n\t\th3 -> Bloque I: Organización del Estado (7 temas)\n\t\ttexto bajo h3 -> Constitución Española\n\t\ttexto bajo h3 -> Gobierno y Administración General del Estado\n\t\ttexto bajo h3 -> Comunidades Autónomas\n\t\ttexto bajo h3 -> La Unión Europea\n\t\th3 -> Bloque II: Derecho Administrativo (5 temas)\n\t\ttexto bajo h3 -> Ley 39/2015 Procedimiento Administrativo\n\t\ttexto bajo h3 -> Ley 40/2015 Régimen Jurídico\n\t\ttexto bajo h3 -> Protección de datos\n\t\th3 -> Bloque III: Derecho Tributario (20 temas)\n\t\ttexto bajo h3 -> Ley General Tributaria (LGT)\n\t\ttexto bajo h3 -> Procedimientos tributarios\n\t\ttexto bajo h3 -> Impuesto sobre Sociedades\n\t\ttexto bajo h3 -> Impuestos Especiales y Aduanas (reducido)\n\t\ttexto bajo h3 -> Gestión catastral\n\t\ttexto bajo h3 -> Recaudación\n\t\ttexto bajo h3 -> Cambios temario 2026:\n\t\ttexto bajo h3 -> Desaparece tema IRNR (Impuesto Renta No Residentes)\n\t\ttexto bajo h3 -> Tema Aduanas reducido (sin Impuestos Especiales detallados)\n\t\ttexto bajo h3 -> Temas 4 y 5 unificados\n\th2 -> Sueldo de Hacienda\n\t\th3 -> Agentes de la Hacienda Pública (C1)\n\t\th3 -> Técnicos de Hacienda (A2)\n\t\ttexto bajo h3 -> La AEAT tiene complementos específicos superiores a otros cuerpos de la AGE.\n\th2 -> Penalización: 1/4 (no 1/3)\n\ttexto bajo h2 -> A diferencia de otras oposiciones (Auxiliar, Policía, Justicia) que penalizan 1/3, Hacienda penaliza 1/4:\n\ttexto bajo h2 -> Estrategia: Con 4 opciones y penalización 1/4, si puedes descartar 1 opción, estadísticamente conviene arriesgar. Calcula tu nota exacta con la calculadora de nota de oposiciones.\n\th2 -> Ventajas de opositar a Hacienda\n\ttexto bajo h2 -> Horario de oficina — Sin turnos ni nocturnidad\n\ttexto bajo h2 -> Buen sueldo — Complementos AEAT superiores a la media\n\ttexto bajo h2 -> Temario acotado — 32 temas (menos que otras C1)\n\ttexto bajo h2 -> Dos convocatorias — Agentes y Técnicos por separado\n\ttexto bajo h2 -> Promoción interna — De Agente a Técnico sin salir de la AEAT\n\th2 -> Estrategia de preparación\n\ttexto bajo h2 -> Para el test:\n\ttexto bajo h2 -> Domina la LGT — Es el núcleo del temario\n\ttexto bajo h2 -> IRPF e IVA son los impuestos más preguntados\n\ttexto bajo h2 -> Usa repetición espaciada para los procedimientos\n\ttexto bajo h2 -> Aplica la práctica de recuperación con tests de cada bloque\n\ttexto bajo h2 -> Para el supuesto práctico:\n\ttexto bajo h2 -> Practica casos reales de liquidación\n\ttexto bajo h2 -> Conoce los plazos y tipos impositivos de memoria\n\ttexto bajo h2 -> Trabaja con los modelos oficiales de la AEAT\n\ttexto bajo h2 -> Empieza con nuestro test gratuito de Agentes de Hacienda con 30 preguntas ya preparadas.\n\th2 -> Recursos adicionales\n\ttexto bajo h2 -> Consulta nuestra guía de recursos oficiales para oposiciones con enlaces al BOE, legislación tributaria gratuita y calendario de convocatorias.\n\t\th3 -> Prueba sin riesgo\n\t\ttexto bajo h3 -> 1 examen gratis, sin tarjeta. Luego decides si quieres seguir con packs de exámenes, sin suscripción.\n\t\ttexto bajo h3 -> Ver planes y precios\n\t\th3 -> Relacionado\n\th2 -> Tu plaza está más cerca\n\ttexto bajo h2 -> Genera tests nuevos de tu propio temario y practica hasta aprobar\n\ttexto bajo h2 -> 1 examen gratis • Sin suscripción • Pago único por exámenes\n\th2 -> Preguntas frecuentes\n\ttexto bajo h2 -> Todo lo que necesitas saber para empezar a practicar";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

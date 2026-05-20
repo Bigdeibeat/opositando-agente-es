@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://www.oposicionesatu.com/hacienda/que-es-un-agente-de-hacienda/</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="content-text">oposiciones@grupoatu.com</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">673502322</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">¿QUÉ ES UN AGENTE DE HACIENDA?</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">enero 19, 2022</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Un Agente de Hacienda sería una especialización dentro del Cuerpo Administrativo del Estado, que desarrolla tareas de trámite y colaboración en la Hacienda Pública. Según el área que le asigne tendrán tareas concretas de tramitación, preparación, gestión y colaboración administrativa para facilitar la gestión tributaria, la recaudación de impuestos o inspección de ilegalidades. Para ello, estarán bajo la supervisión y control de Técnicos e Inspectores de Hacienda.</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="tag-label">h5 -&gt; </span><span class="content-header">Vacaciones y días libres de un Agente de Hacienda</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="context-label">texto bajo h5 -&gt; </span><span class="content-text">• Serán 22 días hábiles que deben ser disfrutados dentro del año natural • Se distribuirán, de manera preferente, entre junio y agosto • Los Agentes de la Hacienda Pública contarán con días de libre disposición que se sumarán a sus días de vacaciones ordinarios • El número de días libres anuales aumentará acorde con la antigüedad en el puesto, hasta lograr un máximo de 26 días hábiles de vacaciones una vez superados los 30 años en el ejercicio de sus funciones</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="tag-label">h5 -&gt; </span><span class="content-header">¿Cuándo son los exámenes para Agente de Hacienda?</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="context-label">texto bajo h5 -&gt; </span><span class="content-text">Desde 2014 se han convocado plazas de forma anual. Desde 2017 se han convocado 400 plazas cada año</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="tag-label">h5 -&gt; </span><span class="content-header">Requisitos para acceder</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="context-label">texto bajo h5 -&gt; </span><span class="content-text">Los aspirantes deben cumplir una serie de requisitos básicos. Contar con la nacionalidad española Tener cumplidos 16 años de edad y no exceder de la edad máxima de jubilación forzosa Haber obtenido, o estar en posición de obtener, el título de Bachiller o Técnico</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="tag-label">h5 -&gt; </span><span class="content-header">¿Cómo es el temario?</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="context-label">texto bajo h5 -&gt; </span><span class="content-text">El temario está dividido en 3 bloques que recogen un total de 35 temas. En él se abarcan conceptos pertenecientes a:</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="context-label">texto bajo h5 -&gt; </span><span class="content-text">Organización del Estado (7 temas)</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="context-label">texto bajo h5 -&gt; </span><span class="content-text">Derecho Administrativo General (5 temas)</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="context-label">texto bajo h5 -&gt; </span><span class="content-text">Organización de la Hacienda Pública y Derecho Tributario (23 temas) Ventajas de prepararse para ser Agente de Hacienda</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="context-label">texto bajo h5 -&gt; </span><span class="content-text">El proceso selectivo es de oposición, sin fase de concurso, por lo que conseguirán las plazas los aspirantes con las mejores puntuaciones en los exámenes, sin que se tenga en cuenta la experiencia ni ningún otro mérito -Regularidad en las convocatorias -Posibilidad de elegir plaza en todo el territorio nacional -Posibilidad de hacer carrera profesional dentro de la administración</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="context-label">texto bajo h5 -&gt; </span><span class="content-text">Las retribuciones de los Agentes de Hacienda Pública (C1) oscilan entre los 18.597 y los 25.888 euros anuales</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="tag-label">h6 -&gt; </span><span class="content-header">Puedes ver la explicación completa del puesto, con la exposición de nuestros formadores en nuestra Webinar de ¿Cómo ser Agente de Hacienda y sus ventajas?</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo h6 -&gt; </span><span class="content-text">https://www.youtube.com/watch?v=TQJdvvW3874&amp;list=PLTRDrQOTDZUjrzUpg5F3xoeQNGtL5NYKv&amp;index=33</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo h6 -&gt; </span><span class="content-text">¿Quieres Trabajar de Agente de Hacienda? Prepárate con expertos Los mejores preparadores especialistas de oposiciones de hacienda, formado por Inspectores y Técnicos de la Agencia Tributaria en activo.</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo h6 -&gt; </span><span class="content-text">Temario actualizado</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo h6 -&gt; </span><span class="content-text">Clases presenciales y online semanales en directo</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo h6 -&gt; </span><span class="content-text">Plataforma online de oposiciones de hacienda con todo el contenido para superar el examen, tendrás acceso a clases grabadas para que las visualices tantas veces como necesites. • Metodología de estudio, fácil y ágil que te ayudará a superar el examen • Simulacros de examen</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo h6 -&gt; </span><span class="content-text">Resúmenes y esquemas</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo h6 -&gt; </span><span class="content-text">Tutorías personales. Abrimos nuevo grupo en el mes de Febrero de Agente de Hacienda en videopresencial, con clases en presencial en Oviedo y/o videoconferencia. Más información e inscripciones en: https://www.oposicionesatu.com/oposiciones/hacienda/agente-de-hacienda/</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo h6 -&gt; </span><span class="content-text">Utilizamos cookies para ofrecerte la mejor experiencia en nuestra web.</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo h6 -&gt; </span><span class="content-text">Puedes aprender más sobre qué cookies utilizamos o desactivarlas en los ajustes.</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo h6 -&gt; </span><span class="content-text">Resumen de privacidad</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo h6 -&gt; </span><span class="content-text">Cookies estrictamente necesarias</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo h6 -&gt; </span><span class="content-text">Cookies de terceros</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo h6 -&gt; </span><span class="content-text">Esta web utiliza cookies para que podamos ofrecerte la mejor experiencia de usuario posible. La información de las cookies se almacena en tu navegador y realiza funciones tales como reconocerte cuando vuelves a nuestra web o ayudar a nuestro equipo a comprender qué secciones de la web encuentras más interesantes y útiles.</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo h6 -&gt; </span><span class="content-text">Las cookies estrictamente necesarias tiene que activarse siempre para que podamos guardar tus preferencias de ajustes de cookies.</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo h6 -&gt; </span><span class="content-text">Esta web utiliza Google Analytics para recopilar información anónima tal como el número de visitantes del sitio, o las páginas más populares.</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo h6 -&gt; </span><span class="content-text">Dejar esta cookie activa nos permite mejorar nuestra web.</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "oposiciones@grupoatu.com\n673502322\nh1 -> ¿QUÉ ES UN AGENTE DE HACIENDA?\ntexto bajo h1 -> enero 19, 2022\ntexto bajo h1 -> Un Agente de Hacienda sería una especialización dentro del Cuerpo Administrativo del Estado, que desarrolla tareas de trámite y colaboración en la Hacienda Pública. Según el área que le asigne tendrán tareas concretas de tramitación, preparación, gestión y colaboración administrativa para facilitar la gestión tributaria, la recaudación de impuestos o inspección de ilegalidades. Para ello, estarán bajo la supervisión y control de Técnicos e Inspectores de Hacienda.\n\t\t\t\th5 -> Vacaciones y días libres de un Agente de Hacienda\n\t\t\t\ttexto bajo h5 -> • Serán 22 días hábiles que deben ser disfrutados dentro del año natural • Se distribuirán, de manera preferente, entre junio y agosto • Los Agentes de la Hacienda Pública contarán con días de libre disposición que se sumarán a sus días de vacaciones ordinarios • El número de días libres anuales aumentará acorde con la antigüedad en el puesto, hasta lograr un máximo de 26 días hábiles de vacaciones una vez superados los 30 años en el ejercicio de sus funciones\n\t\t\t\th5 -> ¿Cuándo son los exámenes para Agente de Hacienda?\n\t\t\t\ttexto bajo h5 -> Desde 2014 se han convocado plazas de forma anual. Desde 2017 se han convocado 400 plazas cada año\n\t\t\t\th5 -> Requisitos para acceder\n\t\t\t\ttexto bajo h5 -> Los aspirantes deben cumplir una serie de requisitos básicos. Contar con la nacionalidad española Tener cumplidos 16 años de edad y no exceder de la edad máxima de jubilación forzosa Haber obtenido, o estar en posición de obtener, el título de Bachiller o Técnico\n\t\t\t\th5 -> ¿Cómo es el temario?\n\t\t\t\ttexto bajo h5 -> El temario está dividido en 3 bloques que recogen un total de 35 temas. En él se abarcan conceptos pertenecientes a:\n\t\t\t\ttexto bajo h5 -> Organización del Estado (7 temas)\n\t\t\t\ttexto bajo h5 -> Derecho Administrativo General (5 temas)\n\t\t\t\ttexto bajo h5 -> Organización de la Hacienda Pública y Derecho Tributario (23 temas) Ventajas de prepararse para ser Agente de Hacienda\n\t\t\t\ttexto bajo h5 -> El proceso selectivo es de oposición, sin fase de concurso, por lo que conseguirán las plazas los aspirantes con las mejores puntuaciones en los exámenes, sin que se tenga en cuenta la experiencia ni ningún otro mérito -Regularidad en las convocatorias -Posibilidad de elegir plaza en todo el territorio nacional -Posibilidad de hacer carrera profesional dentro de la administración\n\t\t\t\ttexto bajo h5 -> Las retribuciones de los Agentes de Hacienda Pública (C1) oscilan entre los 18.597 y los 25.888 euros anuales\n\t\t\t\t\th6 -> Puedes ver la explicación completa del puesto, con la exposición de nuestros formadores en nuestra Webinar de ¿Cómo ser Agente de Hacienda y sus ventajas?\n\t\t\t\t\ttexto bajo h6 -> https://www.youtube.com/watch?v=TQJdvvW3874&list=PLTRDrQOTDZUjrzUpg5F3xoeQNGtL5NYKv&index=33\n\t\t\t\t\ttexto bajo h6 -> ¿Quieres Trabajar de Agente de Hacienda? Prepárate con expertos Los mejores preparadores especialistas de oposiciones de hacienda, formado por Inspectores y Técnicos de la Agencia Tributaria en activo.\n\t\t\t\t\ttexto bajo h6 -> Temario actualizado\n\t\t\t\t\ttexto bajo h6 -> Clases presenciales y online semanales en directo\n\t\t\t\t\ttexto bajo h6 -> Plataforma online de oposiciones de hacienda con todo el contenido para superar el examen, tendrás acceso a clases grabadas para que las visualices tantas veces como necesites. • Metodología de estudio, fácil y ágil que te ayudará a superar el examen • Simulacros de examen\n\t\t\t\t\ttexto bajo h6 -> Resúmenes y esquemas\n\t\t\t\t\ttexto bajo h6 -> Tutorías personales. Abrimos nuevo grupo en el mes de Febrero de Agente de Hacienda en videopresencial, con clases en presencial en Oviedo y/o videoconferencia. Más información e inscripciones en: https://www.oposicionesatu.com/oposiciones/hacienda/agente-de-hacienda/\n\t\t\t\t\ttexto bajo h6 -> Utilizamos cookies para ofrecerte la mejor experiencia en nuestra web.\n\t\t\t\t\ttexto bajo h6 -> Puedes aprender más sobre qué cookies utilizamos o desactivarlas en los ajustes.\n\t\t\t\t\ttexto bajo h6 -> Resumen de privacidad\n\t\t\t\t\ttexto bajo h6 -> Cookies estrictamente necesarias\n\t\t\t\t\ttexto bajo h6 -> Cookies de terceros\n\t\t\t\t\ttexto bajo h6 -> Esta web utiliza cookies para que podamos ofrecerte la mejor experiencia de usuario posible. La información de las cookies se almacena en tu navegador y realiza funciones tales como reconocerte cuando vuelves a nuestra web o ayudar a nuestro equipo a comprender qué secciones de la web encuentras más interesantes y útiles.\n\t\t\t\t\ttexto bajo h6 -> Las cookies estrictamente necesarias tiene que activarse siempre para que podamos guardar tus preferencias de ajustes de cookies.\n\t\t\t\t\ttexto bajo h6 -> Esta web utiliza Google Analytics para recopilar información anónima tal como el número de visitantes del sitio, o las páginas más populares.\n\t\t\t\t\ttexto bajo h6 -> Dejar esta cookie activa nos permite mejorar nuestra web.";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

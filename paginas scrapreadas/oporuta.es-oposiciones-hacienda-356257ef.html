@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://oporuta.es/oposiciones/hacienda</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Oposiciones Agente de Hacienda 2026</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Actualizado: abril 2026</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Practica con tests online gratis. 32 temas en 3 bloques: test de 80 preguntas + 10 supuestos de desarrollo escrito. La LGT es la ley más preguntada — nuestras preguntas se verifican contra ella.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Estructura del examen</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">80 preguntas test</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ej. 1 — todo el temario, 90 min</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Penalización -1/4</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ej. 1 — error resta 1/4 del acierto</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">10 supuestos escritos</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ej. 2 — desarrollo Bloque III, 2h30</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Máx. 30 puntos ej. 2</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Respuestas breves y razonadas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Penalización -1/4 — responde solo si puedes descartar al menos 1 opción.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Temario completo — 32 temas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La Constitución Española de 1978</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Estructura, derechos fundamentales, principios rectores, reforma constitucional.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Las Cortes Generales</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Congreso y Senado. Composición, funciones, procedimiento legislativo.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El Gobierno</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Composición, funciones, relaciones con las Cortes. Presidente y Consejo de Ministros.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La Administración Pública</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Principios de organización. AGE, CCAA y Administración Local.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La Unión Europea</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Instituciones, fuentes del Derecho comunitario, libertades fundamentales.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Protección de Datos Personales</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">RGPD y LOPDGDD. Derechos digitales, delegado de protección de datos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Políticas de igualdad de género</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">LO 3/2007. Planes de igualdad. Violencia de género. Conciliación.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Fuentes del Derecho Administrativo</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ley, reglamento, jerarquía normativa. Principios generales del Derecho.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El acto administrativo</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Requisitos, eficacia, nulidad y anulabilidad. Notificaciones.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Procedimiento administrativo común</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ley 39/2015. Fases, plazos, silencio administrativo, recursos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Contratos del sector público</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ley 9/2017. Tipos, procedimientos de adjudicación, ejecución.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Responsabilidad patrimonial</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Requisitos, procedimiento, indemnización. Responsabilidad de autoridades.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El sistema fiscal español</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Principios constitucionales tributarios. Poder financiero. Tributos: impuestos, tasas, contribuciones.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La AEAT</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Agencia Estatal de Administración Tributaria. Organización, funciones, estructura.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Derecho Tributario: conceptos generales</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ley 58/2003 LGT. Hecho imponible, base, cuota, deuda.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Derechos de los obligados tributarios</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">LGT Arts. 34-35. Derechos y garantías. Obligados tributarios.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Obligaciones formales</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">NIF, censos, facturación, libros registro, deberes de información.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Información y asistencia tributaria</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Consultas vinculantes, publicaciones, asistencia al contribuyente.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Declaraciones tributarias</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Autoliquidaciones, comunicaciones de datos, declaraciones informativas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La deuda tributaria</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Extinción: pago, prescripción, compensación, condonación. Recaudación.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Garantías de la deuda tributaria</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Derecho de prelación, hipoteca legal tácita, afección de bienes.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Gestión tributaria</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Procedimientos de gestión. Verificación de datos, comprobación limitada.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Inspección de los Tributos</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Funciones, facultades, procedimiento inspector, documentación.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Potestad sancionadora tributaria</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Infracciones y sanciones tributarias. Procedimiento sancionador.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Revisión en vía administrativa</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Recurso de reposición, reclamación económico-administrativa, TEAC.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">IRPF (I)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hecho imponible, contribuyente, rendimientos del trabajo y capital.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">IRPF (II)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Rendimientos de actividades económicas, ganancias patrimoniales, base liquidable.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Impuesto sobre Sociedades</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hecho imponible, base imponible, tipo, deducciones, régimen especial PYMES.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">IVA (I)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hecho imponible, sujeto pasivo, base imponible, tipos impositivos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">IVA (II)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Deducciones, regímenes especiales, operaciones intracomunitarias.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Impuestos Especiales</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Alcohol, tabaco, hidrocarburos, electricidad. Normativa y gestión.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Aduanas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Código Aduanero de la Unión. Despacho, origen, valor en aduana.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Para quién es OpoRuta para Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">✓ OpoRuta es para ti si...</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">• Quieres practicar con preguntas tipo examen verificadas contra BOE</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">• Preparas por libre o complementas academia</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">• Prefieres cobro anual de 49,99 € (~4,17€/mes prorrateado) sin suscripción mensual</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">• Preparas Agente de Hacienda Pública (C1) con temario tributario</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">• Quieres practicar LGT, IRPF, IVA con citas verificadas</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">△ Quizás no es para ti si...</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">• Necesitas temario completo (OpoRuta es para practicar, no para estudiar desde cero)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">• Buscas tutorías presenciales con profesor</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">• Buscas preparación para el supuesto práctico exclusivamente</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Cómo te ayuda OpoRuta?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Tests con IA</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Preguntas verificadas contra LGT, IRPF, IVA y más.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Supuestos con corrección IA</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Practica los 10 supuestos de desarrollo del Bloque III con corrección automática.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Radar del Tribunal</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Temas más preguntados en convocatorias AEAT anteriores.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Precio único 49,99€</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Sin suscripción. Acceso ilimitado. 20 créditos IA.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Requisitos</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Nacionalidad española</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Bachillerato, Técnico FP o equivalente</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Mayor de 16 años</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Leyes más examinadas en Agente de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ranking basado en el histórico de preguntas oficiales. Pulsa un artículo para verlo.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ley General Tributaria 26 preguntas · 25 artículos Art. 56 · 2 Art. 101 · 1 Art. 131 · 1</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ley del Impuesto sobre la Renta de las Personas Fisicas 13 preguntas · 12 artículos Art. 7 · 2 Art. 14 · 1 Art. 19 · 1</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ley del Procedimiento Administrativo Comun 13 preguntas · 13 artículos Art. 107 · 1 Art. 114 · 1 Art. 115 · 1</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Constitucion Española 8 preguntas · 8 artículos Art. 145 · 1 Art. 153 · 1 Art. 155 · 1</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ley del Impuesto sobre el Valor Añadido 7 preguntas · 7 artículos Art. 103 · 1 Art. 110 · 1 Art. 8 · 1</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Guías complementarias Agente Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Calendario Hacienda 2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Fechas convocatoria → toma de posesión</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Calendario AGE consolidado</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Auxiliar, GACE, Hacienda en una vista</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Plan estudiar trabajando 8 h</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Compatibilizar empleo y oposición</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Preguntas frecuentes</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Cuántas plazas hay?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">1.000 plazas libre (OEP 2025). Histórico: 851 (2024), 823 (2023), 787 (2022).</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Cómo es el examen?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">2 ejercicios: 80 preguntas test de todo el temario (90 min, -1/4) + 10 supuestos prácticos de desarrollo escrito del Bloque III (2h30, respuestas breves y razonadas, 0-30 pts).</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Cuándo es el examen?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Convocatoria anual. El último fue marzo 2026. La próxima se espera para marzo 2027.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Cuál es la ley más importante?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La Ley General Tributaria (Ley 58/2003) es con diferencia la más preguntada, cubriendo temas 13-25.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Empieza a preparar Hacienda hoy</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Gratis, sin tarjeta de crédito, desde el primer tema.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Guías y artículos del blog — Agente de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Todo el contenido publicado para esta oposición. Actualizado en cada convocatoria.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Convocatoria Agente de Hacienda 2026: BOE, plazas y fechas oficiales</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Nota corte Técnico Hacienda 2026: aprobado real y proyección</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Salario Agente de Hacienda 2026: nómina completa con trienios</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Segundo examen Agente Hacienda 2026: supuestos prácticos y temas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Nota de corte Agente de Hacienda 2025: histórico 2020-2025</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Simulacro Agente Hacienda 2026: examen completo online</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Examen Agente Hacienda 2024: análisis de preguntas típicas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Opositar a Hacienda trabajando: plan realista de 10 meses</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Temas más preguntados en Agente Hacienda 2023-2024</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Supuestos prácticos Agente Hacienda 2026: ejemplos resueltos</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">IRPF Ley 35/2006: temas de Hacienda 2026 que más preguntan</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">IVA Ley 37/1992: temas de Hacienda 2026 que debes dominar</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">LGT Ley 58/2003: temas clave para la oposición de Hacienda 2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Técnico de Hacienda 2026: oposición, temario y examen</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Agente vs Técnico de Hacienda 2026: diferencias clave</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Plazas Agente Hacienda 2026: distribución por Delegación AEAT</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Requisitos Agente Hacienda 2026: edad, titulación y nacionalidad</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Calendario Agente Hacienda 2026: fechas clave de la convocatoria</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Las 5 mejores plataformas para preparar Agente de Hacienda 2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">OpoRuta vs OpositaTest para Agente de Hacienda 2026: comparativa honesta</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Sueldo de Agente de la Hacienda Publica en 2026 — Desglose completo</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Como aprobar Agente de Hacienda — Estrategia de estudio por bloques</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Nota corte Agente Hacienda 2026: 53,25 (2024) | OpoRuta</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Temario Agente de Hacienda 2026 — Los 32 temas completos (actualizado BOE)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Test Agente de Hacienda 2026 — Practica gratis con preguntas tipo examen AEAT</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Todos los temas gratis — sin tarjeta</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Preguntas verificadas contra el BOE</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "h1 -> Oposiciones Agente de Hacienda 2026\ntexto bajo h1 -> Actualizado: abril 2026\ntexto bajo h1 -> Practica con tests online gratis. 32 temas en 3 bloques: test de 80 preguntas + 10 supuestos de desarrollo escrito. La LGT es la ley más preguntada — nuestras preguntas se verifican contra ella.\n\th2 -> Estructura del examen\n\ttexto bajo h2 -> 80 preguntas test\n\ttexto bajo h2 -> Ej. 1 — todo el temario, 90 min\n\ttexto bajo h2 -> Penalización -1/4\n\ttexto bajo h2 -> Ej. 1 — error resta 1/4 del acierto\n\ttexto bajo h2 -> 10 supuestos escritos\n\ttexto bajo h2 -> Ej. 2 — desarrollo Bloque III, 2h30\n\ttexto bajo h2 -> Máx. 30 puntos ej. 2\n\ttexto bajo h2 -> Respuestas breves y razonadas\n\ttexto bajo h2 -> Penalización -1/4 — responde solo si puedes descartar al menos 1 opción.\n\th2 -> Temario completo — 32 temas\n\ttexto bajo h2 -> La Constitución Española de 1978\n\ttexto bajo h2 -> Estructura, derechos fundamentales, principios rectores, reforma constitucional.\n\ttexto bajo h2 -> Las Cortes Generales\n\ttexto bajo h2 -> Congreso y Senado. Composición, funciones, procedimiento legislativo.\n\ttexto bajo h2 -> El Gobierno\n\ttexto bajo h2 -> Composición, funciones, relaciones con las Cortes. Presidente y Consejo de Ministros.\n\ttexto bajo h2 -> La Administración Pública\n\ttexto bajo h2 -> Principios de organización. AGE, CCAA y Administración Local.\n\ttexto bajo h2 -> La Unión Europea\n\ttexto bajo h2 -> Instituciones, fuentes del Derecho comunitario, libertades fundamentales.\n\ttexto bajo h2 -> Protección de Datos Personales\n\ttexto bajo h2 -> RGPD y LOPDGDD. Derechos digitales, delegado de protección de datos.\n\ttexto bajo h2 -> Políticas de igualdad de género\n\ttexto bajo h2 -> LO 3/2007. Planes de igualdad. Violencia de género. Conciliación.\n\ttexto bajo h2 -> Fuentes del Derecho Administrativo\n\ttexto bajo h2 -> Ley, reglamento, jerarquía normativa. Principios generales del Derecho.\n\ttexto bajo h2 -> El acto administrativo\n\ttexto bajo h2 -> Requisitos, eficacia, nulidad y anulabilidad. Notificaciones.\n\ttexto bajo h2 -> Procedimiento administrativo común\n\ttexto bajo h2 -> Ley 39/2015. Fases, plazos, silencio administrativo, recursos.\n\ttexto bajo h2 -> Contratos del sector público\n\ttexto bajo h2 -> Ley 9/2017. Tipos, procedimientos de adjudicación, ejecución.\n\ttexto bajo h2 -> Responsabilidad patrimonial\n\ttexto bajo h2 -> Requisitos, procedimiento, indemnización. Responsabilidad de autoridades.\n\ttexto bajo h2 -> El sistema fiscal español\n\ttexto bajo h2 -> Principios constitucionales tributarios. Poder financiero. Tributos: impuestos, tasas, contribuciones.\n\ttexto bajo h2 -> La AEAT\n\ttexto bajo h2 -> Agencia Estatal de Administración Tributaria. Organización, funciones, estructura.\n\ttexto bajo h2 -> Derecho Tributario: conceptos generales\n\ttexto bajo h2 -> Ley 58/2003 LGT. Hecho imponible, base, cuota, deuda.\n\ttexto bajo h2 -> Derechos de los obligados tributarios\n\ttexto bajo h2 -> LGT Arts. 34-35. Derechos y garantías. Obligados tributarios.\n\ttexto bajo h2 -> Obligaciones formales\n\ttexto bajo h2 -> NIF, censos, facturación, libros registro, deberes de información.\n\ttexto bajo h2 -> Información y asistencia tributaria\n\ttexto bajo h2 -> Consultas vinculantes, publicaciones, asistencia al contribuyente.\n\ttexto bajo h2 -> Declaraciones tributarias\n\ttexto bajo h2 -> Autoliquidaciones, comunicaciones de datos, declaraciones informativas.\n\ttexto bajo h2 -> La deuda tributaria\n\ttexto bajo h2 -> Extinción: pago, prescripción, compensación, condonación. Recaudación.\n\ttexto bajo h2 -> Garantías de la deuda tributaria\n\ttexto bajo h2 -> Derecho de prelación, hipoteca legal tácita, afección de bienes.\n\ttexto bajo h2 -> Gestión tributaria\n\ttexto bajo h2 -> Procedimientos de gestión. Verificación de datos, comprobación limitada.\n\ttexto bajo h2 -> Inspección de los Tributos\n\ttexto bajo h2 -> Funciones, facultades, procedimiento inspector, documentación.\n\ttexto bajo h2 -> Potestad sancionadora tributaria\n\ttexto bajo h2 -> Infracciones y sanciones tributarias. Procedimiento sancionador.\n\ttexto bajo h2 -> Revisión en vía administrativa\n\ttexto bajo h2 -> Recurso de reposición, reclamación económico-administrativa, TEAC.\n\ttexto bajo h2 -> IRPF (I)\n\ttexto bajo h2 -> Hecho imponible, contribuyente, rendimientos del trabajo y capital.\n\ttexto bajo h2 -> IRPF (II)\n\ttexto bajo h2 -> Rendimientos de actividades económicas, ganancias patrimoniales, base liquidable.\n\ttexto bajo h2 -> Impuesto sobre Sociedades\n\ttexto bajo h2 -> Hecho imponible, base imponible, tipo, deducciones, régimen especial PYMES.\n\ttexto bajo h2 -> IVA (I)\n\ttexto bajo h2 -> Hecho imponible, sujeto pasivo, base imponible, tipos impositivos.\n\ttexto bajo h2 -> IVA (II)\n\ttexto bajo h2 -> Deducciones, regímenes especiales, operaciones intracomunitarias.\n\ttexto bajo h2 -> Impuestos Especiales\n\ttexto bajo h2 -> Alcohol, tabaco, hidrocarburos, electricidad. Normativa y gestión.\n\ttexto bajo h2 -> Aduanas\n\ttexto bajo h2 -> Código Aduanero de la Unión. Despacho, origen, valor en aduana.\n\th2 -> ¿Para quién es OpoRuta para Hacienda?\n\t\th3 -> ✓ OpoRuta es para ti si...\n\t\ttexto bajo h3 -> • Quieres practicar con preguntas tipo examen verificadas contra BOE\n\t\ttexto bajo h3 -> • Preparas por libre o complementas academia\n\t\ttexto bajo h3 -> • Prefieres cobro anual de 49,99 € (~4,17€/mes prorrateado) sin suscripción mensual\n\t\ttexto bajo h3 -> • Preparas Agente de Hacienda Pública (C1) con temario tributario\n\t\ttexto bajo h3 -> • Quieres practicar LGT, IRPF, IVA con citas verificadas\n\t\th3 -> △ Quizás no es para ti si...\n\t\ttexto bajo h3 -> • Necesitas temario completo (OpoRuta es para practicar, no para estudiar desde cero)\n\t\ttexto bajo h3 -> • Buscas tutorías presenciales con profesor\n\t\ttexto bajo h3 -> • Buscas preparación para el supuesto práctico exclusivamente\n\th2 -> ¿Cómo te ayuda OpoRuta?\n\ttexto bajo h2 -> Tests con IA\n\ttexto bajo h2 -> Preguntas verificadas contra LGT, IRPF, IVA y más.\n\ttexto bajo h2 -> Supuestos con corrección IA\n\ttexto bajo h2 -> Practica los 10 supuestos de desarrollo del Bloque III con corrección automática.\n\ttexto bajo h2 -> Radar del Tribunal\n\ttexto bajo h2 -> Temas más preguntados en convocatorias AEAT anteriores.\n\ttexto bajo h2 -> Precio único 49,99€\n\ttexto bajo h2 -> Sin suscripción. Acceso ilimitado. 20 créditos IA.\n\th2 -> Requisitos\n\ttexto bajo h2 -> Nacionalidad española\n\ttexto bajo h2 -> Bachillerato, Técnico FP o equivalente\n\ttexto bajo h2 -> Mayor de 16 años\n\th2 -> Leyes más examinadas en Agente de Hacienda\n\ttexto bajo h2 -> Ranking basado en el histórico de preguntas oficiales. Pulsa un artículo para verlo.\n\ttexto bajo h2 -> Ley General Tributaria 26 preguntas · 25 artículos Art. 56 · 2 Art. 101 · 1 Art. 131 · 1\n\ttexto bajo h2 -> Ley del Impuesto sobre la Renta de las Personas Fisicas 13 preguntas · 12 artículos Art. 7 · 2 Art. 14 · 1 Art. 19 · 1\n\ttexto bajo h2 -> Ley del Procedimiento Administrativo Comun 13 preguntas · 13 artículos Art. 107 · 1 Art. 114 · 1 Art. 115 · 1\n\ttexto bajo h2 -> Constitucion Española 8 preguntas · 8 artículos Art. 145 · 1 Art. 153 · 1 Art. 155 · 1\n\ttexto bajo h2 -> Ley del Impuesto sobre el Valor Añadido 7 preguntas · 7 artículos Art. 103 · 1 Art. 110 · 1 Art. 8 · 1\n\th2 -> Guías complementarias Agente Hacienda\n\ttexto bajo h2 -> Calendario Hacienda 2026\n\ttexto bajo h2 -> Fechas convocatoria → toma de posesión\n\ttexto bajo h2 -> Calendario AGE consolidado\n\ttexto bajo h2 -> Auxiliar, GACE, Hacienda en una vista\n\ttexto bajo h2 -> Plan estudiar trabajando 8 h\n\ttexto bajo h2 -> Compatibilizar empleo y oposición\n\th2 -> Preguntas frecuentes\n\ttexto bajo h2 -> ¿Cuántas plazas hay?\n\ttexto bajo h2 -> 1.000 plazas libre (OEP 2025). Histórico: 851 (2024), 823 (2023), 787 (2022).\n\ttexto bajo h2 -> ¿Cómo es el examen?\n\ttexto bajo h2 -> 2 ejercicios: 80 preguntas test de todo el temario (90 min, -1/4) + 10 supuestos prácticos de desarrollo escrito del Bloque III (2h30, respuestas breves y razonadas, 0-30 pts).\n\ttexto bajo h2 -> ¿Cuándo es el examen?\n\ttexto bajo h2 -> Convocatoria anual. El último fue marzo 2026. La próxima se espera para marzo 2027.\n\ttexto bajo h2 -> ¿Cuál es la ley más importante?\n\ttexto bajo h2 -> La Ley General Tributaria (Ley 58/2003) es con diferencia la más preguntada, cubriendo temas 13-25.\n\th2 -> Empieza a preparar Hacienda hoy\n\ttexto bajo h2 -> Gratis, sin tarjeta de crédito, desde el primer tema.\n\th2 -> Guías y artículos del blog — Agente de Hacienda\n\ttexto bajo h2 -> Todo el contenido publicado para esta oposición. Actualizado en cada convocatoria.\n\ttexto bajo h2 -> Convocatoria Agente de Hacienda 2026: BOE, plazas y fechas oficiales\n\ttexto bajo h2 -> Nota corte Técnico Hacienda 2026: aprobado real y proyección\n\ttexto bajo h2 -> Salario Agente de Hacienda 2026: nómina completa con trienios\n\ttexto bajo h2 -> Segundo examen Agente Hacienda 2026: supuestos prácticos y temas\n\ttexto bajo h2 -> Nota de corte Agente de Hacienda 2025: histórico 2020-2025\n\ttexto bajo h2 -> Simulacro Agente Hacienda 2026: examen completo online\n\ttexto bajo h2 -> Examen Agente Hacienda 2024: análisis de preguntas típicas\n\ttexto bajo h2 -> Opositar a Hacienda trabajando: plan realista de 10 meses\n\ttexto bajo h2 -> Temas más preguntados en Agente Hacienda 2023-2024\n\ttexto bajo h2 -> Supuestos prácticos Agente Hacienda 2026: ejemplos resueltos\n\ttexto bajo h2 -> IRPF Ley 35/2006: temas de Hacienda 2026 que más preguntan\n\ttexto bajo h2 -> IVA Ley 37/1992: temas de Hacienda 2026 que debes dominar\n\ttexto bajo h2 -> LGT Ley 58/2003: temas clave para la oposición de Hacienda 2026\n\ttexto bajo h2 -> Técnico de Hacienda 2026: oposición, temario y examen\n\ttexto bajo h2 -> Agente vs Técnico de Hacienda 2026: diferencias clave\n\ttexto bajo h2 -> Plazas Agente Hacienda 2026: distribución por Delegación AEAT\n\ttexto bajo h2 -> Requisitos Agente Hacienda 2026: edad, titulación y nacionalidad\n\ttexto bajo h2 -> Calendario Agente Hacienda 2026: fechas clave de la convocatoria\n\ttexto bajo h2 -> Las 5 mejores plataformas para preparar Agente de Hacienda 2026\n\ttexto bajo h2 -> OpoRuta vs OpositaTest para Agente de Hacienda 2026: comparativa honesta\n\ttexto bajo h2 -> Sueldo de Agente de la Hacienda Publica en 2026 — Desglose completo\n\ttexto bajo h2 -> Como aprobar Agente de Hacienda — Estrategia de estudio por bloques\n\ttexto bajo h2 -> Nota corte Agente Hacienda 2026: 53,25 (2024) | OpoRuta\n\ttexto bajo h2 -> Temario Agente de Hacienda 2026 — Los 32 temas completos (actualizado BOE)\n\ttexto bajo h2 -> Test Agente de Hacienda 2026 — Practica gratis con preguntas tipo examen AEAT\n\ttexto bajo h2 -> Todos los temas gratis — sin tarjeta\n\ttexto bajo h2 -> Preguntas verificadas contra el BOE";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

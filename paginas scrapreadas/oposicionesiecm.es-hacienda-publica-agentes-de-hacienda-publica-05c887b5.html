@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://oposicionesiecm.es/hacienda-publica/agentes-de-hacienda-publica/</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Avenida de Córdoba 15-2ª planta | 28026 MADRID</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">91 131 83 85</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">prloposiciones@coloniecm.com</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Oposiciones PRL INSST- Instituto Nacional de Seguridad y Salud en el Trabajo</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">IRSST-Técnico Superior Seguridad y Salud Comunidad de Madrid</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">SBSSL-Subinspector Laboral de Seguridad y Salud</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Servicios Propios-Técnico Superior PRL Comunidad de Madrid</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Administración Gestión de la Administración Civil del Estado</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Administrativo de la Administración del Estado</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Administrativo Comunidad de Madrid</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Hacienda Pública Técnico de Hacienda</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Agentes de Hacienda Pública</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Empleo y Seguridad Social Subinspector Laboral de Empleo y Seguridad Social</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Nuestra Metodología</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Ayudas al Opositor</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Noticias</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Normativa</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Contacto</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">© 2022</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Agentes de Hacienda Pública</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Hacienda Pública</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Agentes de Hacienda Pública</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Fórmate con nosotros</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">El Cuerpo de Agentes de Hacienda Pública fue creado en 1990 y está adscrito a la Agencia Tributaria.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Entre las funciones de los agentes de la hacienda pública destacan, entre otras:</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Área de Inspección. Área de Recaudación, seguimiento y mantenimiento de expedientes de deudores. Área de Gestión.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">GRUPO C1</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">El sueldo oscila entre 18.000 y 25.000 euros brutos anuales. Recibe 14 pagas al año.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Estar en posesión o en condiciones de obtener el título de Bachiller o Técnico, BUP, Bachiller Superior, Bachillerato-LOGSE, Formación Profesional de II grado o equivalente, o tener aprobadas las pruebas de acceso a la Universidad para mayores de 25 años.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Consultar la Orden EDU/1603/2009, de 10 de junio, por la que se establecen las equivalencias con los títulos de Graduado en Educación Secundaria Obligatoria y de Bachiller regulados en la Ley Orgánica 2/2006, de 3 de mayo, de Educación, modificada mediante Orden EDU/520/2011.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">El proceso de selección de los aspirantes se realizará por el sistema de oposición.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Constará de 2 ejercicios eliminatorios.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">EJERCICIOS:</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Primer ejercicio: Realización de un cuestionario de 100 preguntas tipo test.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">El tiempo máximo para la realización de este ejercicio será de 1 hora y 40 minutos.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Segundo ejercicio: Contestar por escrito un cuestionario con diez supuestos prácticos relacionados con las materias del programa.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">En siete de ellos se formularán tres preguntas en cada uno en la que se responderá de forma breve y razonada. En los tres restantes se formularán tres preguntas en cada uno de ellos con respuestas alternativas.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">El tiempo máximo para la realización de este ejercicio será de 2 horas y 30 minutos</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">I – Organización del Estado y funcionamiento de la Administración General del Estado. Temas 1 al 7</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">II – Derecho Administrativo General. Temas 1 al 5</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">III – Organización de la Hacienda Pública y Derecho Tributario. Temas 1 al 22</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">– Técnicos de Hacienda. Licenciados en economía.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">– Letrado de la Seguridad Social en el Servicio Jurídico Delegado Provincial de la Dirección Provincial del Instituto Nacional de Seguridad Social de Madrid. Doctorado en derecho y Licenciado en periodismo.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">– Letrado de la Seguridad Social en el Servicio Jurídico Delegado Provincial de la Dirección Provincial del Instituto Nacional de Seguridad Social de Madrid. Licenciado en derecho.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">– Técnico de Recursos Humanos en Ayuntamiento de Comunidad de Madrid. Licenciado en derecho y abogado en ejercicio.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">CONVOCATORIA 2025</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">1000 Plazas acceso libre + 400 plazas promoción interna</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Descarga la Oferta de Empleo Público 2025: Aquí</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Convocatoria abierta.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Descarga aquí la convocatoria: https://bit.ly/3N5eekv</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">-OEP: Oferta Empleo Público 2026</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Plazas pendientes de convocar:</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Acceso libre: 920 turno general y 80 reserva discapacidad).</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Promoción interna: 276 turno general y 24 reserva discapacidad</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Descarga la OEP 2026: https://bit.ly/4tWXVH3</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">COMPROMETIDOS CON LA MEJORA CONTINUA</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Nuestro buen hacer y cultura de mejora continua y compromiso con nuestros alumnos y clientes están avalados por nuestros sellos de calidad</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Política de privacidad</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Política de Cookies</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Contacto</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">© 2019</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "Avenida de Córdoba 15-2ª planta | 28026 MADRID\n91 131 83 85\nprloposiciones@coloniecm.com\nOposiciones PRL INSST- Instituto Nacional de Seguridad y Salud en el Trabajo\nIRSST-Técnico Superior Seguridad y Salud Comunidad de Madrid\nSBSSL-Subinspector Laboral de Seguridad y Salud\nServicios Propios-Técnico Superior PRL Comunidad de Madrid\nAdministración Gestión de la Administración Civil del Estado\nAdministrativo de la Administración del Estado\nAdministrativo Comunidad de Madrid\nHacienda Pública Técnico de Hacienda\nAgentes de Hacienda Pública\nEmpleo y Seguridad Social Subinspector Laboral de Empleo y Seguridad Social\nNuestra Metodología\nAyudas al Opositor\nNoticias\nNormativa\nContacto\n© 2022\nh1 -> Agentes de Hacienda Pública\ntexto bajo h1 -> Hacienda Pública\ntexto bajo h1 -> Agentes de Hacienda Pública\nh1 -> Fórmate con nosotros\ntexto bajo h1 -> El Cuerpo de Agentes de Hacienda Pública fue creado en 1990 y está adscrito a la Agencia Tributaria.\ntexto bajo h1 -> Entre las funciones de los agentes de la hacienda pública destacan, entre otras:\ntexto bajo h1 -> Área de Inspección. Área de Recaudación, seguimiento y mantenimiento de expedientes de deudores. Área de Gestión.\ntexto bajo h1 -> GRUPO C1\ntexto bajo h1 -> El sueldo oscila entre 18.000 y 25.000 euros brutos anuales. Recibe 14 pagas al año.\ntexto bajo h1 -> Estar en posesión o en condiciones de obtener el título de Bachiller o Técnico, BUP, Bachiller Superior, Bachillerato-LOGSE, Formación Profesional de II grado o equivalente, o tener aprobadas las pruebas de acceso a la Universidad para mayores de 25 años.\ntexto bajo h1 -> Consultar la Orden EDU/1603/2009, de 10 de junio, por la que se establecen las equivalencias con los títulos de Graduado en Educación Secundaria Obligatoria y de Bachiller regulados en la Ley Orgánica 2/2006, de 3 de mayo, de Educación, modificada mediante Orden EDU/520/2011.\ntexto bajo h1 -> El proceso de selección de los aspirantes se realizará por el sistema de oposición.\ntexto bajo h1 -> Constará de 2 ejercicios eliminatorios.\ntexto bajo h1 -> EJERCICIOS:\ntexto bajo h1 -> Primer ejercicio: Realización de un cuestionario de 100 preguntas tipo test.\ntexto bajo h1 -> El tiempo máximo para la realización de este ejercicio será de 1 hora y 40 minutos.\ntexto bajo h1 -> Segundo ejercicio: Contestar por escrito un cuestionario con diez supuestos prácticos relacionados con las materias del programa.\ntexto bajo h1 -> En siete de ellos se formularán tres preguntas en cada uno en la que se responderá de forma breve y razonada. En los tres restantes se formularán tres preguntas en cada uno de ellos con respuestas alternativas.\ntexto bajo h1 -> El tiempo máximo para la realización de este ejercicio será de 2 horas y 30 minutos\ntexto bajo h1 -> I – Organización del Estado y funcionamiento de la Administración General del Estado. Temas 1 al 7\ntexto bajo h1 -> II – Derecho Administrativo General. Temas 1 al 5\ntexto bajo h1 -> III – Organización de la Hacienda Pública y Derecho Tributario. Temas 1 al 22\ntexto bajo h1 -> – Técnicos de Hacienda. Licenciados en economía.\ntexto bajo h1 -> – Letrado de la Seguridad Social en el Servicio Jurídico Delegado Provincial de la Dirección Provincial del Instituto Nacional de Seguridad Social de Madrid. Doctorado en derecho y Licenciado en periodismo.\ntexto bajo h1 -> – Letrado de la Seguridad Social en el Servicio Jurídico Delegado Provincial de la Dirección Provincial del Instituto Nacional de Seguridad Social de Madrid. Licenciado en derecho.\ntexto bajo h1 -> – Técnico de Recursos Humanos en Ayuntamiento de Comunidad de Madrid. Licenciado en derecho y abogado en ejercicio.\ntexto bajo h1 -> CONVOCATORIA 2025\ntexto bajo h1 -> 1000 Plazas acceso libre + 400 plazas promoción interna\ntexto bajo h1 -> Descarga la Oferta de Empleo Público 2025: Aquí\ntexto bajo h1 -> Convocatoria abierta.\ntexto bajo h1 -> Descarga aquí la convocatoria: https://bit.ly/3N5eekv\ntexto bajo h1 -> -OEP: Oferta Empleo Público 2026\ntexto bajo h1 -> Plazas pendientes de convocar:\ntexto bajo h1 -> Acceso libre: 920 turno general y 80 reserva discapacidad).\ntexto bajo h1 -> Promoción interna: 276 turno general y 24 reserva discapacidad\ntexto bajo h1 -> Descarga la OEP 2026: https://bit.ly/4tWXVH3\n\t\th3 -> COMPROMETIDOS CON LA MEJORA CONTINUA\n\t\ttexto bajo h3 -> Nuestro buen hacer y cultura de mejora continua y compromiso con nuestros alumnos y clientes están avalados por nuestros sellos de calidad\n\t\ttexto bajo h3 -> Política de privacidad\n\t\ttexto bajo h3 -> Política de Cookies\n\t\ttexto bajo h3 -> Contacto\n\t\ttexto bajo h3 -> © 2019";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

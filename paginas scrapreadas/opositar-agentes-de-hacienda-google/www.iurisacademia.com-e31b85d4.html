@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://www.iurisacademia.com/</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Preparadores de Agente de Hacienda</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Prepárate con inspectores de Hacienda expertos en conseguir resultados: formadores de 3 top 10 en la última convocatoria. Con la experiencia acumulada en Agentes Garrido Estudios, nuestros preparadores trasladan ahora toda su metodología y resultados a Iuris Academia.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Curso completo desde el inicio hasta la plaza.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">En la convocatoria de 2024 conseguimos 3 alumnos en el TOP 10 de la convocatoria</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Quiénes van a ser tus preparadores?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Cambiamos de nombre, pero seguimos siendo los mismos.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Si nos conoces desde hace años, quizás te suene Garrido Estudios. Ahí empezamos Javi y Edu esta aventura como preparadores, con un único objetivo: ayudarte a conseguir tu plaza como Agente de Hacienda.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Hoy damos un paso más con Iuris Academia, con la misma esencia, pero una imagen renovada: cambiamos de nombre para conectar mejor, acercarnos más a ti y ofrecerte una formación integral y cercana.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Porque no somos una academia generalista. Porque no preparamos miles de oposiciones. Porque no trabajamos con robots ni atención automatizada.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">✅ Somos inspectores de Hacienda. ✅ Preparamos exclusivamente la oposición de Agente de Hacienda. ✅ Nuestra metodología funciona: más del 70% de nuestros alumnos aprueban, y contamos con varios aprobados en 9 meses o incluso menos.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Este cambio de nombre no es un fin. Es el principio de algo más grande. Más directo, más claro, más comprometido contigo.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Nuevo nombre. Mismo compromiso. Misma preparación de verdad.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">La academia de Agente de Hacienda que estabas buscando</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Clases magistrales interactivas</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Desde el inicio podrás visualizar nuestras clases magistrales para comenzar cuanto antes.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Clases prácticas y en directo</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Cuentas con clases grupales en DIRECTO todas las semanas. Resolvemos dudas para bordar el examen.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Acceso a Opositatest</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Con tu suscripción cuentas con el acceso incluido a Opositatest para que puedas hacer miles de preguntas test.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Temario completo</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Temario elaborado específicamente para esta oposición con una actualización continua.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Acceso directo a Inspectores de Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Aquí no hay bots ni tutores anónimos. Estás aprendiendo con quienes han pasado por el mismo proceso… y ahora están dentro.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Resultados reales</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El 70% de nuestros alumnos ha conseguido la plaza pero en la última convocatoria 3 de nuestros alumnos entraron en el TOP 10. Simulacros de exámenes con correcciones y pautas de mejora.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Sesión informativa curso 2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En Iuris Academia no creemos en academias masivas ni en cursos impersonales. Nuestras clases duran una media de 2h30/3h. Una auténtica locura pero es que no se deja duda sin resolver. Sabemos que cada alumno es único y merece un camino personalizado hasta su plaza. Cada euro que inviertas en tu formación valdrá la pena y lo recuperarás con tu primer sueldo como Agente de Hacienda. Te dejamos a continuación nuestra sesión informativa para que puedas resolver todas tus dudas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Historias exitosas de nuestros alumnos</span></div>
+<div class="line level-3" style="padding-left:108px"><span class="tag-label">h4 -&gt; </span><span class="content-header">Laura G.</span></div>
+<div class="line level-3" style="padding-left:108px"><span class="context-label">texto bajo h4 -&gt; </span><span class="content-text">Aprobé la oposición de Agente de Hacienda estudiando sin parar durante 13 meses y no tengo duda de que gran parte del mérito fue de Javi y Edu. Explican muy claro, te centran en lo importante y están encima cuando lo necesitas. Preparar con ellos es ir con ventaja.</span></div>
+<div class="line level-3" style="padding-left:108px"><span class="tag-label">h4 -&gt; </span><span class="content-header">Carlos M</span></div>
+<div class="line level-3" style="padding-left:108px"><span class="context-label">texto bajo h4 -&gt; </span><span class="content-text">Estoy en mi segundo intento y no tiene nada que ver con cuando empecé. Siento que ahora tengo una estrategia clara, materiales de calidad y preparadores que responden al momento. Edu y Javi saben perfectamente lo que hacen.</span></div>
+<div class="line level-3" style="padding-left:108px"><span class="tag-label">h4 -&gt; </span><span class="content-header">Andrés V</span></div>
+<div class="line level-3" style="padding-left:108px"><span class="context-label">texto bajo h4 -&gt; </span><span class="content-text">Lo que más valoro es que se nota que les importa tu resultado. No es solo dar clase y ya. Te preguntan, te revisan, te empujan. Javi y Edu están detrás del alumno de verdad, y eso no se encuentra en todas partes.</span></div>
+<div class="line level-3" style="padding-left:108px"><span class="tag-label">h4 -&gt; </span><span class="content-header">Ana P</span></div>
+<div class="line level-3" style="padding-left:108px"><span class="context-label">texto bajo h4 -&gt; </span><span class="content-text">Probé en una academia grande y me sentía un número más. Aquí todo es diferente: clases directas, temario sin paja, y contacto real con ellos. Me motivan a seguir incluso cuando flaqueo. Muy agradecida por haber dado con esta preparación.</span></div>
+<div class="line level-3" style="padding-left:108px"><span class="tag-label">h4 -&gt; </span><span class="content-header">Pedro G.</span></div>
+<div class="line level-3" style="padding-left:108px"><span class="context-label">texto bajo h4 -&gt; </span><span class="content-text">Aprobé a la primera. Seguí su planificación al pie de la letra y llegué al examen sintiéndome seguro. Javi es muy técnico y preciso, Edu te transmite seguridad y foco. Hacen un equipo brutal.</span></div>
+<div class="line level-3" style="padding-left:108px"><span class="tag-label">h4 -&gt; </span><span class="content-header">Silvia D</span></div>
+<div class="line level-3" style="padding-left:108px"><span class="context-label">texto bajo h4 -&gt; </span><span class="content-text">Compagino el estudio con mi trabajo y gracias a la flexibilidad del curso, puedo seguir avanzando sin perderme. Las clases son una pasada, está todo muy bien estructurado. Además, responden muy rápido cualquier duda.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Nuestro blog</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Si tienes algunas dudas de la oposición, esto quizás pueda ayudarte</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Sueldo Agente de Hacienda 2025: cuánto se cobra y qué complementos existen</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El sueldo base de un Agente de Hacienda se establece en los Presupuestos Generales del Estado y depende del Grupo C1 de clasificación funcionarial, que es el grupo al que pertenece este cuerpo.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Destinos Agentes de Hacienda: destinos más comunes tras aprobar</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">¿Te has preguntado dónde trabajarás una vez que apruebes la oposición de Agente de Hacienda? La elección de tu destino puede influir en tu calidad de vida y salario. En este artículo, descubrirás los destinos más comunes, cómo se adjudican las plazas y qué esperar en tus primeros años en la Agencia Tributaria. Desde grandes capitales hasta administraciones periféricas, cada opción tiene sus particularidades. Además, te daremos consejos para maximizar tus posibilidades de elegir el destino que deseas. ¡No te lo pierdas y comienza a planificar tu futuro en la AEAT!</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Qué funciones tiene un Agente de Hacienda: trabajo diario explicado</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">¿Te has preguntado qué hace realmente un Agente de Hacienda? Este funcionario de carrera no solo garantiza el cumplimiento de las obligaciones fiscales, sino que también desempeña un papel crucial en la gestión, inspección y recaudación de tributos. Desde la revisión de declaraciones hasta la notificación de deudas, su trabajo es variado y dinámico. Además, las oportunidades de desarrollo profesional son amplias, permitiendo ascensos y especializaciones. Si buscas un empleo público estable con buenas condiciones laborales, descubre cómo prepararte para formar parte de este esencial cuerpo de la Agencia Tributaria. ¡Sigue leyendo para conocer más!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Si quieres ser Agente de Hacienda, esto te puede interesar</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Iuris es una de las academias más atractivas para Agentes de Hacienda porque trabajamos una preparación de Agente de Hacienda muy enfocada a lo que realmente exige la oposición: temario útil, clases bien orientadas, trabajo del práctico y seguimiento cercano. Es una academia pensada para opositores que buscan avanzar con orden y no perder tiempo en un temario tan amplio.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">A continuación te dejamos una infografía para resolver todas las dudas en un vistazo de lo que implica esta oposición.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Utilizamos cookies para ofrecerte la mejor experiencia en nuestra web.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Puedes aprender más sobre qué cookies utilizamos o desactivarlas en los ajustes.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Tienes dudas?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Javi o Edu te llamarán personalmente y resolverán todas tus dudas. En IURIS Academia creemos en la atención de calidad y personalizada.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Resumen de privacidad</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Cookies estrictamente necesarias</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Analítica</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Política de cookies</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Esta web utiliza cookies para que podamos ofrecerte la mejor experiencia de usuario posible. La información de las cookies se almacena en tu navegador y realiza funciones tales como reconocerte cuando vuelves a nuestra web o ayudar a nuestro equipo a comprender qué secciones de la web encuentras más interesantes y útiles.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Las cookies estrictamente necesarias tiene que activarse siempre para que podamos guardar tus preferencias de ajustes de cookies.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Esta web utiliza Google Analytics para recopilar información anónima tal como el número de visitantes del sitio, o las páginas más populares.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Dejar esta cookie activa nos permite mejorar nuestra web.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Más información sobre nuestra política de cookies</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "h1 -> Preparadores de Agente de Hacienda\ntexto bajo h1 -> Prepárate con inspectores de Hacienda expertos en conseguir resultados: formadores de 3 top 10 en la última convocatoria. Con la experiencia acumulada en Agentes Garrido Estudios, nuestros preparadores trasladan ahora toda su metodología y resultados a Iuris Academia.\ntexto bajo h1 -> Curso completo desde el inicio hasta la plaza.\n\t\th3 -> En la convocatoria de 2024 conseguimos 3 alumnos en el TOP 10 de la convocatoria\n\th2 -> ¿Quiénes van a ser tus preparadores?\n\t\th3 -> Cambiamos de nombre, pero seguimos siendo los mismos.\n\t\ttexto bajo h3 -> Si nos conoces desde hace años, quizás te suene Garrido Estudios. Ahí empezamos Javi y Edu esta aventura como preparadores, con un único objetivo: ayudarte a conseguir tu plaza como Agente de Hacienda.\n\t\ttexto bajo h3 -> Hoy damos un paso más con Iuris Academia, con la misma esencia, pero una imagen renovada: cambiamos de nombre para conectar mejor, acercarnos más a ti y ofrecerte una formación integral y cercana.\n\t\ttexto bajo h3 -> Porque no somos una academia generalista. Porque no preparamos miles de oposiciones. Porque no trabajamos con robots ni atención automatizada.\n\t\ttexto bajo h3 -> ✅ Somos inspectores de Hacienda. ✅ Preparamos exclusivamente la oposición de Agente de Hacienda. ✅ Nuestra metodología funciona: más del 70% de nuestros alumnos aprueban, y contamos con varios aprobados en 9 meses o incluso menos.\n\t\ttexto bajo h3 -> Este cambio de nombre no es un fin. Es el principio de algo más grande. Más directo, más claro, más comprometido contigo.\n\t\ttexto bajo h3 -> Nuevo nombre. Mismo compromiso. Misma preparación de verdad.\n\th2 -> La academia de Agente de Hacienda que estabas buscando\n\t\th3 -> Clases magistrales interactivas\n\t\ttexto bajo h3 -> Desde el inicio podrás visualizar nuestras clases magistrales para comenzar cuanto antes.\n\t\th3 -> Clases prácticas y en directo\n\t\ttexto bajo h3 -> Cuentas con clases grupales en DIRECTO todas las semanas. Resolvemos dudas para bordar el examen.\n\t\th3 -> Acceso a Opositatest\n\t\ttexto bajo h3 -> Con tu suscripción cuentas con el acceso incluido a Opositatest para que puedas hacer miles de preguntas test.\n\t\th3 -> Temario completo\n\t\ttexto bajo h3 -> Temario elaborado específicamente para esta oposición con una actualización continua.\n\t\th3 -> Acceso directo a Inspectores de Hacienda\n\t\ttexto bajo h3 -> Aquí no hay bots ni tutores anónimos. Estás aprendiendo con quienes han pasado por el mismo proceso… y ahora están dentro.\n\t\th3 -> Resultados reales\n\t\ttexto bajo h3 -> El 70% de nuestros alumnos ha conseguido la plaza pero en la última convocatoria 3 de nuestros alumnos entraron en el TOP 10. Simulacros de exámenes con correcciones y pautas de mejora.\n\th2 -> Sesión informativa curso 2026\n\ttexto bajo h2 -> En Iuris Academia no creemos en academias masivas ni en cursos impersonales. Nuestras clases duran una media de 2h30/3h. Una auténtica locura pero es que no se deja duda sin resolver. Sabemos que cada alumno es único y merece un camino personalizado hasta su plaza. Cada euro que inviertas en tu formación valdrá la pena y lo recuperarás con tu primer sueldo como Agente de Hacienda. Te dejamos a continuación nuestra sesión informativa para que puedas resolver todas tus dudas.\n\th2 -> Historias exitosas de nuestros alumnos\n\t\t\th4 -> Laura G.\n\t\t\ttexto bajo h4 -> Aprobé la oposición de Agente de Hacienda estudiando sin parar durante 13 meses y no tengo duda de que gran parte del mérito fue de Javi y Edu. Explican muy claro, te centran en lo importante y están encima cuando lo necesitas. Preparar con ellos es ir con ventaja.\n\t\t\th4 -> Carlos M\n\t\t\ttexto bajo h4 -> Estoy en mi segundo intento y no tiene nada que ver con cuando empecé. Siento que ahora tengo una estrategia clara, materiales de calidad y preparadores que responden al momento. Edu y Javi saben perfectamente lo que hacen.\n\t\t\th4 -> Andrés V\n\t\t\ttexto bajo h4 -> Lo que más valoro es que se nota que les importa tu resultado. No es solo dar clase y ya. Te preguntan, te revisan, te empujan. Javi y Edu están detrás del alumno de verdad, y eso no se encuentra en todas partes.\n\t\t\th4 -> Ana P\n\t\t\ttexto bajo h4 -> Probé en una academia grande y me sentía un número más. Aquí todo es diferente: clases directas, temario sin paja, y contacto real con ellos. Me motivan a seguir incluso cuando flaqueo. Muy agradecida por haber dado con esta preparación.\n\t\t\th4 -> Pedro G.\n\t\t\ttexto bajo h4 -> Aprobé a la primera. Seguí su planificación al pie de la letra y llegué al examen sintiéndome seguro. Javi es muy técnico y preciso, Edu te transmite seguridad y foco. Hacen un equipo brutal.\n\t\t\th4 -> Silvia D\n\t\t\ttexto bajo h4 -> Compagino el estudio con mi trabajo y gracias a la flexibilidad del curso, puedo seguir avanzando sin perderme. Las clases son una pasada, está todo muy bien estructurado. Además, responden muy rápido cualquier duda.\n\th2 -> Nuestro blog\n\ttexto bajo h2 -> Si tienes algunas dudas de la oposición, esto quizás pueda ayudarte\n\t\th3 -> Sueldo Agente de Hacienda 2025: cuánto se cobra y qué complementos existen\n\t\ttexto bajo h3 -> El sueldo base de un Agente de Hacienda se establece en los Presupuestos Generales del Estado y depende del Grupo C1 de clasificación funcionarial, que es el grupo al que pertenece este cuerpo.\n\t\th3 -> Destinos Agentes de Hacienda: destinos más comunes tras aprobar\n\t\ttexto bajo h3 -> ¿Te has preguntado dónde trabajarás una vez que apruebes la oposición de Agente de Hacienda? La elección de tu destino puede influir en tu calidad de vida y salario. En este artículo, descubrirás los destinos más comunes, cómo se adjudican las plazas y qué esperar en tus primeros años en la Agencia Tributaria. Desde grandes capitales hasta administraciones periféricas, cada opción tiene sus particularidades. Además, te daremos consejos para maximizar tus posibilidades de elegir el destino que deseas. ¡No te lo pierdas y comienza a planificar tu futuro en la AEAT!\n\t\th3 -> Qué funciones tiene un Agente de Hacienda: trabajo diario explicado\n\t\ttexto bajo h3 -> ¿Te has preguntado qué hace realmente un Agente de Hacienda? Este funcionario de carrera no solo garantiza el cumplimiento de las obligaciones fiscales, sino que también desempeña un papel crucial en la gestión, inspección y recaudación de tributos. Desde la revisión de declaraciones hasta la notificación de deudas, su trabajo es variado y dinámico. Además, las oportunidades de desarrollo profesional son amplias, permitiendo ascensos y especializaciones. Si buscas un empleo público estable con buenas condiciones laborales, descubre cómo prepararte para formar parte de este esencial cuerpo de la Agencia Tributaria. ¡Sigue leyendo para conocer más!\n\th2 -> Si quieres ser Agente de Hacienda, esto te puede interesar\n\ttexto bajo h2 -> Iuris es una de las academias más atractivas para Agentes de Hacienda porque trabajamos una preparación de Agente de Hacienda muy enfocada a lo que realmente exige la oposición: temario útil, clases bien orientadas, trabajo del práctico y seguimiento cercano. Es una academia pensada para opositores que buscan avanzar con orden y no perder tiempo en un temario tan amplio.\n\ttexto bajo h2 -> A continuación te dejamos una infografía para resolver todas las dudas en un vistazo de lo que implica esta oposición.\n\ttexto bajo h2 -> Utilizamos cookies para ofrecerte la mejor experiencia en nuestra web.\n\ttexto bajo h2 -> Puedes aprender más sobre qué cookies utilizamos o desactivarlas en los ajustes.\n\th2 -> ¿Tienes dudas?\n\ttexto bajo h2 -> Javi o Edu te llamarán personalmente y resolverán todas tus dudas. En IURIS Academia creemos en la atención de calidad y personalizada.\n\ttexto bajo h2 -> Resumen de privacidad\n\ttexto bajo h2 -> Cookies estrictamente necesarias\n\ttexto bajo h2 -> Analítica\n\ttexto bajo h2 -> Política de cookies\n\ttexto bajo h2 -> Esta web utiliza cookies para que podamos ofrecerte la mejor experiencia de usuario posible. La información de las cookies se almacena en tu navegador y realiza funciones tales como reconocerte cuando vuelves a nuestra web o ayudar a nuestro equipo a comprender qué secciones de la web encuentras más interesantes y útiles.\n\ttexto bajo h2 -> Las cookies estrictamente necesarias tiene que activarse siempre para que podamos guardar tus preferencias de ajustes de cookies.\n\ttexto bajo h2 -> Esta web utiliza Google Analytics para recopilar información anónima tal como el número de visitantes del sitio, o las páginas más populares.\n\ttexto bajo h2 -> Dejar esta cookie activa nos permite mejorar nuestra web.\n\ttexto bajo h2 -> Más información sobre nuestra política de cookies";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

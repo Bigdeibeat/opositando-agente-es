@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://www.repasandosinpapeles.com/oposiciones-hacienda/</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">faq -&gt; </span><span class="content-header">Close Menu X</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Oposiciones Hacienda</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Si quieres a trabajar en la Agencia Tributaria puedes opositar a Agente de Hacienda o a Técnico de Hacienda.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">En este post te voy a contar cuáles son los requisitos para cada especialidad y las funciones que realizan en su puesto como funcionario de la administración general del estado.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">En las oposiciones de hacienda sólo se valoran los exámenes de la fase de oposición, pues no hay fase de concurso, es decir, en estas oposiciones no se hace valoración de méritos.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Desplegar Indice de Contenido</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">faq -&gt; </span><span class="content-header">Toggle</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Requisitos para opositar a Hacienda.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Para opositar a Agente de Hacienda es suficiente con tener el título de Bachiller: Grupo C1.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Para opositar a Técnico de Hacienda debes tener el título de Diplomado, Ingeniero Técnico, Arquitecto Técnico o Grado: Grupo A2.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Diferencias entre los cuerpos de hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Los Agentes de Hacienda son los que realizan tareas administrativas dentro del ámbito tributario como los requerimientos de información, seguimientos de embargos y la preparación de notificaciones.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Los Técnicos de Hacienda tienen tareas más relacionadas con la recaudación, gestión e inspección del sistema aduanero y del sistema tributario del estado español.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Cada cuánto tiempo convocan?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Cada año se convocan plazas. Incluso en los años de crisis se han convocado plazas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Temario que tienes que estudiar</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Cada especialidad tiene su propio temario específico.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En mi canal de youtube de oposiciones Repasando Sin Papeles tienes algunos temas en vídeo del temario tanto de Agente de Hacienda como de Técnico de Hacienda, que te servirán para repasar o para hacer un primer acercamiento a las leyes que incluyen esos temas:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">febrero 26, 2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Agente de Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Temario Agente de Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">julio 27, 2016</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Técnico de Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Temario Técnico de Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Ya podéis adquirir en la Opo-Tienda de la web, el TEMARIO DE AGENTE DE HACIENDA que yo misma he confeccionado para mis valientes opositoras y opositores:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El temario es en formato PDF y contiene los 35 temas organizados en tres bloques.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Su precio es de 34 euros.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">100% actualizado para la convocatoria de 2022.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Lo he confeccionado de forma que al estudiar vas a relacionar cada uno de los puntos de cada Tema con los artículos de la Legislación correspondiente.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Además, después del examen, tienes la posibilidad, por tan solo 3.70 euros, de recibir actualizaciones para el examen de la siguiente convocatoria, que se espera salga en septiembre, aunque si se alarga seguirás recibiendo todas las modificaciones legislativas que se produzcan hasta la fecha, así mantendrás tu temario siempre actualizado.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Este temario es válido tanto para turno libre como para promoción interna.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Mi Temario de Agente de Hacienda que también te servirá para la Próxima Convocatoria de Agente de Hacienda, contiene los 32 temas del PROGRAMA es decir, los tres bloques, incluyendo todas las modificaciones del programa respecto al de la convocatoria anterior, y cualquier actualización legislativa para que estudies correctamente para el examen.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Con un único pago descargas todo el Temario. No te voy a entregar los temas en cuentagotas, pues vas a descargar todo el contenido con un único pago de 41 euros (No hay cuota mensual).</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Descargable ( lo descargas en tu dispositivo, no está en la nube, no necesita internet).</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">En formato digital para que estudies anotando y subrayando desde tu tablet u ordenador, te evites el gasto de imprimir, y te resulte más fácil actualizarlo que en papel.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Lo he confeccionado de forma que al estudiar vas a relacionar cada uno de los puntos de cada Tema con los artículos de la Legislación correspondiente gracias a los menús clicables de cada tema, y a que viene la legislación detallada en todo el temario para que sepas lo que estás estudiando en cada uno de los puntos.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Está organizado por Temas siguiendo los puntos del programa, pero de forma que relacionas cada punto del tema con las leyes y artículos correspondientes de la ley mientras estás estudiando (no están indicadas las leyes y artículos al final del tema, sino que estudias sobre ellas, visualizando en cada momento qué ley y artículos conforman cada punto del programa)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El temario es conciso y está completo (no resumido) basándose en la literalidad de la ley (conforme plantean las preguntas del examen)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Lo adquieres 100% ACTUALIZADO y te enviaré a través de un canal exclusivo de Telegram al que podrás acceder tras el pago, TODAS las ACTUALIZACIONES que se produzcan para que lo mantengas actualizado para estudiar correctamente para el EXAMEN. Así que ante cualquier Actualización Legislativa, te enviaré los temas modificados contándote qué artículos y leyes y qué temas se han actualizado.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">También te mantendré informado en todo momento sobre el proceso selectivo de Agente de Hacienda, que es “oposición” (no hay fase de concurso) y, por lo tanto, no se valoran méritos por haber trabajado como interino en la administración pública.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">¡Y también te servirá para la Próxima Convocatoria!</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">pues incluye Mantener Actualizado el Temario ante cualquier cambio legislativo o del programa</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">y Mantenerte informado del proceso selectivo de la Próxima Convocatoria</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">desde la Inscripción hasta la toma de posesión de los aprobados</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">para que sepas lo que hay que hacer en cada momento del proceso selectivo</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Descarga en tus dispositivos favoritos todo el contenido del Temario Actualizado</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">y ¡entérate de todo el proceso selectivo!</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">¡Con un único pago de 41 euros!</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">(no hay cuota mensual)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">⭐⭐⭐⭐⭐</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Testimonios de Opositores que han comprado el Temario</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">YouTube</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">TikTok</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Instagram</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Temario Agente de Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">VER TESTIMONIOS</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">¿Necesitas que te aclare alguna cosa sobre el Temario? CLIC AQUÍ</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tras el pago por Tarjeta bancaria te lo descargas en tu dispositivo desde un correo que recibirás tras la compra, desde donde te pasaré también el acceso al canal de Telegram para las futuras Actualizaciones y Avisos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Última Convocatoria Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Últimas convocatorias de Agente de Hacienda:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">abril 23, 2024</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Plantilla Agentes Hacienda 2024 ¡Examen y Respuestas!</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">enero 8, 2020</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Proceso Selectivo Técnico de Hacienda</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "\tfaq -> Close Menu X\nh1 -> Oposiciones Hacienda\ntexto bajo h1 -> Si quieres a trabajar en la Agencia Tributaria puedes opositar a Agente de Hacienda o a Técnico de Hacienda.\ntexto bajo h1 -> En este post te voy a contar cuáles son los requisitos para cada especialidad y las funciones que realizan en su puesto como funcionario de la administración general del estado.\ntexto bajo h1 -> En las oposiciones de hacienda sólo se valoran los exámenes de la fase de oposición, pues no hay fase de concurso, es decir, en estas oposiciones no se hace valoración de méritos.\ntexto bajo h1 -> Desplegar Indice de Contenido\n\tfaq -> Toggle\n\th2 -> Requisitos para opositar a Hacienda.\n\ttexto bajo h2 -> Para opositar a Agente de Hacienda es suficiente con tener el título de Bachiller: Grupo C1.\n\ttexto bajo h2 -> Para opositar a Técnico de Hacienda debes tener el título de Diplomado, Ingeniero Técnico, Arquitecto Técnico o Grado: Grupo A2.\n\th2 -> Diferencias entre los cuerpos de hacienda\n\ttexto bajo h2 -> Los Agentes de Hacienda son los que realizan tareas administrativas dentro del ámbito tributario como los requerimientos de información, seguimientos de embargos y la preparación de notificaciones.\n\ttexto bajo h2 -> Los Técnicos de Hacienda tienen tareas más relacionadas con la recaudación, gestión e inspección del sistema aduanero y del sistema tributario del estado español.\n\th2 -> Cada cuánto tiempo convocan?\n\ttexto bajo h2 -> Cada año se convocan plazas. Incluso en los años de crisis se han convocado plazas.\n\th2 -> Temario que tienes que estudiar\n\ttexto bajo h2 -> Cada especialidad tiene su propio temario específico.\n\ttexto bajo h2 -> En mi canal de youtube de oposiciones Repasando Sin Papeles tienes algunos temas en vídeo del temario tanto de Agente de Hacienda como de Técnico de Hacienda, que te servirán para repasar o para hacer un primer acercamiento a las leyes que incluyen esos temas:\n\ttexto bajo h2 -> febrero 26, 2026\n\ttexto bajo h2 -> Agente de Hacienda\n\t\th3 -> Temario Agente de Hacienda\n\t\ttexto bajo h3 -> julio 27, 2016\n\t\ttexto bajo h3 -> Técnico de Hacienda\n\t\th3 -> Temario Técnico de Hacienda\n\t\ttexto bajo h3 -> Ya podéis adquirir en la Opo-Tienda de la web, el TEMARIO DE AGENTE DE HACIENDA que yo misma he confeccionado para mis valientes opositoras y opositores:\n\t\ttexto bajo h3 -> El temario es en formato PDF y contiene los 35 temas organizados en tres bloques.\n\t\ttexto bajo h3 -> Su precio es de 34 euros.\n\t\ttexto bajo h3 -> 100% actualizado para la convocatoria de 2022.\n\t\ttexto bajo h3 -> Lo he confeccionado de forma que al estudiar vas a relacionar cada uno de los puntos de cada Tema con los artículos de la Legislación correspondiente.\n\t\ttexto bajo h3 -> Además, después del examen, tienes la posibilidad, por tan solo 3.70 euros, de recibir actualizaciones para el examen de la siguiente convocatoria, que se espera salga en septiembre, aunque si se alarga seguirás recibiendo todas las modificaciones legislativas que se produzcan hasta la fecha, así mantendrás tu temario siempre actualizado.\n\t\ttexto bajo h3 -> Este temario es válido tanto para turno libre como para promoción interna.\n\t\ttexto bajo h3 -> Mi Temario de Agente de Hacienda que también te servirá para la Próxima Convocatoria de Agente de Hacienda, contiene los 32 temas del PROGRAMA es decir, los tres bloques, incluyendo todas las modificaciones del programa respecto al de la convocatoria anterior, y cualquier actualización legislativa para que estudies correctamente para el examen.\n\t\ttexto bajo h3 -> Con un único pago descargas todo el Temario. No te voy a entregar los temas en cuentagotas, pues vas a descargar todo el contenido con un único pago de 41 euros (No hay cuota mensual).\n\t\ttexto bajo h3 -> Descargable ( lo descargas en tu dispositivo, no está en la nube, no necesita internet).\n\t\ttexto bajo h3 -> En formato digital para que estudies anotando y subrayando desde tu tablet u ordenador, te evites el gasto de imprimir, y te resulte más fácil actualizarlo que en papel.\n\t\ttexto bajo h3 -> Lo he confeccionado de forma que al estudiar vas a relacionar cada uno de los puntos de cada Tema con los artículos de la Legislación correspondiente gracias a los menús clicables de cada tema, y a que viene la legislación detallada en todo el temario para que sepas lo que estás estudiando en cada uno de los puntos.\n\t\ttexto bajo h3 -> Está organizado por Temas siguiendo los puntos del programa, pero de forma que relacionas cada punto del tema con las leyes y artículos correspondientes de la ley mientras estás estudiando (no están indicadas las leyes y artículos al final del tema, sino que estudias sobre ellas, visualizando en cada momento qué ley y artículos conforman cada punto del programa)\n\t\ttexto bajo h3 -> El temario es conciso y está completo (no resumido) basándose en la literalidad de la ley (conforme plantean las preguntas del examen)\n\t\ttexto bajo h3 -> Lo adquieres 100% ACTUALIZADO y te enviaré a través de un canal exclusivo de Telegram al que podrás acceder tras el pago, TODAS las ACTUALIZACIONES que se produzcan para que lo mantengas actualizado para estudiar correctamente para el EXAMEN. Así que ante cualquier Actualización Legislativa, te enviaré los temas modificados contándote qué artículos y leyes y qué temas se han actualizado.\n\t\ttexto bajo h3 -> También te mantendré informado en todo momento sobre el proceso selectivo de Agente de Hacienda, que es “oposición” (no hay fase de concurso) y, por lo tanto, no se valoran méritos por haber trabajado como interino en la administración pública.\n\t\ttexto bajo h3 -> ¡Y también te servirá para la Próxima Convocatoria!\n\t\ttexto bajo h3 -> pues incluye Mantener Actualizado el Temario ante cualquier cambio legislativo o del programa\n\t\ttexto bajo h3 -> y Mantenerte informado del proceso selectivo de la Próxima Convocatoria\n\t\ttexto bajo h3 -> desde la Inscripción hasta la toma de posesión de los aprobados\n\t\ttexto bajo h3 -> para que sepas lo que hay que hacer en cada momento del proceso selectivo\n\t\ttexto bajo h3 -> Descarga en tus dispositivos favoritos todo el contenido del Temario Actualizado\n\t\ttexto bajo h3 -> y ¡entérate de todo el proceso selectivo!\n\t\ttexto bajo h3 -> ¡Con un único pago de 41 euros!\n\t\ttexto bajo h3 -> (no hay cuota mensual)\n\t\ttexto bajo h3 -> ⭐⭐⭐⭐⭐\n\t\ttexto bajo h3 -> Testimonios de Opositores que han comprado el Temario\n\t\ttexto bajo h3 -> YouTube\n\t\ttexto bajo h3 -> TikTok\n\t\ttexto bajo h3 -> Instagram\n\t\ttexto bajo h3 -> Temario Agente de Hacienda\n\t\ttexto bajo h3 -> VER TESTIMONIOS\n\t\ttexto bajo h3 -> ¿Necesitas que te aclare alguna cosa sobre el Temario? CLIC AQUÍ\n\t\ttexto bajo h3 -> Tras el pago por Tarjeta bancaria te lo descargas en tu dispositivo desde un correo que recibirás tras la compra, desde donde te pasaré también el acceso al canal de Telegram para las futuras Actualizaciones y Avisos.\n\th2 -> Última Convocatoria Hacienda\n\ttexto bajo h2 -> Últimas convocatorias de Agente de Hacienda:\n\ttexto bajo h2 -> abril 23, 2024\n\t\th3 -> Plantilla Agentes Hacienda 2024 ¡Examen y Respuestas!\n\t\ttexto bajo h3 -> enero 8, 2020\n\t\th3 -> Proceso Selectivo Técnico de Hacienda";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

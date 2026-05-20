@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://agentesdehacienda.com/</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Consigue tu plaza como Agente de Hacienda con Fran Sánchez Ocaña</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Una metodología eficaz, con un ratio de éxito del 73%, basada en el dominio del temario, el uso de técnicas de estudio avanzadas y el seguimiento personalizado del opositor con un único objetivo: ayudarte a conseguir un empleo seguro y estable en la Agencia Tributaria en el menor tiempo posible.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Webinar gratuito: Técnicas de estudio para Agentes de Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Mejora la eficacia de tu preparación mediante el uso de técnicas de estudio de eficacia probada, debidametne testeadas y validadas por la cienda. Sin inventos.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Programa para la preparación Integral AHP</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Con este programa podrás realizar una preparación completa de la oposición a Agentes de Hacienda. El programa cuenta con cuatro módulos formativos, a desarrollar en un periodo de entre 8 y 12 meses, e incluye la realización de tutorías personalizadas.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Programa de Nivel Avanzado AHP</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Dirigido a personas con experiencia en la preparación de la oposición, que tan solo necesiten preparar el segundo ejercicio. El programa cuenta con tres módulos formativos a desarrollar entre 6 y 12 meses, adaptable a las necesidades concretas del opositor.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Motivos por los que opositar a Agente de Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Estabilidad laboral</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Un puesto como funcionario ofrece seguridad en el empleo de por vida, evitando la incertidumbre del mercado laboral privado.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Sueldo fijo y pagas extra</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Retribución mensual garantizada, con dos pagas extra al año y complementos según destino y funciones.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">convocatorias regulares con muchas plazas</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Cada año se ofertan cientos de plazas, más de 800 en la última convocatoria, lo que facilita el acceso a la función pública</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">no se exige titulación universitaria</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Se te permite acceder a una plaza bien remunerada sin necesidad de estudios superiores.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">posibilidades de promoción interna</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Posibilidad de mejorar tu estatus dentro de la agencia mediante los procesos de promoción interna</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">funciones variadas dentro de la Agencia</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Diversidad de tareas que permiten desarrollar diferentes competencias en los depatamentos de gestión, inspección o recaudación.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">horarios favorables que facilitan la conciliación familiar</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Horarios estables y flexibles que permiten compaginar vida personal y profesional.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">formación continua y desarrollo profesional</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Acceso a cursos y formación interna para mejorar conocimientos, competencias y habilidades.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">trabajo en todo el territorio nacional</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Posibilidad de elegir o solicitar destinos en distintas provincias según preferencias personales.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Requisitos para opositar a Agentes de Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Titulación</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Estar en posesión o en condiciones de obtener el título de Bachiller o Técnico.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Edad y nacionalidad</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tener nacionalidad española y tener cumplidos los dieciséis años de edad y no exceder de la edad máxima de jubilación forzosa.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Capacidad funcional</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Poseer la capacidad funcional necesaria para el desempeño de las funciones que se deriven del puesto a desempeñar.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Habilitación</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">No hallarse en inhabilitación para empleos o cargos públicos por resolución judicial</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "\th2 -> Consigue tu plaza como Agente de Hacienda con Fran Sánchez Ocaña\n\ttexto bajo h2 -> Una metodología eficaz, con un ratio de éxito del 73%, basada en el dominio del temario, el uso de técnicas de estudio avanzadas y el seguimiento personalizado del opositor con un único objetivo: ayudarte a conseguir un empleo seguro y estable en la Agencia Tributaria en el menor tiempo posible.\n\t\th3 -> Webinar gratuito: Técnicas de estudio para Agentes de Hacienda\n\t\ttexto bajo h3 -> Mejora la eficacia de tu preparación mediante el uso de técnicas de estudio de eficacia probada, debidametne testeadas y validadas por la cienda. Sin inventos.\n\t\th3 -> Programa para la preparación Integral AHP\n\t\ttexto bajo h3 -> Con este programa podrás realizar una preparación completa de la oposición a Agentes de Hacienda. El programa cuenta con cuatro módulos formativos, a desarrollar en un periodo de entre 8 y 12 meses, e incluye la realización de tutorías personalizadas.\n\t\th3 -> Programa de Nivel Avanzado AHP\n\t\ttexto bajo h3 -> Dirigido a personas con experiencia en la preparación de la oposición, que tan solo necesiten preparar el segundo ejercicio. El programa cuenta con tres módulos formativos a desarrollar entre 6 y 12 meses, adaptable a las necesidades concretas del opositor.\n\th2 -> Motivos por los que opositar a Agente de Hacienda\n\t\th3 -> Estabilidad laboral\n\t\ttexto bajo h3 -> Un puesto como funcionario ofrece seguridad en el empleo de por vida, evitando la incertidumbre del mercado laboral privado.\n\t\th3 -> Sueldo fijo y pagas extra\n\t\ttexto bajo h3 -> Retribución mensual garantizada, con dos pagas extra al año y complementos según destino y funciones.\n\t\th3 -> convocatorias regulares con muchas plazas\n\t\ttexto bajo h3 -> Cada año se ofertan cientos de plazas, más de 800 en la última convocatoria, lo que facilita el acceso a la función pública\n\t\th3 -> no se exige titulación universitaria\n\t\ttexto bajo h3 -> Se te permite acceder a una plaza bien remunerada sin necesidad de estudios superiores.\n\t\th3 -> posibilidades de promoción interna\n\t\ttexto bajo h3 -> Posibilidad de mejorar tu estatus dentro de la agencia mediante los procesos de promoción interna\n\t\th3 -> funciones variadas dentro de la Agencia\n\t\ttexto bajo h3 -> Diversidad de tareas que permiten desarrollar diferentes competencias en los depatamentos de gestión, inspección o recaudación.\n\t\th3 -> horarios favorables que facilitan la conciliación familiar\n\t\ttexto bajo h3 -> Horarios estables y flexibles que permiten compaginar vida personal y profesional.\n\t\th3 -> formación continua y desarrollo profesional\n\t\ttexto bajo h3 -> Acceso a cursos y formación interna para mejorar conocimientos, competencias y habilidades.\n\t\th3 -> trabajo en todo el territorio nacional\n\t\ttexto bajo h3 -> Posibilidad de elegir o solicitar destinos en distintas provincias según preferencias personales.\n\th2 -> Requisitos para opositar a Agentes de Hacienda\n\t\th3 -> Titulación\n\t\ttexto bajo h3 -> Estar en posesión o en condiciones de obtener el título de Bachiller o Técnico.\n\t\th3 -> Edad y nacionalidad\n\t\ttexto bajo h3 -> Tener nacionalidad española y tener cumplidos los dieciséis años de edad y no exceder de la edad máxima de jubilación forzosa.\n\t\th3 -> Capacidad funcional\n\t\ttexto bajo h3 -> Poseer la capacidad funcional necesaria para el desempeño de las funciones que se deriven del puesto a desempeñar.\n\t\th3 -> Habilitación\n\t\ttexto bajo h3 -> No hallarse en inhabilitación para empleos o cargos públicos por resolución judicial";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

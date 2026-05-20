@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://www.atrioposicioneshacienda.es/oposiciones-agentes-hacienda/</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Facebook</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">OPOSICIONES A AGENTE DE HACIENDA PUBLICA</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Contacta con Nosotros para más Info</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Nombre</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Dirección de correo electrónico</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Teléfono</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Elige el tipo de oposción Elige el tipo de oposción Oposiciones Inspector de Hacienda Oposiciones Técnico de Hacienda Oposiciones Agente de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">15 + 4 =</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">OPOSICIONES CUERPO DE AGENTES DE LA HACIENDA PÚBLICA</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Es un cuerpo adscrito a la Agencia Tributaria, que desempeñan tareas preparatorias y de verificación material de hechos con relevancia tributaria. Sus retribuciones iniciales son de 25.000 euros anuales.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">PROGRAMA DE LA OPOSICIÓN</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">El opositor que apruebe el primer ejercicio se le guarda para la convocatoria siguiente. DATOS DE LAS ÚLTIMAS CONVOCATORIAS</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">PLAZAS CONVOCADAS</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">INSTANCIAS</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">APROBADOS PRIMERO</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">APROBADOS</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">400 (375 general +25 disc)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">8.408</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">1.217</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">375 general (+5 disc)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">400 (376 general +24 disc)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">11.566</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">376 general (+1 disc)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">400 (380 general + 20 disc)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">10.633</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">380 general (+8 disc)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">20210</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">500 (475 general + 25 disc)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">13.055</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">1.078</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">475 general (+15 disc)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">787 (736 general+ 51 disc)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">12.147</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">1.596</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">736 general (+18 disc)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">780 (741 general+ 39 disc)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">13.127</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">741 +(31 disc)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">800 (736 general+ 64 disc)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">9.513</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">878 (+731 con reserva 1º)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">736 (+21 disc)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">1000 (920 general+ 80 disc) Convocada BOE 30/12/2025</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">(528 con reserva de 2024)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">PREPARACIÓN</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">PROFESORADO</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Los profesores son Inspectores de Hacienda y Técnicos de Hacienda con amplia experiencia docente y cada uno de ellos trabaja a diario en la Administración tributaria en las materias que imparte en las clases.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">SISTEMAS DE PREPARACIÓN:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">PRESENCIAL . Preparación en grupo.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">ONLINE. Asistencia a clases en directo a través de una plataforma digital. Un día a la semana, por la tarde, de 16 a 20,15 horas, y un segundo día cuando avance la preparación.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">CLASES: Un día a la semana, por la tarde, de 16 a 20,15 horas y un segundo día cuando se necesite en la preparación (normalmente durante 4 meses)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Se hacen simulacros de examen periódicos.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Se dan dos vueltas a todo el temario: La primera en el grupo de inicio en la que se explica la teoría, apoyándose en supuestos prácticos, y la segunda en el grupo avanzado, en el que sólo se hacen supuestos prácticos y de exámenes de años anteriores.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">MATERIAL.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Además del temario que compra el alumno, los profesores entregan abundante material propio con resúmenes, esquemas y supuestos prácticos.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">En el grupo avanzado el alumno tiene acceso a la plataforma de OPOSITATEST para hacer test y simulacros de examen de forma ilitidada.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">TIEMPO ESTIMADO DE PREPARACIÓN .</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">12 meses en el grupo de inicio, más los de repaso en el grupo avanzado hasta llegar a los exámenes de la convocatoria. Tiempo total aproximado 16-18 meses.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">HONORARIOS</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">150 euros mensuales. No se paga matrícula. Precio del temario 80 euros. El resto del material entregado por los profesores es gratuito.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">2 + 15 =</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Esta web utiliza cookies propias y de terceros para analizar tus hábitos de navegación y así elaborar perfiles para ofrecerte publicidad relacionada con tus preferencias.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¡Nos importa tu privacidad!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Cookies técnicas / necesarias</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Cookies analíticas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Esta web utiliza cookies para que poder ofrecerte la mejor experiencia de usuario posible.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La información de las cookies se almacena en tu navegador y realiza funciones tales como reconocerte cuando vuelves a este sitio o ayudarme a comprender qué secciones de la web encuentras más interesantes y útiles.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Puedes consultar aquí la política de privacidad. Más información en mi política de cookies.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Las cookies técnicas son estrictamente necesarias y tienen que activarse siempre para guardar tus preferencias de ajustes de cookies. Estas cookies son:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">• Sesión de usuario • Comentarios • Seguridad • Aceptación de cookies</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Esta web utiliza Google Analytics para recopilar información anónima tal como el número de visitantes del sitio, o las páginas más populares.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Dejar esta cookie activa nos permite mejorar nuestra web.</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "Facebook\nh1 -> OPOSICIONES A AGENTE DE HACIENDA PUBLICA\n\th2 -> Contacta con Nosotros para más Info\n\ttexto bajo h2 -> Nombre\n\ttexto bajo h2 -> Dirección de correo electrónico\n\ttexto bajo h2 -> Teléfono\n\ttexto bajo h2 -> Elige el tipo de oposción Elige el tipo de oposción Oposiciones Inspector de Hacienda Oposiciones Técnico de Hacienda Oposiciones Agente de Hacienda\n\ttexto bajo h2 -> 15 + 4 =\n\th2 -> OPOSICIONES CUERPO DE AGENTES DE LA HACIENDA PÚBLICA\n\ttexto bajo h2 -> Es un cuerpo adscrito a la Agencia Tributaria, que desempeñan tareas preparatorias y de verificación material de hechos con relevancia tributaria. Sus retribuciones iniciales son de 25.000 euros anuales.\n\th2 -> PROGRAMA DE LA OPOSICIÓN\n\th2 -> El opositor que apruebe el primer ejercicio se le guarda para la convocatoria siguiente. DATOS DE LAS ÚLTIMAS CONVOCATORIAS\n\ttexto bajo h2 -> PLAZAS CONVOCADAS\n\ttexto bajo h2 -> INSTANCIAS\n\ttexto bajo h2 -> APROBADOS PRIMERO\n\ttexto bajo h2 -> APROBADOS\n\ttexto bajo h2 -> 400 (375 general +25 disc)\n\ttexto bajo h2 -> 8.408\n\ttexto bajo h2 -> 1.217\n\ttexto bajo h2 -> 375 general (+5 disc)\n\ttexto bajo h2 -> 400 (376 general +24 disc)\n\ttexto bajo h2 -> 11.566\n\ttexto bajo h2 -> 376 general (+1 disc)\n\ttexto bajo h2 -> 400 (380 general + 20 disc)\n\ttexto bajo h2 -> 10.633\n\ttexto bajo h2 -> 380 general (+8 disc)\n\ttexto bajo h2 -> 20210\n\ttexto bajo h2 -> 500 (475 general + 25 disc)\n\ttexto bajo h2 -> 13.055\n\ttexto bajo h2 -> 1.078\n\ttexto bajo h2 -> 475 general (+15 disc)\n\ttexto bajo h2 -> 787 (736 general+ 51 disc)\n\ttexto bajo h2 -> 12.147\n\ttexto bajo h2 -> 1.596\n\ttexto bajo h2 -> 736 general (+18 disc)\n\ttexto bajo h2 -> 780 (741 general+ 39 disc)\n\ttexto bajo h2 -> 13.127\n\ttexto bajo h2 -> 741 +(31 disc)\n\ttexto bajo h2 -> 800 (736 general+ 64 disc)\n\ttexto bajo h2 -> 9.513\n\ttexto bajo h2 -> 878 (+731 con reserva 1º)\n\ttexto bajo h2 -> 736 (+21 disc)\n\ttexto bajo h2 -> 1000 (920 general+ 80 disc) Convocada BOE 30/12/2025\n\ttexto bajo h2 -> (528 con reserva de 2024)\n\t\th3 -> PREPARACIÓN\n\t\ttexto bajo h3 -> PROFESORADO\n\t\ttexto bajo h3 -> Los profesores son Inspectores de Hacienda y Técnicos de Hacienda con amplia experiencia docente y cada uno de ellos trabaja a diario en la Administración tributaria en las materias que imparte en las clases.\n\t\ttexto bajo h3 -> SISTEMAS DE PREPARACIÓN:\n\t\ttexto bajo h3 -> PRESENCIAL . Preparación en grupo.\n\t\ttexto bajo h3 -> ONLINE. Asistencia a clases en directo a través de una plataforma digital. Un día a la semana, por la tarde, de 16 a 20,15 horas, y un segundo día cuando avance la preparación.\n\t\ttexto bajo h3 -> CLASES: Un día a la semana, por la tarde, de 16 a 20,15 horas y un segundo día cuando se necesite en la preparación (normalmente durante 4 meses)\n\t\ttexto bajo h3 -> Se hacen simulacros de examen periódicos.\n\t\ttexto bajo h3 -> Se dan dos vueltas a todo el temario: La primera en el grupo de inicio en la que se explica la teoría, apoyándose en supuestos prácticos, y la segunda en el grupo avanzado, en el que sólo se hacen supuestos prácticos y de exámenes de años anteriores.\n\t\ttexto bajo h3 -> MATERIAL.\n\t\ttexto bajo h3 -> Además del temario que compra el alumno, los profesores entregan abundante material propio con resúmenes, esquemas y supuestos prácticos.\n\t\ttexto bajo h3 -> En el grupo avanzado el alumno tiene acceso a la plataforma de OPOSITATEST para hacer test y simulacros de examen de forma ilitidada.\n\t\ttexto bajo h3 -> TIEMPO ESTIMADO DE PREPARACIÓN .\n\t\ttexto bajo h3 -> 12 meses en el grupo de inicio, más los de repaso en el grupo avanzado hasta llegar a los exámenes de la convocatoria. Tiempo total aproximado 16-18 meses.\n\t\ttexto bajo h3 -> HONORARIOS\n\t\ttexto bajo h3 -> 150 euros mensuales. No se paga matrícula. Precio del temario 80 euros. El resto del material entregado por los profesores es gratuito.\n\ttexto bajo h2 -> 2 + 15 =\n\ttexto bajo h2 -> Esta web utiliza cookies propias y de terceros para analizar tus hábitos de navegación y así elaborar perfiles para ofrecerte publicidad relacionada con tus preferencias.\n\ttexto bajo h2 -> ¡Nos importa tu privacidad!\n\ttexto bajo h2 -> Cookies técnicas / necesarias\n\ttexto bajo h2 -> Cookies analíticas\n\ttexto bajo h2 -> Esta web utiliza cookies para que poder ofrecerte la mejor experiencia de usuario posible.\n\ttexto bajo h2 -> La información de las cookies se almacena en tu navegador y realiza funciones tales como reconocerte cuando vuelves a este sitio o ayudarme a comprender qué secciones de la web encuentras más interesantes y útiles.\n\ttexto bajo h2 -> Puedes consultar aquí la política de privacidad. Más información en mi política de cookies.\n\ttexto bajo h2 -> Las cookies técnicas son estrictamente necesarias y tienen que activarse siempre para guardar tus preferencias de ajustes de cookies. Estas cookies son:\n\ttexto bajo h2 -> • Sesión de usuario • Comentarios • Seguridad • Aceptación de cookies\n\ttexto bajo h2 -> Esta web utiliza Google Analytics para recopilar información anónima tal como el número de visitantes del sitio, o las páginas más populares.\n\ttexto bajo h2 -> Dejar esta cookie activa nos permite mejorar nuestra web.";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

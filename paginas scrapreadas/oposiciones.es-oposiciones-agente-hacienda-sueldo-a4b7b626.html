@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://oposiciones.es/oposiciones-agente-hacienda/sueldo/</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="content-text">1.000 plazas ofertadas este año</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Sueldo Agente Hacienda 2026</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Opositar es más fácil con ayuda</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Consigue el respaldo profesional que necesitas</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">&quot; *&quot; señala los campos obligatorios</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">En este artículo te expondremos el sueldo de un agente de hacienda con todos los detalles de las retribuciones y los complementos salariales de estos funcionarios de la Agencia Estatal de la Administración Tributaria.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Cuál es el sueldo de un agente de hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El Agente de Hacienda como funcionario del cuerpo auxiliar, que realiza tareas de atención al público o de administración elemental, pertenece a la categoría C1. En las tablas salariales de 2026, el sueldo base asciende a 841,66. Las retribuciones mensuales oscilan entre los 1.250 y 1.470 € a los que hay que sumar las pagas extras.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Según los importes incluidos en los Presupuestos Generales del Estado, publicados en el Real Decreto-ley 4/2024, de 26 de junio, el salario del Agente de Hacienda en 2026 asciende en su primer año a 17.311,56 €, hasta 20.366,64 € brutos cuando alcanzan el nivel 22.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Agente de hacienda: conceptos retributivos en 2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Además del sueldo base, el salario del agente de hacienda está formado por:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Complemento de destino: Va asociado al funcionario, pues se consolida al estar dos años en el puesto de trabajo. Cada funcionario tiene derecho a cobrar el complemento de destino que tenga consolidado, aunque el puesto de desempeño tenga un complemento de destino inferior.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Complemento específico: varía en función del tramo (subdisiviones en las que se divide la carrera profesional), que en agentes de la hacienda pública van del 0 al 6. Para pasar del tramo 0 al 1 hay que tener 2 años de antigüedad, mientras que, para subir a los siguientes tramos, además de la antigüedad, habrá una evaluación del desempeño del funcionario.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Antigüedad. Cada tres años trabajados el funcionario percibirá un trienio (28,85 €). Se percibirán cada tres años.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Pagas extra: los meses de junio y diciembre los agentes de la Hacienda Pública reciben las dos pagas extra anuales.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Agente de hacienda: complementos</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Productividad, que retribuye el rendimiento y dedicación en el puesto de trabajo.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Residencia, solo para los funcionarios que residan en las islas Canarias o Baleares, así como el Valle de Arán, Ceuta y Melilla</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Complemento por el Plan Especial de Intensificación de Actuaciones, los empleados de la Agencia Tributaria pueden participar voluntariamente en esta «intensificación de actuaciones» haciendo más horas de trabajo. El importe del complemento varía en función de los resultados de recaudación.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Agente de hacienda: posibilidades de mejora salarial</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Al igual que en otros cargos pertenecientes al cuerpo de la Administración de Agencia Tributaria, el sueldo de agente de Hacienda puede mejorar y evolucionar a través de los años de servicio.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Presupuestos: las leyes de presupuestos de cada año hacen una revisión de los importes de sueldos, trienios y complementos, aplicando (de forma habitual y salvo excepciones) un determinado porcentaje de crecimiento.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Años de servicio, Reflejados en la antigüedad y en la percepción de trienios. Tu salario irá aumentando de forma progresiva cada tres años.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Promoción interna: si tenemos la titulación exigida es posible, ascender por promoción interna tanto a Técnicos de Hacienda como una vez en Técnicos a Inspectores de Hacienda, el nivel más alto dentro de esta Administración. Esto hace que en esta oposición haya posibilidades reales de promoción profesional y de mejorar de categoría, superando por supuesto, el correspondiente proceso selectivo de promoción interna.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Carrera profesional estructurada en siete tramos (del 0 al 6). Cada dos años de servicio puedes ascender de tramo, en función de tu desempeño profesional. Esto va a condicionar el importe del complemento específico que recibas y, por tanto, una parte sustancial de tus retribuciones</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Como puedes ver, conseguir la plaza de agente de Hacienda te asegura un éxito indudable en tu carrera de funcionario. Tendrás un sueldo estable con posibilidades de mejora y de movilidad. Si te gusta el sector y ya ha decidido opositar para ser agente de Hacienda, este puede ser tu trabajo ideal. Prepara tus oposiciones y da un paso definitivo en tu trayectoria profesional.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¡Investiga a fondo! Descubre todos los detalles de Oposiciones Agente Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¡La información es poder! Sigue leyendo sobre:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Funciones de Agente de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¡Atento a estas convocatorias!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Email *</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Privacidad * Acepto la política de privacidad*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hidden pagina_name</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hidden producto_name</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hidden producto_cat</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hidden form_variant</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hidden form_seccion</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hidden producto_id</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hidden producto_id_wp</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hidden user_id</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hidden mll</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hidden fecha</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Contacto:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Redes sociales:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Copyright 2026 Darwin Media SL</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">No tenemos academias que imparten esta formación</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Opositar es más fácil con ayuda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Consigue el respaldo profesional que necesitas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">&quot; *&quot; señala los campos obligatorios</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Cubre el formulario con tus datos</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Obtendrás nuestra guía formativa</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Administración y Archivo</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Auxiliar Administrativo del Estado</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Auxiliar Administrativo Comunidades Autónomas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Auxiliar Administrativo Corporaciones Locales</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Técnico Auxiliar Informática (TAI)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Auxiliar Administrativo de Universidad</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Administrativo Comunidades Autónomas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Administrativo del Estado</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Fuerzas de Seguridad</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Policía Nacional</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Tropa y Marinería</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Suboficial del Ejército</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Bomberos</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Policía Local</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ertzaintza</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Guardia Urbana</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Mossos d’Esquadra</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Guardia Civil</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Educación</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Educación Física Secundaria</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Biología y Geología (Educación Secundaria)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Secundaria Geografía e Historia</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Profesor Lengua Literatura</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Audición Lenguaje</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Educación Física</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Pedagogía Terapéutica</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Educación Infantil</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Justicia</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Tramitación Procesal</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Gestión Procesal</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Auxilio Judicial</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Salud</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Administrativo Sanidad</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Técnico Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Agente Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Instituciones Penitenciarias</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Cuerpo Superior de Instituciones Penitenciarias</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ayudante Instituciones Penitenciarias</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Otras Categorías</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Unión Europea</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Forestales</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Aduanas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Otras Oposiciones</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Las convocatorias que están arrasando:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Técnico de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Correos</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Asturias</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Canarias</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Castilla y León</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Cataluña</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Comunidad de Madrid</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Estatales</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Murcia</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">País Vasco</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Provincia</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Madrid</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Barcelona</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ávila</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Cantabria</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Girona</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">A Coruña</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Convocante</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ayuntamiento de Madrid</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Generalitat Valenciana</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Junta de Andalucía</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Junta de Castilla-La Mancha</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Servicio Andaluz de Salud</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Servicio Aragonés de Salud</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Xunta de Galicia</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">1704 plazas Guardia Civil</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">380 plazas Trabajo Social Servicios Sociales</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">335 plazas Auxilio Judicial</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">1010 plazas Tramitación Procesal</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "1.000 plazas ofertadas este año\nh1 -> Sueldo Agente Hacienda 2026\ntexto bajo h1 -> Opositar es más fácil con ayuda\ntexto bajo h1 -> Consigue el respaldo profesional que necesitas\ntexto bajo h1 -> \" *\" señala los campos obligatorios\ntexto bajo h1 -> En este artículo te expondremos el sueldo de un agente de hacienda con todos los detalles de las retribuciones y los complementos salariales de estos funcionarios de la Agencia Estatal de la Administración Tributaria.\n\th2 -> ¿Cuál es el sueldo de un agente de hacienda?\n\ttexto bajo h2 -> El Agente de Hacienda como funcionario del cuerpo auxiliar, que realiza tareas de atención al público o de administración elemental, pertenece a la categoría C1. En las tablas salariales de 2026, el sueldo base asciende a 841,66. Las retribuciones mensuales oscilan entre los 1.250 y 1.470 € a los que hay que sumar las pagas extras.\n\ttexto bajo h2 -> Según los importes incluidos en los Presupuestos Generales del Estado, publicados en el Real Decreto-ley 4/2024, de 26 de junio, el salario del Agente de Hacienda en 2026 asciende en su primer año a 17.311,56 €, hasta 20.366,64 € brutos cuando alcanzan el nivel 22.\n\th2 -> Agente de hacienda: conceptos retributivos en 2026\n\ttexto bajo h2 -> Además del sueldo base, el salario del agente de hacienda está formado por:\n\ttexto bajo h2 -> Complemento de destino: Va asociado al funcionario, pues se consolida al estar dos años en el puesto de trabajo. Cada funcionario tiene derecho a cobrar el complemento de destino que tenga consolidado, aunque el puesto de desempeño tenga un complemento de destino inferior.\n\ttexto bajo h2 -> Complemento específico: varía en función del tramo (subdisiviones en las que se divide la carrera profesional), que en agentes de la hacienda pública van del 0 al 6. Para pasar del tramo 0 al 1 hay que tener 2 años de antigüedad, mientras que, para subir a los siguientes tramos, además de la antigüedad, habrá una evaluación del desempeño del funcionario.\n\ttexto bajo h2 -> Antigüedad. Cada tres años trabajados el funcionario percibirá un trienio (28,85 €). Se percibirán cada tres años.\n\ttexto bajo h2 -> Pagas extra: los meses de junio y diciembre los agentes de la Hacienda Pública reciben las dos pagas extra anuales.\n\th2 -> Agente de hacienda: complementos\n\ttexto bajo h2 -> Productividad, que retribuye el rendimiento y dedicación en el puesto de trabajo.\n\ttexto bajo h2 -> Residencia, solo para los funcionarios que residan en las islas Canarias o Baleares, así como el Valle de Arán, Ceuta y Melilla\n\ttexto bajo h2 -> Complemento por el Plan Especial de Intensificación de Actuaciones, los empleados de la Agencia Tributaria pueden participar voluntariamente en esta «intensificación de actuaciones» haciendo más horas de trabajo. El importe del complemento varía en función de los resultados de recaudación.\n\th2 -> Agente de hacienda: posibilidades de mejora salarial\n\ttexto bajo h2 -> Al igual que en otros cargos pertenecientes al cuerpo de la Administración de Agencia Tributaria, el sueldo de agente de Hacienda puede mejorar y evolucionar a través de los años de servicio.\n\ttexto bajo h2 -> Presupuestos: las leyes de presupuestos de cada año hacen una revisión de los importes de sueldos, trienios y complementos, aplicando (de forma habitual y salvo excepciones) un determinado porcentaje de crecimiento.\n\ttexto bajo h2 -> Años de servicio, Reflejados en la antigüedad y en la percepción de trienios. Tu salario irá aumentando de forma progresiva cada tres años.\n\ttexto bajo h2 -> Promoción interna: si tenemos la titulación exigida es posible, ascender por promoción interna tanto a Técnicos de Hacienda como una vez en Técnicos a Inspectores de Hacienda, el nivel más alto dentro de esta Administración. Esto hace que en esta oposición haya posibilidades reales de promoción profesional y de mejorar de categoría, superando por supuesto, el correspondiente proceso selectivo de promoción interna.\n\ttexto bajo h2 -> Carrera profesional estructurada en siete tramos (del 0 al 6). Cada dos años de servicio puedes ascender de tramo, en función de tu desempeño profesional. Esto va a condicionar el importe del complemento específico que recibas y, por tanto, una parte sustancial de tus retribuciones\n\ttexto bajo h2 -> Como puedes ver, conseguir la plaza de agente de Hacienda te asegura un éxito indudable en tu carrera de funcionario. Tendrás un sueldo estable con posibilidades de mejora y de movilidad. Si te gusta el sector y ya ha decidido opositar para ser agente de Hacienda, este puede ser tu trabajo ideal. Prepara tus oposiciones y da un paso definitivo en tu trayectoria profesional.\n\ttexto bajo h2 -> ¡Investiga a fondo! Descubre todos los detalles de Oposiciones Agente Hacienda\n\ttexto bajo h2 -> ¡La información es poder! Sigue leyendo sobre:\n\ttexto bajo h2 -> Funciones de Agente de Hacienda\n\ttexto bajo h2 -> ¡Atento a estas convocatorias!\n\ttexto bajo h2 -> Email *\n\ttexto bajo h2 -> Privacidad * Acepto la política de privacidad*\n\ttexto bajo h2 -> Hidden pagina_name\n\ttexto bajo h2 -> Hidden producto_name\n\ttexto bajo h2 -> Hidden producto_cat\n\ttexto bajo h2 -> Hidden form_variant\n\ttexto bajo h2 -> Hidden form_seccion\n\ttexto bajo h2 -> Hidden producto_id\n\ttexto bajo h2 -> Hidden producto_id_wp\n\ttexto bajo h2 -> Hidden user_id\n\ttexto bajo h2 -> Hidden mll\n\ttexto bajo h2 -> Hidden fecha\n\ttexto bajo h2 -> Contacto:\n\ttexto bajo h2 -> Redes sociales:\n\ttexto bajo h2 -> Copyright 2026 Darwin Media SL\n\ttexto bajo h2 -> No tenemos academias que imparten esta formación\n\ttexto bajo h2 -> Opositar es más fácil con ayuda\n\ttexto bajo h2 -> Consigue el respaldo profesional que necesitas\n\ttexto bajo h2 -> \" *\" señala los campos obligatorios\n\ttexto bajo h2 -> Cubre el formulario con tus datos\n\ttexto bajo h2 -> Obtendrás nuestra guía formativa\n\ttexto bajo h2 -> Administración y Archivo\n\ttexto bajo h2 -> Auxiliar Administrativo del Estado\n\ttexto bajo h2 -> Auxiliar Administrativo Comunidades Autónomas\n\ttexto bajo h2 -> Auxiliar Administrativo Corporaciones Locales\n\ttexto bajo h2 -> Técnico Auxiliar Informática (TAI)\n\ttexto bajo h2 -> Auxiliar Administrativo de Universidad\n\ttexto bajo h2 -> Administrativo Comunidades Autónomas\n\ttexto bajo h2 -> Administrativo del Estado\n\ttexto bajo h2 -> Fuerzas de Seguridad\n\ttexto bajo h2 -> Policía Nacional\n\ttexto bajo h2 -> Tropa y Marinería\n\ttexto bajo h2 -> Suboficial del Ejército\n\ttexto bajo h2 -> Bomberos\n\ttexto bajo h2 -> Policía Local\n\ttexto bajo h2 -> Ertzaintza\n\ttexto bajo h2 -> Guardia Urbana\n\ttexto bajo h2 -> Mossos d’Esquadra\n\ttexto bajo h2 -> Guardia Civil\n\ttexto bajo h2 -> Educación\n\ttexto bajo h2 -> Educación Física Secundaria\n\ttexto bajo h2 -> Biología y Geología (Educación Secundaria)\n\ttexto bajo h2 -> Secundaria Geografía e Historia\n\ttexto bajo h2 -> Profesor Lengua Literatura\n\ttexto bajo h2 -> Audición Lenguaje\n\ttexto bajo h2 -> Educación Física\n\ttexto bajo h2 -> Pedagogía Terapéutica\n\ttexto bajo h2 -> Educación Infantil\n\ttexto bajo h2 -> Justicia\n\ttexto bajo h2 -> Tramitación Procesal\n\ttexto bajo h2 -> Gestión Procesal\n\ttexto bajo h2 -> Auxilio Judicial\n\ttexto bajo h2 -> Salud\n\ttexto bajo h2 -> Administrativo Sanidad\n\ttexto bajo h2 -> Hacienda\n\ttexto bajo h2 -> Técnico Hacienda\n\ttexto bajo h2 -> Agente Hacienda\n\ttexto bajo h2 -> Instituciones Penitenciarias\n\ttexto bajo h2 -> Cuerpo Superior de Instituciones Penitenciarias\n\ttexto bajo h2 -> Ayudante Instituciones Penitenciarias\n\ttexto bajo h2 -> Otras Categorías\n\ttexto bajo h2 -> Unión Europea\n\ttexto bajo h2 -> Forestales\n\ttexto bajo h2 -> Aduanas\n\ttexto bajo h2 -> Otras Oposiciones\n\ttexto bajo h2 -> Las convocatorias que están arrasando:\n\ttexto bajo h2 -> Técnico de Hacienda\n\ttexto bajo h2 -> Correos\n\ttexto bajo h2 -> Asturias\n\ttexto bajo h2 -> Canarias\n\ttexto bajo h2 -> Castilla y León\n\ttexto bajo h2 -> Cataluña\n\ttexto bajo h2 -> Comunidad de Madrid\n\ttexto bajo h2 -> Estatales\n\ttexto bajo h2 -> Murcia\n\ttexto bajo h2 -> País Vasco\n\ttexto bajo h2 -> Provincia\n\ttexto bajo h2 -> Madrid\n\ttexto bajo h2 -> Barcelona\n\ttexto bajo h2 -> Ávila\n\ttexto bajo h2 -> Cantabria\n\ttexto bajo h2 -> Girona\n\ttexto bajo h2 -> A Coruña\n\ttexto bajo h2 -> Convocante\n\ttexto bajo h2 -> Ayuntamiento de Madrid\n\ttexto bajo h2 -> Generalitat Valenciana\n\ttexto bajo h2 -> Junta de Andalucía\n\ttexto bajo h2 -> Junta de Castilla-La Mancha\n\ttexto bajo h2 -> Servicio Andaluz de Salud\n\ttexto bajo h2 -> Servicio Aragonés de Salud\n\ttexto bajo h2 -> Xunta de Galicia\n\ttexto bajo h2 -> 1704 plazas Guardia Civil\n\ttexto bajo h2 -> 380 plazas Trabajo Social Servicios Sociales\n\ttexto bajo h2 -> 335 plazas Auxilio Judicial\n\ttexto bajo h2 -> 1010 plazas Tramitación Procesal";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

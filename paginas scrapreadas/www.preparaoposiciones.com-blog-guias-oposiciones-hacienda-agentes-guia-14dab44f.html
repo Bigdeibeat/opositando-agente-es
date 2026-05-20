@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://www.preparaoposiciones.com/blog/guias/oposiciones-hacienda-agentes-guia/</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Oposiciones a Agentes de Hacienda Pública: Guía completa de preparación</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Guía detallada para las oposiciones de Agentes de Hacienda Pública: requisitos del grupo C1, temario tributario, examen tipo test, sueldo en la AEAT y consejos estratégicos de preparación.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Contenido revisado el 12 de junio de 2024</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Qué son las oposiciones de Agentes de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Los Agentes de la Hacienda Pública son funcionarios de carrera pertenecientes al subgrupo C1 que desempeñan sus funciones en la Agencia Estatal de Administración Tributaria (AEAT). Su labor es fundamental para el funcionamiento del sistema fiscal, encargándose de tareas operativas de gestión, liquidación, inspección y recaudación tributaria, además de prestar servicios de atención e información al contribuyente.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Esta oposición es una de las más demandadas en España, ya que ofrece una de las retribuciones más competitivas dentro del grupo C1, gracias a los complementos específicos y de productividad que aplica la AEAT a su personal.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Datos clave de la convocatoria</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Requisitos de acceso</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Para participar en el proceso selectivo, los aspirantes deben cumplir los siguientes requisitos generales:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Nacionalidad: Española. Al tratarse de un cuerpo que ejerce funciones que implican la salvaguardia de los intereses del Estado, generalmente no se admite la nacionalidad comunitaria.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Edad: Tener cumplidos los 18 años y no exceder la edad máxima de jubilación forzosa.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Titulación: Estar en posesión del título de Bachillerato, Técnico Superior de Formación Profesional o equivalente.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Habilitación: No haber sido separado mediante expediente disciplinario del servicio de cualquiera de las Administraciones Públicas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Antecedentes: Carecer de antecedentes penales por delitos dolosos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Temario de Agentes de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El programa oficial se caracteriza por una marcada especialización en materia tributaria y organización administrativa, dividiéndose en tres bloques principales:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque I: Organización del Estado y Derecho Administrativo</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La Constitución Española: derechos fundamentales, deberes y organización institucional.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La Administración General del Estado y su estructura.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El procedimiento administrativo común y el régimen jurídico del sector público.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La administración electrónica y la protección de datos.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque II: Organización de la Hacienda Pública</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La Agencia Estatal de Administración Tributaria: estructura, funciones y competencias.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Los Presupuestos Generales del Estado y el gasto público.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El sistema tributario español: principios generales e impuestos directos e indirectos.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Nociones básicas sobre el IRPF, el IVA y el Impuesto sobre Sociedades.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque III: Derecho Tributario</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La Ley General Tributaria: principios y normas generales.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Las obligaciones tributarias y los obligados tributarios.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Los procedimientos de gestión tributaria.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La inspección de los tributos y sus facultades.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La recaudación tributaria: recaudación en período voluntario y ejecutivo.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Infracciones y sanciones en materia tributaria.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Revisión de actos en vía administrativa y reclamaciones económico-administrativas.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El temario comprende un total de 30 temas, donde el Bloque III es el más extenso y determinante para superar las pruebas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Estructura del examen</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El proceso selectivo se rige por el sistema de oposición y consta de dos ejercicios obligatorios y eliminatorios.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Primer ejercicio: Cuestionario test</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Consiste en un cuestionario de 100 preguntas de respuesta múltiple con cuatro alternativas.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El tiempo para su realización suele ser de entre 60 y 75 minutos.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Las respuestas erróneas penalizan (habitualmente se descuenta un tercio del valor de una respuesta correcta).</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Es necesario alcanzar la puntuación mínima establecida por el tribunal para acceder al siguiente ejercicio.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Segundo ejercicio: Supuesto práctico</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Consiste en la resolución de uno o varios supuestos prácticos relacionados con el Bloque III del temario (Derecho Tributario).</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Los aspirantes deben resolver cuestiones sobre procedimientos de gestión, inspección o recaudación.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Se valora especialmente el rigor técnico, la capacidad de análisis y el conocimiento preciso de la normativa tributaria vigente.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Al igual que el primero, este ejercicio es eliminatorio.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La calificación final de la oposición vendrá determinada por la suma de las puntuaciones obtenidas en ambos ejercicios.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Sueldo y condiciones laborales en la AEAT</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La principal ventaja competitiva de los Agentes de Hacienda frente a otros cuerpos del subgrupo C1 es su estructura retributiva:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Sueldo base correspondiente al grupo C1.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Complemento de destino (niveles 17 a 20, según el puesto).</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Complemento específico de la AEAT, que es sensiblemente superior al de otros ministerios.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Complemento de productividad, vinculado al cumplimiento de objetivos de la Agencia.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El salario neto resultante oscila entre los 1.600 y 2.100 euros mensuales distribuidos en 14 pagas. Además, las condiciones laborales incluyen:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Jornada laboral de 37,5 horas semanales, generalmente en horario de mañana.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Amplia oferta de destinos en delegaciones y administraciones de la AEAT en todo el territorio nacional.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Excelentes posibilidades de promoción interna hacia el Cuerpo Técnico de Hacienda (subgrupo A2) tras dos años de servicio activo.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Ventajas de opositar a Agentes de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Retribución superior: Es uno de los cuerpos C1 mejor pagados de la Administración.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Estabilidad de plazas: La AEAT convoca plazas de forma recurrente y en volúmenes elevados.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Carrera profesional: Ofrece un itinerario claro de ascenso mediante promoción interna.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Especialización técnica: Los conocimientos adquiridos son altamente valorados tanto en el sector público como en el privado.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Consejos de preparación</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Dominio de la Ley General Tributaria: Constituye la columna vertebral del examen. Es imprescindible conocerla en profundidad.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Práctica constante de supuestos: No limite su estudio a la teoría; la resolución de casos prácticos es lo que marca la diferencia en la nota final.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Actualización normativa: El Derecho Tributario es dinámico. Asegúrese de estudiar con materiales actualizados a la última reforma legal.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Gestión del tiempo en el test: Practique con simulacros reales para controlar la velocidad de respuesta y minimizar el impacto de las penalizaciones.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Recursos especializados: En PreparaOposiciones.com ponemos a su disposición test específicos y herramientas de autoevaluación diseñadas para replicar la dificultad real de la AEAT.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Prepárate con PreparaOposiciones</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Alcanzar una plaza como Agente de Hacienda requiere una planificación rigurosa y una metodología orientada al éxito. En PreparaOposiciones.com encontrará los recursos necesarios, desde test actualizados hasta simulacros de examen, para que su preparación sea lo más eficiente y sólida posible.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Recursos relacionados:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Tests gratuitos de Agentes de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Guía completa: Oposiciones Agentes de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Calendario de oposiciones</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Descarga gratis: Plan de Estudio para Oposiciones (30 días)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Plan diario de 30 días con metodología de repetición espaciada y bloques temáticos. Aplicable a cualquier oposición de Grupo C1 / C2. Te lo enviamos al email en menos de 10 minutos.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Al enviar el formulario recibirás únicamente el recurso solicitado. Tratamos tus datos conforme a nuestra política de privacidad. Puedes darte de baja con un click en cualquier email o escribiendo a info@preparaoposiciones.com.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Fundador y Director</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Fundador de PreparaOposiciones con más de 20 años de experiencia en formación para oposiciones. Licenciado en Derecho e Ingeniero de Telecomunicaciones e Informática. Especialista en metodologías de estudio basadas en repetición espaciada y test adaptativos. Ha ayudado a miles de opositores a conseguir su plaza.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Fundador de PreparaOposiciones</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Licenciado en Derecho</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Ingeniero de Telecomunicaciones e Informática</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">+20 años en formación de oposiciones</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Especialista en metodología SRS</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Desarrollador de la plataforma con +132.000 preguntas</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Recursos para tu oposición</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Preguntas frecuentes</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">faq -&gt; </span><span class="content-header">¿Qué titulación se requiere para ser Agente de Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">faq -&gt; </span><span class="content-header">¿En qué consiste el examen de Agentes de Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">faq -&gt; </span><span class="content-header">¿Cuál es el sueldo de un Agente de Hacienda Pública?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">faq -&gt; </span><span class="content-header">¿Cuántos temas componen la oposición de Agentes de Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">faq -&gt; </span><span class="content-header">¿Es difícil aprobar la oposición de Agentes de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Packs Premium con temario PDF, 6 meses de acceso a la última versión dentro del curso, tests por tema, tests personalizados, simulacros y recursos extra como flashcards. Si solo quieres practicar, también tienes Domina con Tests con tests por tema, tests personalizados, simulacros y flashcards desde 9,90 €/mes.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Base común para oposiciones de la Administración General del Estado</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Curso gratuito para empezar con la Constitución Española</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">No te pierdas ninguna convocatoria</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Suscríbete y recibe las últimas convocatorias, noticias y guías directamente en tu email.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Comentarios</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Artículos relacionados</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Agentes de Hacienda vs Administrativo del Estado: Diferencias, Sueldo y Plazas 2026</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Comparativa entre Agentes de Hacienda y Administrativo del Estado: requisitos, sueldo, temario, plazas y funciones. Descubre cuál te conviene más en 2026.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Oposiciones a Inspector de Hacienda: Guía de la oposición más exigente</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Descubre todo sobre las oposiciones al Cuerpo Superior de Inspectores de Hacienda del Estado: requisitos del Grupo A1, temario extenso, tiempos de preparación y las elevadas retribuciones del sector.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Oposiciones a Técnicos de Hacienda: Guía completa del Grupo A2</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Guía detallada sobre las oposiciones de Técnico de Hacienda: requisitos del grupo A2, temario tributario avanzado, estructura de los exámenes, sueldo en la AEAT y posibilidades de promoción profesional.</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "h1 -> Oposiciones a Agentes de Hacienda Pública: Guía completa de preparación\ntexto bajo h1 -> Guía detallada para las oposiciones de Agentes de Hacienda Pública: requisitos del grupo C1, temario tributario, examen tipo test, sueldo en la AEAT y consejos estratégicos de preparación.\ntexto bajo h1 -> Contenido revisado el 12 de junio de 2024\n\th2 -> ¿Qué son las oposiciones de Agentes de Hacienda?\n\ttexto bajo h2 -> Los Agentes de la Hacienda Pública son funcionarios de carrera pertenecientes al subgrupo C1 que desempeñan sus funciones en la Agencia Estatal de Administración Tributaria (AEAT). Su labor es fundamental para el funcionamiento del sistema fiscal, encargándose de tareas operativas de gestión, liquidación, inspección y recaudación tributaria, además de prestar servicios de atención e información al contribuyente.\n\ttexto bajo h2 -> Esta oposición es una de las más demandadas en España, ya que ofrece una de las retribuciones más competitivas dentro del grupo C1, gracias a los complementos específicos y de productividad que aplica la AEAT a su personal.\n\th2 -> Datos clave de la convocatoria\n\th2 -> Requisitos de acceso\n\ttexto bajo h2 -> Para participar en el proceso selectivo, los aspirantes deben cumplir los siguientes requisitos generales:\n\ttexto bajo h2 -> Nacionalidad: Española. Al tratarse de un cuerpo que ejerce funciones que implican la salvaguardia de los intereses del Estado, generalmente no se admite la nacionalidad comunitaria.\n\ttexto bajo h2 -> Edad: Tener cumplidos los 18 años y no exceder la edad máxima de jubilación forzosa.\n\ttexto bajo h2 -> Titulación: Estar en posesión del título de Bachillerato, Técnico Superior de Formación Profesional o equivalente.\n\ttexto bajo h2 -> Habilitación: No haber sido separado mediante expediente disciplinario del servicio de cualquiera de las Administraciones Públicas.\n\ttexto bajo h2 -> Antecedentes: Carecer de antecedentes penales por delitos dolosos.\n\th2 -> Temario de Agentes de Hacienda\n\ttexto bajo h2 -> El programa oficial se caracteriza por una marcada especialización en materia tributaria y organización administrativa, dividiéndose en tres bloques principales:\n\t\th3 -> Bloque I: Organización del Estado y Derecho Administrativo\n\t\ttexto bajo h3 -> La Constitución Española: derechos fundamentales, deberes y organización institucional.\n\t\ttexto bajo h3 -> La Administración General del Estado y su estructura.\n\t\ttexto bajo h3 -> El procedimiento administrativo común y el régimen jurídico del sector público.\n\t\ttexto bajo h3 -> La administración electrónica y la protección de datos.\n\t\th3 -> Bloque II: Organización de la Hacienda Pública\n\t\ttexto bajo h3 -> La Agencia Estatal de Administración Tributaria: estructura, funciones y competencias.\n\t\ttexto bajo h3 -> Los Presupuestos Generales del Estado y el gasto público.\n\t\ttexto bajo h3 -> El sistema tributario español: principios generales e impuestos directos e indirectos.\n\t\ttexto bajo h3 -> Nociones básicas sobre el IRPF, el IVA y el Impuesto sobre Sociedades.\n\t\th3 -> Bloque III: Derecho Tributario\n\t\ttexto bajo h3 -> La Ley General Tributaria: principios y normas generales.\n\t\ttexto bajo h3 -> Las obligaciones tributarias y los obligados tributarios.\n\t\ttexto bajo h3 -> Los procedimientos de gestión tributaria.\n\t\ttexto bajo h3 -> La inspección de los tributos y sus facultades.\n\t\ttexto bajo h3 -> La recaudación tributaria: recaudación en período voluntario y ejecutivo.\n\t\ttexto bajo h3 -> Infracciones y sanciones en materia tributaria.\n\t\ttexto bajo h3 -> Revisión de actos en vía administrativa y reclamaciones económico-administrativas.\n\t\ttexto bajo h3 -> El temario comprende un total de 30 temas, donde el Bloque III es el más extenso y determinante para superar las pruebas.\n\th2 -> Estructura del examen\n\ttexto bajo h2 -> El proceso selectivo se rige por el sistema de oposición y consta de dos ejercicios obligatorios y eliminatorios.\n\t\th3 -> Primer ejercicio: Cuestionario test\n\t\ttexto bajo h3 -> Consiste en un cuestionario de 100 preguntas de respuesta múltiple con cuatro alternativas.\n\t\ttexto bajo h3 -> El tiempo para su realización suele ser de entre 60 y 75 minutos.\n\t\ttexto bajo h3 -> Las respuestas erróneas penalizan (habitualmente se descuenta un tercio del valor de una respuesta correcta).\n\t\ttexto bajo h3 -> Es necesario alcanzar la puntuación mínima establecida por el tribunal para acceder al siguiente ejercicio.\n\t\th3 -> Segundo ejercicio: Supuesto práctico\n\t\ttexto bajo h3 -> Consiste en la resolución de uno o varios supuestos prácticos relacionados con el Bloque III del temario (Derecho Tributario).\n\t\ttexto bajo h3 -> Los aspirantes deben resolver cuestiones sobre procedimientos de gestión, inspección o recaudación.\n\t\ttexto bajo h3 -> Se valora especialmente el rigor técnico, la capacidad de análisis y el conocimiento preciso de la normativa tributaria vigente.\n\t\ttexto bajo h3 -> Al igual que el primero, este ejercicio es eliminatorio.\n\t\ttexto bajo h3 -> La calificación final de la oposición vendrá determinada por la suma de las puntuaciones obtenidas en ambos ejercicios.\n\th2 -> Sueldo y condiciones laborales en la AEAT\n\ttexto bajo h2 -> La principal ventaja competitiva de los Agentes de Hacienda frente a otros cuerpos del subgrupo C1 es su estructura retributiva:\n\ttexto bajo h2 -> Sueldo base correspondiente al grupo C1.\n\ttexto bajo h2 -> Complemento de destino (niveles 17 a 20, según el puesto).\n\ttexto bajo h2 -> Complemento específico de la AEAT, que es sensiblemente superior al de otros ministerios.\n\ttexto bajo h2 -> Complemento de productividad, vinculado al cumplimiento de objetivos de la Agencia.\n\ttexto bajo h2 -> El salario neto resultante oscila entre los 1.600 y 2.100 euros mensuales distribuidos en 14 pagas. Además, las condiciones laborales incluyen:\n\ttexto bajo h2 -> Jornada laboral de 37,5 horas semanales, generalmente en horario de mañana.\n\ttexto bajo h2 -> Amplia oferta de destinos en delegaciones y administraciones de la AEAT en todo el territorio nacional.\n\ttexto bajo h2 -> Excelentes posibilidades de promoción interna hacia el Cuerpo Técnico de Hacienda (subgrupo A2) tras dos años de servicio activo.\n\th2 -> Ventajas de opositar a Agentes de Hacienda\n\ttexto bajo h2 -> Retribución superior: Es uno de los cuerpos C1 mejor pagados de la Administración.\n\ttexto bajo h2 -> Estabilidad de plazas: La AEAT convoca plazas de forma recurrente y en volúmenes elevados.\n\ttexto bajo h2 -> Carrera profesional: Ofrece un itinerario claro de ascenso mediante promoción interna.\n\ttexto bajo h2 -> Especialización técnica: Los conocimientos adquiridos son altamente valorados tanto en el sector público como en el privado.\n\th2 -> Consejos de preparación\n\ttexto bajo h2 -> Dominio de la Ley General Tributaria: Constituye la columna vertebral del examen. Es imprescindible conocerla en profundidad.\n\ttexto bajo h2 -> Práctica constante de supuestos: No limite su estudio a la teoría; la resolución de casos prácticos es lo que marca la diferencia en la nota final.\n\ttexto bajo h2 -> Actualización normativa: El Derecho Tributario es dinámico. Asegúrese de estudiar con materiales actualizados a la última reforma legal.\n\ttexto bajo h2 -> Gestión del tiempo en el test: Practique con simulacros reales para controlar la velocidad de respuesta y minimizar el impacto de las penalizaciones.\n\ttexto bajo h2 -> Recursos especializados: En PreparaOposiciones.com ponemos a su disposición test específicos y herramientas de autoevaluación diseñadas para replicar la dificultad real de la AEAT.\n\th2 -> Prepárate con PreparaOposiciones\n\ttexto bajo h2 -> Alcanzar una plaza como Agente de Hacienda requiere una planificación rigurosa y una metodología orientada al éxito. En PreparaOposiciones.com encontrará los recursos necesarios, desde test actualizados hasta simulacros de examen, para que su preparación sea lo más eficiente y sólida posible.\n\ttexto bajo h2 -> Recursos relacionados:\n\ttexto bajo h2 -> Tests gratuitos de Agentes de Hacienda\n\ttexto bajo h2 -> Guía completa: Oposiciones Agentes de Hacienda\n\ttexto bajo h2 -> Calendario de oposiciones\n\t\th3 -> Descarga gratis: Plan de Estudio para Oposiciones (30 días)\n\t\ttexto bajo h3 -> Plan diario de 30 días con metodología de repetición espaciada y bloques temáticos. Aplicable a cualquier oposición de Grupo C1 / C2. Te lo enviamos al email en menos de 10 minutos.\n\t\ttexto bajo h3 -> Al enviar el formulario recibirás únicamente el recurso solicitado. Tratamos tus datos conforme a nuestra política de privacidad. Puedes darte de baja con un click en cualquier email o escribiendo a info@preparaoposiciones.com.\n\t\ttexto bajo h3 -> Fundador y Director\n\t\ttexto bajo h3 -> Fundador de PreparaOposiciones con más de 20 años de experiencia en formación para oposiciones. Licenciado en Derecho e Ingeniero de Telecomunicaciones e Informática. Especialista en metodologías de estudio basadas en repetición espaciada y test adaptativos. Ha ayudado a miles de opositores a conseguir su plaza.\n\t\ttexto bajo h3 -> Fundador de PreparaOposiciones\n\t\ttexto bajo h3 -> Licenciado en Derecho\n\t\ttexto bajo h3 -> Ingeniero de Telecomunicaciones e Informática\n\t\ttexto bajo h3 -> +20 años en formación de oposiciones\n\t\ttexto bajo h3 -> Especialista en metodología SRS\n\t\ttexto bajo h3 -> Desarrollador de la plataforma con +132.000 preguntas\n\t\ttexto bajo h3 -> Recursos para tu oposición\n\th2 -> Preguntas frecuentes\n\t\tfaq -> ¿Qué titulación se requiere para ser Agente de Hacienda?\n\t\tfaq -> ¿En qué consiste el examen de Agentes de Hacienda?\n\t\tfaq -> ¿Cuál es el sueldo de un Agente de Hacienda Pública?\n\t\tfaq -> ¿Cuántos temas componen la oposición de Agentes de Hacienda?\n\t\tfaq -> ¿Es difícil aprobar la oposición de Agentes de Hacienda?\n\ttexto bajo h2 -> Packs Premium con temario PDF, 6 meses de acceso a la última versión dentro del curso, tests por tema, tests personalizados, simulacros y recursos extra como flashcards. Si solo quieres practicar, también tienes Domina con Tests con tests por tema, tests personalizados, simulacros y flashcards desde 9,90 €/mes.\n\ttexto bajo h2 -> Base común para oposiciones de la Administración General del Estado\n\ttexto bajo h2 -> Curso gratuito para empezar con la Constitución Española\n\t\th3 -> No te pierdas ninguna convocatoria\n\t\ttexto bajo h3 -> Suscríbete y recibe las últimas convocatorias, noticias y guías directamente en tu email.\n\th2 -> Comentarios\n\th2 -> Artículos relacionados\n\t\th3 -> Agentes de Hacienda vs Administrativo del Estado: Diferencias, Sueldo y Plazas 2026\n\t\ttexto bajo h3 -> Comparativa entre Agentes de Hacienda y Administrativo del Estado: requisitos, sueldo, temario, plazas y funciones. Descubre cuál te conviene más en 2026.\n\t\th3 -> Oposiciones a Inspector de Hacienda: Guía de la oposición más exigente\n\t\ttexto bajo h3 -> Descubre todo sobre las oposiciones al Cuerpo Superior de Inspectores de Hacienda del Estado: requisitos del Grupo A1, temario extenso, tiempos de preparación y las elevadas retribuciones del sector.\n\t\th3 -> Oposiciones a Técnicos de Hacienda: Guía completa del Grupo A2\n\t\ttexto bajo h3 -> Guía detallada sobre las oposiciones de Técnico de Hacienda: requisitos del grupo A2, temario tributario avanzado, estructura de los exámenes, sueldo en la AEAT y posibilidades de promoción profesional.";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

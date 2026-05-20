@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://www.masterd.es/blog/requisitos-agente-hacienda</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Más de 270 cursos para conseguir tu meta ¡Infórmate!</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Lo más buscado dentro de nuestro portal</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Encontrados resultados para &#x27; &#x27;</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">¿Cómo ser Agente de Hacienda? Guía Actualizada 2026</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Trabajar como Agente de Hacienda Pública tiene muchas ventajas. La posibilidad de tener un puesto fijo, conseguir la estabilidad laboral y la posibilidad de promoción interna. ¿Quieres conocer los requisitos necesarios para ser agente?</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Funciones de un Técnico de Hacienda.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Tabla de contenidos</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">¿Cómo ser Agente de Hacienda? Guía definitiva</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">¿Qué es un Agente de Hacienda?</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">¿Qué funciones hace un Agente de Hacienda?</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">¿Cuánto gana un Agente de Hacienda?</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">¿Qué estudiar para ser Agente de Hacienda?</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">¿Cómo es el proceso selectivo?</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">¿Por qué ser Agente de Hacienda? Ventajas:</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Formación de Agente de Hacienda en MasterD Davante</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Cómo ser Agente de Hacienda? Guía definitiva</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La oposición de Agente de Hacienda Pública (subgrupo C1) es una de las vías más directas para trabajar en la Agencia Estatal de Administración Tributaria (AEAT), con funciones vinculadas a la gestión, inspección y recaudación del sistema tributario.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">AGENTE DE HACIENDA</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Qué es un Agente de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El Agente de Hacienda Pública es personal funcionario que presta servicios en la AEAT. En la convocatoria oficial se encuadra en el Cuerpo General Administrativo de la Administración del Estado, en la especialidad de Agentes de la Hacienda Pública.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Qué funciones hace un Agente de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Las funciones concretas dependen del destino (gestión tributaria, recaudación, inspección, aduanas e impuestos especiales, etc.). En términos generales, la AEAT tiene encomendada la aplicación efectiva del sistema tributario estatal y aduanero, destacando actuaciones de gestión, inspección y recaudación.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En el día a día, un Agente de Hacienda suele desempeñar tareas como:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Tramitación y gestión de expedientes tributarios y administrativos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Apoyo en procedimientos de comprobación y verificación de datos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Colaboración en actuaciones de recaudación (seguimiento de deudas, diligencias, notificaciones).</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Atención e información al contribuyente, preparación y revisión de documentación.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Apoyo documental y operativo a unidades de inspección y a otras áreas de la AEAT, según destino.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Cuánto gana un Agente de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El salario de un Agente de la Hacienda Pública (subgrupo C1) se compone de retribuciones básicas (sueldo y pagas extra) y retribuciones complementarias (complemento de destino, según el nivel del puesto, y complemento específico). Por la combinación de complementos propios de la AEAT, suele considerarse una de las retribuciones más atractivas dentro del grupo C1.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Además, el sueldo puede incrementarse con conceptos variables. La participación voluntaria en la Campaña de Renta se remunera mediante módulos por hora/jornada (por ejemplo, en 2026: apoyo 29,60 €/h y operador 35,47 €/h). También existe productividad adicional por resultados vinculada al Plan de Intensificación de Actuaciones (PIA), con pagos fijos y liquidaciones (en 2025, para C1: 120 €/mes y 90 € por pago a cuenta, más variables si se cumplen objetivos). En años de alta participación (Campaña de Renta + PIA), el bruto anual en un puesto de nivel 18 puede acercarse a los 30.000 €.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En la siguiente tabla, puedes ver un ejemplo, sin antigüedad ni productividad, de una persona recién incorporada a su puesto:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Qué estudiar para ser Agente de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En la convocatoria publicada en el BOE, se exigen requisitos generales y de titulación, entre otros:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Nacionalidad española (con el alcance previsto en la normativa aplicable).</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Capacidad funcional para el desempeño de las tareas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Edad: 16 años cumplidos y no exceder la edad máxima de jubilación forzosa.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Habilitación: no haber sido separado del servicio ni inhabilitado, y no pertenecer al mismo cuerpo al que se opta.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Titulación: título de Bachiller o Técnico, o equivalentes.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Respecto al contenido de la Oposición, el programa oficial incluye materias de Organización del Estado y de la Administración Pública, Derecho Administrativo General y materias específicas de Organización de la Hacienda Pública y Derecho Tributario.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">¿Cómo es el proceso selectivo?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El proceso selectivo de acceso libre se realiza mediante oposición con dos ejercicios:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Primer ejercicio: cuestionario tipo test de 80 preguntas, 1 hora y 30 minutos.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Segundo ejercicio: 10 supuestos prácticos sobre materias específicas, 2 horas y 30 minutos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Por qué ser Agente de Hacienda? Ventajas:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Es una oposición atractiva para quien busca estabilidad, un trabajo técnico-administrativo con contenido jurídico-tributario y opciones de desarrollo profesional dentro de la propia AEAT.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Algunas ventajas habituales del puesto son:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Empleo público estable en un organismo con estructura y funciones bien definidas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Funciones variadas según el área (gestión, recaudación, inspección, aduanas).</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Retribución compuesta por básicos y complementos, además, en algunos puestos puede existir productividad y complementos como participación en campaña de IRPF y en el plan de intensificación de actuaciones, (PIA)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Posibilidad de promoción interna: las convocatorias suelen incluir plazas de promoción interna además del turno libre.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Formación de Agente de Hacienda en MasterD Davante</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La preparación de Agente de Hacienda en MasterD Davante se estructura para que el alumno no solo “estudie temas”, sino que aprenda a aprobar el examen: dominar el temario oficial, entrenar el test con penalización y coger soltura con los supuestos prácticos, que son el elemento que más diferencia a quienes llegan bien al segundo ejercicio.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En general, el enfoque combina contenidos + metodología + entrenamiento, con un esquema de trabajo progresivo:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Fase 1: Base teórica sólida (temario oficial) Se parte de un temario organizado por bloques para cubrir lo que exigen las bases. Se trabaja con:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Materiales estructurados por temas y epígrafes.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Actualizaciones cuando hay cambios normativos o ajustes en bases/temario.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Técnicas para memorizar “lo preguntable” (conceptos clave, plazos, procedimientos, definiciones y artículos típicos).</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Fase 2: Entrenamiento del test (velocidad + precisión) El objetivo es aprender a rendir en condiciones reales: tiempo limitado, preguntas con “trampa” y penalización por error. Por eso, el entrenamiento puede incluir:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Baterías de test por tema (para consolidar) y test globales (para integrar).</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Corrección y explicación de fallos (por qué era esa y por qué caías).</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Estrategias de examen: gestión del tiempo, cuándo dejar en blanco, cómo eliminar opciones, y cómo evitar errores típicos de lectura.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Fase 3: Supuestos prácticos (procedimiento y razonamiento) En Agente de Hacienda, el práctico requiere aplicar lo estudiado: identificar el problema, seguir el procedimiento y responder de forma breve y correcta. En esta parte, la preparación refuerza:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Modelos de resolución paso a paso (qué mirar primero, qué norma aplica, qué conclusión corresponde).</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Casuística habitual: gestión/recaudación, notificaciones, plazos, recursos, actuaciones administrativas, etc.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Corrección orientada a formato examen: respuestas concretas, sin paja, y con foco en lo que puntúa.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Fase 4: Planificación y seguimiento Para que el estudio sea sostenible, el acompañamiento suele incluir:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Un plan de estudio por semanas con objetivos realistas (temas, test y prácticos).</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Tutorías/seguimiento para ajustar ritmo, y desbloquear puntos críticos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Control de progreso: qué temas dominas, dónde fallas, y cómo priorizar.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En definitiva, prepararte con MasterD significa estudiar con un método enfocado en aprobar, entrenando exactamente las habilidades que exige el examen. Todo ello con el apoyo de profesionales y herramientas diseñadas para maximizar tus opciones de conseguir plaza en la Agencia Tributaria. ¡Comienza ahora!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Por MasterD</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Puedo ser Policía o Guardia Civil si tengo tatuajes? ¡Nueva Normativa!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Cuál es la diferencia entre electricidad y electrónica?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Diferencias Funcionales entre Policía Nacional, Policía Local y Guardia Civil</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Cuánto ganan los diferentes Cuerpos de Seguridad del Estado</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Sueldo Profesores Primaria y Secundaria: diferencias salariales entre CCAA</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Las oposiciones más rentables para comenzar a preparar ya</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Información y Tipos de Oposiciones</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Quiero ser Controlador Aéreo, ¿Qué tengo que hacer?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Cuánto cobra un Auxiliar Administrativo? ¿Y un Administrativo del Estado?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Qué Estudiar para Ser Actor de Doblaje</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Exclusiones Médicas Ertzaintza</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La Guardia Civil elimina los límites de altura para ingresar al cuerpo</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Adiós al límite de edad para promocionar en las Fuerzas Armadas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Cómo ser Guardia Civil? Te contamos Todos los Requisitos para 2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Defensa elimina los límites de estatura para entrar a las Fuerzas Armadas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¡Infórmate gratis y sin compromiso!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Información básica de protección de datos: Corresponsables del tratamiento: Empresas DAVANTE Finalidad: Prospección comercial Derechos: Puede acceder, rectificar y suprimir sus datos, así como otros derechos tal y como se explica en nuestra política de privacidad.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">17 respuestas a ¿Cómo ser Agente de Hacienda? Guía Actualizada 2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Un artículo muy útil para quienes estén valorando preparar la oposición de Agente de Hacienda. En el blog se explican de forma clara los requisitos para ser Agente de Hacienda.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Estas oposiciones tienen bolsa de empleo?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Buenos días, con titulación de técnico se refiere a cualquier grado superior o grado medio? Al ser equivalente al bachillerato.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hola Carmen. Efectivamente, al ser títulos equivalentes, podrías presentarte con cualquier título de Técnico Medio o Superior. Un saludo.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hola. La edad cuenta durante la selección?. El tener 50 años sería una debilidad, Soy licenciada en Administración con Máster</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hola Ana.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La edad no sería un impedimento en absoluto, ya que lo que se valora es la puntuación final.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Un saludo.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Se podría acceder al puesto con un titulo de tecnico superior? O dependerá del grado superior que se contenga?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hola María.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Sí, podrías acceder con este título al ser equivalente a Bachillerato, indiferentemente de la especialización.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hola. Se precisa se español o vale ser Nacional de un están y miembro de la UE con residencia en España? Gracias</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hola Vicenzo.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Sería necesaria la nacionalidad española.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Se puede compatibilizar la preparacion con el trabajo?¿Cuando hay convocatoria?cuanto tiempo lleva prepararlas? ¿Que retio hay de persona/plaza?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hola Rafael.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Por supuesto, en MasterD podemos ayudarte a compatibilizar adecuadamente la preparación de las oposiciones con tu trabajo. El tiempo de preparación es relativo, ya que dependerá de tus capacidades y el tiempo que puedas dedicarle. En cuanto a las convocatorias, se suelen publicar todos los años, por lo que es posible que el próximo año tengamos una nueva convocatoria. En cuanto al ratio, puede variar en función de la convocatoria.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Me gustaría saber si para 2020 saldrán plazas para técnico o agente de Hacienda, en tal caso, me gustaría saber cuándo puedo comenzar a prepararme.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Hola Alejo.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Previsiblemente sí saldrán, ya que suelen convocarse todos los años. Por otra parte, puedes empezar a prepararte cuando lo desees, cuanto más tiempo tengas para dedicarle a la oposición, mejor. Puedes informarte visitando nuestra página web y rellenando el formulario sin ningún tipo de compromiso: https://www.masterd.es/oposiciones-de-hacienda-g37</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Funciones atrayentes, todos los años convocan plaza, tienen un alto ratio de aprobados, el proceso competitivo no es por méritos y tiene una remuneración competitiva. ¡Preparar estas oposiciones es una muy buena opción!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Teneis academia en Bilbao para preparar las oposiciones de agente de hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Por supuesto. Puedes consultar más información aquí https://www.masterd.es/delegaciones/bilbao/1500</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Comparte esta página:</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "Más de 270 cursos para conseguir tu meta ¡Infórmate!\nLo más buscado dentro de nuestro portal\nEncontrados resultados para ' '\nh1 -> ¿Cómo ser Agente de Hacienda? Guía Actualizada 2026\ntexto bajo h1 -> Trabajar como Agente de Hacienda Pública tiene muchas ventajas. La posibilidad de tener un puesto fijo, conseguir la estabilidad laboral y la posibilidad de promoción interna. ¿Quieres conocer los requisitos necesarios para ser agente?\ntexto bajo h1 -> Funciones de un Técnico de Hacienda.\ntexto bajo h1 -> Tabla de contenidos\ntexto bajo h1 -> ¿Cómo ser Agente de Hacienda? Guía definitiva\ntexto bajo h1 -> ¿Qué es un Agente de Hacienda?\ntexto bajo h1 -> ¿Qué funciones hace un Agente de Hacienda?\ntexto bajo h1 -> ¿Cuánto gana un Agente de Hacienda?\ntexto bajo h1 -> ¿Qué estudiar para ser Agente de Hacienda?\ntexto bajo h1 -> ¿Cómo es el proceso selectivo?\ntexto bajo h1 -> ¿Por qué ser Agente de Hacienda? Ventajas:\ntexto bajo h1 -> Formación de Agente de Hacienda en MasterD Davante\n\th2 -> ¿Cómo ser Agente de Hacienda? Guía definitiva\n\ttexto bajo h2 -> La oposición de Agente de Hacienda Pública (subgrupo C1) es una de las vías más directas para trabajar en la Agencia Estatal de Administración Tributaria (AEAT), con funciones vinculadas a la gestión, inspección y recaudación del sistema tributario.\n\ttexto bajo h2 -> AGENTE DE HACIENDA\n\th2 -> ¿Qué es un Agente de Hacienda?\n\ttexto bajo h2 -> El Agente de Hacienda Pública es personal funcionario que presta servicios en la AEAT. En la convocatoria oficial se encuadra en el Cuerpo General Administrativo de la Administración del Estado, en la especialidad de Agentes de la Hacienda Pública.\n\th2 -> ¿Qué funciones hace un Agente de Hacienda?\n\ttexto bajo h2 -> Las funciones concretas dependen del destino (gestión tributaria, recaudación, inspección, aduanas e impuestos especiales, etc.). En términos generales, la AEAT tiene encomendada la aplicación efectiva del sistema tributario estatal y aduanero, destacando actuaciones de gestión, inspección y recaudación.\n\ttexto bajo h2 -> En el día a día, un Agente de Hacienda suele desempeñar tareas como:\n\ttexto bajo h2 -> Tramitación y gestión de expedientes tributarios y administrativos.\n\ttexto bajo h2 -> Apoyo en procedimientos de comprobación y verificación de datos.\n\ttexto bajo h2 -> Colaboración en actuaciones de recaudación (seguimiento de deudas, diligencias, notificaciones).\n\ttexto bajo h2 -> Atención e información al contribuyente, preparación y revisión de documentación.\n\ttexto bajo h2 -> Apoyo documental y operativo a unidades de inspección y a otras áreas de la AEAT, según destino.\n\th2 -> ¿Cuánto gana un Agente de Hacienda?\n\ttexto bajo h2 -> El salario de un Agente de la Hacienda Pública (subgrupo C1) se compone de retribuciones básicas (sueldo y pagas extra) y retribuciones complementarias (complemento de destino, según el nivel del puesto, y complemento específico). Por la combinación de complementos propios de la AEAT, suele considerarse una de las retribuciones más atractivas dentro del grupo C1.\n\ttexto bajo h2 -> Además, el sueldo puede incrementarse con conceptos variables. La participación voluntaria en la Campaña de Renta se remunera mediante módulos por hora/jornada (por ejemplo, en 2026: apoyo 29,60 €/h y operador 35,47 €/h). También existe productividad adicional por resultados vinculada al Plan de Intensificación de Actuaciones (PIA), con pagos fijos y liquidaciones (en 2025, para C1: 120 €/mes y 90 € por pago a cuenta, más variables si se cumplen objetivos). En años de alta participación (Campaña de Renta + PIA), el bruto anual en un puesto de nivel 18 puede acercarse a los 30.000 €.\n\ttexto bajo h2 -> En la siguiente tabla, puedes ver un ejemplo, sin antigüedad ni productividad, de una persona recién incorporada a su puesto:\n\th2 -> ¿Qué estudiar para ser Agente de Hacienda?\n\ttexto bajo h2 -> En la convocatoria publicada en el BOE, se exigen requisitos generales y de titulación, entre otros:\n\ttexto bajo h2 -> Nacionalidad española (con el alcance previsto en la normativa aplicable).\n\ttexto bajo h2 -> Capacidad funcional para el desempeño de las tareas.\n\ttexto bajo h2 -> Edad: 16 años cumplidos y no exceder la edad máxima de jubilación forzosa.\n\ttexto bajo h2 -> Habilitación: no haber sido separado del servicio ni inhabilitado, y no pertenecer al mismo cuerpo al que se opta.\n\ttexto bajo h2 -> Titulación: título de Bachiller o Técnico, o equivalentes.\n\ttexto bajo h2 -> Respecto al contenido de la Oposición, el programa oficial incluye materias de Organización del Estado y de la Administración Pública, Derecho Administrativo General y materias específicas de Organización de la Hacienda Pública y Derecho Tributario.\n\t\th3 -> ¿Cómo es el proceso selectivo?\n\t\ttexto bajo h3 -> El proceso selectivo de acceso libre se realiza mediante oposición con dos ejercicios:\n\t\ttexto bajo h3 -> Primer ejercicio: cuestionario tipo test de 80 preguntas, 1 hora y 30 minutos.\n\t\ttexto bajo h3 -> Segundo ejercicio: 10 supuestos prácticos sobre materias específicas, 2 horas y 30 minutos.\n\th2 -> ¿Por qué ser Agente de Hacienda? Ventajas:\n\ttexto bajo h2 -> Es una oposición atractiva para quien busca estabilidad, un trabajo técnico-administrativo con contenido jurídico-tributario y opciones de desarrollo profesional dentro de la propia AEAT.\n\ttexto bajo h2 -> Algunas ventajas habituales del puesto son:\n\ttexto bajo h2 -> Empleo público estable en un organismo con estructura y funciones bien definidas.\n\ttexto bajo h2 -> Funciones variadas según el área (gestión, recaudación, inspección, aduanas).\n\ttexto bajo h2 -> Retribución compuesta por básicos y complementos, además, en algunos puestos puede existir productividad y complementos como participación en campaña de IRPF y en el plan de intensificación de actuaciones, (PIA)\n\ttexto bajo h2 -> Posibilidad de promoción interna: las convocatorias suelen incluir plazas de promoción interna además del turno libre.\n\th2 -> Formación de Agente de Hacienda en MasterD Davante\n\ttexto bajo h2 -> La preparación de Agente de Hacienda en MasterD Davante se estructura para que el alumno no solo “estudie temas”, sino que aprenda a aprobar el examen: dominar el temario oficial, entrenar el test con penalización y coger soltura con los supuestos prácticos, que son el elemento que más diferencia a quienes llegan bien al segundo ejercicio.\n\ttexto bajo h2 -> En general, el enfoque combina contenidos + metodología + entrenamiento, con un esquema de trabajo progresivo:\n\ttexto bajo h2 -> Fase 1: Base teórica sólida (temario oficial) Se parte de un temario organizado por bloques para cubrir lo que exigen las bases. Se trabaja con:\n\ttexto bajo h2 -> Materiales estructurados por temas y epígrafes.\n\ttexto bajo h2 -> Actualizaciones cuando hay cambios normativos o ajustes en bases/temario.\n\ttexto bajo h2 -> Técnicas para memorizar “lo preguntable” (conceptos clave, plazos, procedimientos, definiciones y artículos típicos).\n\ttexto bajo h2 -> Fase 2: Entrenamiento del test (velocidad + precisión) El objetivo es aprender a rendir en condiciones reales: tiempo limitado, preguntas con “trampa” y penalización por error. Por eso, el entrenamiento puede incluir:\n\ttexto bajo h2 -> Baterías de test por tema (para consolidar) y test globales (para integrar).\n\ttexto bajo h2 -> Corrección y explicación de fallos (por qué era esa y por qué caías).\n\ttexto bajo h2 -> Estrategias de examen: gestión del tiempo, cuándo dejar en blanco, cómo eliminar opciones, y cómo evitar errores típicos de lectura.\n\ttexto bajo h2 -> Fase 3: Supuestos prácticos (procedimiento y razonamiento) En Agente de Hacienda, el práctico requiere aplicar lo estudiado: identificar el problema, seguir el procedimiento y responder de forma breve y correcta. En esta parte, la preparación refuerza:\n\ttexto bajo h2 -> Modelos de resolución paso a paso (qué mirar primero, qué norma aplica, qué conclusión corresponde).\n\ttexto bajo h2 -> Casuística habitual: gestión/recaudación, notificaciones, plazos, recursos, actuaciones administrativas, etc.\n\ttexto bajo h2 -> Corrección orientada a formato examen: respuestas concretas, sin paja, y con foco en lo que puntúa.\n\ttexto bajo h2 -> Fase 4: Planificación y seguimiento Para que el estudio sea sostenible, el acompañamiento suele incluir:\n\ttexto bajo h2 -> Un plan de estudio por semanas con objetivos realistas (temas, test y prácticos).\n\ttexto bajo h2 -> Tutorías/seguimiento para ajustar ritmo, y desbloquear puntos críticos.\n\ttexto bajo h2 -> Control de progreso: qué temas dominas, dónde fallas, y cómo priorizar.\n\ttexto bajo h2 -> En definitiva, prepararte con MasterD significa estudiar con un método enfocado en aprobar, entrenando exactamente las habilidades que exige el examen. Todo ello con el apoyo de profesionales y herramientas diseñadas para maximizar tus opciones de conseguir plaza en la Agencia Tributaria. ¡Comienza ahora!\n\ttexto bajo h2 -> Por MasterD\n\ttexto bajo h2 -> ¿Puedo ser Policía o Guardia Civil si tengo tatuajes? ¡Nueva Normativa!\n\ttexto bajo h2 -> ¿Cuál es la diferencia entre electricidad y electrónica?\n\ttexto bajo h2 -> Diferencias Funcionales entre Policía Nacional, Policía Local y Guardia Civil\n\ttexto bajo h2 -> Cuánto ganan los diferentes Cuerpos de Seguridad del Estado\n\ttexto bajo h2 -> Sueldo Profesores Primaria y Secundaria: diferencias salariales entre CCAA\n\ttexto bajo h2 -> Las oposiciones más rentables para comenzar a preparar ya\n\ttexto bajo h2 -> Información y Tipos de Oposiciones\n\ttexto bajo h2 -> Quiero ser Controlador Aéreo, ¿Qué tengo que hacer?\n\ttexto bajo h2 -> ¿Cuánto cobra un Auxiliar Administrativo? ¿Y un Administrativo del Estado?\n\ttexto bajo h2 -> Qué Estudiar para Ser Actor de Doblaje\n\ttexto bajo h2 -> Exclusiones Médicas Ertzaintza\n\ttexto bajo h2 -> La Guardia Civil elimina los límites de altura para ingresar al cuerpo\n\ttexto bajo h2 -> Adiós al límite de edad para promocionar en las Fuerzas Armadas\n\ttexto bajo h2 -> ¿Cómo ser Guardia Civil? Te contamos Todos los Requisitos para 2026\n\ttexto bajo h2 -> Defensa elimina los límites de estatura para entrar a las Fuerzas Armadas\n\ttexto bajo h2 -> ¡Infórmate gratis y sin compromiso!\n\ttexto bajo h2 -> Información básica de protección de datos: Corresponsables del tratamiento: Empresas DAVANTE Finalidad: Prospección comercial Derechos: Puede acceder, rectificar y suprimir sus datos, así como otros derechos tal y como se explica en nuestra política de privacidad.\n\ttexto bajo h2 -> 17 respuestas a ¿Cómo ser Agente de Hacienda? Guía Actualizada 2026\n\ttexto bajo h2 -> Un artículo muy útil para quienes estén valorando preparar la oposición de Agente de Hacienda. En el blog se explican de forma clara los requisitos para ser Agente de Hacienda.\n\ttexto bajo h2 -> Estas oposiciones tienen bolsa de empleo?\n\ttexto bajo h2 -> Buenos días, con titulación de técnico se refiere a cualquier grado superior o grado medio? Al ser equivalente al bachillerato.\n\ttexto bajo h2 -> Hola Carmen. Efectivamente, al ser títulos equivalentes, podrías presentarte con cualquier título de Técnico Medio o Superior. Un saludo.\n\ttexto bajo h2 -> Hola. La edad cuenta durante la selección?. El tener 50 años sería una debilidad, Soy licenciada en Administración con Máster\n\ttexto bajo h2 -> Hola Ana.\n\ttexto bajo h2 -> La edad no sería un impedimento en absoluto, ya que lo que se valora es la puntuación final.\n\ttexto bajo h2 -> Un saludo.\n\ttexto bajo h2 -> Se podría acceder al puesto con un titulo de tecnico superior? O dependerá del grado superior que se contenga?\n\ttexto bajo h2 -> Hola María.\n\ttexto bajo h2 -> Sí, podrías acceder con este título al ser equivalente a Bachillerato, indiferentemente de la especialización.\n\ttexto bajo h2 -> Hola. Se precisa se español o vale ser Nacional de un están y miembro de la UE con residencia en España? Gracias\n\ttexto bajo h2 -> Hola Vicenzo.\n\ttexto bajo h2 -> Sería necesaria la nacionalidad española.\n\ttexto bajo h2 -> ¿Se puede compatibilizar la preparacion con el trabajo?¿Cuando hay convocatoria?cuanto tiempo lleva prepararlas? ¿Que retio hay de persona/plaza?\n\ttexto bajo h2 -> Hola Rafael.\n\ttexto bajo h2 -> Por supuesto, en MasterD podemos ayudarte a compatibilizar adecuadamente la preparación de las oposiciones con tu trabajo. El tiempo de preparación es relativo, ya que dependerá de tus capacidades y el tiempo que puedas dedicarle. En cuanto a las convocatorias, se suelen publicar todos los años, por lo que es posible que el próximo año tengamos una nueva convocatoria. En cuanto al ratio, puede variar en función de la convocatoria.\n\ttexto bajo h2 -> Me gustaría saber si para 2020 saldrán plazas para técnico o agente de Hacienda, en tal caso, me gustaría saber cuándo puedo comenzar a prepararme.\n\ttexto bajo h2 -> Hola Alejo.\n\ttexto bajo h2 -> Previsiblemente sí saldrán, ya que suelen convocarse todos los años. Por otra parte, puedes empezar a prepararte cuando lo desees, cuanto más tiempo tengas para dedicarle a la oposición, mejor. Puedes informarte visitando nuestra página web y rellenando el formulario sin ningún tipo de compromiso: https://www.masterd.es/oposiciones-de-hacienda-g37\n\ttexto bajo h2 -> Funciones atrayentes, todos los años convocan plaza, tienen un alto ratio de aprobados, el proceso competitivo no es por méritos y tiene una remuneración competitiva. ¡Preparar estas oposiciones es una muy buena opción!\n\ttexto bajo h2 -> Teneis academia en Bilbao para preparar las oposiciones de agente de hacienda?\n\ttexto bajo h2 -> Por supuesto. Puedes consultar más información aquí https://www.masterd.es/delegaciones/bilbao/1500\n\ttexto bajo h2 -> Comparte esta página:";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

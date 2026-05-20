@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://preparatuexamen.com/agentes-hacienda-publica-2026-guia</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Agentes Hacienda Pública 2026: Guía Completa [Plazas, LGT, Salario]</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Todo sobre las oposiciones a Agentes de Hacienda Pública</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Guía completa Agentes Hacienda Pública 2026. Plazas del Cuerpo de Agentes, temario LGT, notas de corte, salarios y calendario AEAT. Datos oficiales.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Agentes de la Hacienda Pública 2026: Guía Completa</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Actualizado: Marzo 2026 | Fuente: Agencia Tributaria (AEAT), Ministerio de Hacienda, BOE</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">El Cuerpo de Agentes de la Hacienda Pública es uno de los más técnicos y mejor remunerados de la AGE (Administración General del Estado). Con un temario centrado en tributos y aduanas, es ideal para titulados medios con facilidad para los números.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">📊 Agentes Hacienda 2026: Datos Oficiales</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Plazas 2026 (Estimación)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🔗 NOTA IMPORTANTE: El OEP 2026 prevé unas 1.000 plazas para Agentes de Hacienda, triplicando las convocatorias anteriores. Esta es una oportunidad histórica.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🔗 Fuente: AEAT - Empleo Público</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Estadísticas 2025</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La ratio elevada (21:1) refleja la alta demanda y el atractivo salarial del cuerpo.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">🎯 Estructura del Cuerpo</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Grupo y Nivel</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Destinos Posibles</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">💰 Salario Agentes Hacienda 2026</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Nuevo Ingreso</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Progresión Salarial</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Comparativa con Otros Cuerpos C1</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Nota: Los salarios de los cuerpos C1 son similares. La diferencia radica en los complementos de productividad y guardias.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Complementos Adicionales</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">📋 Requisitos Agentes Hacienda 2026</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Requisitos Generales</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Pruebas Físicas</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">No hay pruebas físicas en este cuerpo. Solo requisitos de aptitud general.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Conocimientos Previos Valorables</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Matemáticas (nivel bachiller)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Informática (nivel usuario)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Inglés (nivel medio)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">📚 Temario Agentes Hacienda 2026</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque I: Constitución y Organización del Estado (15%)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque II: Derecho Administrativo (20%)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque III: Hacienda Pública (35%)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque IV: Aduanas y Comercio Exterior (20%)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque V: Contabilidad y Matemáticas (10%)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">🗓️ Calendario Agentes Hacienda 2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">🎯 Estructura de los Exámenes</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Primer Ejercicio: Test (Fase de Oposición)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">80 preguntas tipo test</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Penalización: 1/3 por error (0.33 puntos)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Duración: 90 minutos</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Contenido: Todo el temario (LGT, aduanas, derecho administrativo)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Para superar: ≥5 puntos sobre 10</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Segundo Ejercicio: Práctico (Fase de Concurso)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">NOTA: El segundo ejercicio ya NO elimina. Se valoran los supuestos prácticos para la fase de concurso (orden de merito).</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Méritos (Fase de Concurso)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">📍 Destinos por Delegación</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Principales Delegaciones (Más Plazas)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Aduanas y Franjas de Vigilancia</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">❓ Preguntas Frecuentes</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">¿Necesito saber mucho de matemáticas?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Se requiere nivel de Bachiller (no universitario). Las matemáticas financieras se estudian en el temario.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">¿Puedo ascender después?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Sí, mediante promoción interna a:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Inspector de Hacienda (A1)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Gestión de la AGE (A2)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">¿Cuál es la nota de corte?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">¿Es mejor que otros cuerpos C1?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Sí, en términos salariales:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">50%+ más que Administrativo</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">40%+ más que Tramitación</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Menos plazas pero mejor salario</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">¿Cuánto tarda el proceso?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">10-12 meses desde convocatoria hasta toma de posesión.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">🎯 Test Hacienda Online</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Practicar test Agentes Hacienda →</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Genera tests ilimitados:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ley 58/2003 (LGT)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Gestión tributaria</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Inspección y recaudación</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Aduanas y comercio exterior</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Casos prácticos de liquidación</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">🔗 Recursos Oficiales</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">🔗 Comparativa C1: Mejores Opciones</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El Cuerpo de Agentes de Hacienda lidera el salario en C1. Compara:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Promoción interna disponible:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Gestión AGE - A2</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">[Inspector Hacienda] - A1 (concurso-oposición)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">🚀 Conclusión</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Los Agentes de la Hacienda Pública 2026 ofrecen:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">✅ 360 plazas aproximadas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">✅ Salario inicial: 38.010€ (50%+ que otros C1)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">✅ Ratio: 21:1 (competencia alta)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">✅ No hay pruebas físicas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">✅ Destinos en toda España</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">✅ Posibilidad de promoción a Inspector</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Claves para aprobar:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">✅ Dominar la LGT (Ley 58/2003)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">✅ Practicar liquidaciones tributarias</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">✅ Estudiar comercio exterior y aduanas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">✅ Matemáticas financieras (interés compuesto)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">✅ Nota mínima: 8.0/10</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Empieza a preparar Agentes Hacienda 2026</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tests de LGT, gestión tributaria, aduanas y casos prácticos de liquidación.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">📚 Fuentes Oficiales</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Nota: Las ~1.050 plazas provienen del OEP 2026. La convocatoria fue publicada el 30/12/2025. El examen está previsto para el 21/03/2026. Consulta siempre el BOE para fechas definitivas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Listo para practicar?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Genera exámenes personalizados desde tu propio temario PDF.</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "h1 -> Agentes Hacienda Pública 2026: Guía Completa [Plazas, LGT, Salario]\ntexto bajo h1 -> Todo sobre las oposiciones a Agentes de Hacienda Pública\ntexto bajo h1 -> Guía completa Agentes Hacienda Pública 2026. Plazas del Cuerpo de Agentes, temario LGT, notas de corte, salarios y calendario AEAT. Datos oficiales.\nh1 -> Agentes de la Hacienda Pública 2026: Guía Completa\ntexto bajo h1 -> Actualizado: Marzo 2026 | Fuente: Agencia Tributaria (AEAT), Ministerio de Hacienda, BOE\ntexto bajo h1 -> El Cuerpo de Agentes de la Hacienda Pública es uno de los más técnicos y mejor remunerados de la AGE (Administración General del Estado). Con un temario centrado en tributos y aduanas, es ideal para titulados medios con facilidad para los números.\n\th2 -> 📊 Agentes Hacienda 2026: Datos Oficiales\n\t\th3 -> Plazas 2026 (Estimación)\n\t\ttexto bajo h3 -> 🔗 NOTA IMPORTANTE: El OEP 2026 prevé unas 1.000 plazas para Agentes de Hacienda, triplicando las convocatorias anteriores. Esta es una oportunidad histórica.\n\t\ttexto bajo h3 -> 🔗 Fuente: AEAT - Empleo Público\n\t\th3 -> Estadísticas 2025\n\t\ttexto bajo h3 -> La ratio elevada (21:1) refleja la alta demanda y el atractivo salarial del cuerpo.\n\th2 -> 🎯 Estructura del Cuerpo\n\t\th3 -> Grupo y Nivel\n\t\th3 -> Destinos Posibles\n\th2 -> 💰 Salario Agentes Hacienda 2026\n\t\th3 -> Nuevo Ingreso\n\t\th3 -> Progresión Salarial\n\t\th3 -> Comparativa con Otros Cuerpos C1\n\t\ttexto bajo h3 -> Nota: Los salarios de los cuerpos C1 son similares. La diferencia radica en los complementos de productividad y guardias.\n\t\th3 -> Complementos Adicionales\n\th2 -> 📋 Requisitos Agentes Hacienda 2026\n\t\th3 -> Requisitos Generales\n\t\th3 -> Pruebas Físicas\n\t\ttexto bajo h3 -> No hay pruebas físicas en este cuerpo. Solo requisitos de aptitud general.\n\t\th3 -> Conocimientos Previos Valorables\n\t\ttexto bajo h3 -> Matemáticas (nivel bachiller)\n\t\ttexto bajo h3 -> Informática (nivel usuario)\n\t\ttexto bajo h3 -> Inglés (nivel medio)\n\th2 -> 📚 Temario Agentes Hacienda 2026\n\t\th3 -> Bloque I: Constitución y Organización del Estado (15%)\n\t\th3 -> Bloque II: Derecho Administrativo (20%)\n\t\th3 -> Bloque III: Hacienda Pública (35%)\n\t\th3 -> Bloque IV: Aduanas y Comercio Exterior (20%)\n\t\th3 -> Bloque V: Contabilidad y Matemáticas (10%)\n\th2 -> 🗓️ Calendario Agentes Hacienda 2026\n\th2 -> 🎯 Estructura de los Exámenes\n\t\th3 -> Primer Ejercicio: Test (Fase de Oposición)\n\t\ttexto bajo h3 -> 80 preguntas tipo test\n\t\ttexto bajo h3 -> Penalización: 1/3 por error (0.33 puntos)\n\t\ttexto bajo h3 -> Duración: 90 minutos\n\t\ttexto bajo h3 -> Contenido: Todo el temario (LGT, aduanas, derecho administrativo)\n\t\ttexto bajo h3 -> Para superar: ≥5 puntos sobre 10\n\t\th3 -> Segundo Ejercicio: Práctico (Fase de Concurso)\n\t\ttexto bajo h3 -> NOTA: El segundo ejercicio ya NO elimina. Se valoran los supuestos prácticos para la fase de concurso (orden de merito).\n\t\th3 -> Méritos (Fase de Concurso)\n\th2 -> 📍 Destinos por Delegación\n\t\th3 -> Principales Delegaciones (Más Plazas)\n\t\th3 -> Aduanas y Franjas de Vigilancia\n\th2 -> ❓ Preguntas Frecuentes\n\t\th3 -> ¿Necesito saber mucho de matemáticas?\n\t\ttexto bajo h3 -> Se requiere nivel de Bachiller (no universitario). Las matemáticas financieras se estudian en el temario.\n\t\th3 -> ¿Puedo ascender después?\n\t\ttexto bajo h3 -> Sí, mediante promoción interna a:\n\t\ttexto bajo h3 -> Inspector de Hacienda (A1)\n\t\ttexto bajo h3 -> Gestión de la AGE (A2)\n\t\th3 -> ¿Cuál es la nota de corte?\n\t\th3 -> ¿Es mejor que otros cuerpos C1?\n\t\ttexto bajo h3 -> Sí, en términos salariales:\n\t\ttexto bajo h3 -> 50%+ más que Administrativo\n\t\ttexto bajo h3 -> 40%+ más que Tramitación\n\t\ttexto bajo h3 -> Menos plazas pero mejor salario\n\t\th3 -> ¿Cuánto tarda el proceso?\n\t\ttexto bajo h3 -> 10-12 meses desde convocatoria hasta toma de posesión.\n\th2 -> 🎯 Test Hacienda Online\n\ttexto bajo h2 -> Practicar test Agentes Hacienda →\n\ttexto bajo h2 -> Genera tests ilimitados:\n\ttexto bajo h2 -> Ley 58/2003 (LGT)\n\ttexto bajo h2 -> Gestión tributaria\n\ttexto bajo h2 -> Inspección y recaudación\n\ttexto bajo h2 -> Aduanas y comercio exterior\n\ttexto bajo h2 -> Casos prácticos de liquidación\n\th2 -> 🔗 Recursos Oficiales\n\th2 -> 🔗 Comparativa C1: Mejores Opciones\n\ttexto bajo h2 -> El Cuerpo de Agentes de Hacienda lidera el salario en C1. Compara:\n\ttexto bajo h2 -> Promoción interna disponible:\n\ttexto bajo h2 -> Gestión AGE - A2\n\ttexto bajo h2 -> [Inspector Hacienda] - A1 (concurso-oposición)\n\th2 -> 🚀 Conclusión\n\ttexto bajo h2 -> Los Agentes de la Hacienda Pública 2026 ofrecen:\n\ttexto bajo h2 -> ✅ 360 plazas aproximadas\n\ttexto bajo h2 -> ✅ Salario inicial: 38.010€ (50%+ que otros C1)\n\ttexto bajo h2 -> ✅ Ratio: 21:1 (competencia alta)\n\ttexto bajo h2 -> ✅ No hay pruebas físicas\n\ttexto bajo h2 -> ✅ Destinos en toda España\n\ttexto bajo h2 -> ✅ Posibilidad de promoción a Inspector\n\ttexto bajo h2 -> Claves para aprobar:\n\ttexto bajo h2 -> ✅ Dominar la LGT (Ley 58/2003)\n\ttexto bajo h2 -> ✅ Practicar liquidaciones tributarias\n\ttexto bajo h2 -> ✅ Estudiar comercio exterior y aduanas\n\ttexto bajo h2 -> ✅ Matemáticas financieras (interés compuesto)\n\ttexto bajo h2 -> ✅ Nota mínima: 8.0/10\n\t\th3 -> Empieza a preparar Agentes Hacienda 2026\n\t\ttexto bajo h3 -> Tests de LGT, gestión tributaria, aduanas y casos prácticos de liquidación.\n\th2 -> 📚 Fuentes Oficiales\n\ttexto bajo h2 -> Nota: Las ~1.050 plazas provienen del OEP 2026. La convocatoria fue publicada el 30/12/2025. El examen está previsto para el 21/03/2026. Consulta siempre el BOE para fechas definitivas.\n\th2 -> ¿Listo para practicar?\n\ttexto bajo h2 -> Genera exámenes personalizados desde tu propio temario PDF.";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

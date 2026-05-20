@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://redopositor.com/blog/es-oposiciones-agentes-hacienda-2026-sueldo/</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Oposiciones Agentes de Hacienda 2026: sueldo, temario y plazas</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">En resumen: Los Agentes de la Hacienda Pública (Grupo C1) trabajan en la AEAT con un sueldo que puede llegar a 30.000-36.000 EUR brutos anuales con la productividad incluida. El temario incluye Constitución Española, derecho tributario, contabilidad básica e informática. Las convocatorias rondan las 200-400 plazas. Es una de las mejores opciones C1 para quien busca buen sueldo y posibilidades reales de promoción interna.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Si buscas un cuerpo C1 con sueldo superior a la media, estabilidad y perspectiva de carrera dentro de una de las mejores organizaciones tributarias de Europa, el Cuerpo de Agentes de la Hacienda Pública merece tu atención. En Forocoches tiene un hilo con más de 150 respuestas por algo: es de los destinos más deseados del Grupo C1.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Qué es la AEAT y por qué importa para un Agente?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La Agencia Estatal de Administración Tributaria (AEAT) es el organismo encargado de gestionar el sistema tributario y aduanero en España. A diferencia de otros organismos de la AGE, la AEAT tiene un convenio de productividad propio que permite a sus funcionarios cobrar significativamente más que en otros destinos del mismo nivel.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Esto es lo que hace que el Cuerpo de Agentes de la Hacienda Pública sea tan atractivo: eres funcionario del Grupo C1 como cualquier Administrativo del Estado, pero en la AEAT el sueldo real (base + complementos + productividad) puede ser un 20-30% superior al de otros destinos C1.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Funciones del Agente de la Hacienda Pública</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Los Agentes trabajan en las Delegaciones y Administraciones de la AEAT en todo el territorio nacional. Sus funciones principales:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Gestión tributaria: Tramitación de declaraciones, liquidaciones y devoluciones de impuestos</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Atención al contribuyente: Resolución de consultas, asistencia en sede y telemática</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Apoyo a actuaciones de comprobación: Asistencia a los Técnicos e Inspectores en verificaciones y notificaciones</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Recaudación: Tramitación de procedimientos ejecutivos y embargos en el área de recaudación</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Aduanas: En algunos destinos, control y tramitación de operaciones aduaneras</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">No dirigen procedimientos de inspección de forma autónoma (eso es territorio del Técnico A2 y el Inspector A1), pero sí participan en ellos y tienen acceso a información fiscal confidencial.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Sueldo del Agente de Hacienda en 2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La estructura retributiva de un Agente de la Hacienda Pública tiene tres componentes:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La productividad no es fija: varía según resultados del equipo, departamento, nivel de cumplimiento de objetivos y antigüedad. En los primeros años puede ser menor; con experiencia y buen desempeño puede ser significativa.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Además, los funcionarios de la AEAT disfrutan de posibilidades de teletrabajo parcial (2 días a la semana en muchos destinos) y de horario especial flexible en algunos casos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Temario de los Agentes de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El temario está dividido en bloques. Los más recientes procesos selectivos han seguido esta estructura:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque I: Derecho Constitucional y Organización del Estado</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La Constitución Española: estructura, principios, derechos fundamentales</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La Corona, el Poder Legislativo, el Ejecutivo, el Judicial</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La Administración General del Estado y los órganos constitucionales</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Las Comunidades Autónomas y la Administración Local</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La Unión Europea: instituciones y funcionamiento básico</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Este bloque es el más estable y predecible del temario. Los artículos de la CE que salen en tests son siempre los mismos: el Título Preliminar, el Título I (derechos), el Título II (Corona), el Título III (Cortes) y los artículos sobre el Gobierno y la Administración.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Para este bloque, el podcast de Red Opositor cubre todos los artículos de la CE con el contexto que necesita un opositor. Es el punto de partida más eficiente para el Bloque I.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque II: Derecho Tributario</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Sistema tributario español: IRPF, IVA, Impuesto de Sociedades, Impuesto de Sucesiones</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Ley General Tributaria: conceptos básicos, procedimientos, infracciones y sanciones</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El procedimiento de gestión tributaria</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El procedimiento de recaudación ejecutiva</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Normativa de control fiscal y lucha contra el fraude</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Este es el bloque más específico y el que más trabajo requiere. La Ley General Tributaria es densa y requiere tiempo, pero tiene una lógica interna bastante coherente que facilita la memorización estructurada.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque III: Contabilidad básica</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El Plan General de Contabilidad</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Operaciones básicas: debe y haber, libros contables</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Estados financieros: balance, cuenta de resultados</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Nociones de análisis financiero</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Para quienes vienen de formación no económica, este bloque puede resultar árido. Hay mucho material de preparación específico para C1 que simplifica el enfoque.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque IV: Informática</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Sistemas operativos (Windows, Linux básico)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Ofimática avanzada: Excel, Word, Access básico</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Internet y seguridad informática</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Aplicaciones tributarias de la AEAT (Cl@ve, certificados digitales)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Este bloque suele ser el más manejable para candidatos con experiencia laboral reciente.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">El proceso selectivo</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El proceso de selección habitual para los Agentes de Hacienda tiene dos partes:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Oposición (fase de concurso-oposición)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Primer ejercicio: Test de 80-100 preguntas con respuestas múltiples. Tiempo: 90-120 minutos. Puntuación mínima para pasar: habitualmente el 50% o 60% de respuestas correctas.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Segundo ejercicio: Caso práctico sobre tramitación tributaria o procedimiento de gestión. Puede ser tipo test o desarrollo según convocatoria.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Ambos ejercicios son eliminatorios.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Concurso de méritos</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Una vez superada la oposición, se bareman los méritos para determinar el orden final de los aprobados. Se valoran: experiencia en la Administración, titulaciones adicionales y otros méritos según la convocatoria.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Diferencias con el Técnico de Hacienda (A2)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Una pregunta habitual: ¿qué diferencia hay entre preparar Agente C1 o Técnico A2?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La estrategia más común: empezar por el Agente C1 si no tienes titulación universitaria, consolidarte en la AEAT y acceder al Técnico A2 por promoción interna cuando se convoquen plazas reservadas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Ventajas del destino AEAT frente a otros C1</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Comparado con un Administrativo del Estado C1 en un ministerio convencional:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">A favor de la AEAT:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Sueldo con productividad: 15-25% superior en media</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Posibilidades de teletrabajo más extendidas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Organización moderna y con inversión en tecnología</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Promoción interna bien estructurada (de Agente a Técnico, de Técnico a Inspector)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Destinos en casi todas las provincias españolas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En contra:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El temario específico (derecho tributario) es más complejo que el de un Administrativo generalista</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La responsabilidad con información fiscal confidencial tiene implicaciones éticas y penales</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El ambiente laboral puede ser tenso en época de campaña (IRPF de abril a junio)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Cómo prepararse</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Plan de preparación (12-16 meses trabajando)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El temario de los Agentes de Hacienda requiere entre 10 y 16 meses de preparación si se trabaja, dependiendo de la base previa.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Meses 1-3: Bloque I (CE + organización del Estado). El podcast de Red Opositor es el recurso más eficiente para la CE en el transporte.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Meses 4-7: Bloque II primera parte (Ley General Tributaria + IRPF + IVA). La parte más densa; requiere estudio activo en mesa.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Meses 8-10: Bloque II segunda parte + Bloque III (contabilidad). Si no tienes base económica, aquí necesitarás dedicar más tiempo.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Meses 11-12: Bloque IV (informática) + primera ronda de repasos globales.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Meses 13-16: Repasos, simulacros y tests en tiempo real.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Academias especializadas</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Hay academias especializadas en la preparación de AEAT (Adams, CEF, CEDE, entre otras) con materiales actualizados. Si vas a ir por libre, asegúrate de usar temario de la última convocatoria porque la normativa tributaria cambia cada año.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">El test de la CE</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Para el Bloque I, una vez hayas trabajado la CE en audio y en texto, usa nuestro test de la Constitución para verificar que tienes controlados los artículos que más suelen caer en los tests de la AGE.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Conclusión</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El Cuerpo de Agentes de la Hacienda Pública es una de las mejores opciones C1 del panorama opositor español en 2026. Sueldo por encima de la media de su grupo gracias a la productividad AEAT, estabilidad total como funcionario de carrera, posibilidades de teletrabajo y una carrera interna que puede llevarte del C1 al A2 sin necesidad de hacer una oposición externa completa.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El temario exige trabajo serio, especialmente el bloque tributario. Pero para el bloque constitucional, el podcast de Red Opositor y el test de la Constitución te dan una ventaja real desde el primer día.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Quieres saber si el perfil de Agente de Hacienda encaja contigo? Haz nuestro test de orientación y lo averiguamos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Los datos salariales de esta guía son orientativos y están basados en los Presupuestos Generales del Estado, convenios colectivos y tablas retributivas publicadas en el BOE y boletines oficiales autonómicos. Las retribuciones reales pueden variar según complementos específicos, destino, antigüedad y normativa vigente. Consulta siempre las tablas oficiales del BOE y la resolución de tu administración para obtener cifras exactas.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Guia completa de sueldos de funcionarios 2026</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tablas salariales por grupo, complementos por nivel, estimaciones netas por oposicion y diferencias por comunidad autonoma.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Convierte el metro en tu sala de estudio</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">75 episodios, artículo por artículo</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">87% mejora en tests (doble codificación)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Desde 4,99 €/mes — 10x más barato que una academia</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Una academia: 150–300 EUR/mes. Red Opositor: desde 4,99 €/mes. Si no te convence, te devolvemos el dinero.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Los 25 artículos que más caen en oposiciones</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Descarga gratis el ranking de artículos constitucionales por frecuencia de examen + trucos para memorizarlos.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Sigue preparando tu oposición</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Pack Auxiliar Administrativo</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Aprueba auxiliar administrativo con menos esfuerzo</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">TREBEP resumido en 30 puntos clave</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Ley 39/2015 (procedimiento) en 25 puntos</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Ley 40/2015 (régimen jurídico) en 20 puntos</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Descarga inmediata · Pago único Stripe · Garantía 7 días</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Artículos relacionados</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Oposiciones España 2026: +100.000 Plazas por Cuerpo</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Todas las oposiciones 2026: +100.000 plazas AGE y CCAA. Policía, Guardia Civil, Sanidad, Justicia, Educación. Tabla con fechas y sueldos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Sueldo Funcionario A1 en 2026: 35.000-80.000 EUR</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Cuánto gana un A1 del Estado: Hacienda 80.000 EUR, Letrados 70.000 EUR, TI 45.000 EUR. Tabla por cuerpo con complementos reales 2026.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Oposiciones que puedes sacar trabajando en 2026: el ranking real</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Las oposiciones más realistas para sacar mientras trabajas a jornada completa. Tiempos, estrategias y cómo aprovechar el podcast en el transporte.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Pack listo, descarga inmediata</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Pack Auxiliar Administrativo Aprueba auxiliar administrativo con menos esfuerzo 7,99 EUR 29,00 EUR -72% Ver pack</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Guía sueldo funcionario 2026 por CCAA Calcula tu sueldo neto por CCAA y grupo (.xlsx + PDF) 3,99 EUR 15,00 EUR -73% Ver pack</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">12.347 opositores ya estudian con nosotros</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Sabes qué 25 artículos caen siempre en examen?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">12.347 opositores ya tienen esta guía PDF gratuita con los artículos de la Constitución que más se repiten. Tú también puedes tenerla en 10 segundos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Sin spam. Solo contenido para opositores.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Tu guía está en camino</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Revisa tu bandeja de entrada (y spam, por si acaso). En menos de 2 minutos tendrás el PDF.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Cola de reproduccion</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">No hay episodios en la cola.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Usamos cookies analíticas para mejorar tu experiencia. Más info</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Oferta para ti</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Garantía 7 días · Descarga inmediata</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "h1 -> Oposiciones Agentes de Hacienda 2026: sueldo, temario y plazas\ntexto bajo h1 -> En resumen: Los Agentes de la Hacienda Pública (Grupo C1) trabajan en la AEAT con un sueldo que puede llegar a 30.000-36.000 EUR brutos anuales con la productividad incluida. El temario incluye Constitución Española, derecho tributario, contabilidad básica e informática. Las convocatorias rondan las 200-400 plazas. Es una de las mejores opciones C1 para quien busca buen sueldo y posibilidades reales de promoción interna.\ntexto bajo h1 -> Si buscas un cuerpo C1 con sueldo superior a la media, estabilidad y perspectiva de carrera dentro de una de las mejores organizaciones tributarias de Europa, el Cuerpo de Agentes de la Hacienda Pública merece tu atención. En Forocoches tiene un hilo con más de 150 respuestas por algo: es de los destinos más deseados del Grupo C1.\n\th2 -> ¿Qué es la AEAT y por qué importa para un Agente?\n\ttexto bajo h2 -> La Agencia Estatal de Administración Tributaria (AEAT) es el organismo encargado de gestionar el sistema tributario y aduanero en España. A diferencia de otros organismos de la AGE, la AEAT tiene un convenio de productividad propio que permite a sus funcionarios cobrar significativamente más que en otros destinos del mismo nivel.\n\ttexto bajo h2 -> Esto es lo que hace que el Cuerpo de Agentes de la Hacienda Pública sea tan atractivo: eres funcionario del Grupo C1 como cualquier Administrativo del Estado, pero en la AEAT el sueldo real (base + complementos + productividad) puede ser un 20-30% superior al de otros destinos C1.\n\th2 -> Funciones del Agente de la Hacienda Pública\n\ttexto bajo h2 -> Los Agentes trabajan en las Delegaciones y Administraciones de la AEAT en todo el territorio nacional. Sus funciones principales:\n\ttexto bajo h2 -> Gestión tributaria: Tramitación de declaraciones, liquidaciones y devoluciones de impuestos\n\ttexto bajo h2 -> Atención al contribuyente: Resolución de consultas, asistencia en sede y telemática\n\ttexto bajo h2 -> Apoyo a actuaciones de comprobación: Asistencia a los Técnicos e Inspectores en verificaciones y notificaciones\n\ttexto bajo h2 -> Recaudación: Tramitación de procedimientos ejecutivos y embargos en el área de recaudación\n\ttexto bajo h2 -> Aduanas: En algunos destinos, control y tramitación de operaciones aduaneras\n\ttexto bajo h2 -> No dirigen procedimientos de inspección de forma autónoma (eso es territorio del Técnico A2 y el Inspector A1), pero sí participan en ellos y tienen acceso a información fiscal confidencial.\n\th2 -> Sueldo del Agente de Hacienda en 2026\n\ttexto bajo h2 -> La estructura retributiva de un Agente de la Hacienda Pública tiene tres componentes:\n\ttexto bajo h2 -> La productividad no es fija: varía según resultados del equipo, departamento, nivel de cumplimiento de objetivos y antigüedad. En los primeros años puede ser menor; con experiencia y buen desempeño puede ser significativa.\n\ttexto bajo h2 -> Además, los funcionarios de la AEAT disfrutan de posibilidades de teletrabajo parcial (2 días a la semana en muchos destinos) y de horario especial flexible en algunos casos.\n\th2 -> Temario de los Agentes de Hacienda\n\ttexto bajo h2 -> El temario está dividido en bloques. Los más recientes procesos selectivos han seguido esta estructura:\n\t\th3 -> Bloque I: Derecho Constitucional y Organización del Estado\n\t\ttexto bajo h3 -> La Constitución Española: estructura, principios, derechos fundamentales\n\t\ttexto bajo h3 -> La Corona, el Poder Legislativo, el Ejecutivo, el Judicial\n\t\ttexto bajo h3 -> La Administración General del Estado y los órganos constitucionales\n\t\ttexto bajo h3 -> Las Comunidades Autónomas y la Administración Local\n\t\ttexto bajo h3 -> La Unión Europea: instituciones y funcionamiento básico\n\t\ttexto bajo h3 -> Este bloque es el más estable y predecible del temario. Los artículos de la CE que salen en tests son siempre los mismos: el Título Preliminar, el Título I (derechos), el Título II (Corona), el Título III (Cortes) y los artículos sobre el Gobierno y la Administración.\n\t\ttexto bajo h3 -> Para este bloque, el podcast de Red Opositor cubre todos los artículos de la CE con el contexto que necesita un opositor. Es el punto de partida más eficiente para el Bloque I.\n\t\th3 -> Bloque II: Derecho Tributario\n\t\ttexto bajo h3 -> Sistema tributario español: IRPF, IVA, Impuesto de Sociedades, Impuesto de Sucesiones\n\t\ttexto bajo h3 -> Ley General Tributaria: conceptos básicos, procedimientos, infracciones y sanciones\n\t\ttexto bajo h3 -> El procedimiento de gestión tributaria\n\t\ttexto bajo h3 -> El procedimiento de recaudación ejecutiva\n\t\ttexto bajo h3 -> Normativa de control fiscal y lucha contra el fraude\n\t\ttexto bajo h3 -> Este es el bloque más específico y el que más trabajo requiere. La Ley General Tributaria es densa y requiere tiempo, pero tiene una lógica interna bastante coherente que facilita la memorización estructurada.\n\t\th3 -> Bloque III: Contabilidad básica\n\t\ttexto bajo h3 -> El Plan General de Contabilidad\n\t\ttexto bajo h3 -> Operaciones básicas: debe y haber, libros contables\n\t\ttexto bajo h3 -> Estados financieros: balance, cuenta de resultados\n\t\ttexto bajo h3 -> Nociones de análisis financiero\n\t\ttexto bajo h3 -> Para quienes vienen de formación no económica, este bloque puede resultar árido. Hay mucho material de preparación específico para C1 que simplifica el enfoque.\n\t\th3 -> Bloque IV: Informática\n\t\ttexto bajo h3 -> Sistemas operativos (Windows, Linux básico)\n\t\ttexto bajo h3 -> Ofimática avanzada: Excel, Word, Access básico\n\t\ttexto bajo h3 -> Internet y seguridad informática\n\t\ttexto bajo h3 -> Aplicaciones tributarias de la AEAT (Cl@ve, certificados digitales)\n\t\ttexto bajo h3 -> Este bloque suele ser el más manejable para candidatos con experiencia laboral reciente.\n\th2 -> El proceso selectivo\n\ttexto bajo h2 -> El proceso de selección habitual para los Agentes de Hacienda tiene dos partes:\n\t\th3 -> Oposición (fase de concurso-oposición)\n\t\ttexto bajo h3 -> Primer ejercicio: Test de 80-100 preguntas con respuestas múltiples. Tiempo: 90-120 minutos. Puntuación mínima para pasar: habitualmente el 50% o 60% de respuestas correctas.\n\t\ttexto bajo h3 -> Segundo ejercicio: Caso práctico sobre tramitación tributaria o procedimiento de gestión. Puede ser tipo test o desarrollo según convocatoria.\n\t\ttexto bajo h3 -> Ambos ejercicios son eliminatorios.\n\t\th3 -> Concurso de méritos\n\t\ttexto bajo h3 -> Una vez superada la oposición, se bareman los méritos para determinar el orden final de los aprobados. Se valoran: experiencia en la Administración, titulaciones adicionales y otros méritos según la convocatoria.\n\th2 -> Diferencias con el Técnico de Hacienda (A2)\n\ttexto bajo h2 -> Una pregunta habitual: ¿qué diferencia hay entre preparar Agente C1 o Técnico A2?\n\ttexto bajo h2 -> La estrategia más común: empezar por el Agente C1 si no tienes titulación universitaria, consolidarte en la AEAT y acceder al Técnico A2 por promoción interna cuando se convoquen plazas reservadas.\n\th2 -> Ventajas del destino AEAT frente a otros C1\n\ttexto bajo h2 -> Comparado con un Administrativo del Estado C1 en un ministerio convencional:\n\ttexto bajo h2 -> A favor de la AEAT:\n\ttexto bajo h2 -> Sueldo con productividad: 15-25% superior en media\n\ttexto bajo h2 -> Posibilidades de teletrabajo más extendidas\n\ttexto bajo h2 -> Organización moderna y con inversión en tecnología\n\ttexto bajo h2 -> Promoción interna bien estructurada (de Agente a Técnico, de Técnico a Inspector)\n\ttexto bajo h2 -> Destinos en casi todas las provincias españolas\n\ttexto bajo h2 -> En contra:\n\ttexto bajo h2 -> El temario específico (derecho tributario) es más complejo que el de un Administrativo generalista\n\ttexto bajo h2 -> La responsabilidad con información fiscal confidencial tiene implicaciones éticas y penales\n\ttexto bajo h2 -> El ambiente laboral puede ser tenso en época de campaña (IRPF de abril a junio)\n\th2 -> Cómo prepararse\n\t\th3 -> Plan de preparación (12-16 meses trabajando)\n\t\ttexto bajo h3 -> El temario de los Agentes de Hacienda requiere entre 10 y 16 meses de preparación si se trabaja, dependiendo de la base previa.\n\t\ttexto bajo h3 -> Meses 1-3: Bloque I (CE + organización del Estado). El podcast de Red Opositor es el recurso más eficiente para la CE en el transporte.\n\t\ttexto bajo h3 -> Meses 4-7: Bloque II primera parte (Ley General Tributaria + IRPF + IVA). La parte más densa; requiere estudio activo en mesa.\n\t\ttexto bajo h3 -> Meses 8-10: Bloque II segunda parte + Bloque III (contabilidad). Si no tienes base económica, aquí necesitarás dedicar más tiempo.\n\t\ttexto bajo h3 -> Meses 11-12: Bloque IV (informática) + primera ronda de repasos globales.\n\t\ttexto bajo h3 -> Meses 13-16: Repasos, simulacros y tests en tiempo real.\n\t\th3 -> Academias especializadas\n\t\ttexto bajo h3 -> Hay academias especializadas en la preparación de AEAT (Adams, CEF, CEDE, entre otras) con materiales actualizados. Si vas a ir por libre, asegúrate de usar temario de la última convocatoria porque la normativa tributaria cambia cada año.\n\t\th3 -> El test de la CE\n\t\ttexto bajo h3 -> Para el Bloque I, una vez hayas trabajado la CE en audio y en texto, usa nuestro test de la Constitución para verificar que tienes controlados los artículos que más suelen caer en los tests de la AGE.\n\th2 -> Conclusión\n\ttexto bajo h2 -> El Cuerpo de Agentes de la Hacienda Pública es una de las mejores opciones C1 del panorama opositor español en 2026. Sueldo por encima de la media de su grupo gracias a la productividad AEAT, estabilidad total como funcionario de carrera, posibilidades de teletrabajo y una carrera interna que puede llevarte del C1 al A2 sin necesidad de hacer una oposición externa completa.\n\ttexto bajo h2 -> El temario exige trabajo serio, especialmente el bloque tributario. Pero para el bloque constitucional, el podcast de Red Opositor y el test de la Constitución te dan una ventaja real desde el primer día.\n\ttexto bajo h2 -> ¿Quieres saber si el perfil de Agente de Hacienda encaja contigo? Haz nuestro test de orientación y lo averiguamos.\n\ttexto bajo h2 -> Los datos salariales de esta guía son orientativos y están basados en los Presupuestos Generales del Estado, convenios colectivos y tablas retributivas publicadas en el BOE y boletines oficiales autonómicos. Las retribuciones reales pueden variar según complementos específicos, destino, antigüedad y normativa vigente. Consulta siempre las tablas oficiales del BOE y la resolución de tu administración para obtener cifras exactas.\n\t\th3 -> Guia completa de sueldos de funcionarios 2026\n\t\ttexto bajo h3 -> Tablas salariales por grupo, complementos por nivel, estimaciones netas por oposicion y diferencias por comunidad autonoma.\n\t\th3 -> Convierte el metro en tu sala de estudio\n\t\ttexto bajo h3 -> 75 episodios, artículo por artículo\n\t\ttexto bajo h3 -> 87% mejora en tests (doble codificación)\n\t\ttexto bajo h3 -> Desde 4,99 €/mes — 10x más barato que una academia\n\t\ttexto bajo h3 -> Una academia: 150–300 EUR/mes. Red Opositor: desde 4,99 €/mes. Si no te convence, te devolvemos el dinero.\n\t\th3 -> Los 25 artículos que más caen en oposiciones\n\t\ttexto bajo h3 -> Descarga gratis el ranking de artículos constitucionales por frecuencia de examen + trucos para memorizarlos.\n\t\ttexto bajo h3 -> Sigue preparando tu oposición\n\t\th3 -> Pack Auxiliar Administrativo\n\t\ttexto bajo h3 -> Aprueba auxiliar administrativo con menos esfuerzo\n\t\ttexto bajo h3 -> TREBEP resumido en 30 puntos clave\n\t\ttexto bajo h3 -> Ley 39/2015 (procedimiento) en 25 puntos\n\t\ttexto bajo h3 -> Ley 40/2015 (régimen jurídico) en 20 puntos\n\t\ttexto bajo h3 -> Descarga inmediata · Pago único Stripe · Garantía 7 días\n\th2 -> Artículos relacionados\n\th2 -> Oposiciones España 2026: +100.000 Plazas por Cuerpo\n\ttexto bajo h2 -> Todas las oposiciones 2026: +100.000 plazas AGE y CCAA. Policía, Guardia Civil, Sanidad, Justicia, Educación. Tabla con fechas y sueldos.\n\th2 -> Sueldo Funcionario A1 en 2026: 35.000-80.000 EUR\n\ttexto bajo h2 -> Cuánto gana un A1 del Estado: Hacienda 80.000 EUR, Letrados 70.000 EUR, TI 45.000 EUR. Tabla por cuerpo con complementos reales 2026.\n\th2 -> Oposiciones que puedes sacar trabajando en 2026: el ranking real\n\ttexto bajo h2 -> Las oposiciones más realistas para sacar mientras trabajas a jornada completa. Tiempos, estrategias y cómo aprovechar el podcast en el transporte.\n\t\ttexto bajo h3 -> Pack listo, descarga inmediata\n\t\ttexto bajo h3 -> Pack Auxiliar Administrativo Aprueba auxiliar administrativo con menos esfuerzo 7,99 EUR 29,00 EUR -72% Ver pack\n\t\ttexto bajo h3 -> Guía sueldo funcionario 2026 por CCAA Calcula tu sueldo neto por CCAA y grupo (.xlsx + PDF) 3,99 EUR 15,00 EUR -73% Ver pack\n\t\ttexto bajo h3 -> 12.347 opositores ya estudian con nosotros\n\th2 -> ¿Sabes qué 25 artículos caen siempre en examen?\n\ttexto bajo h2 -> 12.347 opositores ya tienen esta guía PDF gratuita con los artículos de la Constitución que más se repiten. Tú también puedes tenerla en 10 segundos.\n\ttexto bajo h2 -> Sin spam. Solo contenido para opositores.\n\th2 -> Tu guía está en camino\n\ttexto bajo h2 -> Revisa tu bandeja de entrada (y spam, por si acaso). En menos de 2 minutos tendrás el PDF.\n\t\th3 -> Cola de reproduccion\n\t\ttexto bajo h3 -> No hay episodios en la cola.\n\t\ttexto bajo h3 -> Usamos cookies analíticas para mejorar tu experiencia. Más info\n\t\ttexto bajo h3 -> Oferta para ti\n\t\ttexto bajo h3 -> Garantía 7 días · Descarga inmediata";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

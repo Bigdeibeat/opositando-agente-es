@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://preparadoragenteshacienda.es/sobre-mi/</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Súmate a los estudiantes que ya han conseguido su plaza con @opositor_ahp . ¡Contacta con nosotros!</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Inicio</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Mis libros Temario Supuestos Resueltos y Exámenes Oficiales</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Formación</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Materiales Gratuitos</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Contacto</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Aprende tu pasión para vivir tu sueño</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">¡Buenas!</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Mi nombre es Antonio García, soy Agente de la Hacienda Pública, actual opositor al Cuerpo Técnico de Hacienda, graduado en Administración y Dirección de Empresas por la Universidad de Alicante y preparador de Agentes de la Hacienda Pública.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Durante algo más de cinco años, desde las cuentas de Instagram y Youtube, @‌Opositor_ahp me he dedicado a resolver todas las cuestiones que a cualquier estudiantes se nos plantea y a compartir mi experiencia, resúmenes, esquemas e información sobre la oposición de Agentes de Hacienda.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Hoy toda esa información la podrás encontrar y descargar desde aquí.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Gracias, a la buena acogida obtenida por mis materiales, opté por iniciarme en el mundo de la preparación de Agentes, volcando toda mi entrega y esfuerzo.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Mi objetivo es que las personas que confían en mi labor, encuentren en el curso de preparación, mucho más que una academia de Agentes de Hacienda, un trabajo constante y una atención personalizada, donde lo importante es el alumno.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Antonio García, @Opositor_ahp</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">WE ARE HIRING</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">If you’re looking to make an impact, we’re looking for you</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Nuestro Objetivo</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Opositar es una tarea que requiere motivación, disciplina y esfuerzo. Trabajamos contigo para lograr afianzar no solo conocimientos, sino también seguridad para afrontar el examen.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Qué nos hace Diferentes?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Nuestra misión es que consigas la plaza en el menor tiempo. Para ello contarás con un equipo entregado, que va a trabajar a diario para fomentar el desarrollo de tu aprendizaje.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Actualizaciones</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Materiales Propios</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Seguimiento Personalizado</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Meet our team</span></div>
+<div class="line level-4" style="padding-left:144px"><span class="tag-label">h5 -&gt; </span><span class="content-header">MORE THAN 1,300 CUSTOMERS TRUST EDUMA</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="tag-label">faq -&gt; </span><span class="content-header">Funcional Funcional Siempre activo</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="tag-label">faq -&gt; </span><span class="content-header">Preferencias Preferencias</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="tag-label">faq -&gt; </span><span class="content-header">Estadísticas Estadísticas</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="tag-label">faq -&gt; </span><span class="content-header">Marketing Marketing</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo faq -&gt; </span><span class="content-text">Administrar opciones</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo faq -&gt; </span><span class="content-text">Gestionar los servicios</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo faq -&gt; </span><span class="content-text">Gestionar {vendor_count} proveedores</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo faq -&gt; </span><span class="content-text">Leer más sobre estos propósitos</span></div>
+<div class="line level-5" style="padding-left:180px"><span class="context-label">texto bajo faq -&gt; </span><span class="content-text">{title}</span></div>
+<div class="line level-3" style="padding-left:108px"><span class="tag-label">h4 -&gt; </span><span class="content-header">Inicia sesión con tu cuenta</span></div>
+<div class="line level-3" style="padding-left:108px"><span class="context-label">texto bajo h4 -&gt; </span><span class="content-text">Recuérdame</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "Súmate a los estudiantes que ya han conseguido su plaza con @opositor_ahp . ¡Contacta con nosotros!\nInicio\nMis libros Temario Supuestos Resueltos y Exámenes Oficiales\nFormación\nMateriales Gratuitos\nContacto\nh1 -> Aprende tu pasión para vivir tu sueño\ntexto bajo h1 -> ¡Buenas!\ntexto bajo h1 -> Mi nombre es Antonio García, soy Agente de la Hacienda Pública, actual opositor al Cuerpo Técnico de Hacienda, graduado en Administración y Dirección de Empresas por la Universidad de Alicante y preparador de Agentes de la Hacienda Pública.\ntexto bajo h1 -> Durante algo más de cinco años, desde las cuentas de Instagram y Youtube, @‌Opositor_ahp me he dedicado a resolver todas las cuestiones que a cualquier estudiantes se nos plantea y a compartir mi experiencia, resúmenes, esquemas e información sobre la oposición de Agentes de Hacienda.\ntexto bajo h1 -> Hoy toda esa información la podrás encontrar y descargar desde aquí.\ntexto bajo h1 -> Gracias, a la buena acogida obtenida por mis materiales, opté por iniciarme en el mundo de la preparación de Agentes, volcando toda mi entrega y esfuerzo.\ntexto bajo h1 -> Mi objetivo es que las personas que confían en mi labor, encuentren en el curso de preparación, mucho más que una academia de Agentes de Hacienda, un trabajo constante y una atención personalizada, donde lo importante es el alumno.\ntexto bajo h1 -> Antonio García, @Opositor_ahp\ntexto bajo h1 -> WE ARE HIRING\n\th2 -> If you’re looking to make an impact, we’re looking for you\n\th2 -> Nuestro Objetivo\n\ttexto bajo h2 -> Opositar es una tarea que requiere motivación, disciplina y esfuerzo. Trabajamos contigo para lograr afianzar no solo conocimientos, sino también seguridad para afrontar el examen.\n\th2 -> ¿Qué nos hace Diferentes?\n\ttexto bajo h2 -> Nuestra misión es que consigas la plaza en el menor tiempo. Para ello contarás con un equipo entregado, que va a trabajar a diario para fomentar el desarrollo de tu aprendizaje.\n\t\th3 -> Actualizaciones\n\t\th3 -> Materiales Propios\n\t\th3 -> Seguimiento Personalizado\n\th2 -> Meet our team\n\t\t\t\th5 -> MORE THAN 1,300 CUSTOMERS TRUST EDUMA\n\t\t\t\t\tfaq -> Funcional Funcional Siempre activo\n\t\t\t\t\tfaq -> Preferencias Preferencias\n\t\t\t\t\tfaq -> Estadísticas Estadísticas\n\t\t\t\t\tfaq -> Marketing Marketing\n\t\t\t\t\ttexto bajo faq -> Administrar opciones\n\t\t\t\t\ttexto bajo faq -> Gestionar los servicios\n\t\t\t\t\ttexto bajo faq -> Gestionar {vendor_count} proveedores\n\t\t\t\t\ttexto bajo faq -> Leer más sobre estos propósitos\n\t\t\t\t\ttexto bajo faq -> {title}\n\t\t\th4 -> Inicia sesión con tu cuenta\n\t\t\ttexto bajo h4 -> Recuérdame";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://opositandoagente.es/</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="content-text">OpositandoAgente</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Oposición AEAT a Agentes de la Hacienda Pública 2026: guía completa</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Información actualizada sobre la oposición al Cuerpo General Administrativo de la AEAT, especialidad Agentes de la Hacienda Pública con fuentes del BOE y la AEAT.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Acceso libre y promoción interna en una sola convocatoria</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Test de 80 preguntas y supuesto práctico escrito</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Pruebas en Madrid, Barcelona, Valencia, Sevilla y más ciudades</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Primer año, sin contar complementos ni pluses por destino</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Descripción de la Oposición a Agentes de la Hacienda Pública</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Dentro de la Agencia Tributaria conviven, entre otros, tres figuras profesionales clave que cooperan de manera directa: los Inspectores de Hacienda, los Técnicos de Hacienda y los Agentes de Hacienda. Aunque cada uno cuenta con distintas responsabilidades y ámbitos de actuación, todos ellos se apoyan mutuamente para llevar a cabo la recaudación, gestión e inspección de los tributos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La oposición a Agente de la Hacienda Pública (C1) permite acceder al Cuerpo General Administrativo de la AEAT, realizando funciones de gestión, inspección y recaudación tributaria. Es una de las oposiciones más demandadas en España por su estabilidad laboral, convocatorias frecuentes, buen sueldo y amplias salidas profesionales en la Administración Pública.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Temario oficial de Agentes de la Hacienda Pública</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La mayoría de las oposiciones tienen un contenido común a otras oposiciones sobre la Constitución, Derecho Administrativo, etc., mientras que otros bloques contienen la materia específica de dicha oposición. Todo esto se distribuye en tres grandes bloques de estudio:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque I: Organización del Estado y funcionamiento de la Administración General del Estado</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Constitución Española, Cortes Generales, Gobierno, organización territorial, funcionamiento electrónico del sector público e igualdad.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque II: Derecho Administrativo General</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Fuentes del Derecho Administrativo, actos administrativos, el procedimiento administrativo común y los recursos administrativos.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque III: Organización de la Hacienda Pública y Derecho Tributario</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El sistema fiscal, la estructura de la AEAT, gestión, inspección y recaudación tributaria, Aduanas y los impuestos principales (IRPF, IVA e IS).</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Salario de un Agente de la Hacienda Pública</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La oposición a Agente de Hacienda Pública ofrece empleo público estable, un salario competitivo desde el primer año (más de 23.387 € brutos anuales) y una carrera profesional con promoción interna, permitiendo especialización en un sector con alta demanda laboral en la Administración Pública.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El salario bruto estimado de un Agente de la Hacienda Pública en su primer año de servicio es el siguiente:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Salario bruto mensual prorrateado (14 pagas ÷ 12)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Esta cifra no incluye los complementos por productividad y otros extras como los obtenidos en el período de la campaña de la declaración de la renta. Importes actualizados según RDL 14/2025.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Estas retribuciones aumentan progresivamente con los años de antigüedad (trienios), el avance en los niveles de destino y la Carrera Horizontal propia de la Agencia Tributaria.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Si quieres entender a la perfección el desglose de conceptos (salario base, complementos de destino, pagas extraordinarias) y cuánto podrás estar ganando en los próximos años, te recomendamos leer nuestro análisis.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Oposición de Agentes de la Hacienda Pública: información, requisitos, temario y salario</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La oposición a Agente de Hacienda Pública ofrece empleo público estable, un salario competitivo desde el primer año (aprox. 23.000 € brutos anuales) y una carrera profesional con promoción interna, permitiendo especialización en un sector con alta demanda laboral en la Administración Pública.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">¿En qué consiste la Oposición de Agentes de la Hacienda Pública?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La oposición a Agente de la Hacienda Pública (C1) permite acceder al Cuerpo General Administrativo de la AEAT, realizando funciones de gestión, inspección y recaudación tributaria. Es una de las oposiciones más demandadas en España por su estabilidad laboral, convocatorias frecuentes, buen sueldo y amplias salidas profesionales en la Administración Pública.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">¿Cómo se lleva a cabo la oposición de Agentes de la Hacienda Pública?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El proceso de oposición a Agente de Hacienda incluye dos ejercicios eliminatorios: un test de 80 preguntas sobre el temario oficial de 32 temas y un supuesto práctico por escrito con un total de 10 enunciados o supuestos con tres preguntas cada uno. La convocatoria oficial se publica en el BOE, normalmente de forma anual, y con un número elevado de plazas.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">¿Dónde se realizan los exámenes de Agente de la Hacienda Pública?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Las pruebas de la oposición a Agente de Hacienda se realizan en distintas zonas de España como Madrid, Barcelona, Valencia, Sevilla y etcétera, facilitando el acceso sin grandes desplazamientos. Si se aprueba la primera prueba pero no la segunda, no tendrá que volver a acudir ya que la nota primera nota se conserva de cara a poder presentarse al segundo ejercicio.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">¿Por qué prepararse la Oposición a Agentes de la Hacienda Pública?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La oposición a Agente de Hacienda Pública ofrece empleo público estable, un salario competitivo desde el primer año (aprox. 23.000 € brutos anuales) y una carrera profesional con promoción interna, permitiendo especialización en un sector con alta demanda laboral en la Administración Pública y que ofrece la estabilidad laborial que desean algunas personas.</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "OpositandoAgente\nh1 -> Oposición AEAT a Agentes de la Hacienda Pública 2026: guía completa\ntexto bajo h1 -> Información actualizada sobre la oposición al Cuerpo General Administrativo de la AEAT, especialidad Agentes de la Hacienda Pública con fuentes del BOE y la AEAT.\ntexto bajo h1 -> Acceso libre y promoción interna en una sola convocatoria\ntexto bajo h1 -> Test de 80 preguntas y supuesto práctico escrito\ntexto bajo h1 -> Pruebas en Madrid, Barcelona, Valencia, Sevilla y más ciudades\ntexto bajo h1 -> Primer año, sin contar complementos ni pluses por destino\n\th2 -> Descripción de la Oposición a Agentes de la Hacienda Pública\n\ttexto bajo h2 -> Dentro de la Agencia Tributaria conviven, entre otros, tres figuras profesionales clave que cooperan de manera directa: los Inspectores de Hacienda, los Técnicos de Hacienda y los Agentes de Hacienda. Aunque cada uno cuenta con distintas responsabilidades y ámbitos de actuación, todos ellos se apoyan mutuamente para llevar a cabo la recaudación, gestión e inspección de los tributos.\n\ttexto bajo h2 -> La oposición a Agente de la Hacienda Pública (C1) permite acceder al Cuerpo General Administrativo de la AEAT, realizando funciones de gestión, inspección y recaudación tributaria. Es una de las oposiciones más demandadas en España por su estabilidad laboral, convocatorias frecuentes, buen sueldo y amplias salidas profesionales en la Administración Pública.\n\th2 -> Temario oficial de Agentes de la Hacienda Pública\n\ttexto bajo h2 -> La mayoría de las oposiciones tienen un contenido común a otras oposiciones sobre la Constitución, Derecho Administrativo, etc., mientras que otros bloques contienen la materia específica de dicha oposición. Todo esto se distribuye en tres grandes bloques de estudio:\n\t\th3 -> Bloque I: Organización del Estado y funcionamiento de la Administración General del Estado\n\t\ttexto bajo h3 -> Constitución Española, Cortes Generales, Gobierno, organización territorial, funcionamiento electrónico del sector público e igualdad.\n\t\th3 -> Bloque II: Derecho Administrativo General\n\t\ttexto bajo h3 -> Fuentes del Derecho Administrativo, actos administrativos, el procedimiento administrativo común y los recursos administrativos.\n\t\th3 -> Bloque III: Organización de la Hacienda Pública y Derecho Tributario\n\t\ttexto bajo h3 -> El sistema fiscal, la estructura de la AEAT, gestión, inspección y recaudación tributaria, Aduanas y los impuestos principales (IRPF, IVA e IS).\n\th2 -> Salario de un Agente de la Hacienda Pública\n\ttexto bajo h2 -> La oposición a Agente de Hacienda Pública ofrece empleo público estable, un salario competitivo desde el primer año (más de 23.387 € brutos anuales) y una carrera profesional con promoción interna, permitiendo especialización en un sector con alta demanda laboral en la Administración Pública.\n\ttexto bajo h2 -> El salario bruto estimado de un Agente de la Hacienda Pública en su primer año de servicio es el siguiente:\n\ttexto bajo h2 -> Salario bruto mensual prorrateado (14 pagas ÷ 12)\n\ttexto bajo h2 -> Esta cifra no incluye los complementos por productividad y otros extras como los obtenidos en el período de la campaña de la declaración de la renta. Importes actualizados según RDL 14/2025.\n\ttexto bajo h2 -> Estas retribuciones aumentan progresivamente con los años de antigüedad (trienios), el avance en los niveles de destino y la Carrera Horizontal propia de la Agencia Tributaria.\n\ttexto bajo h2 -> Si quieres entender a la perfección el desglose de conceptos (salario base, complementos de destino, pagas extraordinarias) y cuánto podrás estar ganando en los próximos años, te recomendamos leer nuestro análisis.\n\th2 -> Oposición de Agentes de la Hacienda Pública: información, requisitos, temario y salario\n\ttexto bajo h2 -> La oposición a Agente de Hacienda Pública ofrece empleo público estable, un salario competitivo desde el primer año (aprox. 23.000 € brutos anuales) y una carrera profesional con promoción interna, permitiendo especialización en un sector con alta demanda laboral en la Administración Pública.\n\t\th3 -> ¿En qué consiste la Oposición de Agentes de la Hacienda Pública?\n\t\ttexto bajo h3 -> La oposición a Agente de la Hacienda Pública (C1) permite acceder al Cuerpo General Administrativo de la AEAT, realizando funciones de gestión, inspección y recaudación tributaria. Es una de las oposiciones más demandadas en España por su estabilidad laboral, convocatorias frecuentes, buen sueldo y amplias salidas profesionales en la Administración Pública.\n\t\th3 -> ¿Cómo se lleva a cabo la oposición de Agentes de la Hacienda Pública?\n\t\ttexto bajo h3 -> El proceso de oposición a Agente de Hacienda incluye dos ejercicios eliminatorios: un test de 80 preguntas sobre el temario oficial de 32 temas y un supuesto práctico por escrito con un total de 10 enunciados o supuestos con tres preguntas cada uno. La convocatoria oficial se publica en el BOE, normalmente de forma anual, y con un número elevado de plazas.\n\t\th3 -> ¿Dónde se realizan los exámenes de Agente de la Hacienda Pública?\n\t\ttexto bajo h3 -> Las pruebas de la oposición a Agente de Hacienda se realizan en distintas zonas de España como Madrid, Barcelona, Valencia, Sevilla y etcétera, facilitando el acceso sin grandes desplazamientos. Si se aprueba la primera prueba pero no la segunda, no tendrá que volver a acudir ya que la nota primera nota se conserva de cara a poder presentarse al segundo ejercicio.\n\t\th3 -> ¿Por qué prepararse la Oposición a Agentes de la Hacienda Pública?\n\t\ttexto bajo h3 -> La oposición a Agente de Hacienda Pública ofrece empleo público estable, un salario competitivo desde el primer año (aprox. 23.000 € brutos anuales) y una carrera profesional con promoción interna, permitiendo especialización en un sector con alta demanda laboral en la Administración Pública y que ofrece la estabilidad laborial que desean algunas personas.";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://www.preparaoposiciones.com/blog/oposiciones/agentes-hacienda/</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Oposiciones de Agentes de la Hacienda Pública</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Agencia Estatal de Administración Tributaria (AEAT)</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Prepara las oposiciones de Agentes de Hacienda Pública 2026: 1.400 plazas convocadas, temario de 32 temas y acceso con Bachillerato. Grupo C1.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Datos clave</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Sobre las oposiciones de Agentes de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Los Agentes de la Hacienda Pública pertenecen al Cuerpo General Administrativo de la Administración del Estado (Grupo C1) y prestan servicio en la Agencia Tributaria. Es una de las oposiciones más populares por el elevado número de plazas y la estabilidad laboral.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Las funciones incluyen la atención al contribuyente, la gestión de declaraciones tributarias, la comprobación de datos fiscales, la gestión recaudatoria y la colaboración en actuaciones de control tributario. Es un puesto con horario predominante de mañanas y destinos en toda España.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La convocatoria 2025 ha ofertado 1.400 plazas (1.000 de acceso libre y 400 de promoción interna). El proceso selectivo consta de dos ejercicios tipo test sobre un temario de 32 temas, lo que la convierte en una oposición asequible con 6 a 12 meses de preparación.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Temario de Agentes de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El temario oficial consta de 32 temas distribuidos en 2 bloques:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque I — Organización del Estado y Derecho Administrativo</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Constitución Española: estructura, derechos fundamentales, organización del Estado. Corona, Cortes Generales, Gobierno, Poder Judicial. Organización territorial: CCAA, administración local. Unión Europea: instituciones, fuentes del Derecho comunitario. Ley 39/2015 de Procedimiento Administrativo Común: procedimiento, recursos, revisión de oficio. Ley 40/2015 de Régimen Jurídico del Sector Público: organización, funcionamiento, relaciones interadministrativas. EBEP: derechos, deberes e incompatibilidades de los funcionarios.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Bloque II — Hacienda Pública y Derecho Tributario</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Ley General Tributaria: obligación tributaria, procedimientos de gestión, inspección y recaudación tributaria, infracciones y sanciones. IRPF: componentes de renta, rendimientos del trabajo, capital, actividades económicas, ganancias patrimoniales, base imponible y liquidable, deducciones, retenciones. IVA: hecho imponible, exenciones, base imponible, tipos impositivos, deducciones, regímenes especiales. Impuesto de Sociedades (nociones básicas): sujeto pasivo, base imponible, tipo de gravamen. La Agencia Tributaria (AEAT): organización, funciones, Plan de Control Tributario. Informática tributaria: sede electrónica, certificado digital, SII. Aduanas (nociones básicas).</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Proceso selectivo de Agentes de Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Primer ejercicio — Test general</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Cuestionario tipo test de 80 preguntas con cuatro opciones de respuesta sobre todo el temario (32 temas). Penalización de un tercio por respuesta incorrecta. Las preguntas en blanco no restan. Cubre ambos bloques del programa de forma proporcional (aproximadamente 30% bloque I, 70% bloque II). Es eliminatorio.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Segundo ejercicio — Test práctico</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Cuestionario tipo test de 30-40 preguntas sobre supuestos prácticos relacionados con las funciones del puesto: liquidación simplificada de impuestos, tramitación de expedientes tributarios, atención al contribuyente, consultas sobre normativa fiscal. Se basa en los conocimientos del Bloque II aplicados a situaciones reales de la oficina tributaria.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Salario de Agentes de Hacienda: desglose</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Cómo preparar Agentes de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Tiempo estimado</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">6 a 12 meses</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">3 a 5 horas de estudio diario</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Temas del temario</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">32 temas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">2 bloques temáticos</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Con 32 temas y dos ejercicios tipo test, Agentes de Hacienda es la oposición más accesible de la AEAT. El 70% del temario es tributario (Bloque II), así que la estrategia debe priorizarlo. No hay ejercicios de desarrollo ni casos prácticos escritos: todo es test, lo que favorece una preparación basada en la comprensión y el entrenamiento con preguntas tipo examen. La relación esfuerzo-recompensa es excelente gracias a la productividad de la AEAT.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Consejos de preparación</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">1 Empieza por el Bloque II (Hacienda y Tributario): tiene el 70% del peso en el primer ejercicio y es la base del segundo. IRPF e IVA son los dos impuestos estrella — domínalos a fondo.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">2 La LGT (Ley General Tributaria) es fundamental: los procedimientos de gestión, inspección, recaudación y sancionador aparecen tanto en el primer como en el segundo ejercicio.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">3 El segundo ejercicio es práctico: no basta con memorizar la norma, hay que saber aplicarla. Practica con supuestos de liquidación simplificada de IRPF e IVA desde el primer mes.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">4 Con solo 32 temas, puedes dar varias vueltas al temario en 6-12 meses. La primera vuelta de comprensión (2-3 meses), la segunda de consolidación (2-3 meses) y la tercera de repaso intensivo y simulacros (1-2 meses).</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">5 Si preparas Agentes simultáneamente con Administrativo del Estado (AGE), el Bloque I (Constitución, procedimiento administrativo, EBEP) se solapa significativamente. Duplicas oportunidades con poco esfuerzo adicional.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Carrera profesional y destinos</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Desde Agentes de Hacienda (C1) el ascenso natural es a Técnico de Hacienda (A2) por promoción interna, con temario reducido y plazas reservadas. El salto salarial es muy significativo: de 1.700-1.900 €/mes a 2.500-3.500 €/mes gracias al incremento de productividad. La carrera completa en la AEAT es: Agentes (C1) → Técnico de Hacienda (A2) → Inspector de Hacienda (A1). Pocos organismos ofrecen una escalera tan clara y con incrementos salariales tan pronunciados en cada peldaño.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Destinos posibles</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Delegaciones y Administraciones de la AEAT en todas las provincias. Oficinas de atención al contribuyente. Unidades de gestión tributaria. Departamentos de recaudación. Oficinas de aduanas y puertos/aeropuertos. La AEAT tiene presencia en toda España con más de 300 oficinas. El concurso de traslados es anual, con amplia movilidad geográfica. Los destinos en grandes ciudades (Madrid, Barcelona, Valencia, Sevilla) son los más demandados.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Empieza a preparar Agentes de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">1.400 plazas (convocatoria 2025) plazas convocadas. Sueldo de 1.500 - 1.900 euros/mes netos. Temario actualizado, test tipo examen y tutor personal.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Herramientas para Agentes de Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Simulacros</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Practica como en el examen real y detecta qué bloques debes reforzar.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Plan de estudio</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Organiza el temario y ajusta el ritmo según tus resultados.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Flashcards</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">8 decks: Constitución Española, Ley 39/2015 (LPAC)...</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Test gratis</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Practica desde cualquier dispositivo con tests tipo examen.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Últimas convocatorias de Agentes de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Agentes de la Hacienda Pública 2026: Lista de Admitidos y Fecha del Examen (BOE)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Convocatoria Agentes de Hacienda Pública 2024: 851 plazas en la AEAT</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Requisitos para Agentes de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Nacionalidad española</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Mayor de 16 años</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Título de Bachillerato, Técnico de FP o equivalente</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">No haber sido separado del servicio de ninguna Administración Pública</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">No estar inhabilitado para funciones públicas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Preguntas frecuentes sobre Agentes de Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">faq -&gt; </span><span class="content-header">¿Qué título necesito para Agentes de Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">faq -&gt; </span><span class="content-header">¿Cuántos temas tiene el temario de Agentes de Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">faq -&gt; </span><span class="content-header">¿En qué consiste el examen de Agentes de Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">faq -&gt; </span><span class="content-header">¿Cuánto cobra un Agente de Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">faq -&gt; </span><span class="content-header">¿Cuántas plazas se convocan de Agentes de Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">faq -&gt; </span><span class="content-header">¿Cuánto tiempo se tarda en preparar Agentes de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Agentes de Hacienda por comunidad autónoma</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Consulta la información específica de Agentes de Hacienda en cada comunidad autónoma: plazas, convocatorias y destinos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Artículos sobre Agentes de Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">OEP 2026 del Estado: 27.232 plazas (RD 387/2026) + 1.700 plazas TIC con IA, Ciberseguridad y Datos</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El Real Decreto 387/2026 aprueba la Oferta de Empleo Público del Estado para 2026: 27.232 plazas en la AGE (20.541 acceso libre + 6.345 promoción interna + 346 extraordinarias por emergencias climáticas). Sumando Policía Nacional, Guardia Civil y Fuerzas Armadas supera las 37.000 plazas. Novedad: 1.700 plazas TIC (+42%) con especialidades en IA, Ciberseguridad y Ciencia del Dato. Desglose por cuerpos, sueldos, plazos y cursos para empezar a preparar tu oposición hoy.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Oposiciones de Hacienda 2026: Requisitos, Plazas y Sueldos</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">800+ plazas anuales en la AEAT. Sueldos de 1.800€ a 5.000€ netos. Requisitos: desde Bachillerato (C1) hasta Grado (A1/A2). Guía completa para 2026.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Inspectores de Hacienda 2026: Modificación del Tribunal Calificador</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Cambios en el Tribunal del proceso selectivo para el Cuerpo Superior de Inspectores de Hacienda del Estado. Acceso libre y promoción interna.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Agentes de Hacienda vs Administrativo del Estado: Diferencias, Sueldo y Plazas 2026</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Comparativa entre Agentes de Hacienda y Administrativo del Estado: requisitos, sueldo, temario, plazas y funciones. Descubre cuál te conviene más en 2026.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Convocatoria Agentes de Hacienda Pública 2024: 851 plazas en la AEAT</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Consulta todos los detalles de la convocatoria de Agentes de la Hacienda Pública 2024: 851 plazas de acceso libre, requisitos, temario, estructura del examen y fechas clave del proceso.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Oposiciones a Agentes de Hacienda Pública: Guía completa de preparación</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Guía detallada para las oposiciones de Agentes de Hacienda Pública: requisitos del grupo C1, temario tributario, examen tipo test, sueldo en la AEAT y consejos estratégicos de preparación.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Salario estimado</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">1.500 - 1.900 euros/mes netos</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Sueldo neto mensual aproximado con 14 pagas anuales. Varía según destino, antigüedad y complementos.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Prepara Agentes de Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Tests por temas, simulacros de examen, legislación actualizada y seguimiento de tu progreso.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Esquemas de leyes</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">📜 Constitución Española CE 1978</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">📋 Ley 39/2015 (LPAC) Ley 39/2015, de 1 de octubre</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Ley 40/2015 (LRJSP) Ley 40/2015, de 1 de octubre</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">👥 TREBEP RDLeg. 5/2015</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🔍 Ley de Transparencia Ley 19/2013, de 9 de diciembre</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🔒 Protección de Datos LO 3/2018 + Reglamento (UE) 2016/679</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">⚖️ Ley de Igualdad LO 3/2007, de 22 de marzo</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">📝 Contratación Pública Ley 9/2017, de 8 de noviembre</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Oposiciones relacionadas</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Auxiliar Administrativo Grupo C2</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Administrativo del Estado Grupo C1</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ TAC del Estado Grupo A2</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">💰 Hacienda Grupo C1 / A2 / A1</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">💰 Técnico de Hacienda Grupo A2</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">💰 Inspector de Hacienda Grupo A1</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Administrativo Seg. Social Grupo C1</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Administrativo Junta Andalucía Grupo C1</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Administrativo Com. Madrid Grupo C1</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Auxiliar Com. Valenciana Grupo C2</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Auxiliar Xunta Galicia Grupo C2</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Auxiliar Catalunya Grupo C2</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Auxiliar Asturias Grupo C2</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Auxiliar Castilla-La Mancha Grupo C2</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Auxiliar Aragón Grupo C2</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Auxiliar Cantabria Grupo C2</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Auxiliar Com. Madrid Grupo C2</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Auxiliar Junta Andalucía Grupo C2</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Auxiliar Administrativo CAIB Grupo C2</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Subalterno CAIB (Grupo E) Grupo E</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Técnico Hacienda Local Grupo A2/C1 (según convocatoria)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Técnico RRHH (AAPP) Grupo A2/C1 (según convocatoria)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Entes Locales Grupo C1/C2 (según puesto)</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">🏛️ Xunta de Galicia Grupo Múltiples (AP/C2/C1/A2/A1)</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "h1 -> Oposiciones de Agentes de la Hacienda Pública\ntexto bajo h1 -> Agencia Estatal de Administración Tributaria (AEAT)\ntexto bajo h1 -> Prepara las oposiciones de Agentes de Hacienda Pública 2026: 1.400 plazas convocadas, temario de 32 temas y acceso con Bachillerato. Grupo C1.\n\th2 -> Datos clave\n\th2 -> Sobre las oposiciones de Agentes de Hacienda\n\ttexto bajo h2 -> Los Agentes de la Hacienda Pública pertenecen al Cuerpo General Administrativo de la Administración del Estado (Grupo C1) y prestan servicio en la Agencia Tributaria. Es una de las oposiciones más populares por el elevado número de plazas y la estabilidad laboral.\n\ttexto bajo h2 -> Las funciones incluyen la atención al contribuyente, la gestión de declaraciones tributarias, la comprobación de datos fiscales, la gestión recaudatoria y la colaboración en actuaciones de control tributario. Es un puesto con horario predominante de mañanas y destinos en toda España.\n\ttexto bajo h2 -> La convocatoria 2025 ha ofertado 1.400 plazas (1.000 de acceso libre y 400 de promoción interna). El proceso selectivo consta de dos ejercicios tipo test sobre un temario de 32 temas, lo que la convierte en una oposición asequible con 6 a 12 meses de preparación.\n\th2 -> Temario de Agentes de Hacienda\n\ttexto bajo h2 -> El temario oficial consta de 32 temas distribuidos en 2 bloques:\n\t\th3 -> Bloque I — Organización del Estado y Derecho Administrativo\n\t\ttexto bajo h3 -> Constitución Española: estructura, derechos fundamentales, organización del Estado. Corona, Cortes Generales, Gobierno, Poder Judicial. Organización territorial: CCAA, administración local. Unión Europea: instituciones, fuentes del Derecho comunitario. Ley 39/2015 de Procedimiento Administrativo Común: procedimiento, recursos, revisión de oficio. Ley 40/2015 de Régimen Jurídico del Sector Público: organización, funcionamiento, relaciones interadministrativas. EBEP: derechos, deberes e incompatibilidades de los funcionarios.\n\t\th3 -> Bloque II — Hacienda Pública y Derecho Tributario\n\t\ttexto bajo h3 -> Ley General Tributaria: obligación tributaria, procedimientos de gestión, inspección y recaudación tributaria, infracciones y sanciones. IRPF: componentes de renta, rendimientos del trabajo, capital, actividades económicas, ganancias patrimoniales, base imponible y liquidable, deducciones, retenciones. IVA: hecho imponible, exenciones, base imponible, tipos impositivos, deducciones, regímenes especiales. Impuesto de Sociedades (nociones básicas): sujeto pasivo, base imponible, tipo de gravamen. La Agencia Tributaria (AEAT): organización, funciones, Plan de Control Tributario. Informática tributaria: sede electrónica, certificado digital, SII. Aduanas (nociones básicas).\n\th2 -> Proceso selectivo de Agentes de Hacienda\n\t\th3 -> Primer ejercicio — Test general\n\t\ttexto bajo h3 -> Cuestionario tipo test de 80 preguntas con cuatro opciones de respuesta sobre todo el temario (32 temas). Penalización de un tercio por respuesta incorrecta. Las preguntas en blanco no restan. Cubre ambos bloques del programa de forma proporcional (aproximadamente 30% bloque I, 70% bloque II). Es eliminatorio.\n\t\th3 -> Segundo ejercicio — Test práctico\n\t\ttexto bajo h3 -> Cuestionario tipo test de 30-40 preguntas sobre supuestos prácticos relacionados con las funciones del puesto: liquidación simplificada de impuestos, tramitación de expedientes tributarios, atención al contribuyente, consultas sobre normativa fiscal. Se basa en los conocimientos del Bloque II aplicados a situaciones reales de la oficina tributaria.\n\th2 -> Salario de Agentes de Hacienda: desglose\n\th2 -> Cómo preparar Agentes de Hacienda\n\ttexto bajo h2 -> Tiempo estimado\n\ttexto bajo h2 -> 6 a 12 meses\n\ttexto bajo h2 -> 3 a 5 horas de estudio diario\n\ttexto bajo h2 -> Temas del temario\n\ttexto bajo h2 -> 32 temas\n\ttexto bajo h2 -> 2 bloques temáticos\n\ttexto bajo h2 -> Con 32 temas y dos ejercicios tipo test, Agentes de Hacienda es la oposición más accesible de la AEAT. El 70% del temario es tributario (Bloque II), así que la estrategia debe priorizarlo. No hay ejercicios de desarrollo ni casos prácticos escritos: todo es test, lo que favorece una preparación basada en la comprensión y el entrenamiento con preguntas tipo examen. La relación esfuerzo-recompensa es excelente gracias a la productividad de la AEAT.\n\t\th3 -> Consejos de preparación\n\t\ttexto bajo h3 -> 1 Empieza por el Bloque II (Hacienda y Tributario): tiene el 70% del peso en el primer ejercicio y es la base del segundo. IRPF e IVA son los dos impuestos estrella — domínalos a fondo.\n\t\ttexto bajo h3 -> 2 La LGT (Ley General Tributaria) es fundamental: los procedimientos de gestión, inspección, recaudación y sancionador aparecen tanto en el primer como en el segundo ejercicio.\n\t\ttexto bajo h3 -> 3 El segundo ejercicio es práctico: no basta con memorizar la norma, hay que saber aplicarla. Practica con supuestos de liquidación simplificada de IRPF e IVA desde el primer mes.\n\t\ttexto bajo h3 -> 4 Con solo 32 temas, puedes dar varias vueltas al temario en 6-12 meses. La primera vuelta de comprensión (2-3 meses), la segunda de consolidación (2-3 meses) y la tercera de repaso intensivo y simulacros (1-2 meses).\n\t\ttexto bajo h3 -> 5 Si preparas Agentes simultáneamente con Administrativo del Estado (AGE), el Bloque I (Constitución, procedimiento administrativo, EBEP) se solapa significativamente. Duplicas oportunidades con poco esfuerzo adicional.\n\th2 -> Carrera profesional y destinos\n\ttexto bajo h2 -> Desde Agentes de Hacienda (C1) el ascenso natural es a Técnico de Hacienda (A2) por promoción interna, con temario reducido y plazas reservadas. El salto salarial es muy significativo: de 1.700-1.900 €/mes a 2.500-3.500 €/mes gracias al incremento de productividad. La carrera completa en la AEAT es: Agentes (C1) → Técnico de Hacienda (A2) → Inspector de Hacienda (A1). Pocos organismos ofrecen una escalera tan clara y con incrementos salariales tan pronunciados en cada peldaño.\n\t\th3 -> Destinos posibles\n\t\ttexto bajo h3 -> Delegaciones y Administraciones de la AEAT en todas las provincias. Oficinas de atención al contribuyente. Unidades de gestión tributaria. Departamentos de recaudación. Oficinas de aduanas y puertos/aeropuertos. La AEAT tiene presencia en toda España con más de 300 oficinas. El concurso de traslados es anual, con amplia movilidad geográfica. Los destinos en grandes ciudades (Madrid, Barcelona, Valencia, Sevilla) son los más demandados.\n\th2 -> Empieza a preparar Agentes de Hacienda\n\ttexto bajo h2 -> 1.400 plazas (convocatoria 2025) plazas convocadas. Sueldo de 1.500 - 1.900 euros/mes netos. Temario actualizado, test tipo examen y tutor personal.\n\th2 -> Herramientas para Agentes de Hacienda\n\t\th3 -> Simulacros\n\t\ttexto bajo h3 -> Practica como en el examen real y detecta qué bloques debes reforzar.\n\t\th3 -> Plan de estudio\n\t\ttexto bajo h3 -> Organiza el temario y ajusta el ritmo según tus resultados.\n\t\th3 -> Flashcards\n\t\ttexto bajo h3 -> 8 decks: Constitución Española, Ley 39/2015 (LPAC)...\n\t\th3 -> Test gratis\n\t\ttexto bajo h3 -> Practica desde cualquier dispositivo con tests tipo examen.\n\th2 -> Últimas convocatorias de Agentes de Hacienda\n\ttexto bajo h2 -> Agentes de la Hacienda Pública 2026: Lista de Admitidos y Fecha del Examen (BOE)\n\ttexto bajo h2 -> Convocatoria Agentes de Hacienda Pública 2024: 851 plazas en la AEAT\n\th2 -> Requisitos para Agentes de Hacienda\n\ttexto bajo h2 -> Nacionalidad española\n\ttexto bajo h2 -> Mayor de 16 años\n\ttexto bajo h2 -> Título de Bachillerato, Técnico de FP o equivalente\n\ttexto bajo h2 -> No haber sido separado del servicio de ninguna Administración Pública\n\ttexto bajo h2 -> No estar inhabilitado para funciones públicas\n\th2 -> Preguntas frecuentes sobre Agentes de Hacienda\n\t\tfaq -> ¿Qué título necesito para Agentes de Hacienda?\n\t\tfaq -> ¿Cuántos temas tiene el temario de Agentes de Hacienda?\n\t\tfaq -> ¿En qué consiste el examen de Agentes de Hacienda?\n\t\tfaq -> ¿Cuánto cobra un Agente de Hacienda?\n\t\tfaq -> ¿Cuántas plazas se convocan de Agentes de Hacienda?\n\t\tfaq -> ¿Cuánto tiempo se tarda en preparar Agentes de Hacienda?\n\th2 -> Agentes de Hacienda por comunidad autónoma\n\ttexto bajo h2 -> Consulta la información específica de Agentes de Hacienda en cada comunidad autónoma: plazas, convocatorias y destinos.\n\th2 -> Artículos sobre Agentes de Hacienda\n\t\th3 -> OEP 2026 del Estado: 27.232 plazas (RD 387/2026) + 1.700 plazas TIC con IA, Ciberseguridad y Datos\n\t\ttexto bajo h3 -> El Real Decreto 387/2026 aprueba la Oferta de Empleo Público del Estado para 2026: 27.232 plazas en la AGE (20.541 acceso libre + 6.345 promoción interna + 346 extraordinarias por emergencias climáticas). Sumando Policía Nacional, Guardia Civil y Fuerzas Armadas supera las 37.000 plazas. Novedad: 1.700 plazas TIC (+42%) con especialidades en IA, Ciberseguridad y Ciencia del Dato. Desglose por cuerpos, sueldos, plazos y cursos para empezar a preparar tu oposición hoy.\n\t\th3 -> Oposiciones de Hacienda 2026: Requisitos, Plazas y Sueldos\n\t\ttexto bajo h3 -> 800+ plazas anuales en la AEAT. Sueldos de 1.800€ a 5.000€ netos. Requisitos: desde Bachillerato (C1) hasta Grado (A1/A2). Guía completa para 2026.\n\t\th3 -> Inspectores de Hacienda 2026: Modificación del Tribunal Calificador\n\t\ttexto bajo h3 -> Cambios en el Tribunal del proceso selectivo para el Cuerpo Superior de Inspectores de Hacienda del Estado. Acceso libre y promoción interna.\n\t\th3 -> Agentes de Hacienda vs Administrativo del Estado: Diferencias, Sueldo y Plazas 2026\n\t\ttexto bajo h3 -> Comparativa entre Agentes de Hacienda y Administrativo del Estado: requisitos, sueldo, temario, plazas y funciones. Descubre cuál te conviene más en 2026.\n\t\th3 -> Convocatoria Agentes de Hacienda Pública 2024: 851 plazas en la AEAT\n\t\ttexto bajo h3 -> Consulta todos los detalles de la convocatoria de Agentes de la Hacienda Pública 2024: 851 plazas de acceso libre, requisitos, temario, estructura del examen y fechas clave del proceso.\n\t\th3 -> Oposiciones a Agentes de Hacienda Pública: Guía completa de preparación\n\t\ttexto bajo h3 -> Guía detallada para las oposiciones de Agentes de Hacienda Pública: requisitos del grupo C1, temario tributario, examen tipo test, sueldo en la AEAT y consejos estratégicos de preparación.\n\t\th3 -> Salario estimado\n\t\ttexto bajo h3 -> 1.500 - 1.900 euros/mes netos\n\t\ttexto bajo h3 -> Sueldo neto mensual aproximado con 14 pagas anuales. Varía según destino, antigüedad y complementos.\n\t\th3 -> Prepara Agentes de Hacienda\n\t\ttexto bajo h3 -> Tests por temas, simulacros de examen, legislación actualizada y seguimiento de tu progreso.\n\t\th3 -> Esquemas de leyes\n\t\ttexto bajo h3 -> 📜 Constitución Española CE 1978\n\t\ttexto bajo h3 -> 📋 Ley 39/2015 (LPAC) Ley 39/2015, de 1 de octubre\n\t\ttexto bajo h3 -> 🏛️ Ley 40/2015 (LRJSP) Ley 40/2015, de 1 de octubre\n\t\ttexto bajo h3 -> 👥 TREBEP RDLeg. 5/2015\n\t\ttexto bajo h3 -> 🔍 Ley de Transparencia Ley 19/2013, de 9 de diciembre\n\t\ttexto bajo h3 -> 🔒 Protección de Datos LO 3/2018 + Reglamento (UE) 2016/679\n\t\ttexto bajo h3 -> ⚖️ Ley de Igualdad LO 3/2007, de 22 de marzo\n\t\ttexto bajo h3 -> 📝 Contratación Pública Ley 9/2017, de 8 de noviembre\n\t\th3 -> Oposiciones relacionadas\n\t\ttexto bajo h3 -> 🏛️ Auxiliar Administrativo Grupo C2\n\t\ttexto bajo h3 -> 🏛️ Administrativo del Estado Grupo C1\n\t\ttexto bajo h3 -> 🏛️ TAC del Estado Grupo A2\n\t\ttexto bajo h3 -> 💰 Hacienda Grupo C1 / A2 / A1\n\t\ttexto bajo h3 -> 💰 Técnico de Hacienda Grupo A2\n\t\ttexto bajo h3 -> 💰 Inspector de Hacienda Grupo A1\n\t\ttexto bajo h3 -> 🏛️ Administrativo Seg. Social Grupo C1\n\t\ttexto bajo h3 -> 🏛️ Administrativo Junta Andalucía Grupo C1\n\t\ttexto bajo h3 -> 🏛️ Administrativo Com. Madrid Grupo C1\n\t\ttexto bajo h3 -> 🏛️ Auxiliar Com. Valenciana Grupo C2\n\t\ttexto bajo h3 -> 🏛️ Auxiliar Xunta Galicia Grupo C2\n\t\ttexto bajo h3 -> 🏛️ Auxiliar Catalunya Grupo C2\n\t\ttexto bajo h3 -> 🏛️ Auxiliar Asturias Grupo C2\n\t\ttexto bajo h3 -> 🏛️ Auxiliar Castilla-La Mancha Grupo C2\n\t\ttexto bajo h3 -> 🏛️ Auxiliar Aragón Grupo C2\n\t\ttexto bajo h3 -> 🏛️ Auxiliar Cantabria Grupo C2\n\t\ttexto bajo h3 -> 🏛️ Auxiliar Com. Madrid Grupo C2\n\t\ttexto bajo h3 -> 🏛️ Auxiliar Junta Andalucía Grupo C2\n\t\ttexto bajo h3 -> 🏛️ Auxiliar Administrativo CAIB Grupo C2\n\t\ttexto bajo h3 -> 🏛️ Subalterno CAIB (Grupo E) Grupo E\n\t\ttexto bajo h3 -> 🏛️ Técnico Hacienda Local Grupo A2/C1 (según convocatoria)\n\t\ttexto bajo h3 -> 🏛️ Técnico RRHH (AAPP) Grupo A2/C1 (según convocatoria)\n\t\ttexto bajo h3 -> 🏛️ Entes Locales Grupo C1/C2 (según puesto)\n\t\ttexto bajo h3 -> 🏛️ Xunta de Galicia Grupo Múltiples (AP/C2/C1/A2/A1)";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

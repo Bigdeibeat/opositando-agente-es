@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://as.com/diarioas/2021/09/24/actualidad/1632496470_041091.html</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="content-text">España</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Chile</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Colombia</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">México</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">USA Latino</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">América</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Eurovisión 2026</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Barcelona - Atlético Copa de la Reina</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Israel - España</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Al Nassr - Gamba Osaka</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Primera RFEF en directo</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Giro de Italia</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Elecciones Andalucía</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Orden de Eurovisión 2026</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Hantavirus</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Mercado de fichajes</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Sevilla - Real Madrid TV</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Barcelona - Betis TV</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Atlético - Girona TV</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Dani Bárez vs Gurule TV</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Sinner - Ruud TV</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">PGA Championship TV</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Final Eurovisión cuándo</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Xabi Alonso Chelsea</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Lotería</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Orden Eurovisión</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Lewandowski</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">¿Cuáles son las oposiciones mejor pagadas y requisitos?</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Inspectores de Hacienda, Abogados del Estados, jueces, fiscales e interventores son los funcionarios que alcanzan salarios más elevados.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Conseguir una mayor seguridad laboral o unas mejores condiciones en el trabajo son algunas de las motivaciones que llevan a muchas personas a decidirse por opositar, al igual que la posibilidad de aspirar a unas remuneraciones más altas, ya que los salarios medios en el sector público son más elevados que en la empresa privada para los mismos niveles de formación.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Los estudios con los que se cuenten, la vocación o los requisitos exigidos son factores que llevan a muchos ciudadanos a decantarse por una opción determinada a la que opositar, además del posible interés en alcanzar un sueldo concreto.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Los grupos existentes</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Todo aspirante a trabajar como funcionario debe tener en cuenta que el salario base de estos trabajadores viene determinado por los grupos de funcionarios tipificados . Cada uno de ellos exige una formación previa concreta. Son los siguientes:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">-Grupo A (con subgrupos A1 y A2): requiere titulación universitaria.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">- Grupo B: requiere un título de técnico superior.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">- Grupo C: requiere Bachillerato y el Subgrupo C2, que exige graduado en ESO.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">- Grupo E: no requiere titulación.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">De esta manera, existe una diferencia en los salarios que viene marcada por la cualificación con la que se cuente. Así, un funcionario del grupo A1 tiene un salario base de 1.200 euros al mes, una cantidad que resulta claramente superior a la que reciben los del grupo E, que es de 650 euros.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">No obstante, otro factor a considerar son los complementos, que suponen una serie de cantidades que se añaden al salario base, como son la antigüedad (que se suma cada tres años, en los conocidos como trienios), los complementos específicos y de destino o los relacionados con la productividad.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Los salarios más altos</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Noticias relacionadas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Parque Móvil del Estado: requisitos, plazas, sueldo y cómo opositar a conductor</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Cuántos contratos temporales se pueden hacer antes de pasar a ser indefinido?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Los trabajadores que cobran un sueldo público y que reciben un mayor salario son los Inspectores de Hacienda. Estos funcionarios perciben una cantidad que, en función de la antigüedad, oscila entre los 40.000 y 65.000 euros anuales brutos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Tras estos empleados públicos se sitúan los Abogados del Estado, quienes pueden alcanzar un salario anual de 60.000 euros, y los jueces, fiscales e interventores del Estado, profesionales que pueden llegar a cobrar unos 50.000 euros, como recoge el diario ‘El Economista’.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Oposiciones</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Empleo público</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Empleo</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Trabajo</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Administración pública</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Te recomendamos en Actualidad</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Recoge 450.000 latas durante siete años, las recicla y se compra una casa con el dinero conseguido</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El ‘dardo’ de Stephen Hawking a Albert Einstein que aún divide a la ciencia: “Se equivocó cuando dijo que Dios no juega a los dados con el universo”</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Adiós a Venecia: el pequeño pueblo francés que arrasa entre los turistas</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La Primitiva: comprobar los resultados del sorteo de hoy, sábado 16 de mayo</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Un país europeo instauró la semana laboral de cuatro días desde 2019: tras seis años, el resultado es el sueño de la Generación Z</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Horarios elecciones Andalucía el 17M: ¿a qué hora abren los colegios electorales y hasta cuándo se puede votar?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Lo más visto</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">David Gross, Premio Nobel de Física: “Las probabilidades de que la humanidad viva más de 50 años son muy bajas”</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Lanzan 227 bloques de hormigón al mar para construir una megamuralla marítima: será el puerto automatizado más grande del mundo</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Los chefs españoles coinciden: “El vinagre es fundamental al freír pechugas de pollo porque desglasa y equilibra los sabores”</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Productos recomendados</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "España\nChile\nColombia\nMéxico\nUSA Latino\nAmérica\nEurovisión 2026\nBarcelona - Atlético Copa de la Reina\nIsrael - España\nAl Nassr - Gamba Osaka\nPrimera RFEF en directo\nGiro de Italia\nElecciones Andalucía\nOrden de Eurovisión 2026\nHantavirus\nMercado de fichajes\nSevilla - Real Madrid TV\nBarcelona - Betis TV\nAtlético - Girona TV\nDani Bárez vs Gurule TV\nSinner - Ruud TV\nPGA Championship TV\nFinal Eurovisión cuándo\nXabi Alonso Chelsea\nLotería\nOrden Eurovisión\nLewandowski\nh1 -> ¿Cuáles son las oposiciones mejor pagadas y requisitos?\ntexto bajo h1 -> Inspectores de Hacienda, Abogados del Estados, jueces, fiscales e interventores son los funcionarios que alcanzan salarios más elevados.\ntexto bajo h1 -> Conseguir una mayor seguridad laboral o unas mejores condiciones en el trabajo son algunas de las motivaciones que llevan a muchas personas a decidirse por opositar, al igual que la posibilidad de aspirar a unas remuneraciones más altas, ya que los salarios medios en el sector público son más elevados que en la empresa privada para los mismos niveles de formación.\ntexto bajo h1 -> Los estudios con los que se cuenten, la vocación o los requisitos exigidos son factores que llevan a muchos ciudadanos a decantarse por una opción determinada a la que opositar, además del posible interés en alcanzar un sueldo concreto.\n\t\th3 -> Los grupos existentes\n\t\ttexto bajo h3 -> Todo aspirante a trabajar como funcionario debe tener en cuenta que el salario base de estos trabajadores viene determinado por los grupos de funcionarios tipificados . Cada uno de ellos exige una formación previa concreta. Son los siguientes:\n\t\ttexto bajo h3 -> -Grupo A (con subgrupos A1 y A2): requiere titulación universitaria.\n\t\ttexto bajo h3 -> - Grupo B: requiere un título de técnico superior.\n\t\ttexto bajo h3 -> - Grupo C: requiere Bachillerato y el Subgrupo C2, que exige graduado en ESO.\n\t\ttexto bajo h3 -> - Grupo E: no requiere titulación.\n\t\ttexto bajo h3 -> De esta manera, existe una diferencia en los salarios que viene marcada por la cualificación con la que se cuente. Así, un funcionario del grupo A1 tiene un salario base de 1.200 euros al mes, una cantidad que resulta claramente superior a la que reciben los del grupo E, que es de 650 euros.\n\t\ttexto bajo h3 -> No obstante, otro factor a considerar son los complementos, que suponen una serie de cantidades que se añaden al salario base, como son la antigüedad (que se suma cada tres años, en los conocidos como trienios), los complementos específicos y de destino o los relacionados con la productividad.\n\t\th3 -> Los salarios más altos\n\th2 -> Noticias relacionadas\n\th2 -> Parque Móvil del Estado: requisitos, plazas, sueldo y cómo opositar a conductor\n\th2 -> ¿Cuántos contratos temporales se pueden hacer antes de pasar a ser indefinido?\n\ttexto bajo h2 -> Los trabajadores que cobran un sueldo público y que reciben un mayor salario son los Inspectores de Hacienda. Estos funcionarios perciben una cantidad que, en función de la antigüedad, oscila entre los 40.000 y 65.000 euros anuales brutos.\n\ttexto bajo h2 -> Tras estos empleados públicos se sitúan los Abogados del Estado, quienes pueden alcanzar un salario anual de 60.000 euros, y los jueces, fiscales e interventores del Estado, profesionales que pueden llegar a cobrar unos 50.000 euros, como recoge el diario ‘El Economista’.\n\ttexto bajo h2 -> Oposiciones\n\ttexto bajo h2 -> Empleo público\n\ttexto bajo h2 -> Empleo\n\ttexto bajo h2 -> Trabajo\n\ttexto bajo h2 -> Administración pública\n\t\th3 -> Te recomendamos en Actualidad\n\t\ttexto bajo h3 -> Recoge 450.000 latas durante siete años, las recicla y se compra una casa con el dinero conseguido\n\t\ttexto bajo h3 -> El ‘dardo’ de Stephen Hawking a Albert Einstein que aún divide a la ciencia: “Se equivocó cuando dijo que Dios no juega a los dados con el universo”\n\t\ttexto bajo h3 -> Adiós a Venecia: el pequeño pueblo francés que arrasa entre los turistas\n\t\ttexto bajo h3 -> La Primitiva: comprobar los resultados del sorteo de hoy, sábado 16 de mayo\n\t\ttexto bajo h3 -> Un país europeo instauró la semana laboral de cuatro días desde 2019: tras seis años, el resultado es el sueño de la Generación Z\n\t\ttexto bajo h3 -> Horarios elecciones Andalucía el 17M: ¿a qué hora abren los colegios electorales y hasta cuándo se puede votar?\n\th2 -> Lo más visto\n\th2 -> David Gross, Premio Nobel de Física: “Las probabilidades de que la humanidad viva más de 50 años son muy bajas”\n\th2 -> Lanzan 227 bloques de hormigón al mar para construir una megamuralla marítima: será el puerto automatizado más grande del mundo\n\th2 -> Los chefs españoles coinciden: “El vinagre es fundamental al freír pechugas de pollo porque desglasa y equilibra los sabores”\n\t\th3 -> Productos recomendados";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

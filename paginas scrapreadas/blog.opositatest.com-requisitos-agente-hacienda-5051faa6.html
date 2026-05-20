@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://blog.opositatest.com/requisitos-agente-hacienda/</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">¿Cuáles son los requisitos para presentarse a las oposiciones de Agente de Hacienda de 2026?</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">¡Hola, opositores y opositoras! En este artículo os desgranamos los requisitos para acceder a la oposición de Agente de Hacienda. Gracias a él, quienes planteáis opositar a Agente de Hacienda seréis conscientes de las exigencias de esta oposición en cuanto a titulación requerida o capacidades.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">¡Seguid leyendo si queréis conocer todos los detalles!</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Índice de contenidos</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Oposiciones de Agente de Hacienda: requisitos 2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">De acuerdo con las bases de la convocatoria vigente de Agentes de Hacienda, los requisitos de acceso a la oposición son los siguientes:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Nacionalidad española. *No se admiten aspirantes de otras nacionalidades. Estas son algunas las oposiciones a las que os podéis presentar si no tenéis la nacionalidad española</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Edad: Tener, al menos, 16 años de edad y no exceder la edad máxima de jubilación forzosa</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Titulación: Estar en posesión o en condiciones de obtener el Título de Bachiller o Técnico. En el caso de contar con titulaciones obtenidas en el extranjero, se deberá acreditar estar en posesión del título homologado o equivalencia</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Capacidad: Poseer la capacidad funcional para el desarrollo de las funciones del puesto a desempeñar</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">No haber sido separado mediante expediente disciplinario del servicio de cualquiera de las Administraciones Públicas o de los Organismos Constitucionales o Estatutarios de las Comunidades Autónomas, ni hallarse en inhabilitación absoluta o especial para empleos o cargos públicos por resolución judicial , para el acceso a Cuerpos o Escalas de funcionarios</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">No pertenecer al mismo Cuerpo o Escala al que se presenta</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Dónde se regulan los requisitos de la oposición a Agente de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Como es habitual en todos los procesos selectivos, los requisitos de la oposición a Agente de la Hacienda Pública están regulados e indicados en las bases de la convocatoria vigente.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Así, actualmente, la convocatoria más reciente es la publicada en el Boletín Oficial del Estado con fecha 30 de diciembre de 2025.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Cuándo deben cumplirse los requisitos de las oposiciones a Agente de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Tal y como indican expresamente las bases de la convocatoria para las oposiciones de Agente de la Hacienda Pública, los requisitos:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Deben reunirse en el día de la finalización del plazo de presentación de solicitudes</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Tienen que mantenerse hasta el momento de toma de posesión como funcionarios de carrera</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Instancia y pago de tasas: trámites exigidos para presentarse a Agente de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Además de los requisitos de Agente de la Hacienda Pública que acabamos de desmenuzar, existen otras exigencias que tendréis que cumplir si queréis ser admitidos/as al proceso selectivo:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Presentar la instancia de participación en tiempo y forma: actualmente, solo se permite la presentación únicamente por vía electrónica. El plazo para hacerlo es de 20 días hábiles a contar desde el siguiente a la publicación de la convocatoria en el Boletín Oficial del Estado. Tenéis más información en nuestra guía completa y actualizada sobre cómo presentar la instancia en la oposición de Agentes de la Hacienda Pública</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Abonar las tasas correspondientes: en la última convocatoria, ascienden a 15,57 € en Turno Libre. No obstante, hay determinados casos de exención del pago: Personas con un grado de discapacidad igual o superior al 33 %, debiendo acompañar a la solicitud certificado acreditativo de tal condición. No necesitaréis aportar esta documentación si dicha condición de discapacidad ha sido reconocida en alguna de estas Comunidades Autónomas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Aquellas personas que figuren como demandantes de empleo durante el plazo, al menos, de un mes anterior a la fecha de la convocatoria, siempre que cumplan los siguientes requisitos: No haber rechazado en este plazo una oferta de empleo adecuado ni haberse negado a participar, salvo causa justificada, en acciones de promoción, formación o reconversión profesional</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Carecer de rentas superiores, en cómputo mensual, al salario mínimo interprofesional</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Las familias numerosas tendrán derecho a una exención: Del 100 % de la tasa los miembros de familias de la categoría especial</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Del 50 % los que fueran de la categoría general (debiendo pagar, por tanto, 7,71 €)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Las víctimas del terrorismo</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Si tenéis derecho a cualquiera de estas exenciones totales o parciales, debéis justificarlo documentalmente, tal y como indican las bases de la convocatoria. De manera que si no enviáis la documentación pertinente o no presentáis la instancia en tiempo y forma, así como no abonáis la tasa de examen correspondiente, apareceréis como excluidos en la lista provisional de personas admitidas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En cualquier caso, recordad que estos dos requisitos de Agentes de Hacienda son, como decíamos, imprescindibles para poder acceder a la lista de admitidos en el proceso selectivo de Agentes de la Hacienda Pública.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El cuestionario tipo test en la oposición de Agentes de la Hacienda Pública es una prueba de carácter eliminatorio, por lo que es fundamental prepararse a conciencia para superarla.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Cuáles son las claves para aprobar la oposición a Agente de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Cumplir los requisitos de Agente de la Hacienda Pública es solo el inicio del camino para lograr vuestra ansiada plaza. En OpositaTest estamos a vuestro lado desde el comienzo de la preparación para la fecha de examen de Agentes de Hacienda.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Así os queremos traer una serie de consejos y recomendaciones para que las probabilidades de éxito aumenten y superéis esta oposición:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Estudiad el temario a conciencia. Para responder con seguridad a las preguntas test y no dudar es fundamental conocer en profundidad la materia y tener los conceptos claros</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Organizad vuestro estudio. Intentad planificar la preparación de estas oposiciones de forma eficiente y racional. Para ello, podéis establecer listas de tareas concretas y objetivos a cumplir en fechas determinadas. Recordad que podéis descargar nuestro OpoTracker gratuito para hacer este seguimiento con mayor facilidad</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Practicad con nuestros test ilimitados regularmente para estar familiarizados con los tipos de preguntas y respuestas que puedan salir en la prueba oficial. En OpositaTest podréis encontrar más de 5.600 preguntas del temario oficial, en constante actualización y con respuestas siempre justificadas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Repasad y fijar los conceptos usando todos los recursos disponibles en OpositaTest. Los esquemas, resúmenes y nuestros materiales descargables pueden ayudaros a memorizar los conceptos de forma mucho más sencilla.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Descubrid cuál es la técnica de estudio que más se ajusta a vosotros. Cada persona se enfrenta a la preparación de una oposición de forma diferente, es por eso que encontrar el método que más encaja con vosotros es fundamental</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Contemplad e intercalad pausas y descansos que os ayuden a mantener la concentración en las sesiones de estudio. Esto reduce los efectos de la curva del olvido en vuestro proceso de preparación de las oposiciones a Agente de la Hacienda Pública</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ahora que conocéis cuáles son los requisitos de Agente de la Hacienda Pública ya sabéis qué precisáis si queréis presentaros a esta oposición.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Antes de presentar vuestra instancia os recomendamos que reviséis concienzudamente el listado completo de exigencias para aseguraros de que cumplís con todos los requisitos y no tenéis ningún impedimento.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¡Ánimo con el estudio y suerte en la oposición!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Tenéis dudas? Probablemente ya las hayamos resuelto en nuestro centro de ayuda. Si no encontráis vuestra pregunta aquí, escribidnos a ayuda@opositatest.com o llamadnos al 919040798 y os ayudaremos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Únete ya a nuestro Grupo de Facebook «Objetivo oposición de la Hacienda Pública» y estate siempre al día de la actualidad de tu oposición en nuestro canal de Telegram especializado.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El equipo de OpositaTest</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">www.opositatest.com</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Conoce nuestra plataforma</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Necesitas ayuda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Nuestro equipo de atención te ayudará en cada fase.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Lunes a Jueves de 09h a 18h Viernes de 09h a 15h</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "h1 -> ¿Cuáles son los requisitos para presentarse a las oposiciones de Agente de Hacienda de 2026?\ntexto bajo h1 -> ¡Hola, opositores y opositoras! En este artículo os desgranamos los requisitos para acceder a la oposición de Agente de Hacienda. Gracias a él, quienes planteáis opositar a Agente de Hacienda seréis conscientes de las exigencias de esta oposición en cuanto a titulación requerida o capacidades.\ntexto bajo h1 -> ¡Seguid leyendo si queréis conocer todos los detalles!\ntexto bajo h1 -> Índice de contenidos\n\th2 -> Oposiciones de Agente de Hacienda: requisitos 2026\n\ttexto bajo h2 -> De acuerdo con las bases de la convocatoria vigente de Agentes de Hacienda, los requisitos de acceso a la oposición son los siguientes:\n\ttexto bajo h2 -> Nacionalidad española. *No se admiten aspirantes de otras nacionalidades. Estas son algunas las oposiciones a las que os podéis presentar si no tenéis la nacionalidad española\n\ttexto bajo h2 -> Edad: Tener, al menos, 16 años de edad y no exceder la edad máxima de jubilación forzosa\n\ttexto bajo h2 -> Titulación: Estar en posesión o en condiciones de obtener el Título de Bachiller o Técnico. En el caso de contar con titulaciones obtenidas en el extranjero, se deberá acreditar estar en posesión del título homologado o equivalencia\n\ttexto bajo h2 -> Capacidad: Poseer la capacidad funcional para el desarrollo de las funciones del puesto a desempeñar\n\ttexto bajo h2 -> No haber sido separado mediante expediente disciplinario del servicio de cualquiera de las Administraciones Públicas o de los Organismos Constitucionales o Estatutarios de las Comunidades Autónomas, ni hallarse en inhabilitación absoluta o especial para empleos o cargos públicos por resolución judicial , para el acceso a Cuerpos o Escalas de funcionarios\n\ttexto bajo h2 -> No pertenecer al mismo Cuerpo o Escala al que se presenta\n\th2 -> ¿Dónde se regulan los requisitos de la oposición a Agente de Hacienda?\n\ttexto bajo h2 -> Como es habitual en todos los procesos selectivos, los requisitos de la oposición a Agente de la Hacienda Pública están regulados e indicados en las bases de la convocatoria vigente.\n\ttexto bajo h2 -> Así, actualmente, la convocatoria más reciente es la publicada en el Boletín Oficial del Estado con fecha 30 de diciembre de 2025.\n\th2 -> ¿Cuándo deben cumplirse los requisitos de las oposiciones a Agente de Hacienda?\n\ttexto bajo h2 -> Tal y como indican expresamente las bases de la convocatoria para las oposiciones de Agente de la Hacienda Pública, los requisitos:\n\ttexto bajo h2 -> Deben reunirse en el día de la finalización del plazo de presentación de solicitudes\n\ttexto bajo h2 -> Tienen que mantenerse hasta el momento de toma de posesión como funcionarios de carrera\n\th2 -> Instancia y pago de tasas: trámites exigidos para presentarse a Agente de Hacienda\n\ttexto bajo h2 -> Además de los requisitos de Agente de la Hacienda Pública que acabamos de desmenuzar, existen otras exigencias que tendréis que cumplir si queréis ser admitidos/as al proceso selectivo:\n\ttexto bajo h2 -> Presentar la instancia de participación en tiempo y forma: actualmente, solo se permite la presentación únicamente por vía electrónica. El plazo para hacerlo es de 20 días hábiles a contar desde el siguiente a la publicación de la convocatoria en el Boletín Oficial del Estado. Tenéis más información en nuestra guía completa y actualizada sobre cómo presentar la instancia en la oposición de Agentes de la Hacienda Pública\n\ttexto bajo h2 -> Abonar las tasas correspondientes: en la última convocatoria, ascienden a 15,57 € en Turno Libre. No obstante, hay determinados casos de exención del pago: Personas con un grado de discapacidad igual o superior al 33 %, debiendo acompañar a la solicitud certificado acreditativo de tal condición. No necesitaréis aportar esta documentación si dicha condición de discapacidad ha sido reconocida en alguna de estas Comunidades Autónomas\n\ttexto bajo h2 -> Aquellas personas que figuren como demandantes de empleo durante el plazo, al menos, de un mes anterior a la fecha de la convocatoria, siempre que cumplan los siguientes requisitos: No haber rechazado en este plazo una oferta de empleo adecuado ni haberse negado a participar, salvo causa justificada, en acciones de promoción, formación o reconversión profesional\n\ttexto bajo h2 -> Carecer de rentas superiores, en cómputo mensual, al salario mínimo interprofesional\n\ttexto bajo h2 -> Las familias numerosas tendrán derecho a una exención: Del 100 % de la tasa los miembros de familias de la categoría especial\n\ttexto bajo h2 -> Del 50 % los que fueran de la categoría general (debiendo pagar, por tanto, 7,71 €)\n\ttexto bajo h2 -> Las víctimas del terrorismo\n\ttexto bajo h2 -> Si tenéis derecho a cualquiera de estas exenciones totales o parciales, debéis justificarlo documentalmente, tal y como indican las bases de la convocatoria. De manera que si no enviáis la documentación pertinente o no presentáis la instancia en tiempo y forma, así como no abonáis la tasa de examen correspondiente, apareceréis como excluidos en la lista provisional de personas admitidas.\n\ttexto bajo h2 -> En cualquier caso, recordad que estos dos requisitos de Agentes de Hacienda son, como decíamos, imprescindibles para poder acceder a la lista de admitidos en el proceso selectivo de Agentes de la Hacienda Pública.\n\ttexto bajo h2 -> El cuestionario tipo test en la oposición de Agentes de la Hacienda Pública es una prueba de carácter eliminatorio, por lo que es fundamental prepararse a conciencia para superarla.\n\th2 -> ¿Cuáles son las claves para aprobar la oposición a Agente de Hacienda?\n\ttexto bajo h2 -> Cumplir los requisitos de Agente de la Hacienda Pública es solo el inicio del camino para lograr vuestra ansiada plaza. En OpositaTest estamos a vuestro lado desde el comienzo de la preparación para la fecha de examen de Agentes de Hacienda.\n\ttexto bajo h2 -> Así os queremos traer una serie de consejos y recomendaciones para que las probabilidades de éxito aumenten y superéis esta oposición:\n\ttexto bajo h2 -> Estudiad el temario a conciencia. Para responder con seguridad a las preguntas test y no dudar es fundamental conocer en profundidad la materia y tener los conceptos claros\n\ttexto bajo h2 -> Organizad vuestro estudio. Intentad planificar la preparación de estas oposiciones de forma eficiente y racional. Para ello, podéis establecer listas de tareas concretas y objetivos a cumplir en fechas determinadas. Recordad que podéis descargar nuestro OpoTracker gratuito para hacer este seguimiento con mayor facilidad\n\ttexto bajo h2 -> Practicad con nuestros test ilimitados regularmente para estar familiarizados con los tipos de preguntas y respuestas que puedan salir en la prueba oficial. En OpositaTest podréis encontrar más de 5.600 preguntas del temario oficial, en constante actualización y con respuestas siempre justificadas\n\ttexto bajo h2 -> Repasad y fijar los conceptos usando todos los recursos disponibles en OpositaTest. Los esquemas, resúmenes y nuestros materiales descargables pueden ayudaros a memorizar los conceptos de forma mucho más sencilla.\n\ttexto bajo h2 -> Descubrid cuál es la técnica de estudio que más se ajusta a vosotros. Cada persona se enfrenta a la preparación de una oposición de forma diferente, es por eso que encontrar el método que más encaja con vosotros es fundamental\n\ttexto bajo h2 -> Contemplad e intercalad pausas y descansos que os ayuden a mantener la concentración en las sesiones de estudio. Esto reduce los efectos de la curva del olvido en vuestro proceso de preparación de las oposiciones a Agente de la Hacienda Pública\n\ttexto bajo h2 -> Ahora que conocéis cuáles son los requisitos de Agente de la Hacienda Pública ya sabéis qué precisáis si queréis presentaros a esta oposición.\n\ttexto bajo h2 -> Antes de presentar vuestra instancia os recomendamos que reviséis concienzudamente el listado completo de exigencias para aseguraros de que cumplís con todos los requisitos y no tenéis ningún impedimento.\n\ttexto bajo h2 -> ¡Ánimo con el estudio y suerte en la oposición!\n\ttexto bajo h2 -> ¿Tenéis dudas? Probablemente ya las hayamos resuelto en nuestro centro de ayuda. Si no encontráis vuestra pregunta aquí, escribidnos a ayuda@opositatest.com o llamadnos al 919040798 y os ayudaremos.\n\ttexto bajo h2 -> Únete ya a nuestro Grupo de Facebook «Objetivo oposición de la Hacienda Pública» y estate siempre al día de la actualidad de tu oposición en nuestro canal de Telegram especializado.\n\ttexto bajo h2 -> El equipo de OpositaTest\n\ttexto bajo h2 -> www.opositatest.com\n\ttexto bajo h2 -> Conoce nuestra plataforma\n\ttexto bajo h2 -> ¿Necesitas ayuda?\n\ttexto bajo h2 -> Nuestro equipo de atención te ayudará en cada fase.\n\ttexto bajo h2 -> Lunes a Jueves de 09h a 18h Viernes de 09h a 15h";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://www.masterd.es/oposiciones-agente-hacienda</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="content-text">OPE 2026: 1.300 Plazas</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Más de 270 cursos para conseguir tu meta ¡Infórmate!</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Lo más buscado dentro de nuestro portal</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Encontrados resultados para &#x27; &#x27;</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Oposiciones Agente de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Academia preparación de Agentes de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Quieres conseguir una plaza fija como Agente de Hacienda? Te preparamos para superar las O posiciones de Agente de Hacienda (Grupo C1) y accede a un puesto de funcionario de Hacienda cuanto antes.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Además, el trabajo como Agente de Hacienda te permite contribuir activamente al bienestar de la sociedad al garantizar el cumplimiento de las obligaciones fiscales y la equidad en el sistema tributario.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Próxima Convocatoria Agentes de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Con fecha 7 de mayo de 2026, se publicó la Oferta de Empleo Público con las plazas de Agente de Hacienda y esta es su distribución, 1.000 plazas de turno libre y 300 por promoción interna. Está previsto que la convocatoria se desarrolle a lo largo de este mismo año. Esta es una excelente oportunidad para acceder a un empleo público estable y con grandes perspectivas de desarrollo profesional.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El puesto de Agente de Hacienda Pública ofrece estabilidad laboral, un sueldo competitivo y la posibilidad de promocionar dentro de la Administración Pública. Es ideal para quienes desean trabajar en el ámbito fiscal y tributario, colaborando directamente en la gestión y recaudación de impuestos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En MasterD te proporcionamos la formación más completa para superar esta oposición. Contamos con:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Temarios actualizados conforme a las bases oficiales.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Clases prácticas y talleres impartidos por expertos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Simulacros de examen para que llegues completamente preparado al día de las pruebas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">No dejes pasar esta oportunidad de entrar en el cuerpo de Agentes de Hacienda Pública. Infórmate ahora y comienza a preparar tu futuro con nosotros. ¡El empleo público te está esperando!</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Convocatorias Agentes Haciendas</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Las convocatorias de hacienda son cada año y en los últimos años han incrementado el número de plazas de oposiciones para agentes de hacienda debido a la lucha contra el fraude fiscal. Pide información sin compromiso ahora y prepara las oposiciones de hacienda.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Evolución de las Plazas Convocadas para Agentes de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Agente Hacienda Online y Semipresencial</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Curso Inicio al Derecho Legislación de Hacienda desde 0</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Simulacros de Examen Similares a los exámenes oficiales</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Éxito Aprobados Hacienda Excelentes resultados en convocatorias</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Temario Agente Hacienda Actualización constante</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Atención Personalizada Con profesores y entrenadores expertos</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Preparación Toda España Te preparamos en cualquier localidad</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Cuáles son las Funciones de un Agente de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Entre las funciones de los agentes de la hacienda pública destacan, entre otras:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En el área de Inspección, tareas preparatorias y de verificación material de hechos y circunstancias con relevancia tributaria, dependiendo del Inspector-Jefe o de un Inspector-Adjunto al mismo.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En el área de Recaudación, seguimiento y mantenimiento de expedientes de deudores, realización de diligencias de embargo (cuentas bancarias, vehículos, inmuebles, etc.), aplazamientos y fraccionamientos de pago y actuaciones dentro de las unidades de subastas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En el área de Gestión, depuración de discrepancias en autoliquidaciones de IRPF, IVA e IS, notificaciones y requerimientos de información.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Por qué preparar las Oposiciones de Agente de Hacienda en MasterD?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En MasterD te preparamos para las Oposiciones de Agente de Hacienda con los mejores medios humanos y técnicos para que apruebes ya que requiere una planificación estructurada y un enfoque disciplinado. Aquí hay algunos pasos esenciales:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Pruebas simuladas: Realiza exámenes para practicar y simulacros para acostumbrarte al formato y las condiciones del día del examen. Esto te ayudará a mejorar tu tiempo de respuesta y a identificar áreas de mejora.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Clases en directo, videoclases 24 horas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Contarás con temarios actualizados y podrás descargar información adicional en el campus online.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Academias para realizar actividades, talleres y sesiones con tu preparador.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Formación con expertos de la AEAT.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Con nuestro curso conseguirás tu plaza y realizarás funciones administrativas, preparatorias y de verificación material de hechos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Proceso de Selección Oposiciones Agente Tributario</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El procedimiento de selección para agentes de hacienda es: Oposición Libre.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La prueba oficial para acceder al Cuerpo General Administrativo de la Administración del Estado, especialidad de Agente de la Hacienda Pública, subgrupo C1 consta de dos ejercicios.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La última convocatoria publicada en el BOE el 30 de diciembre de 2025 introduce una serie de cambios relevantes en la estructura del primer ejercicio y en el temario, que simplifican parte del proceso y hacen la preparación más accesible para el opositor.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En el primer ejercicio, el número de preguntas tipo test se ha reducido, pasando de 100 a 80 preguntas, lo que permite una prueba más ágil y mejor enfocada a los contenidos esenciales del programa. Todas las preguntas tendrán el mismo valor y cada contestación errónea se penalizará descontando un cuarto del valor de una respuesta correcta. Las respuestas en blanco no penalizan. El tiempo máximo para la realización de este ejercicio será de una hora y cuarenta minutos. Se calificará de 0 a 10 puntos, siendo necesario obtener un mínimo de 5 puntos para superarlo. El Tribunal fijará la puntuación directa mínima necesaria para superar el ejercicio.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Segundo ejercicio: Consistirá en contestar por escrito un cuestionario con diez supuestos prácticos relacionados con las materias del programa que figura como Bloque de Organización de la Hacienda Pública y Derecho Tributario, dirigidas a apreciar la capacidad y competencia de los aspirantes para llevar a cabo las tareas relativas a dichas materias. En siete de ellos se formularán tres preguntas en cada uno de ellos con respuesta breve y razonada y en los tres restantes se formularán tres preguntas en cada uno de ellos con respuestas alternativas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">De acuerdo con la última convocatoria publicada en el BOE el 30 de diciembre de 2025, se han producido modificaciones en el temario oficial de la oposición, afectando tanto al módulo de Derecho Tributario como a otros bloques del programa.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">M ódulo de Derecho Tributario: Se han eliminado de la convocatoria los contenidos relativos a los siguientes impuestos:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Impuesto sobre la Renta de los No Residentes</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Impuestos Especiales</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Impuestos Medioambientales</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Además, el tema de Aduanas se ha simplificado de forma notable, eliminándose todo lo relacionado con el Contrabando y reduciendo el alcance general del contenido exigido.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">También se han introducido ajustes en otros bloques del temario. El Impuesto sobre Sociedades presenta una ligera modificación, con una simplificación en la parte relativa a la gestión del impuesto, y en el apartado de Declaraciones Tributarias se han eliminado las declaraciones informativas y los contenidos relacionados con la obtención de información de trascendencia tributaria.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En las preguntas con respuestas alternativas, sólo una de ellas es la correcta. Para su realización, los aspirantes deberán señalar en la hoja de examen las opciones de respuesta que estimen válidas de acuerdo con las instrucciones que se faciliten. Todas las preguntas tendrán el mismo valor y cada contestación errónea se penalizará descontando un cuarto del valor de una respuesta correcta. Las respuestas en blanco no penalizan.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El tiempo máximo para la realización de este ejercicio será de dos horas y treinta minutos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Se calificará de 0 a 30 puntos, siendo necesario obtener un mínimo de 15 puntos para superarle.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Temario Oposiciones Agente de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Es la publicación de la convocatoria la que recoge los temas que componen la misma, pero al ser una convocatoria nacional, los temas exigidos en dicha convocatoria son los que nuestro temario recoge.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En concreto, los 32 temas según la convocatoria son:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Módulo I. Organización del Estado y de la Administración Pública</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La Constitución Española: estructura y contenido. La Corona.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Las Cortes Generales: composición, atribuciones y funcionamiento.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El Gobierno y la Administración.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La organización territorial del Estado. Instituciones de la UE.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El funcionamiento electrónico del sector público.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Políticas sociales públicas.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Los funcionarios públicos.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Módulo II. Derecho administrativo general</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Fuentes del Derecho administrativo.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El acto administrativo: concepto, clases y elementos.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El procedimiento administrativo común.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">4. Las fases del procedimiento administrativo.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Los recursos administrativos. Concepto y clases.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Módulo III. Organización de la Hacienda Pública y Derecho tributario</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El sistema fiscal español.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La Agencia Estatal de la Administración Tributaria.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El Derecho tributario.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La obligación tributaria.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El obligado tributario.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La aplicación de los tributos: información y asistencia.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Las obligaciones formales de los contribuyentes.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Normas comunes sobre actuaciones y procedimientos tributarios.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Las declaraciones tributarias.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La gestión de los tributos.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Procedimiento de inspección: actuaciones y facultades. Medidas cautelares en la inspección.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La extinción de la deuda tributaria.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La recaudación tributaria.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Embargo: tipos, depósito y enajenación de bienes embargados.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Infracciones y sanciones.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La revisión de los actos de carácter tributario en vía administrativa.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El impuesto sobre la renta de las personas físicas.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El impuesto sobre el valor añadido.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La aduana.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El impuesto sobre sociedades.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Cuáles son las ventajas de ser Agente de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ser Agente de Hacienda ofrece varias ventajas en términos de conciliación laboral y personal:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Estabilidad laboral: Como funcionario público, un Agente de Hacienda goza de estabilidad laboral, lo que brinda seguridad en el empleo a largo plazo.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Horarios regulares: En general, los horarios de trabajo suelen ser regulares, permitiendo una mejor planificación y previsibilidad en la vida personal.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Flexibilidad laboral: Dependiendo de la unidad y la carga de trabajo, algunos Agentes de Hacienda pueden disfrutar de cierta flexibilidad en la organización de sus tareas diarias.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Días libres y vacaciones: Los empleados públicos tienen derecho a un número específico de días libres y vacaciones, lo que contribuye a un mejor equilibrio entre el trabajo y la vida personal.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Desarrollo profesional: La posibilidad de ascenso y desarrollo profesional dentro de la administración pública permite a los Agentes de Hacienda avanzar en sus carreras de manera gradual.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Seguro de salud y otros beneficios: Como empleado público, se pueden recibir beneficios adicionales, como un seguro de salud integral y otras prestaciones sociales.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ambiente laboral estable: La Administración Tributaria proporciona un ambiente laboral estable y la oportunidad de trabajar en un equipo especializado.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Contribución social significativa: Al desempeñar un papel clave en la recaudación de impuestos y la lucha contra el fraude fiscal, los Agentes de Hacienda tienen la oportunidad de realizar una contribución significativa a la sociedad.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Formación continua: La administración pública suele ofrecer programas de formación continua, permitiendo a los empleados mejorar sus habilidades y conocimientos a lo largo de su carrera.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Sueldo funcionario Agente de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El salario base de un agente de hacienda, excluyendo antigüedad y complementos, podría variar entre 1.565 € y 2.200 € al mes.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En MasterD contamos con excelentes resultados en la preparación de las oposiciones de agente de hacienda. Aquí puedes ver la experiencia de David, alumno de MasterD que sacó plaza en el puesto número 20 de su convocatoria. Nos adaptamos a ti hasta que consigas tu meta y nuestra metodología es garantía de éxito.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Requisitos Agente de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Los requisitos específicos para acceder al Cuerpo General Administrativo de la Administración del Estado, especialidad de Agente de la Hacienda Pública, subgrupo C1 son:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ser español</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Tener 16 años de edad y no haber alcanzado la edad de jubilación.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Estar en posesión o en condiciones de obtener el título de bachiller o técnico. Asimismo, se estará sujeto a lo establecido en la Orden EDU/1603/2009, de 10 de junio, por la que se establecen equivalencias con los títulos de graduado en Educación Secundaria Obligatoria y de bachiller regulados en la Ley Orgánica 2/2006, de 3 de mayo, de Educación. En el caso de titulaciones obtenidas en el extranjero se deberá estar en posesión de la credencial que acredite su homologación o convalidación en su caso. Este requisito no será de aplicación a los aspirantes que hubieran obtenido el reconocimiento de su cualificación profesional, en el ámbito de las profesiones reguladas, al amparo de las Disposiciones de Derecho Comunitario.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Compatibilidad funcional: no padecer enfermedad ni estar afectado por limitación física o psíquica incompatible con el desempeño de las correspondientes funciones.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">No haber sido separado, mediante procedimiento disciplinario, del servicio de cualquiera de las administraciones públicas, ni hallarse inhabilitado para el desempeño de las funciones públicas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Estos requisitos deberán poseerse en el momento de finalización del plazo de presentación de solicitudes y mantenerlos hasta el momento de la toma de posesión como funcionario de carrera.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Además son de aplicación las bases comunes que regirán los procesos selectivos para el ingreso acceso en Cuerpos o Escalas de la Administración General del Estado.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Si quieres conocer más información sobre las condiciones relacionadas con el curso pincha en este link</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Información Oposición Agente de Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">¿Qué necesitas para Ser Agente de Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Para ser Agente de Hacienda es necesario estar en posesión de la nacionalidad española, haber cumplido 16 años y no haber alcanzado la edad de jubilación, tener el título de bachillerato o de técnico, y estar física y psicológicamente capacitado para el puesto.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">¿Cuántas Horas Trabaja un Agente de Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La jornada de un Agente de Hacienda es de 35 horas, trabajando de lunes a viernes 7 horas al día. Esta jornada puede variar dependiendo de la comunidad autónoma.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">¿Cuál es el Trabajo de un Agente de Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Las funciones principales del Agente de Hacienda son la actuaciones de preparación y comprobación de hechos que tengan transcendencia tributaria. Estas funciones siempre se llevan a cabo supervisadas por superiores.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">¿Cuánto cobra un Agente de la Hacienda Pública?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El salario de un Agente de Hacienda se enmarca entre los 20.134€ y los 25.691€ al año.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">¿Cuánto se Tarda en Preparar las Oposiciones de Agente de Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">No hay un periódo determinado para conseguir superar las oposiciones de agente de Hacienda, todo depende de la implicación, el tiempo de dedciación y el esfuerzo que pueda aportar el opositor. Teniendo en cuenta estas variables, el tiempo medio de preparación para aprobar la oposición suele encontrarse entre 1 y 3 años con una academia especializada.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">¡Infórmate gratis y sin compromiso!</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Información básica de protección de datos: Corresponsables del tratamiento: Empresas DAVANTE Finalidad: Prospección comercial Derechos: Puede acceder, rectificar y suprimir sus datos, así como otros derechos tal y como se explica en nuestra política de privacidad.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Comparte esta página:</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "OPE 2026: 1.300 Plazas\nMás de 270 cursos para conseguir tu meta ¡Infórmate!\nLo más buscado dentro de nuestro portal\nEncontrados resultados para ' '\nh1 -> Oposiciones Agente de Hacienda\n\th2 -> Academia preparación de Agentes de Hacienda\n\ttexto bajo h2 -> ¿Quieres conseguir una plaza fija como Agente de Hacienda? Te preparamos para superar las O posiciones de Agente de Hacienda (Grupo C1) y accede a un puesto de funcionario de Hacienda cuanto antes.\n\ttexto bajo h2 -> Además, el trabajo como Agente de Hacienda te permite contribuir activamente al bienestar de la sociedad al garantizar el cumplimiento de las obligaciones fiscales y la equidad en el sistema tributario.\n\th2 -> Próxima Convocatoria Agentes de Hacienda\n\ttexto bajo h2 -> Con fecha 7 de mayo de 2026, se publicó la Oferta de Empleo Público con las plazas de Agente de Hacienda y esta es su distribución, 1.000 plazas de turno libre y 300 por promoción interna. Está previsto que la convocatoria se desarrolle a lo largo de este mismo año. Esta es una excelente oportunidad para acceder a un empleo público estable y con grandes perspectivas de desarrollo profesional.\n\ttexto bajo h2 -> El puesto de Agente de Hacienda Pública ofrece estabilidad laboral, un sueldo competitivo y la posibilidad de promocionar dentro de la Administración Pública. Es ideal para quienes desean trabajar en el ámbito fiscal y tributario, colaborando directamente en la gestión y recaudación de impuestos.\n\ttexto bajo h2 -> En MasterD te proporcionamos la formación más completa para superar esta oposición. Contamos con:\n\ttexto bajo h2 -> Temarios actualizados conforme a las bases oficiales.\n\ttexto bajo h2 -> Clases prácticas y talleres impartidos por expertos.\n\ttexto bajo h2 -> Simulacros de examen para que llegues completamente preparado al día de las pruebas.\n\ttexto bajo h2 -> No dejes pasar esta oportunidad de entrar en el cuerpo de Agentes de Hacienda Pública. Infórmate ahora y comienza a preparar tu futuro con nosotros. ¡El empleo público te está esperando!\n\t\th3 -> Convocatorias Agentes Haciendas\n\t\ttexto bajo h3 -> Las convocatorias de hacienda son cada año y en los últimos años han incrementado el número de plazas de oposiciones para agentes de hacienda debido a la lucha contra el fraude fiscal. Pide información sin compromiso ahora y prepara las oposiciones de hacienda.\n\t\th3 -> Evolución de las Plazas Convocadas para Agentes de Hacienda\n\th2 -> Agente Hacienda Online y Semipresencial\n\ttexto bajo h2 -> Curso Inicio al Derecho Legislación de Hacienda desde 0\n\ttexto bajo h2 -> Simulacros de Examen Similares a los exámenes oficiales\n\ttexto bajo h2 -> Éxito Aprobados Hacienda Excelentes resultados en convocatorias\n\ttexto bajo h2 -> Temario Agente Hacienda Actualización constante\n\ttexto bajo h2 -> Atención Personalizada Con profesores y entrenadores expertos\n\ttexto bajo h2 -> Preparación Toda España Te preparamos en cualquier localidad\n\th2 -> ¿Cuáles son las Funciones de un Agente de Hacienda?\n\ttexto bajo h2 -> Entre las funciones de los agentes de la hacienda pública destacan, entre otras:\n\ttexto bajo h2 -> En el área de Inspección, tareas preparatorias y de verificación material de hechos y circunstancias con relevancia tributaria, dependiendo del Inspector-Jefe o de un Inspector-Adjunto al mismo.\n\ttexto bajo h2 -> En el área de Recaudación, seguimiento y mantenimiento de expedientes de deudores, realización de diligencias de embargo (cuentas bancarias, vehículos, inmuebles, etc.), aplazamientos y fraccionamientos de pago y actuaciones dentro de las unidades de subastas.\n\ttexto bajo h2 -> En el área de Gestión, depuración de discrepancias en autoliquidaciones de IRPF, IVA e IS, notificaciones y requerimientos de información.\n\th2 -> ¿Por qué preparar las Oposiciones de Agente de Hacienda en MasterD?\n\ttexto bajo h2 -> En MasterD te preparamos para las Oposiciones de Agente de Hacienda con los mejores medios humanos y técnicos para que apruebes ya que requiere una planificación estructurada y un enfoque disciplinado. Aquí hay algunos pasos esenciales:\n\ttexto bajo h2 -> Pruebas simuladas: Realiza exámenes para practicar y simulacros para acostumbrarte al formato y las condiciones del día del examen. Esto te ayudará a mejorar tu tiempo de respuesta y a identificar áreas de mejora.\n\ttexto bajo h2 -> Clases en directo, videoclases 24 horas.\n\ttexto bajo h2 -> Contarás con temarios actualizados y podrás descargar información adicional en el campus online.\n\ttexto bajo h2 -> Academias para realizar actividades, talleres y sesiones con tu preparador.\n\ttexto bajo h2 -> Formación con expertos de la AEAT.\n\ttexto bajo h2 -> Con nuestro curso conseguirás tu plaza y realizarás funciones administrativas, preparatorias y de verificación material de hechos.\n\th2 -> Proceso de Selección Oposiciones Agente Tributario\n\ttexto bajo h2 -> El procedimiento de selección para agentes de hacienda es: Oposición Libre.\n\ttexto bajo h2 -> La prueba oficial para acceder al Cuerpo General Administrativo de la Administración del Estado, especialidad de Agente de la Hacienda Pública, subgrupo C1 consta de dos ejercicios.\n\ttexto bajo h2 -> La última convocatoria publicada en el BOE el 30 de diciembre de 2025 introduce una serie de cambios relevantes en la estructura del primer ejercicio y en el temario, que simplifican parte del proceso y hacen la preparación más accesible para el opositor.\n\ttexto bajo h2 -> En el primer ejercicio, el número de preguntas tipo test se ha reducido, pasando de 100 a 80 preguntas, lo que permite una prueba más ágil y mejor enfocada a los contenidos esenciales del programa. Todas las preguntas tendrán el mismo valor y cada contestación errónea se penalizará descontando un cuarto del valor de una respuesta correcta. Las respuestas en blanco no penalizan. El tiempo máximo para la realización de este ejercicio será de una hora y cuarenta minutos. Se calificará de 0 a 10 puntos, siendo necesario obtener un mínimo de 5 puntos para superarlo. El Tribunal fijará la puntuación directa mínima necesaria para superar el ejercicio.\n\ttexto bajo h2 -> Segundo ejercicio: Consistirá en contestar por escrito un cuestionario con diez supuestos prácticos relacionados con las materias del programa que figura como Bloque de Organización de la Hacienda Pública y Derecho Tributario, dirigidas a apreciar la capacidad y competencia de los aspirantes para llevar a cabo las tareas relativas a dichas materias. En siete de ellos se formularán tres preguntas en cada uno de ellos con respuesta breve y razonada y en los tres restantes se formularán tres preguntas en cada uno de ellos con respuestas alternativas.\n\ttexto bajo h2 -> De acuerdo con la última convocatoria publicada en el BOE el 30 de diciembre de 2025, se han producido modificaciones en el temario oficial de la oposición, afectando tanto al módulo de Derecho Tributario como a otros bloques del programa.\n\ttexto bajo h2 -> M ódulo de Derecho Tributario: Se han eliminado de la convocatoria los contenidos relativos a los siguientes impuestos:\n\ttexto bajo h2 -> Impuesto sobre la Renta de los No Residentes\n\ttexto bajo h2 -> Impuestos Especiales\n\ttexto bajo h2 -> Impuestos Medioambientales\n\ttexto bajo h2 -> Además, el tema de Aduanas se ha simplificado de forma notable, eliminándose todo lo relacionado con el Contrabando y reduciendo el alcance general del contenido exigido.\n\ttexto bajo h2 -> También se han introducido ajustes en otros bloques del temario. El Impuesto sobre Sociedades presenta una ligera modificación, con una simplificación en la parte relativa a la gestión del impuesto, y en el apartado de Declaraciones Tributarias se han eliminado las declaraciones informativas y los contenidos relacionados con la obtención de información de trascendencia tributaria.\n\ttexto bajo h2 -> En las preguntas con respuestas alternativas, sólo una de ellas es la correcta. Para su realización, los aspirantes deberán señalar en la hoja de examen las opciones de respuesta que estimen válidas de acuerdo con las instrucciones que se faciliten. Todas las preguntas tendrán el mismo valor y cada contestación errónea se penalizará descontando un cuarto del valor de una respuesta correcta. Las respuestas en blanco no penalizan.\n\ttexto bajo h2 -> El tiempo máximo para la realización de este ejercicio será de dos horas y treinta minutos.\n\ttexto bajo h2 -> Se calificará de 0 a 30 puntos, siendo necesario obtener un mínimo de 15 puntos para superarle.\n\th2 -> Temario Oposiciones Agente de Hacienda\n\ttexto bajo h2 -> Es la publicación de la convocatoria la que recoge los temas que componen la misma, pero al ser una convocatoria nacional, los temas exigidos en dicha convocatoria son los que nuestro temario recoge.\n\ttexto bajo h2 -> En concreto, los 32 temas según la convocatoria son:\n\t\th3 -> Módulo I. Organización del Estado y de la Administración Pública\n\t\ttexto bajo h3 -> La Constitución Española: estructura y contenido. La Corona.\n\t\ttexto bajo h3 -> Las Cortes Generales: composición, atribuciones y funcionamiento.\n\t\ttexto bajo h3 -> El Gobierno y la Administración.\n\t\ttexto bajo h3 -> La organización territorial del Estado. Instituciones de la UE.\n\t\ttexto bajo h3 -> El funcionamiento electrónico del sector público.\n\t\ttexto bajo h3 -> Políticas sociales públicas.\n\t\ttexto bajo h3 -> Los funcionarios públicos.\n\t\th3 -> Módulo II. Derecho administrativo general\n\t\ttexto bajo h3 -> Fuentes del Derecho administrativo.\n\t\ttexto bajo h3 -> El acto administrativo: concepto, clases y elementos.\n\t\ttexto bajo h3 -> El procedimiento administrativo común.\n\t\ttexto bajo h3 -> 4. Las fases del procedimiento administrativo.\n\t\ttexto bajo h3 -> Los recursos administrativos. Concepto y clases.\n\t\th3 -> Módulo III. Organización de la Hacienda Pública y Derecho tributario\n\t\ttexto bajo h3 -> El sistema fiscal español.\n\t\ttexto bajo h3 -> La Agencia Estatal de la Administración Tributaria.\n\t\ttexto bajo h3 -> El Derecho tributario.\n\t\ttexto bajo h3 -> La obligación tributaria.\n\t\ttexto bajo h3 -> El obligado tributario.\n\t\ttexto bajo h3 -> La aplicación de los tributos: información y asistencia.\n\t\ttexto bajo h3 -> Las obligaciones formales de los contribuyentes.\n\t\ttexto bajo h3 -> Normas comunes sobre actuaciones y procedimientos tributarios.\n\t\ttexto bajo h3 -> Las declaraciones tributarias.\n\t\ttexto bajo h3 -> La gestión de los tributos.\n\t\ttexto bajo h3 -> Procedimiento de inspección: actuaciones y facultades. Medidas cautelares en la inspección.\n\t\ttexto bajo h3 -> La extinción de la deuda tributaria.\n\t\ttexto bajo h3 -> La recaudación tributaria.\n\t\ttexto bajo h3 -> Embargo: tipos, depósito y enajenación de bienes embargados.\n\t\ttexto bajo h3 -> Infracciones y sanciones.\n\t\ttexto bajo h3 -> La revisión de los actos de carácter tributario en vía administrativa.\n\t\ttexto bajo h3 -> El impuesto sobre la renta de las personas físicas.\n\t\ttexto bajo h3 -> El impuesto sobre el valor añadido.\n\t\ttexto bajo h3 -> La aduana.\n\t\ttexto bajo h3 -> El impuesto sobre sociedades.\n\th2 -> ¿Cuáles son las ventajas de ser Agente de Hacienda?\n\ttexto bajo h2 -> Ser Agente de Hacienda ofrece varias ventajas en términos de conciliación laboral y personal:\n\ttexto bajo h2 -> Estabilidad laboral: Como funcionario público, un Agente de Hacienda goza de estabilidad laboral, lo que brinda seguridad en el empleo a largo plazo.\n\ttexto bajo h2 -> Horarios regulares: En general, los horarios de trabajo suelen ser regulares, permitiendo una mejor planificación y previsibilidad en la vida personal.\n\ttexto bajo h2 -> Flexibilidad laboral: Dependiendo de la unidad y la carga de trabajo, algunos Agentes de Hacienda pueden disfrutar de cierta flexibilidad en la organización de sus tareas diarias.\n\ttexto bajo h2 -> Días libres y vacaciones: Los empleados públicos tienen derecho a un número específico de días libres y vacaciones, lo que contribuye a un mejor equilibrio entre el trabajo y la vida personal.\n\ttexto bajo h2 -> Desarrollo profesional: La posibilidad de ascenso y desarrollo profesional dentro de la administración pública permite a los Agentes de Hacienda avanzar en sus carreras de manera gradual.\n\ttexto bajo h2 -> Seguro de salud y otros beneficios: Como empleado público, se pueden recibir beneficios adicionales, como un seguro de salud integral y otras prestaciones sociales.\n\ttexto bajo h2 -> Ambiente laboral estable: La Administración Tributaria proporciona un ambiente laboral estable y la oportunidad de trabajar en un equipo especializado.\n\ttexto bajo h2 -> Contribución social significativa: Al desempeñar un papel clave en la recaudación de impuestos y la lucha contra el fraude fiscal, los Agentes de Hacienda tienen la oportunidad de realizar una contribución significativa a la sociedad.\n\ttexto bajo h2 -> Formación continua: La administración pública suele ofrecer programas de formación continua, permitiendo a los empleados mejorar sus habilidades y conocimientos a lo largo de su carrera.\n\th2 -> Sueldo funcionario Agente de Hacienda\n\ttexto bajo h2 -> El salario base de un agente de hacienda, excluyendo antigüedad y complementos, podría variar entre 1.565 € y 2.200 € al mes.\n\ttexto bajo h2 -> En MasterD contamos con excelentes resultados en la preparación de las oposiciones de agente de hacienda. Aquí puedes ver la experiencia de David, alumno de MasterD que sacó plaza en el puesto número 20 de su convocatoria. Nos adaptamos a ti hasta que consigas tu meta y nuestra metodología es garantía de éxito.\n\th2 -> Requisitos Agente de Hacienda\n\ttexto bajo h2 -> Los requisitos específicos para acceder al Cuerpo General Administrativo de la Administración del Estado, especialidad de Agente de la Hacienda Pública, subgrupo C1 son:\n\ttexto bajo h2 -> Ser español\n\ttexto bajo h2 -> Tener 16 años de edad y no haber alcanzado la edad de jubilación.\n\ttexto bajo h2 -> Estar en posesión o en condiciones de obtener el título de bachiller o técnico. Asimismo, se estará sujeto a lo establecido en la Orden EDU/1603/2009, de 10 de junio, por la que se establecen equivalencias con los títulos de graduado en Educación Secundaria Obligatoria y de bachiller regulados en la Ley Orgánica 2/2006, de 3 de mayo, de Educación. En el caso de titulaciones obtenidas en el extranjero se deberá estar en posesión de la credencial que acredite su homologación o convalidación en su caso. Este requisito no será de aplicación a los aspirantes que hubieran obtenido el reconocimiento de su cualificación profesional, en el ámbito de las profesiones reguladas, al amparo de las Disposiciones de Derecho Comunitario.\n\ttexto bajo h2 -> Compatibilidad funcional: no padecer enfermedad ni estar afectado por limitación física o psíquica incompatible con el desempeño de las correspondientes funciones.\n\ttexto bajo h2 -> No haber sido separado, mediante procedimiento disciplinario, del servicio de cualquiera de las administraciones públicas, ni hallarse inhabilitado para el desempeño de las funciones públicas.\n\ttexto bajo h2 -> Estos requisitos deberán poseerse en el momento de finalización del plazo de presentación de solicitudes y mantenerlos hasta el momento de la toma de posesión como funcionario de carrera.\n\ttexto bajo h2 -> Además son de aplicación las bases comunes que regirán los procesos selectivos para el ingreso acceso en Cuerpos o Escalas de la Administración General del Estado.\n\ttexto bajo h2 -> Si quieres conocer más información sobre las condiciones relacionadas con el curso pincha en este link\n\th2 -> Información Oposición Agente de Hacienda\n\t\th3 -> ¿Qué necesitas para Ser Agente de Hacienda?\n\t\ttexto bajo h3 -> Para ser Agente de Hacienda es necesario estar en posesión de la nacionalidad española, haber cumplido 16 años y no haber alcanzado la edad de jubilación, tener el título de bachillerato o de técnico, y estar física y psicológicamente capacitado para el puesto.\n\t\th3 -> ¿Cuántas Horas Trabaja un Agente de Hacienda?\n\t\ttexto bajo h3 -> La jornada de un Agente de Hacienda es de 35 horas, trabajando de lunes a viernes 7 horas al día. Esta jornada puede variar dependiendo de la comunidad autónoma.\n\t\th3 -> ¿Cuál es el Trabajo de un Agente de Hacienda?\n\t\ttexto bajo h3 -> Las funciones principales del Agente de Hacienda son la actuaciones de preparación y comprobación de hechos que tengan transcendencia tributaria. Estas funciones siempre se llevan a cabo supervisadas por superiores.\n\t\th3 -> ¿Cuánto cobra un Agente de la Hacienda Pública?\n\t\ttexto bajo h3 -> El salario de un Agente de Hacienda se enmarca entre los 20.134€ y los 25.691€ al año.\n\t\th3 -> ¿Cuánto se Tarda en Preparar las Oposiciones de Agente de Hacienda?\n\t\ttexto bajo h3 -> No hay un periódo determinado para conseguir superar las oposiciones de agente de Hacienda, todo depende de la implicación, el tiempo de dedciación y el esfuerzo que pueda aportar el opositor. Teniendo en cuenta estas variables, el tiempo medio de preparación para aprobar la oposición suele encontrarse entre 1 y 3 años con una academia especializada.\n\t\ttexto bajo h3 -> ¡Infórmate gratis y sin compromiso!\n\t\ttexto bajo h3 -> Información básica de protección de datos: Corresponsables del tratamiento: Empresas DAVANTE Finalidad: Prospección comercial Derechos: Puede acceder, rectificar y suprimir sus datos, así como otros derechos tal y como se explica en nuestra política de privacidad.\n\t\ttexto bajo h3 -> Comparte esta página:";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

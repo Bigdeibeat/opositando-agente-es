@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://www.opobusca.com/oposicion-agente-de-hacienda-publica</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Alertas OpoBusca</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Información Oposiciones Agente de Hacienda</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">¿Quieres ser Agente de Hacienda? Las Oposiciones de Agente de Hacienda forman parte del Grupo C1 dentro de los niveles de funcionarios. Son oposiciones ofertadas en la Oferta de Empleo de la Administración General del Estado que te permitirán acceder a un empleo público pensado para personas a las que les atraiga la administración y la gestión tributaria llevando a cabo acciones dentro de la Administración tributaria.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Para el buen funcionamiento de un país, las labores de recaudación, gestión e inspección tributaria son muy importante y por ello se precisan funcionarios que garanticen el cumplimiento de las leyes tributarias y fiscales. Como Agente de Hacienda podrás contribuir con el sistema fiscal en multitud de competencias y te permitirá trabajar en un trabajo estimulante debido a los cambios fiscales que se producen. Elegir las oposiciones de Agente de Hacienda te otorgan un empleo estable y una remuneración adecuada que te permitirá compatibilizar la vida laboral con la familiar.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">¿Qué funciones tiene un Agente de Hacienda? Las funciones principales que desarrollarás serán muy variadas y a continuación te dejamos algunas de ellas:</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Gestión, control y cumplimiento de las obligaciones tributarias de los ciudadanos o de sus empresas a través de la revisión de impuestos.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Auditar registros contables e identificación de irregularidades tributarias.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Proporcionan asesoramiento y orientación a los contribuyentes sobre sus obligaciones fiscales, los procedimientos de presentación de impuestos, las deducciones disponibles y otros aspectos relacionados con la fiscalidad.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">También pueden ofrecer asistencia para resolver problemas fiscales y responder a consultas sobre normativas tributarias, inspecciones y verificaciones fiscales en empresas y particulares para asegurarse de que están cumpliendo con las normativas fiscales vigentes.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Investigaciones para detectar posibles casos de fraude fiscal, aplicar sanciones y medidas coercitivas según lo establecido por la legislación tributaria y colaborar estrechamente con otras entidades.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Cuál es el sueldo de un Agente de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Cuál es el salario de un Agente de Hacienda? El sueldo del Agente de Hacienda Pública oscila entre los 1.500, 00 € y 2.000,00 € mensuales, pero estos datos han sido tomados sin tener en cuenta la antigüedad que tenga el funcionario, ya que este aumenta conforme se sube de nivel en el cuerpo o el tiempo de permanencia en el puesto.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Por una parte, dentro del sueldo de un Agente de Hacienda encontraremos las:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Retribuciones Básicas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Sueldo base: El sueldo bases suele ascender hasta casi los 900,00 euros.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Trienios: acumularán 28,00 euros al mes por cada 3 años de servicio activo.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Paga Extraordinarias: meses de junio y diciembre</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Retribuciones complementarias</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Complemento específico: Oscila desde los 358,00 euros hasta los 558,00 euros.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Complemento de destino: Remunera desde los 358,00 euros hasta los 558,00 euros.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Rendimiento y dedicación: A razón de la productividad.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Residencia: Funcionarios con residencia en Islas, Ceuta y Melilla.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Cómo acceder a Oposiciones Agente Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Los requisitos para ser Agente de Hacienda en la Administración Pública son, entre otros:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Tener nacionalidad española.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Tener más de 16 años de edad no exceder la edad de jubilación forzosa.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Poseer el título de bachiller o técnico.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Haber satisfecho las tasas establecidas para poder realizar el examen salvo que te encuentres en los supuestos exentos que vendrán establecidos en las bases de la convocatoria.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Si accedes por promoción interna alternativamente, los requisitos varían notablemente:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Poseer una antigüedad de diez años en los cuerpos o escalas del subgrupo C2 o de cinco años.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Haber superado el curso específico al que se refiere la disposición adicional novena del citado Real Decreto 364/1995, de 10 de marzo a estos puestos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Como puedes ver, se pueden considerar unas oposiciones con requisitos muy asequibles.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Pruebas Agente Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Las pruebas oficiales de la convocatoria para acceder al Cuerpo General Administrativo de la Administración del Estado en la especialidad de Agente de la Hacienda Pública en turno libre, subgrupo C1, consta de dos ejercicios:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Cuestionario</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Será un test de 100 preguntas de respuesta múltiple sobre las materias contenidas en el temario. Para cada pregunta se propondrán diversas respuestas, siendo sólo una de ellas la correcta. Se calificará de 0 a 10 puntos, siendo necesario obtener un mínimo de 5 puntos para superarlo. Es decir, para superar el ejercicio como mínimo deberás obtener una puntuación de 5 puntos sobre 10.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Supuesto teórico-práctico</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Consistirá en contestar por escrito un supuesto teórico-práctico relacionado con la «Organización de la Hacienda Pública y Derecho Tributario» del programa. El ejercicio deberá escribirse de tal modo que permita su lectura por cualquier miembro del Tribunal, evitando la utilización de abreviaturas o signos no usuales en el lenguaje escrito. Se calificará de 0 a 30 puntos, siendo necesario obtener un mínimo de 15 puntos para superarlo.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Por otra parte, si accedes al Cuerpo de Agente Tributario por promoción interna deberás realizar un examen tipo test de 60 preguntas y un cuestionario con diez supuestos prácticos relacionados con las materias del programa. El cuestionario de la primera parte del ejercicio, así como el cuestionario de la segunda parte de preguntas con respuesta múltiple, estarán compuestos por preguntas con cuatro respuestas alternativas, de las cuales sólo una de ellas es correcta. Para su realización, los aspirantes deberán señalar en la hoja de examen las opciones de respuesta que estimen válidas de acuerdo con las instrucciones que se faciliten. Tras superar la parte de la oposición podrás aumentar tu nota certificando los méritos que poseas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Temario Agente Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Antes de que te centres en el temario, te recomendamos que tengas una planificación estructurada y consultes los requisitos de la convocatoria. Planifica tu estudio con un plan real que abarque el total del temario, márcate una rutina de estudio, haz pruebas siumuladas que te hagan familiarizarte con el modelo de examen, revisa convocatorias anteriores. asegúrate de que tu temario está completamente actualizado y cuida de tu descanso. Todo esto te hará alcanzar el éxito en las oposiciones de Agente de Hacienda.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El temario de las Oposiciones de Agente de Hacienda en turno libre consta principalmente de 30 temas sobre Organización del Estado y de la Administración Pública, Derecho Administrativo General, Organización de la Hacienda Pública y Derecho Tributario.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En cambio, si ya eres funcionario de la Administración pública pero quieres pasar a formar parte del Cuerpo de Agentes de Hacienda, el temario de las Oposiciones de Agente de Hacienda por promoción interna constará de 25 temas basado en la Organización del Estado y de la Administración Pública y Derecho Tributario.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Evolución de convocatorias y plazas convocadas</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">* La evolución del número de convocatorias y de las plazas convocadas es un sumatorio de todas las vacantes de esta oposición en España y sus localidades</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Preguntas Frecuentes</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Qué necesitas para Ser Agente de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Para opositar a Agente de Hacienda, los requisitos principales son tener la nacionalidad española, ser mayor de 16 años y poseer el título de Bachiller o Técnico. Además, es imprescindible contar con la aptitud psicofísica necesaria para el ejercicio de las funciones.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Qué hace un Agente de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El Agente de Hacienda se encarga de la recopilación, gestión y verificación de datos con relevancia fiscal. Estas tareas de apoyo y comprobación se realizan siempre bajo la supervisión directa de los Técnicos o Inspectores de Hacienda.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Cuánto cobra un Agente de la Hacienda Pública?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El salario de un Agente de Hacienda se enmarca entre los 20.134€ y los 25.691€ al año.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Cuánto se Tarda en Preparar las Oposiciones de Agente de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">No existe un plazo fijo para aprobar, pero la constancia y una buena organización son claves. Generalmente, los opositores tardan entre uno y tres años en superar el proceso, un periodo que puede optimizarse significativamente mediante una metodología de estudio profesional y guiada.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Últimas ofertas / convocatorias</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Convocatoria de 11 plazas, Agente de Hacienda Pública (Gobierno Valenciano)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Oferta de 1300 plazas, Agente de Hacienda Pública (Administración General del Estado)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Convocatoria de 2 plazas, Agente Tributario Local (Diputación Provincial de Cuenca)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Convocatoria de 6 plazas, Agente Tributario Local (León, León)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Oferta de 17 plazas, Agente Tributario Local (Gestión Tributaria de Alicante (SUMA))</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Oferta de 1 plaza, Agente Tributario Local (Melilla, Melilla)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Oferta de 1 plaza, Agente de Hacienda Pública (Melilla)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Oferta de 1 plaza, Agente de Hacienda Pública (Santander, Cantabria)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Oferta de 1 plaza, Agente de Hacienda Pública (Diputación Provincial de Burgos)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Oferta de 3 plazas, Agente de Hacienda Pública (Diputación Provincial de Sevilla)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Te informamos sin compromiso</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Rellena el formulario para que podamos atenderte</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Información básica de protección de datos: Corresponsables del tratamiento: Empresas DAVANTE Finalidad: Prospección comercial Derechos: Puede acceder, rectificar y suprimir sus datos, así como otros derechos tal y como se explica en nuestra política de privacidad.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Comparte esta página:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Filtrar por:</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "Alertas OpoBusca\nh1 -> Información Oposiciones Agente de Hacienda\ntexto bajo h1 -> ¿Quieres ser Agente de Hacienda? Las Oposiciones de Agente de Hacienda forman parte del Grupo C1 dentro de los niveles de funcionarios. Son oposiciones ofertadas en la Oferta de Empleo de la Administración General del Estado que te permitirán acceder a un empleo público pensado para personas a las que les atraiga la administración y la gestión tributaria llevando a cabo acciones dentro de la Administración tributaria.\ntexto bajo h1 -> Para el buen funcionamiento de un país, las labores de recaudación, gestión e inspección tributaria son muy importante y por ello se precisan funcionarios que garanticen el cumplimiento de las leyes tributarias y fiscales. Como Agente de Hacienda podrás contribuir con el sistema fiscal en multitud de competencias y te permitirá trabajar en un trabajo estimulante debido a los cambios fiscales que se producen. Elegir las oposiciones de Agente de Hacienda te otorgan un empleo estable y una remuneración adecuada que te permitirá compatibilizar la vida laboral con la familiar.\ntexto bajo h1 -> ¿Qué funciones tiene un Agente de Hacienda? Las funciones principales que desarrollarás serán muy variadas y a continuación te dejamos algunas de ellas:\ntexto bajo h1 -> Gestión, control y cumplimiento de las obligaciones tributarias de los ciudadanos o de sus empresas a través de la revisión de impuestos.\ntexto bajo h1 -> Auditar registros contables e identificación de irregularidades tributarias.\ntexto bajo h1 -> Proporcionan asesoramiento y orientación a los contribuyentes sobre sus obligaciones fiscales, los procedimientos de presentación de impuestos, las deducciones disponibles y otros aspectos relacionados con la fiscalidad.\ntexto bajo h1 -> También pueden ofrecer asistencia para resolver problemas fiscales y responder a consultas sobre normativas tributarias, inspecciones y verificaciones fiscales en empresas y particulares para asegurarse de que están cumpliendo con las normativas fiscales vigentes.\ntexto bajo h1 -> Investigaciones para detectar posibles casos de fraude fiscal, aplicar sanciones y medidas coercitivas según lo establecido por la legislación tributaria y colaborar estrechamente con otras entidades.\n\th2 -> ¿Cuál es el sueldo de un Agente de Hacienda?\n\ttexto bajo h2 -> ¿Cuál es el salario de un Agente de Hacienda? El sueldo del Agente de Hacienda Pública oscila entre los 1.500, 00 € y 2.000,00 € mensuales, pero estos datos han sido tomados sin tener en cuenta la antigüedad que tenga el funcionario, ya que este aumenta conforme se sube de nivel en el cuerpo o el tiempo de permanencia en el puesto.\n\ttexto bajo h2 -> Por una parte, dentro del sueldo de un Agente de Hacienda encontraremos las:\n\ttexto bajo h2 -> Retribuciones Básicas\n\ttexto bajo h2 -> Sueldo base: El sueldo bases suele ascender hasta casi los 900,00 euros.\n\ttexto bajo h2 -> Trienios: acumularán 28,00 euros al mes por cada 3 años de servicio activo.\n\ttexto bajo h2 -> Paga Extraordinarias: meses de junio y diciembre\n\ttexto bajo h2 -> Retribuciones complementarias\n\ttexto bajo h2 -> Complemento específico: Oscila desde los 358,00 euros hasta los 558,00 euros.\n\ttexto bajo h2 -> Complemento de destino: Remunera desde los 358,00 euros hasta los 558,00 euros.\n\ttexto bajo h2 -> Rendimiento y dedicación: A razón de la productividad.\n\ttexto bajo h2 -> Residencia: Funcionarios con residencia en Islas, Ceuta y Melilla.\n\th2 -> ¿Cómo acceder a Oposiciones Agente Hacienda?\n\ttexto bajo h2 -> Los requisitos para ser Agente de Hacienda en la Administración Pública son, entre otros:\n\ttexto bajo h2 -> Tener nacionalidad española.\n\ttexto bajo h2 -> Tener más de 16 años de edad no exceder la edad de jubilación forzosa.\n\ttexto bajo h2 -> Poseer el título de bachiller o técnico.\n\ttexto bajo h2 -> Haber satisfecho las tasas establecidas para poder realizar el examen salvo que te encuentres en los supuestos exentos que vendrán establecidos en las bases de la convocatoria.\n\ttexto bajo h2 -> Si accedes por promoción interna alternativamente, los requisitos varían notablemente:\n\ttexto bajo h2 -> Poseer una antigüedad de diez años en los cuerpos o escalas del subgrupo C2 o de cinco años.\n\ttexto bajo h2 -> Haber superado el curso específico al que se refiere la disposición adicional novena del citado Real Decreto 364/1995, de 10 de marzo a estos puestos.\n\ttexto bajo h2 -> Como puedes ver, se pueden considerar unas oposiciones con requisitos muy asequibles.\n\th2 -> Pruebas Agente Hacienda\n\ttexto bajo h2 -> Las pruebas oficiales de la convocatoria para acceder al Cuerpo General Administrativo de la Administración del Estado en la especialidad de Agente de la Hacienda Pública en turno libre, subgrupo C1, consta de dos ejercicios:\n\ttexto bajo h2 -> Cuestionario\n\ttexto bajo h2 -> Será un test de 100 preguntas de respuesta múltiple sobre las materias contenidas en el temario. Para cada pregunta se propondrán diversas respuestas, siendo sólo una de ellas la correcta. Se calificará de 0 a 10 puntos, siendo necesario obtener un mínimo de 5 puntos para superarlo. Es decir, para superar el ejercicio como mínimo deberás obtener una puntuación de 5 puntos sobre 10.\n\ttexto bajo h2 -> Supuesto teórico-práctico\n\ttexto bajo h2 -> Consistirá en contestar por escrito un supuesto teórico-práctico relacionado con la «Organización de la Hacienda Pública y Derecho Tributario» del programa. El ejercicio deberá escribirse de tal modo que permita su lectura por cualquier miembro del Tribunal, evitando la utilización de abreviaturas o signos no usuales en el lenguaje escrito. Se calificará de 0 a 30 puntos, siendo necesario obtener un mínimo de 15 puntos para superarlo.\n\ttexto bajo h2 -> Por otra parte, si accedes al Cuerpo de Agente Tributario por promoción interna deberás realizar un examen tipo test de 60 preguntas y un cuestionario con diez supuestos prácticos relacionados con las materias del programa. El cuestionario de la primera parte del ejercicio, así como el cuestionario de la segunda parte de preguntas con respuesta múltiple, estarán compuestos por preguntas con cuatro respuestas alternativas, de las cuales sólo una de ellas es correcta. Para su realización, los aspirantes deberán señalar en la hoja de examen las opciones de respuesta que estimen válidas de acuerdo con las instrucciones que se faciliten. Tras superar la parte de la oposición podrás aumentar tu nota certificando los méritos que poseas.\n\th2 -> Temario Agente Hacienda\n\ttexto bajo h2 -> Antes de que te centres en el temario, te recomendamos que tengas una planificación estructurada y consultes los requisitos de la convocatoria. Planifica tu estudio con un plan real que abarque el total del temario, márcate una rutina de estudio, haz pruebas siumuladas que te hagan familiarizarte con el modelo de examen, revisa convocatorias anteriores. asegúrate de que tu temario está completamente actualizado y cuida de tu descanso. Todo esto te hará alcanzar el éxito en las oposiciones de Agente de Hacienda.\n\ttexto bajo h2 -> El temario de las Oposiciones de Agente de Hacienda en turno libre consta principalmente de 30 temas sobre Organización del Estado y de la Administración Pública, Derecho Administrativo General, Organización de la Hacienda Pública y Derecho Tributario.\n\ttexto bajo h2 -> En cambio, si ya eres funcionario de la Administración pública pero quieres pasar a formar parte del Cuerpo de Agentes de Hacienda, el temario de las Oposiciones de Agente de Hacienda por promoción interna constará de 25 temas basado en la Organización del Estado y de la Administración Pública y Derecho Tributario.\n\t\th3 -> Evolución de convocatorias y plazas convocadas\n\t\ttexto bajo h3 -> * La evolución del número de convocatorias y de las plazas convocadas es un sumatorio de todas las vacantes de esta oposición en España y sus localidades\n\th2 -> Preguntas Frecuentes\n\ttexto bajo h2 -> ¿Qué necesitas para Ser Agente de Hacienda?\n\ttexto bajo h2 -> Para opositar a Agente de Hacienda, los requisitos principales son tener la nacionalidad española, ser mayor de 16 años y poseer el título de Bachiller o Técnico. Además, es imprescindible contar con la aptitud psicofísica necesaria para el ejercicio de las funciones.\n\ttexto bajo h2 -> ¿Qué hace un Agente de Hacienda?\n\ttexto bajo h2 -> El Agente de Hacienda se encarga de la recopilación, gestión y verificación de datos con relevancia fiscal. Estas tareas de apoyo y comprobación se realizan siempre bajo la supervisión directa de los Técnicos o Inspectores de Hacienda.\n\ttexto bajo h2 -> ¿Cuánto cobra un Agente de la Hacienda Pública?\n\ttexto bajo h2 -> El salario de un Agente de Hacienda se enmarca entre los 20.134€ y los 25.691€ al año.\n\ttexto bajo h2 -> ¿Cuánto se Tarda en Preparar las Oposiciones de Agente de Hacienda?\n\ttexto bajo h2 -> No existe un plazo fijo para aprobar, pero la constancia y una buena organización son claves. Generalmente, los opositores tardan entre uno y tres años en superar el proceso, un periodo que puede optimizarse significativamente mediante una metodología de estudio profesional y guiada.\n\ttexto bajo h2 -> Últimas ofertas / convocatorias\n\ttexto bajo h2 -> Convocatoria de 11 plazas, Agente de Hacienda Pública (Gobierno Valenciano)\n\ttexto bajo h2 -> Oferta de 1300 plazas, Agente de Hacienda Pública (Administración General del Estado)\n\ttexto bajo h2 -> Convocatoria de 2 plazas, Agente Tributario Local (Diputación Provincial de Cuenca)\n\ttexto bajo h2 -> Convocatoria de 6 plazas, Agente Tributario Local (León, León)\n\ttexto bajo h2 -> Oferta de 17 plazas, Agente Tributario Local (Gestión Tributaria de Alicante (SUMA))\n\ttexto bajo h2 -> Oferta de 1 plaza, Agente Tributario Local (Melilla, Melilla)\n\ttexto bajo h2 -> Oferta de 1 plaza, Agente de Hacienda Pública (Melilla)\n\ttexto bajo h2 -> Oferta de 1 plaza, Agente de Hacienda Pública (Santander, Cantabria)\n\ttexto bajo h2 -> Oferta de 1 plaza, Agente de Hacienda Pública (Diputación Provincial de Burgos)\n\ttexto bajo h2 -> Oferta de 3 plazas, Agente de Hacienda Pública (Diputación Provincial de Sevilla)\n\ttexto bajo h2 -> Te informamos sin compromiso\n\ttexto bajo h2 -> Rellena el formulario para que podamos atenderte\n\ttexto bajo h2 -> Información básica de protección de datos: Corresponsables del tratamiento: Empresas DAVANTE Finalidad: Prospección comercial Derechos: Puede acceder, rectificar y suprimir sus datos, así como otros derechos tal y como se explica en nuestra política de privacidad.\n\ttexto bajo h2 -> Comparte esta página:\n\ttexto bajo h2 -> Filtrar por:";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

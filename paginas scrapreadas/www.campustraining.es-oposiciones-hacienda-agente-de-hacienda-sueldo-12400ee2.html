@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://www.campustraining.es/oposiciones/hacienda/agente-de-hacienda/sueldo/</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Agente de Hacienda: sueldo y condiciones laborales</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Escrito por</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Juan Luis Gómez Frieiro</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Realizador de audiovisuales y guionista de formación, es especialista en la red...</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">7 minutos</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">A día de hoy, trabajar en el sector tributario es una garantía de tranquilidad que te permitirá disfrutar de una estabilidad económica. Pero, ¿de qué cifras estamos hablando exactamente? En este artículo, vamos a detallar el sueldo de uno de sus mayores representantes. ¡Lee y descubre cuánto cobra un Agente de Hacienda!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Cuánto cobra un Agente de Hacienda? Su sueldo</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Si estás pensando en presentarte a las Oposiciones de Agente de Hacienda, saber cuánto cobra este profesional puede ayudar a motivarte. Es cierto que la cifra exacta dependerá de las circunstancias específicas de tu puesto —antigüedad, responsabilidad, ubicación geográfica…—, pero podemos hablar de una horquilla que va de los 23.000 a los 34.000 euros brutos anuales.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Tu sueldo en Hacienda oscilará entre los 23.000 y los 34.000 euros brutos anuales. ¡Nada mal!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Los números parten de las Retribuciones del personal funcionario del Estado, que establece el sueldo del grupo A,B,C y E. Para saber cuánto cobra un Agente de Hacienda en este documento, hay que consultar los importes del grupo C1, en el que se sitúa el perfil que nos ocupa.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Según la tabla, el salario anual es de 11.594,76 euros, teniendo en cuenta únicamente la remuneración base y las pagas extraordinarias. Como ves, es importante tener en cuenta todos los componentes salariales para hacerse una idea precisa de cuál será tu nómina. ¡A continuación, te indicamos sus partes esenciales!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Cómo mejorar mi salario?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Receta calórica para tu cuenta corriente</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Componentes del sueldo de un Agente de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ya hemos visto cuánto cobra un Agente de Hacienda, pero no hemos explicado el porqué de unas nóminas tan dispares. Al fin y al cabo, puede haber una diferencia de hasta 10.000 euros en la remuneración de dos profesionales que hayan aprobado el mismo proceso selectivo.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La respuesta hay que buscarla en las partes que conforman el sueldo, y que, en ocasiones, podrás hacer jugar a tu favor. ¡Vamos a verlas!</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Sueldo base</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Como su nombre indica, es el punto de partida para calcular cuánto cobra un Agente de Hacienda. Este importe, uno de los más importantes de las remuneraciones básicas de la Ley 30/1984, depende del grupo funcionarial.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Para el C1, encontramos un salario de 10.134, 84 euros anuales. La cifra se distribuye en 12 pagas, por lo que no incluye las extraordinarias de verano e invierno.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Trienios</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Otro de los elementos que conforman las remuneraciones básicas son los trienios. Se trata de pluses que reciben los funcionarios por cada tres años ejerciendo en un Cuerpo, Escala, Clase o Categoría.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Aunque parezcan poca cosa, pueden influir mucho en cuánto cobra un Agente de Hacienda. Con un trienio, ganarás 424,28 euros más al año, pero recuerda que se acumulan. ¡Imagina a lo que pueden ascender!</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Pagas extraordinarias</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Las pagas extraordinarias son dos incentivos adicionales que se otorgan en los meses de junio y diciembre. Según indica la legislación, su importe mínimo es «de una mensualidad del sueldo y trienios». ¿Traducido? 729,96 euros de salario base y 26,68 por trienio.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Complemento de destino</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Para determinar cuánto cobra un Agente de Hacienda, también hay que tener presentes los complementos. Uno de los más cuantiosos son los de destino, que la Administración otorga por la «especialización, responsabilidad, competencia y mando» del nivel de funcionariado al que se pertenece.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">En el grupo C1, partirás del nivel 15 y tendrás como tope el 22. Las cuantías para cada uno de estos peldaños son estas:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Complemento específico</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Otro de los complementos salariales de los funcionarios es el específico. La misión de estos importes es servir de contrapeso ante las características más complicadas del puesto de trabajo, que, en la Administración Tributaria, se refieren a la dificultad, la dedicación y la responsabilidad.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Cuanto mayores sean estos factores, mayor será el plus que te corresponda. Las cifras son muy variables, pero puedes esperar entre 7.000 y 14.000 euros brutos anuales más.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Complemento de productividad y gratificaciones</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Los últimos dos elementos que influyen en cuánto cobra un Agente de Hacienda son el complemento de productividad y las gratificaciones:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Complemento de productividad: un interés o un desempeño extraordinario en tus funciones te hará merecedor de este añadido. Hablamos de un plus puntual, que puede ir de los 500 a los 1.500 euros.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Gratificaciones: también conocidas como horas extras. Las recibirás cuando tengas que realizar tu trabajo fuera de la jornada laboral establecida. El importe suele ser un 25% más de lo que se cobra por una hora regular.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Evolución del salario de un Agente de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ya sabes cuánto cobra un Agente de Hacienda actualmente. Pero, ¿y si quieres prever cómo serán tus futuras nóminas? Entonces debes echar la vista atrás y ver cómo tienden a bailar las cifras año tras año:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Condiciones laborales de un Agente de Hacienda: más allá del sueldo</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Como puedes ver, el salario de un Agente de Hacienda es muy competitivo. Pero, además, dispone de unas excelentes condiciones laborales:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Jornada llevadera: la jornada laboral de un Agente de Hacienda es de 35 horas semanales distribuidas de lunes a viernes con 7 horas diarias. Esta jornada puede variar levemente según la comunidad autónoma, pero siempre es continua y tendrás todas las tardes libres. Además, en verano trabajarás menos, 6 horas y media. También existe una semana especial al año donde solo desempeñarás tus funciones durante 5 horas diarias.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Horario flexible: la entrada al trabajo suele ser flexible, entre las 7:30 u 8:30. Por ejemplo, puedes entrar a las 7:30 y salir del trabajo a las 14:30. También puedes entrar una hora más tarde y salir a las 15:30.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Vacaciones: tus vacaciones serán de un mes y contarás con media hora libre de descanso cada día.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Campaña de la renta: en mayo y junio tienes la opción de trabajar también por las tardes para apoyar el mayor volumen de trabajo de este periodo… ¡Y ganarte unos euros extra!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¡Consigue un trabajo estable en Hacienda!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Conocías cuánto cobra un Agente de Hacienda? Puede que sí y que ese sea uno de los motivos por los que te interesaras por esta profesión tan provechosa.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Si quieres presentarte a las Oposiciones de Agente de Hacienda de 2024, en Campus Training te ayudamos con un plan de estudios flexible enriquecido con tutorías individuales. ¡Infórmate ya rellenando nuestro formulario y comienza un nuevo futuro laboral en la recaudación pública!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Bibliografía</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Real Decreto 861/1986, de 25 de abril, por el que se establece el régimen de las retribuciones de los funcionarios de Administración Local. Boletín Oficial del Estado, 106, de 3 de mayo de 1986. https://www.boe.es/buscar/pdf/1986/BOE-A-1986-10798-consolidado.pdf.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ministerio de Hacienda. (2023). Retribuciones del personal funcionario [Archivo PDF]. https://www.sepg.pap.hacienda.gob.es/sitios/sepg/es-ES/CostesPersonal/EstadisticasInformes/Documents/A%c3%91O%202024/Retribuciones%20personal%20funcionario%20LPGE%202023%20%28con%20incremento%200%2c5%25%20PIB%29.pdf.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ley 30/1984, de 2 de agosto, de medidas para la reforma de la Función Pública. Boletín Oficial del Estado, 185, de 3 de agosto de 1984. https://www.boe.es/buscar/act.php?id=BOE-A-1984-17387.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Selecciona el tipo de estudios Cursos Oposiciones FP Tipo de estudios*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Selecciona la categoría Familia de estudios*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Qué te interesa? Preparar una oposición y conseguir un empleo fijo Formarme en una profesión con futuro Obtener un título FP con alta empleabilidad Titulación*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Selecciona tu centro* Madrid Barcelona Centro*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Nombre y apellidos*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">+34 +54 +52 +57 +51 +593 +56 +1 +44 +58 +502 +33 +351 País*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Teléfono*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Email*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Código postal*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">España Afganistán Albania Alemania Andorra Angola Anguila Antigua y Barbuda Antillas Neerlandesas Arabia Saudita Argelia Argentina Armenia Aruba Australia Austria Azerbaiyán Bahamas Bahrein Bangladesh Barbados Bélgica Belice Benín Bermudas Bielorrusia Bolivia Bosnia y Herzegovina Botswana Brasil Brunei Bulgaria Burkina Faso Burundi Bután Camboya Camerún Canadá Chad Chile China Chipre Colombia Comores Congo Corea Del Norte Corea Del Sur Costa De Marfil Costa Rica Croacia Cuba Curaçao Dinamarca Djibouti Dominica Ecuador Egipto El Salvador Emiratos Árabes Unidos Eritrea Eslovaquia Eslovenia Estados Unidos De América Estonia Etiopía Federación de Estados de Micronesia Fiyi Filipinas Finlandia Francia Gabón Gambia Gaza y Jericó Georgia Ghana Gibraltar Granada Grecia Groenlandia Guadalupe Guam Guatemala Guernesey Guinea Guinea Ecuatorial Guinea-Bissau Guyana Guyana Francesa Haití Honduras Hong Kong Hungría India Indonesia Irán Iraq Irlanda Isla De Man Islandia Islas Caimán Islas Cook Islas Feroe Islas Malvinas (Falklands) Islas Marianas Del Norte Islas Marshall Islas Salomón Islas Turks y Caicos Islas Vírgenes Británicas Islas Vírgenes, Estados Unidos Islas Wallis y Futuna Israel Italia Jamaica Japón Jersey Jordania Kazajistán Kenia Kirguistán Kiribati Kuwait Laos Lesotho Letonia Líbano Liberia Libia Liechtenstein Lituania Luxemburgo Macao Macedonia Madagascar Malasia Malawi Maldivas Malí Malta Marruecos Martinica Mauricio Mauritania México Moldavia Mónaco Mongolia Montenegro Montserrat Mozambique Myanmar (Birmania) Namibia Nauru Nepal Nicaragua Níger Nigeria Niue Noruega Nueva Caledonia y Dependencias Nueva Zelanda Omán Organismos Internacionales Otros Países Países Bajos Pakistán Palau Panamá Papua-Nueva Guinea Paraguay Perú Pitcairn Polinesia Francesa Polonia Portugal Puerto Rico Qatar Reino Unido República Dominicana República Centroafricana República Checa República de Cabo Verde Reunión Ruanda Rumanía Rusia Samoa Americana Samoa Occidental San Cristóbal y Nieves San Marino San Pedro y Miquelón San Vicente Santa Helena y Dependencias Santa Lucía Santo Tomé y Príncipe Senegal Serbia Seychelles y Dependencias Sierra Leona Singapur Siria Somalia Sri Lanka Sudáfrica Sudán Suecia Suiza Surinam Swazilandia Tailandia Taiwán Tajikistán Tanzania Timor Leste Togo Tonga Trinidad y Tobago Túnez Turkmenistán Turquía Tuvalu Ucrania Uganda Uruguay Uzbekistán Vanuatu Vaticano Venezuela Vietnam Yemen Zaire Zambia Zimbabue Nacionalidad*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Ed. Secundaria/EGB/ESO Bachillerato FP medio FP superior Estudios universitarios Sin estudios Nivel de estudios*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Edad Por favor, escribe un número entre 0 y 90.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Grupo Northius tratará sus datos personales para contactarle por medios tecnológicos, incluso aplicaciones de mensajería instantánea, con el fin de ofrecerle información del programa formativo seleccionado o de otros directamente relacionados con el interés manifestado y, en su caso, para tramitar la contratación correspondiente. Compartiremos su solicitud con las empresas que conforman el Grupo Northius, con el objeto de que estas puedan hacerle llegar la mejor oferta de productos y servicios de acuerdo a su petición. Quedan reconocidos los derechos de acceso, rectificación, supresión, oposición, limitación, tal y como se explica en la Política de Privacidad.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">producto_name*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">producto_id*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">producto_tipo*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">producto_categoria*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">producto_catalogo*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">prelead_name*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">prelead_tipo*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">prelead_seccion*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">prelead_form*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">prelead_author*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">prelead_blogcat*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">prelead_content*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">user_id*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">lead_id*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">transaction_id*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">modo_llegada*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">gclid*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Fecha de entrada*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">user_ip*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">pais_id*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">wp_id*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">utm_campaign*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">utm_content*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">utm_medium*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">utm_source*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">utm_term*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">orig_utm_campaign*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">orig_utm_content*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">orig_utm_medium*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">orig_utm_source*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">orig_utm_term*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">optHitId*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">urlOrig*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">social_request_id*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">social_request_type*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">user_id_triki*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">session_id_triki*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">nav_id_triki*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Motivaciones para elegir Oposiciones Agente de Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Oposiciones menos demandadas: ¿cuáles son?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Foro oposiciones Hacienda</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">¿Dónde trabaja un Agente de Hacienda?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Oposiciones Agente de Hacienda 2024: ¿Qué novedades y expectativas hay?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Otras profesiones que pueden interesarte</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Agente del Servicio de Vigilancia Aduanera</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Técnico de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Agente de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">url_catalogo*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Infórmate gratis</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Vigila las tributaciones con vista de águila</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">tipo_formacion*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Deseo recibir información de interés</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Fuente*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">orig_author*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">orig_tipo*</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">producto_temario*</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "h1 -> Agente de Hacienda: sueldo y condiciones laborales\ntexto bajo h1 -> Escrito por\ntexto bajo h1 -> Juan Luis Gómez Frieiro\ntexto bajo h1 -> Realizador de audiovisuales y guionista de formación, es especialista en la red...\ntexto bajo h1 -> 7 minutos\ntexto bajo h1 -> A día de hoy, trabajar en el sector tributario es una garantía de tranquilidad que te permitirá disfrutar de una estabilidad económica. Pero, ¿de qué cifras estamos hablando exactamente? En este artículo, vamos a detallar el sueldo de uno de sus mayores representantes. ¡Lee y descubre cuánto cobra un Agente de Hacienda!\n\th2 -> ¿Cuánto cobra un Agente de Hacienda? Su sueldo\n\ttexto bajo h2 -> Si estás pensando en presentarte a las Oposiciones de Agente de Hacienda, saber cuánto cobra este profesional puede ayudar a motivarte. Es cierto que la cifra exacta dependerá de las circunstancias específicas de tu puesto —antigüedad, responsabilidad, ubicación geográfica…—, pero podemos hablar de una horquilla que va de los 23.000 a los 34.000 euros brutos anuales.\n\ttexto bajo h2 -> Tu sueldo en Hacienda oscilará entre los 23.000 y los 34.000 euros brutos anuales. ¡Nada mal!\n\ttexto bajo h2 -> Los números parten de las Retribuciones del personal funcionario del Estado, que establece el sueldo del grupo A,B,C y E. Para saber cuánto cobra un Agente de Hacienda en este documento, hay que consultar los importes del grupo C1, en el que se sitúa el perfil que nos ocupa.\n\ttexto bajo h2 -> Según la tabla, el salario anual es de 11.594,76 euros, teniendo en cuenta únicamente la remuneración base y las pagas extraordinarias. Como ves, es importante tener en cuenta todos los componentes salariales para hacerse una idea precisa de cuál será tu nómina. ¡A continuación, te indicamos sus partes esenciales!\n\ttexto bajo h2 -> ¿Cómo mejorar mi salario?\n\ttexto bajo h2 -> Receta calórica para tu cuenta corriente\n\th2 -> Componentes del sueldo de un Agente de Hacienda\n\ttexto bajo h2 -> Ya hemos visto cuánto cobra un Agente de Hacienda, pero no hemos explicado el porqué de unas nóminas tan dispares. Al fin y al cabo, puede haber una diferencia de hasta 10.000 euros en la remuneración de dos profesionales que hayan aprobado el mismo proceso selectivo.\n\ttexto bajo h2 -> La respuesta hay que buscarla en las partes que conforman el sueldo, y que, en ocasiones, podrás hacer jugar a tu favor. ¡Vamos a verlas!\n\t\th3 -> Sueldo base\n\t\ttexto bajo h3 -> Como su nombre indica, es el punto de partida para calcular cuánto cobra un Agente de Hacienda. Este importe, uno de los más importantes de las remuneraciones básicas de la Ley 30/1984, depende del grupo funcionarial.\n\t\ttexto bajo h3 -> Para el C1, encontramos un salario de 10.134, 84 euros anuales. La cifra se distribuye en 12 pagas, por lo que no incluye las extraordinarias de verano e invierno.\n\t\th3 -> Trienios\n\t\ttexto bajo h3 -> Otro de los elementos que conforman las remuneraciones básicas son los trienios. Se trata de pluses que reciben los funcionarios por cada tres años ejerciendo en un Cuerpo, Escala, Clase o Categoría.\n\t\ttexto bajo h3 -> Aunque parezcan poca cosa, pueden influir mucho en cuánto cobra un Agente de Hacienda. Con un trienio, ganarás 424,28 euros más al año, pero recuerda que se acumulan. ¡Imagina a lo que pueden ascender!\n\t\th3 -> Pagas extraordinarias\n\t\ttexto bajo h3 -> Las pagas extraordinarias son dos incentivos adicionales que se otorgan en los meses de junio y diciembre. Según indica la legislación, su importe mínimo es «de una mensualidad del sueldo y trienios». ¿Traducido? 729,96 euros de salario base y 26,68 por trienio.\n\t\th3 -> Complemento de destino\n\t\ttexto bajo h3 -> Para determinar cuánto cobra un Agente de Hacienda, también hay que tener presentes los complementos. Uno de los más cuantiosos son los de destino, que la Administración otorga por la «especialización, responsabilidad, competencia y mando» del nivel de funcionariado al que se pertenece.\n\t\ttexto bajo h3 -> En el grupo C1, partirás del nivel 15 y tendrás como tope el 22. Las cuantías para cada uno de estos peldaños son estas:\n\t\th3 -> Complemento específico\n\t\ttexto bajo h3 -> Otro de los complementos salariales de los funcionarios es el específico. La misión de estos importes es servir de contrapeso ante las características más complicadas del puesto de trabajo, que, en la Administración Tributaria, se refieren a la dificultad, la dedicación y la responsabilidad.\n\t\ttexto bajo h3 -> Cuanto mayores sean estos factores, mayor será el plus que te corresponda. Las cifras son muy variables, pero puedes esperar entre 7.000 y 14.000 euros brutos anuales más.\n\t\th3 -> Complemento de productividad y gratificaciones\n\t\ttexto bajo h3 -> Los últimos dos elementos que influyen en cuánto cobra un Agente de Hacienda son el complemento de productividad y las gratificaciones:\n\t\ttexto bajo h3 -> Complemento de productividad: un interés o un desempeño extraordinario en tus funciones te hará merecedor de este añadido. Hablamos de un plus puntual, que puede ir de los 500 a los 1.500 euros.\n\t\ttexto bajo h3 -> Gratificaciones: también conocidas como horas extras. Las recibirás cuando tengas que realizar tu trabajo fuera de la jornada laboral establecida. El importe suele ser un 25% más de lo que se cobra por una hora regular.\n\th2 -> Evolución del salario de un Agente de Hacienda\n\ttexto bajo h2 -> Ya sabes cuánto cobra un Agente de Hacienda actualmente. Pero, ¿y si quieres prever cómo serán tus futuras nóminas? Entonces debes echar la vista atrás y ver cómo tienden a bailar las cifras año tras año:\n\th2 -> Condiciones laborales de un Agente de Hacienda: más allá del sueldo\n\ttexto bajo h2 -> Como puedes ver, el salario de un Agente de Hacienda es muy competitivo. Pero, además, dispone de unas excelentes condiciones laborales:\n\ttexto bajo h2 -> Jornada llevadera: la jornada laboral de un Agente de Hacienda es de 35 horas semanales distribuidas de lunes a viernes con 7 horas diarias. Esta jornada puede variar levemente según la comunidad autónoma, pero siempre es continua y tendrás todas las tardes libres. Además, en verano trabajarás menos, 6 horas y media. También existe una semana especial al año donde solo desempeñarás tus funciones durante 5 horas diarias.\n\ttexto bajo h2 -> Horario flexible: la entrada al trabajo suele ser flexible, entre las 7:30 u 8:30. Por ejemplo, puedes entrar a las 7:30 y salir del trabajo a las 14:30. También puedes entrar una hora más tarde y salir a las 15:30.\n\ttexto bajo h2 -> Vacaciones: tus vacaciones serán de un mes y contarás con media hora libre de descanso cada día.\n\ttexto bajo h2 -> Campaña de la renta: en mayo y junio tienes la opción de trabajar también por las tardes para apoyar el mayor volumen de trabajo de este periodo… ¡Y ganarte unos euros extra!\n\th2 -> ¡Consigue un trabajo estable en Hacienda!\n\ttexto bajo h2 -> ¿Conocías cuánto cobra un Agente de Hacienda? Puede que sí y que ese sea uno de los motivos por los que te interesaras por esta profesión tan provechosa.\n\ttexto bajo h2 -> Si quieres presentarte a las Oposiciones de Agente de Hacienda de 2024, en Campus Training te ayudamos con un plan de estudios flexible enriquecido con tutorías individuales. ¡Infórmate ya rellenando nuestro formulario y comienza un nuevo futuro laboral en la recaudación pública!\n\th2 -> Bibliografía\n\ttexto bajo h2 -> Real Decreto 861/1986, de 25 de abril, por el que se establece el régimen de las retribuciones de los funcionarios de Administración Local. Boletín Oficial del Estado, 106, de 3 de mayo de 1986. https://www.boe.es/buscar/pdf/1986/BOE-A-1986-10798-consolidado.pdf.\n\ttexto bajo h2 -> Ministerio de Hacienda. (2023). Retribuciones del personal funcionario [Archivo PDF]. https://www.sepg.pap.hacienda.gob.es/sitios/sepg/es-ES/CostesPersonal/EstadisticasInformes/Documents/A%c3%91O%202024/Retribuciones%20personal%20funcionario%20LPGE%202023%20%28con%20incremento%200%2c5%25%20PIB%29.pdf.\n\ttexto bajo h2 -> Ley 30/1984, de 2 de agosto, de medidas para la reforma de la Función Pública. Boletín Oficial del Estado, 185, de 3 de agosto de 1984. https://www.boe.es/buscar/act.php?id=BOE-A-1984-17387.\n\ttexto bajo h2 -> Selecciona el tipo de estudios Cursos Oposiciones FP Tipo de estudios*\n\ttexto bajo h2 -> Selecciona la categoría Familia de estudios*\n\ttexto bajo h2 -> ¿Qué te interesa? Preparar una oposición y conseguir un empleo fijo Formarme en una profesión con futuro Obtener un título FP con alta empleabilidad Titulación*\n\ttexto bajo h2 -> Selecciona tu centro* Madrid Barcelona Centro*\n\ttexto bajo h2 -> Nombre y apellidos*\n\ttexto bajo h2 -> +34 +54 +52 +57 +51 +593 +56 +1 +44 +58 +502 +33 +351 País*\n\ttexto bajo h2 -> Teléfono*\n\ttexto bajo h2 -> Email*\n\ttexto bajo h2 -> Código postal*\n\ttexto bajo h2 -> España Afganistán Albania Alemania Andorra Angola Anguila Antigua y Barbuda Antillas Neerlandesas Arabia Saudita Argelia Argentina Armenia Aruba Australia Austria Azerbaiyán Bahamas Bahrein Bangladesh Barbados Bélgica Belice Benín Bermudas Bielorrusia Bolivia Bosnia y Herzegovina Botswana Brasil Brunei Bulgaria Burkina Faso Burundi Bután Camboya Camerún Canadá Chad Chile China Chipre Colombia Comores Congo Corea Del Norte Corea Del Sur Costa De Marfil Costa Rica Croacia Cuba Curaçao Dinamarca Djibouti Dominica Ecuador Egipto El Salvador Emiratos Árabes Unidos Eritrea Eslovaquia Eslovenia Estados Unidos De América Estonia Etiopía Federación de Estados de Micronesia Fiyi Filipinas Finlandia Francia Gabón Gambia Gaza y Jericó Georgia Ghana Gibraltar Granada Grecia Groenlandia Guadalupe Guam Guatemala Guernesey Guinea Guinea Ecuatorial Guinea-Bissau Guyana Guyana Francesa Haití Honduras Hong Kong Hungría India Indonesia Irán Iraq Irlanda Isla De Man Islandia Islas Caimán Islas Cook Islas Feroe Islas Malvinas (Falklands) Islas Marianas Del Norte Islas Marshall Islas Salomón Islas Turks y Caicos Islas Vírgenes Británicas Islas Vírgenes, Estados Unidos Islas Wallis y Futuna Israel Italia Jamaica Japón Jersey Jordania Kazajistán Kenia Kirguistán Kiribati Kuwait Laos Lesotho Letonia Líbano Liberia Libia Liechtenstein Lituania Luxemburgo Macao Macedonia Madagascar Malasia Malawi Maldivas Malí Malta Marruecos Martinica Mauricio Mauritania México Moldavia Mónaco Mongolia Montenegro Montserrat Mozambique Myanmar (Birmania) Namibia Nauru Nepal Nicaragua Níger Nigeria Niue Noruega Nueva Caledonia y Dependencias Nueva Zelanda Omán Organismos Internacionales Otros Países Países Bajos Pakistán Palau Panamá Papua-Nueva Guinea Paraguay Perú Pitcairn Polinesia Francesa Polonia Portugal Puerto Rico Qatar Reino Unido República Dominicana República Centroafricana República Checa República de Cabo Verde Reunión Ruanda Rumanía Rusia Samoa Americana Samoa Occidental San Cristóbal y Nieves San Marino San Pedro y Miquelón San Vicente Santa Helena y Dependencias Santa Lucía Santo Tomé y Príncipe Senegal Serbia Seychelles y Dependencias Sierra Leona Singapur Siria Somalia Sri Lanka Sudáfrica Sudán Suecia Suiza Surinam Swazilandia Tailandia Taiwán Tajikistán Tanzania Timor Leste Togo Tonga Trinidad y Tobago Túnez Turkmenistán Turquía Tuvalu Ucrania Uganda Uruguay Uzbekistán Vanuatu Vaticano Venezuela Vietnam Yemen Zaire Zambia Zimbabue Nacionalidad*\n\ttexto bajo h2 -> Ed. Secundaria/EGB/ESO Bachillerato FP medio FP superior Estudios universitarios Sin estudios Nivel de estudios*\n\ttexto bajo h2 -> Edad Por favor, escribe un número entre 0 y 90.\n\ttexto bajo h2 -> Grupo Northius tratará sus datos personales para contactarle por medios tecnológicos, incluso aplicaciones de mensajería instantánea, con el fin de ofrecerle información del programa formativo seleccionado o de otros directamente relacionados con el interés manifestado y, en su caso, para tramitar la contratación correspondiente. Compartiremos su solicitud con las empresas que conforman el Grupo Northius, con el objeto de que estas puedan hacerle llegar la mejor oferta de productos y servicios de acuerdo a su petición. Quedan reconocidos los derechos de acceso, rectificación, supresión, oposición, limitación, tal y como se explica en la Política de Privacidad.\n\ttexto bajo h2 -> producto_name*\n\ttexto bajo h2 -> producto_id*\n\ttexto bajo h2 -> producto_tipo*\n\ttexto bajo h2 -> producto_categoria*\n\ttexto bajo h2 -> producto_catalogo*\n\ttexto bajo h2 -> prelead_name*\n\ttexto bajo h2 -> prelead_tipo*\n\ttexto bajo h2 -> prelead_seccion*\n\ttexto bajo h2 -> prelead_form*\n\ttexto bajo h2 -> prelead_author*\n\ttexto bajo h2 -> prelead_blogcat*\n\ttexto bajo h2 -> prelead_content*\n\ttexto bajo h2 -> user_id*\n\ttexto bajo h2 -> lead_id*\n\ttexto bajo h2 -> transaction_id*\n\ttexto bajo h2 -> modo_llegada*\n\ttexto bajo h2 -> gclid*\n\ttexto bajo h2 -> Fecha de entrada*\n\ttexto bajo h2 -> user_ip*\n\ttexto bajo h2 -> pais_id*\n\ttexto bajo h2 -> wp_id*\n\ttexto bajo h2 -> utm_campaign*\n\ttexto bajo h2 -> utm_content*\n\ttexto bajo h2 -> utm_medium*\n\ttexto bajo h2 -> utm_source*\n\ttexto bajo h2 -> utm_term*\n\ttexto bajo h2 -> orig_utm_campaign*\n\ttexto bajo h2 -> orig_utm_content*\n\ttexto bajo h2 -> orig_utm_medium*\n\ttexto bajo h2 -> orig_utm_source*\n\ttexto bajo h2 -> orig_utm_term*\n\ttexto bajo h2 -> optHitId*\n\ttexto bajo h2 -> urlOrig*\n\ttexto bajo h2 -> social_request_id*\n\ttexto bajo h2 -> social_request_type*\n\ttexto bajo h2 -> user_id_triki*\n\ttexto bajo h2 -> session_id_triki*\n\ttexto bajo h2 -> nav_id_triki*\n\th2 -> Motivaciones para elegir Oposiciones Agente de Hacienda\n\t\th3 -> Oposiciones menos demandadas: ¿cuáles son?\n\t\th3 -> Foro oposiciones Hacienda\n\t\th3 -> ¿Dónde trabaja un Agente de Hacienda?\n\t\th3 -> Oposiciones Agente de Hacienda 2024: ¿Qué novedades y expectativas hay?\n\th2 -> Otras profesiones que pueden interesarte\n\ttexto bajo h2 -> Agente del Servicio de Vigilancia Aduanera\n\ttexto bajo h2 -> Técnico de Hacienda\n\ttexto bajo h2 -> Agente de Hacienda\n\ttexto bajo h2 -> url_catalogo*\n\ttexto bajo h2 -> Infórmate gratis\n\ttexto bajo h2 -> Vigila las tributaciones con vista de águila\n\ttexto bajo h2 -> tipo_formacion*\n\ttexto bajo h2 -> Deseo recibir información de interés\n\ttexto bajo h2 -> Fuente*\n\ttexto bajo h2 -> orig_author*\n\ttexto bajo h2 -> orig_tipo*\n\ttexto bajo h2 -> producto_temario*";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://www.opositor.com/oposiciones/agente-de-hacienda-publica</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Inicio / Convocatorias por Oposición / Agente de Hacienda</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Oposiciones de Agente de Hacienda</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Infórmate sobre cómo preparar oposiciones de Agente de Hacienda para 2026 Todas las instancias de convocatorias y plazas de Oposiciones de Agente de Hacienda</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Oferta de 1300 plazas de Agente de Hacienda Pública en Administración General del Estado</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Administración General del Estado</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Publicada el 07/05/2026</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Oferta de 40 plazas de Agente de Hacienda Pública en Generalitat de Cataluña</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Generalitat de Cataluña</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Publicada el 12/01/2026</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Oferta de 17 plazas de Agente Tributario Local en Gestión Tributaria de Alicante (SUMA)</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Gestión Tributaria de Alicante (SUMA)</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Publicada el 14/04/2026</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Oferta de 7 plazas de Agente de Hacienda Pública en Diputación Provincial de Sevilla</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Diputación Provincial de Sevilla</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Publicada el 16/02/2026</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Oferta de 3 plazas de Agente de Hacienda Pública en Diputación Provincial de Albacete</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Diputación Provincial de Albacete</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Publicada el 13/02/2026</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Oferta de 3 plazas de Agente de Hacienda Pública en Diputación Provincial de Sevilla</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Oferta de 1 plaza de Agente Tributario Local en Melilla (Melilla)</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Melilla (Melilla)</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Publicada el 25/03/2026</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Oferta de 1 plaza de Agente de Hacienda Pública en Santander (Cantabria)</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Santander (Cantabria)</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Publicada el 09/03/2026</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Oferta de 1 plaza de Agente de Hacienda Pública en Melilla</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Melilla</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Publicada el 10/03/2026</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Oferta de 1 plaza de Agente de Hacienda Pública en Diputación Provincial de Burgos</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Diputación Provincial de Burgos</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Publicada el 27/02/2026</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">OPOSICIONES 2026</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Prepárate y aprueba con plaza</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">HOY EN OPOSITOR.COM</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">OPE Hacienda 2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">OPE Justicia 2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Convocatoria de la Guardia Civil 2026: Todas las Plazas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">LO MÁS LEÍDO</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Acceso Policía Nacional: Información sobre Pruebas y Requisitos</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Trucos para preparar una oposición con éxito</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Quiero ser Policía Nacional, ¿qué tengo que hacer?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Cómo ser Controlador Aéreo en España</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Comparte ésta página:</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "Inicio / Convocatorias por Oposición / Agente de Hacienda\nh1 -> Oposiciones de Agente de Hacienda\ntexto bajo h1 -> Infórmate sobre cómo preparar oposiciones de Agente de Hacienda para 2026 Todas las instancias de convocatorias y plazas de Oposiciones de Agente de Hacienda\ntexto bajo h1 -> Oferta de 1300 plazas de Agente de Hacienda Pública en Administración General del Estado\ntexto bajo h1 -> Administración General del Estado\ntexto bajo h1 -> Publicada el 07/05/2026\ntexto bajo h1 -> Oferta de 40 plazas de Agente de Hacienda Pública en Generalitat de Cataluña\ntexto bajo h1 -> Generalitat de Cataluña\ntexto bajo h1 -> Publicada el 12/01/2026\ntexto bajo h1 -> Oferta de 17 plazas de Agente Tributario Local en Gestión Tributaria de Alicante (SUMA)\ntexto bajo h1 -> Gestión Tributaria de Alicante (SUMA)\ntexto bajo h1 -> Publicada el 14/04/2026\ntexto bajo h1 -> Oferta de 7 plazas de Agente de Hacienda Pública en Diputación Provincial de Sevilla\ntexto bajo h1 -> Diputación Provincial de Sevilla\ntexto bajo h1 -> Publicada el 16/02/2026\ntexto bajo h1 -> Oferta de 3 plazas de Agente de Hacienda Pública en Diputación Provincial de Albacete\ntexto bajo h1 -> Diputación Provincial de Albacete\ntexto bajo h1 -> Publicada el 13/02/2026\ntexto bajo h1 -> Oferta de 3 plazas de Agente de Hacienda Pública en Diputación Provincial de Sevilla\ntexto bajo h1 -> Oferta de 1 plaza de Agente Tributario Local en Melilla (Melilla)\ntexto bajo h1 -> Melilla (Melilla)\ntexto bajo h1 -> Publicada el 25/03/2026\ntexto bajo h1 -> Oferta de 1 plaza de Agente de Hacienda Pública en Santander (Cantabria)\ntexto bajo h1 -> Santander (Cantabria)\ntexto bajo h1 -> Publicada el 09/03/2026\ntexto bajo h1 -> Oferta de 1 plaza de Agente de Hacienda Pública en Melilla\ntexto bajo h1 -> Melilla\ntexto bajo h1 -> Publicada el 10/03/2026\ntexto bajo h1 -> Oferta de 1 plaza de Agente de Hacienda Pública en Diputación Provincial de Burgos\ntexto bajo h1 -> Diputación Provincial de Burgos\ntexto bajo h1 -> Publicada el 27/02/2026\ntexto bajo h1 -> OPOSICIONES 2026\ntexto bajo h1 -> Prepárate y aprueba con plaza\n\th2 -> HOY EN OPOSITOR.COM\n\ttexto bajo h2 -> OPE Hacienda 2026\n\ttexto bajo h2 -> OPE Justicia 2026\n\ttexto bajo h2 -> Convocatoria de la Guardia Civil 2026: Todas las Plazas\n\th2 -> LO MÁS LEÍDO\n\ttexto bajo h2 -> Acceso Policía Nacional: Información sobre Pruebas y Requisitos\n\ttexto bajo h2 -> Trucos para preparar una oposición con éxito\n\ttexto bajo h2 -> Quiero ser Policía Nacional, ¿qué tengo que hacer?\n\ttexto bajo h2 -> Cómo ser Controlador Aéreo en España\n\ttexto bajo h2 -> Comparte ésta página:";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://www.opositor.com/convocatoria-agentes-hacienda/41539</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Inicio / Noticias / Empleo Público / Nueva convocatoria de Agentes de Hacienda: 1400 plazas</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="content-text">Oposiciones Agente de Hacienda 2025</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">Nueva convocatoria de Agentes de Hacienda: 1400 plazas</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">EMPLEO PÚBLICO</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">TABLA DE CONTENIDOS</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">OPOSICIONES AGENTE DE HACIENDA 2025-2026</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Requisitos para ser Agente de Hacienda</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Pruebas Agente de Hacienda por Oposición libre</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Preparar oposiciones de Agente de Hacienda</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Ya se ha publicado la nueva convocatoria de Agentes de Hacienda, con el mayor número de plazas de los últimos años: 1400. Te contamos aquí todo lo que necesitas saber sobre la convocatoria de 2025.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">¿Cuánto cobra un Agente de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">OPOSICIONES AGENTE DE HACIENDA 2025-2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Publicada en el BOE de 30 de diciembre de 2025 la nueva convocatoria de 1400 plazas de Agente de Hacienda Pública. Se trata de la mayor convocatoria de los últimos años, superando por un amplio margen las de los años anteriores. La distribución de plazas se realiza de la siguiente manera:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">1000 plazas para el turno libre. A través del sistema de Oposición. De estas plazas, 80 estarán reservadas al turno de discapacidad.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">400 plazas para el turno de promoción interna. A través del sistema Concurso Oposición. Del total de plazas, 32 estarán reservadas para el turno de discapacidad.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">El plazo de presentación de instancias se extenderá hasta el día 29 de enero de 2026. La presentación de solicitudes se realizará obligatoriamente por vía telemática con certificado electrónico o mediante el sistema «Cl@ve PIN», a través de la sede electrónica de la Agencia Estatal de Administración TributariaTe contamos a continuación todo lo que necesitas saber para hacerte con una plaza.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¡Infórmate ya!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Requisitos para ser Agente de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Qué requisitos necesito para ser Agente de Hacienda? Los siguientes:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Estar en posesión de la nacionalidad española.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Superar los 16 años de edad y no exceder de la edad máxima para la jubilación forzosa.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Estar en posesión del título de Bachillerato, Técnico o equivalente, o estar en condiciones de obtenerlos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Tener la capacidad funcional adecuada para el normal desempeño de las funciones correspondientes del cuerpo al que se aspira.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Pruebas Agente de Hacienda por Oposición libre</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La oposición consistirá en la realización de los dos ejercicios que a continuación se detallan, siendo ambos obligatorios y eliminatorios.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Primer ejercicio: consistente en responder por escrito a un cuestionario de 80 preguntas con respuestas múltiples sobre el temario, de las cuales solo una de ellas será la correcta. Las respuestas incorrectas tendrán penalización.El tiempo máximo para la realización de este ejercicio será de una hora y media.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Segundo ejercicio: consistirá en contestar por escrito un cuestionario con diez supuestos prácticos dirigidos a apreciar la capacidad y competencia de las personas aspirantes para llevar a cabo las tareas relativas a dichas materias. Este ejercicio tendrá una duración máxima de dos horas y media.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Preparar oposiciones de Agente de Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Quieres hacerte con una de las plazas? Contar con la ayuda de una academia de oposiciones puede ser el factor determinante para conseguirlo o no. Preparar una oposición es algo que debe tomarse como un trabajo, por lo que requiere un buen planning, horarios, habilidades y las pautas necesarias para superar las pruebas. Algo en lo que una academia es experta.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">¿Estás buscando una academia de oposiciones para las Oposiciones de Hacienda? Visita nuestra página web, rellena gratis el formulario y recibe información sin compromiso ¡Ánimo, opositores!</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">4.4 (13 votos)</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">Nuevo Comentario</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">11 respuestas a Nueva convocatoria de Agentes de Hacienda: 1400 plazas</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Otra gran oportunidad!</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Querría información</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Hola Fátima ¡Por supuesto! Para más información, puedes visitar nuestra página web y rellenar el formulario sin ningún tipo de compromiso: https://www.opositor.com/oposiciones-agente-hacienda. Un saludo.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Hola. Teniendo el título de una carrera universitaria es necesario presentar el título de bachiller? o vale con presentar el título de la carrera?</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Hola María del Mar. No, no sería necesario presentarlo, al ser un título superior al de Bachillerato. Para más información, puedes visitar nuestra página web y rellenar el formulario sin ningún tipo de compromiso: https://www.opositor.com/oposiciones-agente-hacienda. Con tu titulación, es posible que también puedas presentarte a las plazas de Técnico de Hacienda: https://www.opositor.com/oposiciones-tecnico-hacienda. Un saludo.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Nuevo Comentario</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">OPOSICIONES 2026</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Prepárate y aprueba con plaza</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">NOTICIAS RELACIONADAS</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">OPE Medioambiente 2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">OPE Seguridad Social 2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">OPE Instituciones Penitenciarias 2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">OPE Hacienda 2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">HOY EN OPOSITOR.COM</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">OPE Justicia 2026</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Convocatoria de la Guardia Civil 2026: Todas las Plazas</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">LO MÁS LEÍDO</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Acceso Policía Nacional: Información sobre Pruebas y Requisitos</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Trucos para preparar una oposición con éxito</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Quiero ser Policía Nacional, ¿qué tengo que hacer?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Cómo ser Controlador Aéreo en España</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Comparte ésta página:</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "Inicio / Noticias / Empleo Público / Nueva convocatoria de Agentes de Hacienda: 1400 plazas\nOposiciones Agente de Hacienda 2025\nh1 -> Nueva convocatoria de Agentes de Hacienda: 1400 plazas\ntexto bajo h1 -> EMPLEO PÚBLICO\ntexto bajo h1 -> TABLA DE CONTENIDOS\ntexto bajo h1 -> OPOSICIONES AGENTE DE HACIENDA 2025-2026\ntexto bajo h1 -> Requisitos para ser Agente de Hacienda\ntexto bajo h1 -> Pruebas Agente de Hacienda por Oposición libre\ntexto bajo h1 -> Preparar oposiciones de Agente de Hacienda\ntexto bajo h1 -> Ya se ha publicado la nueva convocatoria de Agentes de Hacienda, con el mayor número de plazas de los últimos años: 1400. Te contamos aquí todo lo que necesitas saber sobre la convocatoria de 2025.\ntexto bajo h1 -> ¿Cuánto cobra un Agente de Hacienda?\n\th2 -> OPOSICIONES AGENTE DE HACIENDA 2025-2026\n\ttexto bajo h2 -> Publicada en el BOE de 30 de diciembre de 2025 la nueva convocatoria de 1400 plazas de Agente de Hacienda Pública. Se trata de la mayor convocatoria de los últimos años, superando por un amplio margen las de los años anteriores. La distribución de plazas se realiza de la siguiente manera:\n\ttexto bajo h2 -> 1000 plazas para el turno libre. A través del sistema de Oposición. De estas plazas, 80 estarán reservadas al turno de discapacidad.\n\ttexto bajo h2 -> 400 plazas para el turno de promoción interna. A través del sistema Concurso Oposición. Del total de plazas, 32 estarán reservadas para el turno de discapacidad.\n\ttexto bajo h2 -> El plazo de presentación de instancias se extenderá hasta el día 29 de enero de 2026. La presentación de solicitudes se realizará obligatoriamente por vía telemática con certificado electrónico o mediante el sistema «Cl@ve PIN», a través de la sede electrónica de la Agencia Estatal de Administración TributariaTe contamos a continuación todo lo que necesitas saber para hacerte con una plaza.\n\ttexto bajo h2 -> ¡Infórmate ya!\n\th2 -> Requisitos para ser Agente de Hacienda\n\ttexto bajo h2 -> ¿Qué requisitos necesito para ser Agente de Hacienda? Los siguientes:\n\ttexto bajo h2 -> Estar en posesión de la nacionalidad española.\n\ttexto bajo h2 -> Superar los 16 años de edad y no exceder de la edad máxima para la jubilación forzosa.\n\ttexto bajo h2 -> Estar en posesión del título de Bachillerato, Técnico o equivalente, o estar en condiciones de obtenerlos.\n\ttexto bajo h2 -> Tener la capacidad funcional adecuada para el normal desempeño de las funciones correspondientes del cuerpo al que se aspira.\n\th2 -> Pruebas Agente de Hacienda por Oposición libre\n\ttexto bajo h2 -> La oposición consistirá en la realización de los dos ejercicios que a continuación se detallan, siendo ambos obligatorios y eliminatorios.\n\ttexto bajo h2 -> Primer ejercicio: consistente en responder por escrito a un cuestionario de 80 preguntas con respuestas múltiples sobre el temario, de las cuales solo una de ellas será la correcta. Las respuestas incorrectas tendrán penalización.El tiempo máximo para la realización de este ejercicio será de una hora y media.\n\ttexto bajo h2 -> Segundo ejercicio: consistirá en contestar por escrito un cuestionario con diez supuestos prácticos dirigidos a apreciar la capacidad y competencia de las personas aspirantes para llevar a cabo las tareas relativas a dichas materias. Este ejercicio tendrá una duración máxima de dos horas y media.\n\th2 -> Preparar oposiciones de Agente de Hacienda\n\ttexto bajo h2 -> ¿Quieres hacerte con una de las plazas? Contar con la ayuda de una academia de oposiciones puede ser el factor determinante para conseguirlo o no. Preparar una oposición es algo que debe tomarse como un trabajo, por lo que requiere un buen planning, horarios, habilidades y las pautas necesarias para superar las pruebas. Algo en lo que una academia es experta.\n\ttexto bajo h2 -> ¿Estás buscando una academia de oposiciones para las Oposiciones de Hacienda? Visita nuestra página web, rellena gratis el formulario y recibe información sin compromiso ¡Ánimo, opositores!\n\ttexto bajo h2 -> 4.4 (13 votos)\n\th2 -> Nuevo Comentario\n\t\th3 -> 11 respuestas a Nueva convocatoria de Agentes de Hacienda: 1400 plazas\n\t\ttexto bajo h3 -> Otra gran oportunidad!\n\t\ttexto bajo h3 -> Querría información\n\t\ttexto bajo h3 -> Hola Fátima ¡Por supuesto! Para más información, puedes visitar nuestra página web y rellenar el formulario sin ningún tipo de compromiso: https://www.opositor.com/oposiciones-agente-hacienda. Un saludo.\n\t\ttexto bajo h3 -> Hola. Teniendo el título de una carrera universitaria es necesario presentar el título de bachiller? o vale con presentar el título de la carrera?\n\t\ttexto bajo h3 -> Hola María del Mar. No, no sería necesario presentarlo, al ser un título superior al de Bachillerato. Para más información, puedes visitar nuestra página web y rellenar el formulario sin ningún tipo de compromiso: https://www.opositor.com/oposiciones-agente-hacienda. Con tu titulación, es posible que también puedas presentarte a las plazas de Técnico de Hacienda: https://www.opositor.com/oposiciones-tecnico-hacienda. Un saludo.\n\t\th3 -> Nuevo Comentario\n\t\ttexto bajo h3 -> OPOSICIONES 2026\n\t\ttexto bajo h3 -> Prepárate y aprueba con plaza\n\th2 -> NOTICIAS RELACIONADAS\n\ttexto bajo h2 -> OPE Medioambiente 2026\n\ttexto bajo h2 -> OPE Seguridad Social 2026\n\ttexto bajo h2 -> OPE Instituciones Penitenciarias 2026\n\ttexto bajo h2 -> OPE Hacienda 2026\n\th2 -> HOY EN OPOSITOR.COM\n\ttexto bajo h2 -> OPE Justicia 2026\n\ttexto bajo h2 -> Convocatoria de la Guardia Civil 2026: Todas las Plazas\n\th2 -> LO MÁS LEÍDO\n\ttexto bajo h2 -> Acceso Policía Nacional: Información sobre Pruebas y Requisitos\n\ttexto bajo h2 -> Trucos para preparar una oposición con éxito\n\ttexto bajo h2 -> Quiero ser Policía Nacional, ¿qué tengo que hacer?\n\ttexto bajo h2 -> Cómo ser Controlador Aéreo en España\n\ttexto bajo h2 -> Comparte ésta página:";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

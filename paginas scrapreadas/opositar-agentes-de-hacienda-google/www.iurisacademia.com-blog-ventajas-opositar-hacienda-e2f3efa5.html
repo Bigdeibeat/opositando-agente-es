@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web Structure</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --panel: #080b14;
+      --border: #2d364d;
+      --tag-color: #818cf8;
+      --header: #cb48ff;
+      --text: #b5a211;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 24px;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source {
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(8, 11, 20, 0.92);
+      color: #f8fafc;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button:hover {
+      border-color: var(--header);
+    }
+    .result-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      background: rgba(8, 11, 20, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow: auto;
+      font-family: Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .line {
+      margin-bottom: 10px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+    .tag-label,
+    .context-label {
+      color: var(--tag-color);
+      font-weight: 600;
+    }
+    .content-header {
+      color: var(--header);
+      font-weight: 600;
+    }
+    .content-text {
+      color: var(--text);
+    }
+    @media (max-width: 720px) {
+      body { padding: 16px; }
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="source">https://www.iurisacademia.com/blog/ventajas-opositar-hacienda/</div>
+    <button id="copyBtn" type="button">Copiar todo</button>
+  </div>
+  <main class="result-container">
+<div class="line level-0" style="padding-left:0px"><span class="tag-label">h1 -&gt; </span><span class="content-header">¿Por qué opositar a Hacienda? Ventajas reales frente a otras oposiciones</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">By sarimore</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">septiembre 24, 2025</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">Cada año miles de personas se plantean opositar. La duda es siempre la misma: ¿ a qué oposición me presento? Administración General, Justicia, Policía, Educación… las opciones son muchas. Pero entre todas, las oposiciones de Hacienda destacan como una de las salidas más seguras, variadas y con mayor proyección profesional.</span></div>
+<div class="line level-0" style="padding-left:0px"><span class="context-label">texto bajo h1 -&gt; </span><span class="content-text">En este artículo analizamos qué ofrece realmente opositar a Hacienda, cuáles son las ventajas frente a otras oposiciones y cómo elegir el cuerpo que mejor se adapta a tu perfil (Agente, Técnico o Inspector).</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">1. ¿Qué oposiciones existen dentro de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La Agencia Tributaria convoca regularmente distintos cuerpos. Los más conocidos son:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Agente de Hacienda Pública (C1) Requiere bachillerato o equivalente.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Funciones: comprobación tributaria, gestión de expedientes, asistencia al contribuyente.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Suele ser la puerta de entrada más accesible.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Técnico de Hacienda (A2) Requiere grado universitario o equivalente.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Funciones más complejas: inspección limitada, gestión avanzada, elaboración de informes.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Supone un salto de responsabilidad y retribución.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Inspector de Hacienda (A1) Requiere titulación universitaria.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Máximo nivel dentro de la AEAT: inspecciones de gran calado, lucha contra el fraude, dirección de equipos.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Además de estos tres, también existen cuerpos como el de Agentes de Vigilancia Aduanera o puestos relacionados con la gestión catastral y recaudación.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">2. Ventajas de opositar a Hacienda frente a otras oposiciones</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">a) Alta oferta de plazas cada año</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">La Agencia Tributaria convoca centenares de plazas anuales. En muchas oposiciones más pequeñas (como ciertos cuerpos de justicia local, universidades o policías autonómicas), la oferta depende de la comunidad autónoma y puede variar drásticamente.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">En cambio, Hacienda mantiene un flujo constante porque la AEAT es esencial para el Estado. Esto significa más posibilidades de aprobar y menos incertidumbre.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">b) Estabilidad laboral garantizada</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Una vez consigues tu plaza, entras en un organismo clave: la Agencia Estatal de Administración Tributaria. No solo disfrutas de la seguridad de ser funcionario, sino que además trabajas en un área crítica del Estado: la recaudación de impuestos.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Comparado con cuerpos de Justicia (donde los retrasos en las convocatorias generan incertidumbre) o de Educación (dependientes de presupuestos autonómicos), Hacienda ofrece una estabilidad mucho más previsible.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">c) Salario competitivo y en progresión</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Los sueldos en Hacienda suelen ser superiores a la media en comparación con otras oposiciones de similar nivel.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Agente de Hacienda: 1.500–1.800 € netos al mes + complementos.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Técnico de Hacienda: 2.000–2.500 € netos al mes.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Inspector de Hacienda: 3.000–4.000 € netos, con posibilidades de seguir creciendo.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Otros cuerpos del grupo C1, como Auxilio Judicial o Administrativo del Estado, no alcanzan estas cifras iniciales.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">d) Proyección interna y movilidad</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Opositar a Hacienda te abre puertas más allá de tu primer puesto:</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Posibilidad de promocionar internamente (de Agente a Técnico, de Técnico a Inspector).</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Movilidad geográfica: oficinas de la AEAT en todo el territorio.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Diversidad de áreas: gestión, recaudación, inspección, aduanas, informática tributaria.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">En oposiciones como Policía Nacional o Guardia Civil, la movilidad puede ser más restringida y las promociones internas más lentas.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">e) Trabajo con impacto real</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El trabajo en Hacienda tiene un fuerte componente de utilidad pública: luchar contra el fraude, asegurar la financiación de servicios esenciales y velar por la justicia tributaria.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Mientras que otras oposiciones (por ejemplo, Administrativos AGE) pueden ser más rutinarias, en Hacienda encuentras una mayor variedad de tareas y un impacto directo en la economía.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">3. ¿Qué perfil encaja mejor en cada oposición de Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Agente de Hacienda (C1): Ideal si quieres empezar rápido, con un temario asumible en 9–12 meses y muchas plazas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Técnico de Hacienda (A2): Para quienes tienen formación universitaria y buscan un salto salarial y de funciones.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Inspector de Hacienda (A1): La opción más exigente, con varios años de preparación, pero con la máxima recompensa en salario, responsabilidad y proyección.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">👉 Una estrategia muy común es empezar como Agente y, una vez dentro, preparar Técnico o Inspector mediante promoción interna.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">4. Comparativa rápida: Hacienda vs otras oposiciones</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">5. Desventajas y retos de opositar a Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">No todo son ventajas, y conviene ser realistas:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Exigencia del temario: incluso en Agente, incluye Derecho, Administrativo y Tributario.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Examen práctico exigente: especialmente en Técnico e Inspector.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Competencia fuerte: cada año más opositores eligen Hacienda por sus ventajas.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Sin embargo, estos retos son superables con una buena planificación y acompañamiento experto.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">6. Iuris Academia: resultados reales en Hacienda</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En Iuris Academia hemos comprobado que Hacienda es una gran apuesta… siempre que se prepare con método.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En la última convocatoria, más del 70% de nuestros alumnos aprobaron el segundo examen.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Varios quedaron entre los 25 primeros.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Y algunos lograron su plaza en menos de 9 meses.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Nuestro equipo, formado por Javi Gutiérrez y Edu de la Rosa, inspectores de Hacienda, te guía con:</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Temario actualizado y explicado de forma clara.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Simulacros reales y corrección personalizada.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Plan de estudio adaptable a tu tiempo y circunstancias.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Sin permanencia: pago mensual con libertad para decidir.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Si buscas resultados reales, este es tu momento.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">👉 Descubre el curso de Agente de Hacienda en Iuris Academia</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Valoras opositar a Hacienda?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Opositar a Hacienda es una de las decisiones más inteligentes para quienes buscan seguridad, salario competitivo y proyección profesional.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Las ventajas frente a otras oposiciones son claras: más plazas, más estabilidad y más posibilidades de crecer dentro de la Administración.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">La clave está en elegir el cuerpo que mejor se adapte a tu perfil y prepararlo con un método probado.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">En Iuris Academia sabemos que los resultados marcan la diferencia. Y los nuestros lo demuestran.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">QUIZÁS TE PUEDA INTERESAR</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Sueldo Agente de Hacienda 2025: cuánto se cobra y qué complementos existen</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">El sueldo base de un Agente de Hacienda se establece en los Presupuestos Generales del Estado y depende del Grupo C1 de clasificación funcionarial, que es el grupo al que pertenece este cuerpo.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="tag-label">h3 -&gt; </span><span class="content-header">Destinos Agentes de Hacienda: destinos más comunes tras aprobar</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">¿Te has preguntado dónde trabajarás una vez que apruebes la oposición de Agente de Hacienda? La elección de tu destino puede influir en tu calidad de vida y salario. En este artículo, descubrirás los destinos más comunes, cómo se adjudican las plazas y qué esperar en tus primeros años en la Agencia Tributaria. Desde grandes capitales hasta administraciones periféricas, cada opción tiene sus particularidades. Además, te daremos consejos para maximizar tus posibilidades de elegir el destino que deseas. ¡No te lo pierdas y comienza a planificar tu futuro en la AEAT!</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Utilizamos cookies para ofrecerte la mejor experiencia en nuestra web.</span></div>
+<div class="line level-2" style="padding-left:72px"><span class="context-label">texto bajo h3 -&gt; </span><span class="content-text">Puedes aprender más sobre qué cookies utilizamos o desactivarlas en los ajustes.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="tag-label">h2 -&gt; </span><span class="content-header">¿Tienes dudas?</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Javi o Edu te llamarán personalmente y resolverán todas tus dudas. En IURIS Academia creemos en la atención de calidad y personalizada.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Resumen de privacidad</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Cookies estrictamente necesarias</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Analítica</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Política de cookies</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Esta web utiliza cookies para que podamos ofrecerte la mejor experiencia de usuario posible. La información de las cookies se almacena en tu navegador y realiza funciones tales como reconocerte cuando vuelves a nuestra web o ayudar a nuestro equipo a comprender qué secciones de la web encuentras más interesantes y útiles.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Las cookies estrictamente necesarias tiene que activarse siempre para que podamos guardar tus preferencias de ajustes de cookies.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Esta web utiliza Google Analytics para recopilar información anónima tal como el número de visitantes del sitio, o las páginas más populares.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Dejar esta cookie activa nos permite mejorar nuestra web.</span></div>
+<div class="line level-1" style="padding-left:36px"><span class="context-label">texto bajo h2 -&gt; </span><span class="content-text">Más información sobre nuestra política de cookies</span></div>
+  </main>
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const plainText = "h1 -> ¿Por qué opositar a Hacienda? Ventajas reales frente a otras oposiciones\ntexto bajo h1 -> By sarimore\ntexto bajo h1 -> septiembre 24, 2025\ntexto bajo h1 -> Cada año miles de personas se plantean opositar. La duda es siempre la misma: ¿ a qué oposición me presento? Administración General, Justicia, Policía, Educación… las opciones son muchas. Pero entre todas, las oposiciones de Hacienda destacan como una de las salidas más seguras, variadas y con mayor proyección profesional.\ntexto bajo h1 -> En este artículo analizamos qué ofrece realmente opositar a Hacienda, cuáles son las ventajas frente a otras oposiciones y cómo elegir el cuerpo que mejor se adapta a tu perfil (Agente, Técnico o Inspector).\n\th2 -> 1. ¿Qué oposiciones existen dentro de Hacienda?\n\ttexto bajo h2 -> La Agencia Tributaria convoca regularmente distintos cuerpos. Los más conocidos son:\n\ttexto bajo h2 -> Agente de Hacienda Pública (C1) Requiere bachillerato o equivalente.\n\ttexto bajo h2 -> Funciones: comprobación tributaria, gestión de expedientes, asistencia al contribuyente.\n\ttexto bajo h2 -> Suele ser la puerta de entrada más accesible.\n\ttexto bajo h2 -> Técnico de Hacienda (A2) Requiere grado universitario o equivalente.\n\ttexto bajo h2 -> Funciones más complejas: inspección limitada, gestión avanzada, elaboración de informes.\n\ttexto bajo h2 -> Supone un salto de responsabilidad y retribución.\n\ttexto bajo h2 -> Inspector de Hacienda (A1) Requiere titulación universitaria.\n\ttexto bajo h2 -> Máximo nivel dentro de la AEAT: inspecciones de gran calado, lucha contra el fraude, dirección de equipos.\n\ttexto bajo h2 -> Además de estos tres, también existen cuerpos como el de Agentes de Vigilancia Aduanera o puestos relacionados con la gestión catastral y recaudación.\n\th2 -> 2. Ventajas de opositar a Hacienda frente a otras oposiciones\n\t\th3 -> a) Alta oferta de plazas cada año\n\t\ttexto bajo h3 -> La Agencia Tributaria convoca centenares de plazas anuales. En muchas oposiciones más pequeñas (como ciertos cuerpos de justicia local, universidades o policías autonómicas), la oferta depende de la comunidad autónoma y puede variar drásticamente.\n\t\ttexto bajo h3 -> En cambio, Hacienda mantiene un flujo constante porque la AEAT es esencial para el Estado. Esto significa más posibilidades de aprobar y menos incertidumbre.\n\t\th3 -> b) Estabilidad laboral garantizada\n\t\ttexto bajo h3 -> Una vez consigues tu plaza, entras en un organismo clave: la Agencia Estatal de Administración Tributaria. No solo disfrutas de la seguridad de ser funcionario, sino que además trabajas en un área crítica del Estado: la recaudación de impuestos.\n\t\ttexto bajo h3 -> Comparado con cuerpos de Justicia (donde los retrasos en las convocatorias generan incertidumbre) o de Educación (dependientes de presupuestos autonómicos), Hacienda ofrece una estabilidad mucho más previsible.\n\t\th3 -> c) Salario competitivo y en progresión\n\t\ttexto bajo h3 -> Los sueldos en Hacienda suelen ser superiores a la media en comparación con otras oposiciones de similar nivel.\n\t\ttexto bajo h3 -> Agente de Hacienda: 1.500–1.800 € netos al mes + complementos.\n\t\ttexto bajo h3 -> Técnico de Hacienda: 2.000–2.500 € netos al mes.\n\t\ttexto bajo h3 -> Inspector de Hacienda: 3.000–4.000 € netos, con posibilidades de seguir creciendo.\n\t\ttexto bajo h3 -> Otros cuerpos del grupo C1, como Auxilio Judicial o Administrativo del Estado, no alcanzan estas cifras iniciales.\n\t\th3 -> d) Proyección interna y movilidad\n\t\ttexto bajo h3 -> Opositar a Hacienda te abre puertas más allá de tu primer puesto:\n\t\ttexto bajo h3 -> Posibilidad de promocionar internamente (de Agente a Técnico, de Técnico a Inspector).\n\t\ttexto bajo h3 -> Movilidad geográfica: oficinas de la AEAT en todo el territorio.\n\t\ttexto bajo h3 -> Diversidad de áreas: gestión, recaudación, inspección, aduanas, informática tributaria.\n\t\ttexto bajo h3 -> En oposiciones como Policía Nacional o Guardia Civil, la movilidad puede ser más restringida y las promociones internas más lentas.\n\t\th3 -> e) Trabajo con impacto real\n\t\ttexto bajo h3 -> El trabajo en Hacienda tiene un fuerte componente de utilidad pública: luchar contra el fraude, asegurar la financiación de servicios esenciales y velar por la justicia tributaria.\n\t\ttexto bajo h3 -> Mientras que otras oposiciones (por ejemplo, Administrativos AGE) pueden ser más rutinarias, en Hacienda encuentras una mayor variedad de tareas y un impacto directo en la economía.\n\th2 -> 3. ¿Qué perfil encaja mejor en cada oposición de Hacienda?\n\ttexto bajo h2 -> Agente de Hacienda (C1): Ideal si quieres empezar rápido, con un temario asumible en 9–12 meses y muchas plazas.\n\ttexto bajo h2 -> Técnico de Hacienda (A2): Para quienes tienen formación universitaria y buscan un salto salarial y de funciones.\n\ttexto bajo h2 -> Inspector de Hacienda (A1): La opción más exigente, con varios años de preparación, pero con la máxima recompensa en salario, responsabilidad y proyección.\n\ttexto bajo h2 -> 👉 Una estrategia muy común es empezar como Agente y, una vez dentro, preparar Técnico o Inspector mediante promoción interna.\n\th2 -> 4. Comparativa rápida: Hacienda vs otras oposiciones\n\th2 -> 5. Desventajas y retos de opositar a Hacienda\n\ttexto bajo h2 -> No todo son ventajas, y conviene ser realistas:\n\ttexto bajo h2 -> Exigencia del temario: incluso en Agente, incluye Derecho, Administrativo y Tributario.\n\ttexto bajo h2 -> Examen práctico exigente: especialmente en Técnico e Inspector.\n\ttexto bajo h2 -> Competencia fuerte: cada año más opositores eligen Hacienda por sus ventajas.\n\ttexto bajo h2 -> Sin embargo, estos retos son superables con una buena planificación y acompañamiento experto.\n\th2 -> 6. Iuris Academia: resultados reales en Hacienda\n\ttexto bajo h2 -> En Iuris Academia hemos comprobado que Hacienda es una gran apuesta… siempre que se prepare con método.\n\ttexto bajo h2 -> En la última convocatoria, más del 70% de nuestros alumnos aprobaron el segundo examen.\n\ttexto bajo h2 -> Varios quedaron entre los 25 primeros.\n\ttexto bajo h2 -> Y algunos lograron su plaza en menos de 9 meses.\n\ttexto bajo h2 -> Nuestro equipo, formado por Javi Gutiérrez y Edu de la Rosa, inspectores de Hacienda, te guía con:\n\ttexto bajo h2 -> Temario actualizado y explicado de forma clara.\n\ttexto bajo h2 -> Simulacros reales y corrección personalizada.\n\ttexto bajo h2 -> Plan de estudio adaptable a tu tiempo y circunstancias.\n\ttexto bajo h2 -> Sin permanencia: pago mensual con libertad para decidir.\n\ttexto bajo h2 -> Si buscas resultados reales, este es tu momento.\n\ttexto bajo h2 -> 👉 Descubre el curso de Agente de Hacienda en Iuris Academia\n\th2 -> ¿Valoras opositar a Hacienda?\n\ttexto bajo h2 -> Opositar a Hacienda es una de las decisiones más inteligentes para quienes buscan seguridad, salario competitivo y proyección profesional.\n\ttexto bajo h2 -> Las ventajas frente a otras oposiciones son claras: más plazas, más estabilidad y más posibilidades de crecer dentro de la Administración.\n\ttexto bajo h2 -> La clave está en elegir el cuerpo que mejor se adapte a tu perfil y prepararlo con un método probado.\n\ttexto bajo h2 -> En Iuris Academia sabemos que los resultados marcan la diferencia. Y los nuestros lo demuestran.\n\t\th3 -> QUIZÁS TE PUEDA INTERESAR\n\t\th3 -> Sueldo Agente de Hacienda 2025: cuánto se cobra y qué complementos existen\n\t\ttexto bajo h3 -> El sueldo base de un Agente de Hacienda se establece en los Presupuestos Generales del Estado y depende del Grupo C1 de clasificación funcionarial, que es el grupo al que pertenece este cuerpo.\n\t\th3 -> Destinos Agentes de Hacienda: destinos más comunes tras aprobar\n\t\ttexto bajo h3 -> ¿Te has preguntado dónde trabajarás una vez que apruebes la oposición de Agente de Hacienda? La elección de tu destino puede influir en tu calidad de vida y salario. En este artículo, descubrirás los destinos más comunes, cómo se adjudican las plazas y qué esperar en tus primeros años en la Agencia Tributaria. Desde grandes capitales hasta administraciones periféricas, cada opción tiene sus particularidades. Además, te daremos consejos para maximizar tus posibilidades de elegir el destino que deseas. ¡No te lo pierdas y comienza a planificar tu futuro en la AEAT!\n\t\ttexto bajo h3 -> Utilizamos cookies para ofrecerte la mejor experiencia en nuestra web.\n\t\ttexto bajo h3 -> Puedes aprender más sobre qué cookies utilizamos o desactivarlas en los ajustes.\n\th2 -> ¿Tienes dudas?\n\ttexto bajo h2 -> Javi o Edu te llamarán personalmente y resolverán todas tus dudas. En IURIS Academia creemos en la atención de calidad y personalizada.\n\ttexto bajo h2 -> Resumen de privacidad\n\ttexto bajo h2 -> Cookies estrictamente necesarias\n\ttexto bajo h2 -> Analítica\n\ttexto bajo h2 -> Política de cookies\n\ttexto bajo h2 -> Esta web utiliza cookies para que podamos ofrecerte la mejor experiencia de usuario posible. La información de las cookies se almacena en tu navegador y realiza funciones tales como reconocerte cuando vuelves a nuestra web o ayudar a nuestro equipo a comprender qué secciones de la web encuentras más interesantes y útiles.\n\ttexto bajo h2 -> Las cookies estrictamente necesarias tiene que activarse siempre para que podamos guardar tus preferencias de ajustes de cookies.\n\ttexto bajo h2 -> Esta web utiliza Google Analytics para recopilar información anónima tal como el número de visitantes del sitio, o las páginas más populares.\n\ttexto bajo h2 -> Dejar esta cookie activa nos permite mejorar nuestra web.\n\ttexto bajo h2 -> Más información sobre nuestra política de cookies";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (error) {
+          console.warn('Clipboard API failed, using fallback.', error);
+        }
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '12px';
+      textarea.style.left = '12px';
+      textarea.style.width = '1px';
+      textarea.style.height = '1px';
+      textarea.style.padding = '0';
+      textarea.style.border = '0';
+      textarea.style.opacity = '0.01';
+      textarea.style.zIndex = '-1';
+      document.body.appendChild(textarea);
+      textarea.focus({ preventScroll: true });
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const copied = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      const original = copyBtn.textContent;
+      const copied = await copyText(plainText);
+      if (copied) {
+        copyBtn.textContent = 'Copiado';
+        copyBtn.style.color = '#10b981';
+      } else {
+        copyBtn.textContent = 'Selecciona y copia manualmente';
+        copyBtn.style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        copyBtn.textContent = original;
+        copyBtn.style.color = '';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>
