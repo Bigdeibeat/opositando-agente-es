@@ -154,6 +154,7 @@ p {
 
 .lead {
   margin-top: 42px;
+  max-width: 900px;
 }
 
 .lead-two {
@@ -258,7 +259,7 @@ section>.container>.eyebrow {
 .hero,
 .hero-two {
   position: relative;
-  overflow: hidden;
+  overflow-x: auto;
   text-align: center;
   background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
 }
@@ -269,10 +270,6 @@ section>.container>.eyebrow {
 
 .hero-two {
   padding: clamp(32px, 6vw, 50px) 0;
-}
-
-.hero-two .container {
-  max-width: 900px;
 }
 
 .hero h1,
@@ -352,6 +349,11 @@ section>.container>.eyebrow {
 
 .hero-actions {
   justify-content: center;
+}
+
+.hero-cards {
+  margin-top: 30px;
+  text-align: left;
 }
 
 /* Components */
@@ -471,6 +473,10 @@ a.card:hover {
   margin-top: 12px;
 }
 
+.full-width-card {
+  margin-top: var(--gap);
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -519,64 +525,165 @@ a.card:hover {
   margin: 30px 0 0 0;
 }
 
-.table-wrap-status {
+.table-wrap {
   display: grid;
   width: 100%;
-  max-width: 900px;
-  margin: 30px auto 0;
-  overflow: hidden;
+  overflow-x: auto;
   border: 1px solid #eadcc3;
   border-radius: var(--radius);
-  grid-template-columns: 1fr max-content max-content max-content 1fr;
-  column-gap: 80px;
 }
 
-.table-wrap-places {
-  grid-template-columns: 1fr max-content max-content 1fr;
-  column-gap: 160px
-}
-
-.status-row {
+.table-row {
   display: grid;
-  grid-column: 1 / -1;
-  grid-template-columns: subgrid;
+  min-width: var(--table-min-width, 620px);
   border-bottom: 1px solid #eadcc3;
 }
 
-.status-row::before,
-.status-row::after {
-  content: "";
-}
-
-.status-row:last-child {
+.table-row:last-child {
   border-bottom: 0;
 }
 
-.status-row:nth-child(odd) {
+.table-row:nth-child(odd) {
   background: #fff8eb;
 }
 
-.status-row:nth-child(even) {
+.table-row:nth-child(even) {
   background: #fdf1dc;
 }
 
-.status-head {
+.table-head {
   background: #f7e7c9;
 }
 
-.status-row span {
-  padding: 12px 0;
+.table-row span {
+  padding: 12px 14px;
   color: var(--muted);
   font-size: 14px;
   text-align: center;
-  white-space: nowrap;
 }
 
-.status-head span {
+.table-row small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.table-head span {
   color: var(--ink);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+
+.table-wrap-status {
+  max-width: 900px;
+  margin: 30px auto 0;
+}
+
+.table-wrap-status .table-row {
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+}
+
+.table-wrap-places {
+  --table-min-width: 520px;
+  max-width: 900px;
+  margin: 30px auto 0;
+}
+
+.table-wrap-places .table-row {
+  grid-template-columns: minmax(260px, 1fr) minmax(260px, 1fr);
+}
+
+.table-wrap-examenes {
+  margin: 30px auto 0;
+}
+
+.table-wrap-examenes .table-row {
+  grid-template-columns: minmax(110px, 0.6fr) minmax(260px, 1.5fr) minmax(150px, 0.8fr) minmax(180px, 1fr);
+}
+
+.table-wrap-penalizacion {
+  margin: 30px auto 0;
+}
+
+.table-wrap-penalizacion .table-row {
+  grid-template-columns: repeat(4, minmax(130px, 1fr));
+}
+
+.table-wrap-practico {
+  margin: 30px auto 0;
+}
+
+.table-wrap-practico .table-row {
+  grid-template-columns: repeat(3, minmax(170px, 1fr));
+}
+
+.table-wrap-nota-final {
+  margin: 30px auto 0;
+}
+
+.table-wrap-nota-final .table-row {
+  grid-template-columns: repeat(3, minmax(170px, 1fr));
+}
+
+.table-wrap-reserva-nota {
+  margin: 30px auto 0;
+}
+
+.table-wrap-reserva-nota .table-row {
+  grid-template-columns: repeat(6, minmax(150px, 1fr));
+}
+
+.table-wrap-requisitos {
+  --table-min-width: 620px;
+  max-width: 900px;
+  margin: 30px auto 0;
+}
+
+.table-wrap-requisitos .table-row {
+  grid-template-columns: minmax(150px, 0.45fr) minmax(360px, 1fr);
+}
+
+.table-wrap-salario-basico {
+  --table-min-width: 620px;
+  max-width: 900px;
+  margin: 30px auto 0;
+}
+
+.table-wrap-salario-basico .table-row {
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
+}
+
+.table-wrap-salario-destino {
+  --table-min-width: 720px;
+  max-width: 900px;
+  margin: 30px auto 0;
+}
+
+.table-wrap-salario-destino .table-row {
+  grid-template-columns: repeat(4, minmax(145px, 1fr));
+}
+
+.table-wrap-salario-carrera,
+.table-wrap-salario-total {
+  --table-min-width: 900px;
+  max-width: 900px;
+  margin: 30px auto 0;
+}
+
+.table-wrap-salario-carrera .table-row,
+.table-wrap-salario-total .table-row {
+  grid-template-columns: repeat(5, minmax(150px, 1fr));
+}
+
+.table-wrap-status .table-row span,
+.table-wrap-places .table-row span,
+.table-wrap-salario-basico .table-row span,
+.table-wrap-salario-destino .table-row span,
+.table-wrap-salario-carrera .table-row span {
+  white-space: nowrap;
 }
 
 .timeline {
@@ -618,52 +725,6 @@ a.card:hover {
   padding: 12px 0;
   border-top: 1px solid var(--line);
   color: var(--muted);
-}
-
-/* Tables */
-.table-wrap {
-  overflow-x: auto;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
-}
-
-table {
-  width: 100%;
-  min-width: 620px;
-  border-collapse: collapse;
-  font-size: 14px;
-}
-
-th,
-td {
-  padding: 12px 14px;
-  border-bottom: 1px solid var(--line);
-  text-align: left;
-}
-
-th {
-  color: var(--ink);
-  background: var(--surface-soft);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-tr:last-child td {
-  border-bottom: 0;
-}
-
-tbody tr:nth-child(even) {
-  background: #faf9f5;
-}
-
-td small {
-  display: block;
-  margin-top: 4px;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.45;
 }
 
 /* Forms */
@@ -730,6 +791,12 @@ textarea {
 .section-copy-two {
   max-width: 900px;
   margin: 0 auto 22px;
+  text-align: center;
+}
+
+.section-copy-three {
+  max-width: 900px;
+  margin: 30px auto;
   text-align: center;
 }
 
