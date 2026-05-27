@@ -114,6 +114,10 @@ p {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.grid.four {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .section-head {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 1fr);
@@ -846,6 +850,10 @@ textarea {
 /* Responsive */
 @media (max-width: 920px) {
   .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid.four {
     grid-template-columns: repeat(2, 1fr);
   }
 
