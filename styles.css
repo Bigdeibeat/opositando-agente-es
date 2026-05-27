@@ -652,7 +652,6 @@ a.card:hover {
 
 .table-wrap-salario-basico {
   --table-min-width: 620px;
-  max-width: 900px;
   margin: 30px auto 0;
 }
 
@@ -662,7 +661,6 @@ a.card:hover {
 
 .table-wrap-salario-destino {
   --table-min-width: 720px;
-  max-width: 900px;
   margin: 30px auto 0;
 }
 
@@ -673,7 +671,6 @@ a.card:hover {
 .table-wrap-salario-carrera,
 .table-wrap-salario-total {
   --table-min-width: 900px;
-  max-width: 900px;
   margin: 30px auto 0;
 }
 
