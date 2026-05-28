@@ -796,6 +796,17 @@ a.card:hover {
   padding: 18px;
 }
 
+.stat img {
+display: block;
+aspect-ratio: 16 / 9;
+object-fit: cover;
+border-radius: calc(var(--radius) - 2px);
+margin: -18px -18px 20px -18px;
+width: calc(100% + 36px);
+max-width: none;
+border-radius: calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0;
+}
+
 .stat strong {
   display: block;
   color: var(--brand-dark);
