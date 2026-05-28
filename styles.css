@@ -412,6 +412,11 @@ section>.container>.eyebrow {
   text-transform: uppercase;
 }
 
+.eyebrow-two {
+  background: var(--brand);
+  color: var(--surface-soft);
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -453,14 +458,12 @@ section>.container>.eyebrow {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  min-height: 50px;
-  padding: 12px 20px;
+  padding: 8px 20px;
   border: 1px solid var(--brand);
   border-radius: var(--radius);
-  color: var(--brand);
-  background: transparent;
+  color: var(--surface);
+  background: var(--brand);
   font-size: 16px;
-  font-weight: 700;
   text-decoration: none;
 }
 
@@ -1021,11 +1024,11 @@ a.card:hover {
   margin: 18px 0 0;
   padding: 0;
   list-style: none;
+  text-align: center;
 }
 
 .clean-list li {
   padding: 12px 0;
-  border-top: 1px solid var(--line);
   color: var(--muted);
 }
 
@@ -1235,6 +1238,25 @@ textarea {
     text-align: left;
   }
 
+  .content-page h2,
+  .content-page .section-copy,
+  .content-page .section-copy-two,
+  .content-page .section-copy-three,
+  .content-page .source-note,
+  .content-page .note,
+  .content-page .table-row span {
+    text-align: left;
+  }
+
+  section>.container>.eyebrow {
+    margin: 0 auto 36px 0;
+  }
+
+  .content-page .card .kicker {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
   .stats {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1242,6 +1264,10 @@ textarea {
   .grid.two,
   .grid.three {
     grid-template-columns: 1fr;
+  }
+
+  .clean-list {
+  text-align: left;
   }
 
   .card {
