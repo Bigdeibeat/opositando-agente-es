@@ -14,6 +14,7 @@
   --shadow: 0 18px 50px rgba(23, 23, 23, 0.08);
   --container: 1200px;
   --container-two: 1000px;
+  --content-width: 1000px;
   --section: clamp(48px, 7vw, 60px);
   --gap: clamp(16px, 2vw, 28px);
   --font-body: "Manrope", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -158,7 +159,7 @@ p {
 
 .lead {
   margin-top: 42px;
-  max-width: 900px;
+  max-width: var(--content-width);
 }
 
 .lead-two {
@@ -289,6 +290,40 @@ section>.container>.eyebrow {
 
 .hero-two h1 {
   font-size: clamp(24px, 3vw, 36px);
+}
+
+.hero-apuntes {
+  text-align: left;
+}
+
+.hero-apuntes-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1fr);
+  gap: clamp(28px, 5vw, 56px);
+  align-items: center;
+}
+
+.hero-apuntes-copy h1,
+.hero-apuntes-copy .lead {
+  margin-inline: 0;
+}
+
+.hero-apuntes .hero-actions {
+  justify-content: flex-start;
+}
+
+.hero-apuntes-media {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.hero-apuntes-media img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .hero .eyebrow {
@@ -481,6 +516,272 @@ a.card:hover {
   margin-top: var(--gap);
 }
 
+.apuntes-pricing-grid {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.apuntes-pricing-card {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr auto auto auto;
+  gap: 14px;
+  min-height: 510px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.apuntes-pricing-featured {
+  border-color: var(--brand);
+  box-shadow: 0 14px 28px rgba(23, 23, 23, 0.14);
+}
+
+.apuntes-badge {
+  position: absolute;
+  top: -10px;
+  right: 30px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.apuntes-book-icon {
+  width: 28px;
+  height: 28px;
+  background: var(--ink);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 7v14'/%3E%3Cpath d='M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 7v14'/%3E%3Cpath d='M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.apuntes-pricing-card h3 {
+  font-size: 24px;
+}
+
+.apuntes-pricing-subtitle {
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.apuntes-feature-list {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  margin: 16px 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.apuntes-feature-list li {
+  position: relative;
+  padding-left: 24px;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.apuntes-feature-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--brand);
+  border-radius: 50%;
+}
+
+.apuntes-feature-list li::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.52em;
+  width: 6px;
+  height: 3px;
+  border-left: 1.5px solid var(--brand);
+  border-bottom: 1.5px solid var(--brand);
+  transform: rotate(-45deg);
+}
+
+.apuntes-price {
+  color: var(--ink);
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.apuntes-price span {
+  margin-right: 6px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: line-through;
+}
+
+.apuntes-price strong {
+  display: inline-flex;
+  align-items: center;
+  min-height: 18px;
+  margin-left: 6px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.apuntes-buy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 18px;
+  border-radius: 5px;
+  background: var(--ink);
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.apuntes-testimonials-grid {
+  columns: 3 260px;
+  column-gap: 20px;
+}
+
+.apuntes-testimonial-card {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  break-inside: avoid;
+}
+
+.apuntes-testimonial-card p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 15px;
+  font-style: italic;
+}
+
+.testimonial-author,
+.testimonial-role {
+  display: block;
+}
+
+.testimonial-author {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.testimonial-role {
+  margin-top: 4px;
+  color: var(--brand);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.apuntes-faq {
+  max-width: var(--content-width);
+}
+
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.faq-item+.faq-item {
+  margin-top: 14px;
+}
+
+.faq-question-heading {
+  margin: 0;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  width: 100%;
+  padding: 20px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-question:hover,
+.faq-question:focus-visible {
+  color: var(--brand-dark);
+}
+
+.faq-icon {
+  position: relative;
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 3px;
+  width: 12px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--brand);
+  transition: transform 180ms ease;
+}
+
+.faq-icon::after {
+  transform: rotate(90deg);
+}
+
+.faq-item.active .faq-icon::after {
+  transform: rotate(0deg);
+}
+
+.faq-answer {
+  padding: 0 20px 20px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.faq-answer p {
+  margin: 0;
+}
+
+.faq-enhanced .faq-answer {
+  height: auto;
+  overflow: hidden;
+  padding-bottom: 0;
+  transition: height 220ms ease;
+}
+
+.faq-enhanced .faq-item.active .faq-answer {
+  padding-bottom: 20px;
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -582,7 +883,7 @@ a.card:hover {
 }
 
 .table-wrap-status {
-  max-width: 900px;
+  max-width: var(--content-width);
   margin: 30px auto 0;
 }
 
@@ -592,7 +893,7 @@ a.card:hover {
 
 .table-wrap-places {
   --table-min-width: 520px;
-  max-width: 900px;
+  max-width: var(--content-width);
   margin: 30px auto 0;
 }
 
@@ -642,7 +943,7 @@ a.card:hover {
 
 .table-wrap-requisitos {
   --table-min-width: 620px;
-  max-width: 900px;
+  max-width: var(--content-width);
   margin: 30px auto 0;
 }
 
@@ -784,19 +1085,19 @@ textarea {
 }
 
 .section-copy {
-  max-width: 900px;
+  max-width: var(--content-width);
   margin: -12px auto 22px;
   text-align: center;
 }
 
 .section-copy-two {
-  max-width: 900px;
+  max-width: var(--content-width);
   margin: 0 auto 22px;
   text-align: center;
 }
 
 .section-copy-three {
-  max-width: 900px;
+  max-width: var(--content-width);
   margin: 30px auto;
   text-align: center;
 }
@@ -808,7 +1109,7 @@ textarea {
 }
 
 .source-note {
-  max-width: 900px;
+  max-width: var(--content-width);
   margin: 22px auto 0;
   color: var(--muted);
   font-size: 13px;
@@ -848,6 +1149,11 @@ textarea {
 @media (max-width: 920px) {
   .stats {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-apuntes-grid,
+  .apuntes-pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .grid.four {
@@ -909,6 +1215,15 @@ textarea {
   .hero-two h1,
   .hero-two .lead {
     margin-inline: 0;
+  }
+
+  .hero-apuntes-grid,
+  .apuntes-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .apuntes-pricing-card {
+    min-height: auto;
   }
 
   .hero-meta,
